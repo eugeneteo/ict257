@@ -4,7 +4,7 @@ Maps every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to the
 course material and the teaching week that cover it.
 
 The RH124 and RH134 courseware is **not** part of this repository. Only section
-numbers are cited here, so you will need your own copy of the material.
+numbers are cited here.
 
 - **Objective** is the stable ID from [`objectives.md`](objectives.md), and
   **Summary** restates it in short.

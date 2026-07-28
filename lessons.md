@@ -174,13 +174,6 @@ exception. We bring RH124 05 forward into week 1. That way you have the
 command-line assistant from the start of the unit, and can use it when you get
 stuck in your own time.
 
-Teaching in course order means we give up two pairings. We teach tuning profiles
-and scheduling priority (RH134 09) in week 9, rather than beside processes
-(RH124 15) in week 5. That means you meet objective 4 on running systems in
-pieces across the unit. And we teach SSH (RH124 19) in week 6, three weeks
-before secure file transfer (RH134 08), although both rest on the same service.
-We make the connection in the recap at the start of those later sessions.
-
 We cover RH124 01.01 briefly in week 1. It sets context rather than teaching a
 skill, and no objective corresponds to it.
 

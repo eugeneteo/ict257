@@ -12,7 +12,8 @@ mapped in [`coverage.md`](coverage.md).
 - **In class** lists the section numbers taught in the session. `11.03` means
   chapter 11, section 03. Section numbers are per-course and the two courses
   reuse them, so always read a number together with its course.
-- **Homework** lists the chapter-end labs and quizzes set after the session.
+- **Optional practice** lists the chapter-end labs and quizzes that go with the
+  session. They are not taught and not marked.
 - **Objectives** lists the IDs the week covers.
 - Focus lines are written for this unit. They are not courseware section titles.
 
@@ -25,18 +26,23 @@ Each session runs to three hours:
 
 | Part | Time | What happens |
 | --- | --- | --- |
-| Recap | 15 min | Questions on last week's homework |
+| Recap | 15 min | Questions carried over from last week |
 | Teaching and demonstration | 90 to 110 min | Main points of each section, shown on a live system |
 | Guided exercises | 10 min each | Students work through the exercises in the session |
-| Wrap-up | 10 min | Set the homework, flag next week's pre-reading |
+| Wrap-up | 10 min | Flag next week's pre-reading and the optional practice |
 
 Students are expected to pre-read the section text. The session covers the main
 points rather than reading the material aloud, which leaves time to demonstrate
 and to get everyone through the guided exercises.
 
-Guided exercises are done in class because they are short, they need a working
-system, and they are where most questions surface. Chapter-end labs are longer
-and are set as homework.
+Guided exercises are the only exercises done in class. They are short, they need
+a working system, and they are where most questions surface.
+
+Chapter-end labs, quizzes and the comprehensive review are not taught and not
+marked. They are longer, and students who want more practice can work through
+them in their own time. Doing so is worthwhile before the exam, because they are
+the only material that asks students to solve a problem without being led
+through it.
 
 From week 1 students have the command-line assistant (RH124 05.01), so they have
 a way to ask questions and troubleshoot between sessions.
@@ -53,8 +59,9 @@ close the gap:
    corresponds to them. See
    [`coverage.md`](coverage.md#course-material-without-an-objective).
 2. **Reading moves out of the session.** See [Session format](#session-format).
-3. **The comprehensive reviews are self-study.** See
-   [Self-study](#self-study).
+3. **Only guided exercises are done in class.** Chapter-end labs and the
+   comprehensive review are left as optional practice. See
+   [Optional practice](#optional-practice).
 
 Weeks were balanced by the length of the sections they contain, which is a rough
 proxy for effort rather than a measurement of it. The load works out at about 61
@@ -66,7 +73,7 @@ exercises taking 80 minutes and leaving 100 minutes to teach.
 
 ### Weeks 1 to 8: Red Hat System Administration I
 
-| Week | Focus | In class | Homework | Objectives |
+| Week | Focus | In class | Optional practice | Objectives |
 | --- | --- | --- | --- | --- |
 | 1 | Getting oriented, the command-line assistant, and the shell | RH124 00.02, 00.03, 01.01, 05.01, 02.01, 02.03, 02.05 | RH124 01.02, 02.02, 02.06, 02.07 | RHCSA-1.1 |
 | 2 | Manual pages, the file-system hierarchy, and working with files | RH124 03.01, 06.01, 06.03, 07.01, 07.03, 07.05 | RH124 03.03, 06.02, 06.04, 07.06, 07.07 | RHCSA-1.8, RHCSA-1.9, RHCSA-1.11 |
@@ -79,7 +86,7 @@ exercises taking 80 minutes and leaving 100 minutes to teach.
 
 ### Weeks 9 to 14: Red Hat System Administration II
 
-| Week | Focus | In class | Homework | Objectives |
+| Week | Focus | In class | Optional practice | Objectives |
 | --- | --- | --- | --- | --- |
 | 9 | Remote access, transferring files, archives, and matching text | RH124 19.01, 19.03, RH134 07.01, 08.01, 08.03, 02.01 | RH124 19.05, RH134 08.05, 02.03 | RHCSA-1.3, RHCSA-1.4, RHCSA-1.6, RHCSA-4.10, RHCSA-10.3 |
 | 10 | Shell scripts and scheduled work | RH134 01.01, 01.03, 01.05, 03.01, 03.03, 04.01, 04.03, 04.05 | RH134 01.07, 03.05, 04.07 | RHCSA-3.1, RHCSA-3.2, RHCSA-3.3, RHCSA-3.4, RHCSA-7.1 |
@@ -112,20 +119,24 @@ the courseware and the lab environment for a self-paced Red Hat course, which is
 not how this unit runs. RH124 00.02 and 00.03 are kept in week 1 because
 students need to know how the lab environment and the exercise types work.
 
-## Self-study
+## Optional practice
 
-Each course closes with a chapter of cumulative labs. These are the closest
-thing in the courseware to exam conditions, so they are set for students to work
-through unaided rather than taught in class. See
+Neither the chapter-end labs listed in the schedule nor the comprehensive review
+is taught in class. Students are free to work through them, and the review in
+particular is the best preparation available for the exam.
+
+Each course closes with a chapter of cumulative labs. Unlike a chapter lab,
+these draw on the whole course rather than the chapter above them, which makes
+them the closest thing in the courseware to exam conditions. See
 [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 
-| Set after | Material |
+| Ready after | Material |
 | --- | --- |
 | Week 8 | RH124 20.02 to 20.06, five labs covering Red Hat System Administration I |
 | Week 14 | RH134 19.02 to 19.05, four labs covering Red Hat System Administration II |
 
 RH134 19.05 covers containers, which are not taught in this unit and match no
-current objective. It is optional.
+current objective.
 
 ## Maintaining this file
 

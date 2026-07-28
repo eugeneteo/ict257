@@ -3,13 +3,13 @@
 Study points for the **Red Hat Certified System Administrator (RHCSA)** exam,
 EX200. This exam is based on **Red Hat Enterprise Linux 10**.
 
-We quote the objectives from Red Hat's published exam page:
+I quote the objectives from Red Hat's published exam page:
 <https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam>
 (retrieved 2026-07-28).
 
-We give each objective a stable ID (`RHCSA-<category>.<n>`). Week notes, labs,
+I give each objective a stable ID (`RHCSA-<category>.<n>`). Week notes, labs,
 and the coverage matrix point at the ID rather than the wording, so a
-cross-reference survives a rewording or a reordering. We never reuse or
+cross-reference survives a rewording or a reordering. I never reuse or
 renumber an ID.
 
 You should be able to do everything below without help.
@@ -145,7 +145,7 @@ objective.
 
 ## Keeping this file current
 
-Red Hat revises the objectives between RHEL major versions. We re-check the
+Red Hat revises the objectives between RHEL major versions. I re-check the
 source URL at the start of each semester and record the new retrieval date
-above. When the objectives change, we add or retire IDs rather than renumber
+above. When the objectives change, I add or retire IDs rather than renumber
 the ones already in use, so that older cross-references stay valid.

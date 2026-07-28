@@ -72,8 +72,8 @@ There is no session in week 15. You sit the RHCSA (EX200) exam.
 
 Revise with the comprehensive review, then the chapter labs. See
 [Your own time](#your-own-time). The labs from weeks 9 to 11 deserve the most
-attention. SELinux, storage, booting, firewalls and network file systems are
-the hardest material in the unit.
+attention. SELinux, storage, booting, troubleshooting, firewalls and network
+file systems are the hardest material in the unit.
 
 Two points from [`objectives.md`](objectives.md#exam-format) shape how to
 revise. The exam is performance-based, so configurations must survive a reboot.

@@ -9,7 +9,7 @@ Objectives are quoted from Red Hat's published exam page:
 
 Each objective has a stable ID (`RHCSA-<category>.<n>`) so week notes, labs, and
 a coverage matrix can reference it without depending on wording or ordering.
-IDs are never reused or renumbered — if Red Hat revises the objectives, add or
+IDs are never reused or renumbered. If Red Hat revises the objectives, add or
 retire IDs rather than shifting existing ones.
 
 RHCSA candidates should be able to accomplish the tasks below without
@@ -150,7 +150,7 @@ procedures before booking a session.
 
 - Hands-on and practical: you perform real system administration tasks on live
   systems. There are no multiple-choice questions.
-- Performance-based grading — **configurations must survive a reboot without
+- Performance-based grading: **configurations must survive a reboot without
   manual intervention**.
 - Closed book. No notes, printed material, or electronic documentation may be
   brought in, and there is no internet access during the exam.

@@ -5,10 +5,11 @@ Red Hat course material that teaches it.
 
 ## How to read this
 
-- **Objective** — the stable ID from [`objectives.md`](objectives.md).
-- **RH124** / **RH134** — section numbers in Red Hat System Administration I and
-  II (RHEL 10). `11.03` means chapter 11, section 03.
-- **Week** — the ICT257 week that teaches the objective.
+- **Objective** is the stable ID from [`objectives.md`](objectives.md).
+- **RH124** and **RH134** are section numbers in Red Hat System Administration I
+  and II (RHEL 10). `11.03` means chapter 11, section 03.
+- **Week** is the ICT257 week that teaches the objective, as scheduled in
+  [`lessons.md`](lessons.md).
 - A dash in **RH124** or **RH134** means that course does not teach the
   objective; the other course usually does. A dash in **Week** means the
   objective is not scheduled yet.
@@ -246,5 +247,6 @@ or 18 appears in the matrix above.
 ## Maintaining this file
 
 When the objectives change, update [`objectives.md`](objectives.md) first, then
-add or retire rows here. When a week is written, fill in its **Week** cells —
-an objective with sections but no week is material that is not being taught.
+add or retire rows here. Keep the **Week** cells in step with
+[`lessons.md`](lessons.md). An objective with sections but no week is material
+that is not being taught.

@@ -1,4 +1,4 @@
-# ICT257 — Red Hat System Administration
+# ICT257: Red Hat System Administration
 
 Course material and notes for **ICT257 Red Hat System Administration**.
 

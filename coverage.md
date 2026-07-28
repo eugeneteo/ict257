@@ -1,36 +1,22 @@
 # RHCSA objective coverage
 
 Maps every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to the
-Red Hat course material that teaches it.
-
-## How to read this
-
-- **Objective** is the stable ID from [`objectives.md`](objectives.md).
-- **RH124** and **RH134** are section numbers in Red Hat System Administration I
-  and II (RHEL 10). `11.03` means chapter 11, section 03.
-- **Week** is the ICT257 week that teaches the objective, as scheduled in
-  [`lessons.md`](lessons.md).
-- A dash in **RH124** or **RH134** means that course does not teach the
-  objective; the other course usually does. Where **Week** lists more than one
-  week, the objective is taught across all of them.
-
-Section numbers are per-course and the two courses reuse them, so always read a
-number together with its course. RH124 16.01 and RH134 16.01 are unrelated
-sections.
-
-Only teaching sections are cited. Guided exercises, quizzes, labs, and chapter
-summaries reinforce the section they sit under and are not listed separately.
-The one exception is the comprehensive review chapter that closes each course,
-whose labs are cumulative and are listed under
-[Exam practice](#exam-practice).
-
-Each **Summary** cell is a short restatement written for this file: in the
-matrix it paraphrases [`objectives.md`](objectives.md), and further down it
-paraphrases each section's own stated objective rather than its title.
+Red Hat course material that teaches it, and to the ICT257 week that teaches it.
 
 The RH124 and RH134 courseware is **not** part of this repository. Only section
-numbers are cited here, so you will need your own copy of the material to follow
-the references.
+numbers are cited here, so you will need your own copy of the material.
+
+- **Objective** is the stable ID from [`objectives.md`](objectives.md), and
+  **Summary** restates it in short.
+- **RH124** and **RH134** are section numbers in Red Hat System Administration I
+  and II (RHEL 10). `11.03` means chapter 11, section 03. A dash means that
+  course does not teach the objective, and the other course usually does.
+- **Week** is the week that teaches the objective, as scheduled in
+  [`lessons.md`](lessons.md). More than one week means it is taught across all
+  of them.
+- Section numbers are per-course and the two courses reuse them, so always read
+  a number together with its course. See
+  [Notes on the mapping](#notes-on-the-mapping).
 
 ## 1. Understand and use essential tools
 
@@ -144,31 +130,12 @@ the references.
 | RHCSA-10.7 | SELinux port labels | — | 14.03 | 13 |
 | RHCSA-10.8 | SELinux Boolean settings | — | 06.05 | 10 |
 
-## Adjacent mappings
-
-Eight sections are mapped as adjacent rather than exact matches. Some teach a
-fundamental the objectives assume without ever naming it; others sit between two
-objectives without matching either exactly.
-
-| Section | Mapped under |
-| --- | --- |
-| RH124 06.01 | RHCSA-1.8 |
-| RH124 14.05 | RHCSA-1.8 |
-| RH124 15.01 | RHCSA-4.4 |
-| RH124 15.03 | RHCSA-4.4 |
-| RH134 01.01 | RHCSA-3.3 |
-| RH134 04.03 | RHCSA-7.1 |
-| RH134 06.07 | RHCSA-10.4, RHCSA-10.5, RHCSA-10.6 |
-| RH134 12.05 | RHCSA-4.3, RHCSA-6.1 |
-
-Treat them as supporting rather than sufficient on their own: an objective is
-not covered by an adjacent section alone.
-
 ## Exam practice
 
-Each course closes with a comprehensive review chapter: a set of cumulative labs
-to work through unaided. These are the closest thing in the courseware to exam
-conditions, so they are cited here even though ordinary chapter labs are not.
+Each course closes with a comprehensive review chapter: a set of cumulative
+labs you work through unaided. These are the closest thing in the courseware to
+exam conditions, so they are cited here even though ordinary chapter labs are
+not.
 Unlike a chapter lab, a review lab draws on the whole course rather than
 rehearsing the section above it.
 
@@ -202,6 +169,26 @@ are absent from the matrix: nothing in
 [`objectives.md`](objectives.md) covers containers. It can be skipped when
 preparing for the exam.
 
+## Adjacent mappings
+
+Eight sections are mapped as adjacent rather than exact matches. Some teach a
+fundamental the objectives assume without ever naming it; others sit between
+two objectives without matching either exactly.
+
+| Section | Mapped under |
+| --- | --- |
+| RH124 06.01 | RHCSA-1.8 |
+| RH124 14.05 | RHCSA-1.8 |
+| RH124 15.01 | RHCSA-4.4 |
+| RH124 15.03 | RHCSA-4.4 |
+| RH134 01.01 | RHCSA-3.3 |
+| RH134 04.03 | RHCSA-7.1 |
+| RH134 06.07 | RHCSA-10.4, RHCSA-10.5, RHCSA-10.6 |
+| RH134 12.05 | RHCSA-4.3, RHCSA-6.1 |
+
+Treat them as supporting rather than sufficient on their own: an objective is
+not covered by an adjacent section alone.
+
 ## Course material without an objective
 
 Material that exists in the courses but that no objective calls for. Every
@@ -234,7 +221,7 @@ labs sit outside that population, since labs are excluded from it throughout.
 
 No objective in [`objectives.md`](objectives.md) mentions installation,
 Kickstart, containers, or image mode, so no section of RH134 chapters 16, 17,
-or 18 appears in the matrix above. They are still taught, in week 14, after
+or 18 appears in the matrix above. You are still taught them, in week 14, after
 every chapter that does carry an objective. See
 [`lessons.md`](lessons.md#sequencing-notes).
 
@@ -245,6 +232,21 @@ every chapter that does carry an objective. See
 | RH124 00.01, RH134 00.01 | Course goals and intended audience |
 | RH124 00.02, RH134 00.02 | Classroom environment orientation |
 | RH124 00.03, RH134 00.03 | How the lab activity types work |
+
+## Notes on the mapping
+
+RH124 16.01 and RH134 16.01 are unrelated sections. Read every section number
+together with its course.
+
+Only teaching sections are cited. Guided exercises, quizzes, labs, and chapter
+summaries reinforce the section they sit under and are not listed separately.
+The one exception is the comprehensive review chapter that closes each course,
+whose labs are cumulative and are listed under
+[Exam practice](#exam-practice).
+
+Each **Summary** cell is a short restatement written for this file. In the
+matrix it paraphrases [`objectives.md`](objectives.md), and further down it
+paraphrases each section's own stated objective rather than its title.
 
 ## Maintaining this file
 

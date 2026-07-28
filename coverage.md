@@ -1,27 +1,31 @@
 # RHCSA objective coverage
 
 Maps every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to the
-Red Hat course material that teaches it, so gaps in course coverage are visible
-at a glance.
+Red Hat course material that teaches it.
 
 ## How to read this
 
 - **Objective** — the stable ID from [`objectives.md`](objectives.md).
 - **RH124** / **RH134** — section numbers in Red Hat System Administration I and
   II (RHEL 10). `11.03` means chapter 11, section 03.
-- **Week** — the ICT257 week that teaches the objective. `—` until the weekly
-  notes exist.
-- `—` in any column means nothing covers it yet.
+- **Week** — the ICT257 week that teaches the objective.
+- A dash in **RH124** or **RH134** means that course does not teach the
+  objective; the other course usually does. A dash in **Week** means the
+  objective is not scheduled yet.
+
+Section numbers are per-course and the two courses reuse them, so always read a
+number together with its course. RH124 16.01 and RH134 16.01 are unrelated
+sections.
 
 Only teaching sections are cited. Guided exercises, quizzes, labs, and chapter
 summaries reinforce the section they sit under and are not listed separately.
+The one exception is the comprehensive review chapter that closes each course,
+whose labs are cumulative and are listed under
+[Exam practice](#exam-practice).
 
-This matrix runs objective-first, so course material that no objective calls for
-does not appear. That material was reviewed and deliberately left out rather
-than overlooked: course administration such as prefaces, orientation, and the
-comprehensive review; background the objectives assume but do not test; and
-whole topics with no objective behind them — installation and Kickstart,
-containers, image mode, and the AI command-line assistant.
+Each **Summary** cell is a short restatement written for this file: in the
+matrix it paraphrases [`objectives.md`](objectives.md), and further down it
+paraphrases each section's own stated objective rather than its title.
 
 The RH124 and RH134 courseware is **not** part of this repository. Only section
 numbers are cited here, so you will need your own copy of the material to follow
@@ -38,7 +42,7 @@ the references.
 | RHCSA-1.5 | Log in and switch users | 10.03 | 12.03 | — |
 | RHCSA-1.6 | `tar`, `gzip`, `bzip2` | — | 07.01 | — |
 | RHCSA-1.7 | Create and edit text files | 08.01 | — | — |
-| RHCSA-1.8 | Create, delete, copy, move files | 06.03, 07.01, 07.05, 14.05 | — | — |
+| RHCSA-1.8 | Create, delete, copy, move files | 06.01, 06.03, 07.01, 07.05, 14.05 | — | — |
 | RHCSA-1.9 | Hard and soft links | 07.03 | — | — |
 | RHCSA-1.10 | Standard ugo/rwx permissions | 11.01, 11.03 | — | — |
 | RHCSA-1.11 | System documentation | 03.01 | — | — |
@@ -58,7 +62,7 @@ the references.
 | --- | --- | --- | --- | --- |
 | RHCSA-3.1 | Conditional execution | — | 01.05 | — |
 | RHCSA-3.2 | Looping constructs | — | 01.05 | — |
-| RHCSA-3.3 | Script inputs (`$1`, `$2`) | — | 01.03 | — |
+| RHCSA-3.3 | Script inputs (`$1`, `$2`) | — | 01.01, 01.03 | — |
 | RHCSA-3.4 | Process command output in a script | — | 01.03 | — |
 
 ## 4. Operate running systems
@@ -68,7 +72,7 @@ the references.
 | RHCSA-4.1 | Boot, reboot, shut down normally | — | 12.03 | — |
 | RHCSA-4.2 | Boot into different targets manually | — | 12.03 | — |
 | RHCSA-4.3 | Interrupt the boot process | — | 12.01, 12.05, 13.01 | — |
-| RHCSA-4.4 | Identify heavy processes and kill them | 15.01, 15.05, 15.07 | — | — |
+| RHCSA-4.4 | Identify heavy processes and kill them | 15.01, 15.03, 15.05, 15.07 | — | — |
 | RHCSA-4.5 | Adjust process scheduling | — | 09.03 | — |
 | RHCSA-4.6 | Manage tuning profiles | — | 09.01 | — |
 | RHCSA-4.7 | Locate and interpret logs and journals | — | 05.01, 05.03, 05.05 | — |
@@ -139,28 +143,105 @@ the references.
 | RHCSA-10.7 | SELinux port labels | — | 14.03 | — |
 | RHCSA-10.8 | SELinux Boolean settings | — | 06.05 | — |
 
-## Gaps
+## Adjacent mappings
 
-Every one of the 62 objectives maps to at least one RH124 or RH134 section, so
-there are no uncovered objectives in the source material. The remaining gap is
-the **Week** column: no objective is scheduled yet, because the weekly notes do
-not exist.
+Eight sections are mapped as adjacent rather than exact matches. Some teach a
+fundamental the objectives assume without ever naming it; others sit between two
+objectives without matching either exactly.
 
-Points to watch when the schedule is built:
+| Section | Mapped under |
+| --- | --- |
+| RH124 06.01 | RHCSA-1.8 |
+| RH124 14.05 | RHCSA-1.8 |
+| RH124 15.01 | RHCSA-4.4 |
+| RH124 15.03 | RHCSA-4.4 |
+| RH134 01.01 | RHCSA-3.3 |
+| RH134 04.03 | RHCSA-7.1 |
+| RH134 06.07 | RHCSA-10.4, RHCSA-10.5, RHCSA-10.6 |
+| RH134 12.05 | RHCSA-4.3, RHCSA-6.1 |
 
-- **RHCSA-1.5** and **RHCSA-4.1**–**4.3** are split across both courses, so boot
-  targets and user switching need to be taught together rather than in the order
-  the courseware presents them.
-- **RHCSA-3.1**–**3.4** rest on just two RH134 sections but carry four
-  objectives. Scripting will need more practice time than its page count
-  suggests.
-- **RHCSA-6.5** is a troubleshooting objective assembled from the permissions
-  sections rather than taught as its own topic; it needs a dedicated exercise.
-- Five sections are mapped as adjacent rather than exact matches: RH124 14.05
-  under RHCSA-1.8, RH124 15.01 under RHCSA-4.4, RH134 04.03 under RHCSA-7.1,
-  RH134 06.07 under the SELinux objectives, and RH134 12.05 under RHCSA-4.3 and
-  RHCSA-6.1. They teach skills the objectives rely on without naming, so treat
-  them as supporting rather than sufficient on their own.
+Treat them as supporting rather than sufficient on their own: an objective is
+not covered by an adjacent section alone.
+
+## Exam practice
+
+Each course closes with a comprehensive review chapter: a set of cumulative labs
+to work through unaided. These are the closest thing in the courseware to exam
+conditions, so they are cited here even though ordinary chapter labs are not.
+Unlike a chapter lab, a review lab draws on the whole course rather than
+rehearsing the section above it.
+
+The objectives listed are those each lab's stated outcomes exercise. They are a
+guide to what a lab rehearses, not a claim that it covers those objectives in
+full.
+
+### RH124
+
+| Section | Summary | Objectives exercised |
+| --- | --- | --- |
+| 20.01 | Chapter introduction and review guidance | — |
+| 20.02 | Manage files, redirect command output, edit text files | RHCSA-1.2, RHCSA-1.7, RHCSA-1.8 |
+| 20.03 | Manage users and groups, set permissions, handle CPU-heavy processes | RHCSA-1.10, RHCSA-4.4, RHCSA-9.1, RHCSA-9.3 |
+| 20.04 | Secure SSH access, configure repositories, manage packages | RHCSA-1.4, RHCSA-2.1, RHCSA-2.2, RHCSA-10.3 |
+| 20.05 | Configure and test networking, set hostnames and name resolution | RHCSA-8.1, RHCSA-8.2 |
+| 20.06 | Mount a file system and find files by name, permissions, and size | RHCSA-1.8, RHCSA-6.1 |
+
+### RH134
+
+| Section | Summary | Objectives exercised |
+| --- | --- | --- |
+| 19.01 | Chapter introduction and review guidance | — |
+| 19.02 | Diagnose boot problems, set the default boot target, schedule recurring jobs | RHCSA-4.3, RHCSA-7.1, RHCSA-7.3 |
+| 19.03 | Create logical volumes and swap, mount NFS persistently, clear temporary files | RHCSA-5.4, RHCSA-5.6, RHCSA-6.2, RHCSA-7.1 |
+| 19.04 | Key-based SSH, firewall settings, SELinux modes, Booleans, and troubleshooting | RHCSA-10.1, RHCSA-10.3, RHCSA-10.4, RHCSA-10.8 |
+| 19.05 | Build a container image, push it to a registry, run a detached container | — |
+
+RH134 19.05 exercises no objective, for the same reason RH134 chapters 16 to 18
+are absent from the matrix: nothing in
+[`objectives.md`](objectives.md) covers containers. It can be skipped when
+preparing for the exam.
+
+## Course material without an objective
+
+Material that exists in the courses but that no objective calls for. Every
+teaching section in both courses is accounted for either in the matrix above or
+in the tables below.
+
+| Course | Teaching sections | Mapped above | Exam practice | Not mapped |
+| --- | --- | --- | --- | --- |
+| RH124 | 47 | 41 | 1 | 5 |
+| RH134 | 49 | 36 | 1 | 12 |
+
+Only the two chapter introductions count as teaching sections; the nine review
+labs sit outside that population, since labs are excluded from it throughout.
+
+### No corresponding objective
+
+| Section | Summary |
+| --- | --- |
+| RH124 01.01 | What Linux, open source, and RHEL are |
+| RH124 05.01 | AI-assisted troubleshooting with the command-line assistant |
+| RH134 16.01 | Installing RHEL interactively in package mode |
+| RH134 16.03 | Automating installation with Kickstart |
+| RH134 17.01 | Container concepts and underlying technology |
+| RH134 17.03 | Running container images with Podman |
+| RH134 17.05 | Managing and building container images |
+| RH134 18.01 | Image mode compared with package-mode installation |
+| RH134 18.03 | Building bootable container images for image mode |
+| RH134 18.05 | Installing RHEL using image mode |
+| RH134 18.07 | Day-2 management of image-mode systems |
+
+No objective in [`objectives.md`](objectives.md) mentions installation,
+Kickstart, containers, or image mode, so no section of RH134 chapters 16, 17,
+or 18 appears in the matrix above.
+
+### Course administration
+
+| Section | Summary |
+| --- | --- |
+| RH124 00.01, RH134 00.01 | Course goals and intended audience |
+| RH124 00.02, RH134 00.02 | Classroom environment orientation |
+| RH124 00.03, RH134 00.03 | How the lab activity types work |
 
 ## Maintaining this file
 

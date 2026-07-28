@@ -7,7 +7,7 @@ revision, and you sit the exam in week 15. See
 [Week 15: the exam](#week-15-the-exam).
 
 The RH124 and RH134 courseware is **not** part of this repository. Only section
-numbers are cited here.
+numbers are cited here, and they refer to version 10.0 of both courses.
 
 ## The schedule
 

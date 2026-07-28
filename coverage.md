@@ -4,12 +4,12 @@ Maps every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to the
 course material and the teaching week that cover it.
 
 The RH124 and RH134 courseware is **not** part of this repository. Only section
-numbers are cited here.
+numbers are cited here, and they refer to version 10.0 of both courses.
 
 - **Objective** is the stable ID from [`objectives.md`](objectives.md), and
   **Summary** restates it in short.
 - **RH124** and **RH134** are section numbers in Red Hat System Administration I
-  and II (RHEL 10). `11.03` means chapter 11, section 03. A dash means that
+  and II (version 10.0). `11.03` means chapter 11, section 03. A dash means that
   course does not teach the objective, and the other course usually does.
 - **Week** is the week that teaches the objective, as scheduled in
   [`lessons.md`](lessons.md). More than one week means it is taught across all
@@ -251,3 +251,7 @@ When the objectives change, update [`objectives.md`](objectives.md) first, then
 add or retire rows here. Keep the **Week** cells in step with
 [`lessons.md`](lessons.md). An objective with sections but no week is material
 that is not being taught.
+
+Red Hat renumbers sections between course versions. If the courseware moves off
+10.0, every section number here needs rechecking against the new release, not
+just the rows whose objectives changed.

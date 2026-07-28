@@ -44,9 +44,9 @@ Focus lines are written for this unit rather than taken from the courseware.
 
 No new chapters. Sessions run over, and this is where the overflow goes.
 
-If nothing has slipped, the session is yours. Bring the guided exercises you did
-not finish, the labs that did not work, and anything you want demonstrated a
-second time.
+Bring the guided exercises you did not finish, the labs that did not work, and
+anything you want demonstrated a second time. Whatever time the catch-up does
+not need goes to those.
 
 If more has slipped than one session can absorb, work through what is left
 yourself. Chapters are taught in order and the ones carrying objectives come
@@ -55,10 +55,10 @@ no objective covers.
 
 ### Week 14: revision
 
-No new chapters. The session works back through
-[`objectives.md`](objectives.md) and [`coverage.md`](coverage.md) objective by
-objective, so you can see what each one asks of you and which week taught it.
-Bring the objectives you are least sure of.
+No new chapters. We go through [`objectives.md`](objectives.md) and
+[`coverage.md`](coverage.md) objective by objective, so you can see what each
+one asks of you and which week taught it. Bring the objectives you are least
+sure of.
 
 Both comprehensive review chapters are open to you by now. If week 12 slipped,
 RH134 19.05 is the one review lab that may have to wait, because it rests on the

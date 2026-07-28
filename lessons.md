@@ -30,9 +30,8 @@ that are better with an instructor in the room: seeing commands run on a real
 system, asking questions, and getting through the exercises with help to hand.
 
 What this asks of students each week is to read the sections listed under **In
-class** before the session. That comes to between 25 and 42 pages for weeks 1
-to 13, and 63 pages for week 14, which is read for the gist rather than the
-detail.
+class** before the session. That comes to between 25 and 42 pages a week, apart
+from week 14 at 63 pages.
 
 To be plain about it: a student who arrives without having read can still follow
 the session, because the teaching covers the main points of every section rather
@@ -52,8 +51,8 @@ Each session runs to three hours:
 | Wrap-up | 10 min | Flag next week's pre-reading and the optional practice |
 
 Guided exercises are the only exercises done in class. They are short, they need
-a working system, and they are where most questions surface. There are 65 of
-them, spread across weeks 1 to 13.
+a working system, and they are where most questions surface. There are 72 of
+them across the fourteen weeks.
 
 From week 1 students have the command-line assistant (RH124 05.01), so they have
 a way to ask questions and troubleshoot between sessions.
@@ -71,7 +70,6 @@ for students to work through in their own revision.
 | Chapter quizzes | 22 quizzes, 99 pages | Use them to check understanding after a chapter |
 | Chapter summaries | 37 summaries, 37 pages | Use them for quick revision |
 | Comprehensive review | 12 sections, 9 of them labs, 49 pages | Save for exam preparation. See [Optional practice](#optional-practice) |
-| Guided exercises in RH134 chapters 16 to 18 | 7 exercises, 29 pages | Optional. Those chapters are covered at overview depth in week 14, and no objective corresponds to them |
 | Course administration sections | 4 sections, 8 pages | Nothing. They orient students to a self-paced Red Hat course, which is not how this unit runs |
 
 RH124 01.01 is covered briefly in week 1. It sets context rather than teaching a
@@ -82,36 +80,6 @@ course contains and what they are responsible for covering themselves. The
 chapter labs and the comprehensive review matter most, because they are the only
 material that asks a student to reach a result unaided, which is what the exam
 asks of them.
-
-## Why the schedule looks like this
-
-The unit has 42 contact hours. Red Hat System Administration I and II are
-nominally about 64 hours of instructor-led training between them, so the
-material runs to roughly one and a half times the time available. Three things
-close the gap:
-
-1. **Objectives set the depth.** RH134 chapters 16 to 18 cover installation,
-   Kickstart, containers and image mode, and no RHCSA objective corresponds to
-   them. They are covered at overview depth in week 14, so students know what
-   the technologies are and where to read further, and their guided exercises
-   are left as optional practice. See
-   [`coverage.md`](coverage.md#course-material-without-an-objective).
-2. **Reading moves out of the session.** See
-   [How the flipped format works](#how-the-flipped-format-works).
-3. **Only guided exercises are done in class.** See
-   [What is not covered in class](#what-is-not-covered-in-class).
-
-Each week covers whole chapters, so nothing is left half-taught at the end of a
-session. There are 38 chapters to fit into 14 weeks, which is why weeks hold
-four, three or two of them rather than a fixed number.
-
-Weeks were then balanced by the length of the chapters they contain, which is a
-rough proxy for effort rather than a measurement of it. The load works out at
-about 70 courseware pages a week, ranging from 53 to 86 for weeks 1 to 13. Week
-14 is larger at 114 pages, which it can absorb because it runs no guided
-exercises and is taught at overview depth. Every week was checked against the
-three-hour budget: the heaviest is week 9, with seven guided exercises taking 70
-minutes and leaving 85 minutes to teach.
 
 ## The schedule
 
@@ -137,7 +105,12 @@ minutes and leaving 85 minutes to teach.
 | 11 | Tuning profiles, scheduling priority, partitions, and swap | RH134 09.01, 09.03, 10.01, 10.03 | RH134 09.05, 10.05 | RHCSA-4.5, RHCSA-4.6, RHCSA-5.1, RHCSA-5.5, RHCSA-5.6, RHCSA-6.1 |
 | 12 | Logical volumes, booting, and recovering root access | RH134 11.01, 11.03, 11.05, 12.01, 12.03, 12.05 | RH134 11.06, 11.07, 12.07 | RHCSA-1.5, RHCSA-4.1, RHCSA-4.2, RHCSA-4.3, RHCSA-5.2, RHCSA-5.3, RHCSA-5.4, RHCSA-5.6, RHCSA-6.1, RHCSA-6.4, RHCSA-7.3, RHCSA-7.6 |
 | 13 | Boot troubleshooting, firewalls, and network file systems | RH134 13.01, 14.01, 14.03, 15.01, 15.03 | RH134 14.05, 15.05 | RHCSA-4.3, RHCSA-6.2, RHCSA-6.3, RHCSA-8.4, RHCSA-10.1, RHCSA-10.7 |
-| 14 | Installation, containers, and image mode, at overview depth | RH134 16.01, 16.03, 17.01, 17.03, 17.05, 18.01, 18.03, 18.05, 18.07 | RH134 16.02, 16.04, 16.05, 17.02, 17.04, 17.06, 17.07, 18.02, 18.04, 18.06, 18.08 | — |
+| 14 | Installation, Kickstart, containers, and image mode | RH134 16.01, 16.03, 17.01, 17.03, 17.05, 18.01, 18.03, 18.05, 18.07 | RH134 16.05, 17.02, 17.07, 18.02 | — |
+
+Week 14 is the tightest session in the schedule, and we may not get through all
+three chapters. Work whatever is left over yourself. No RHCSA objective covers
+installation, Kickstart, containers, or image mode, so nothing the exam asks for
+is lost, but the material is worth knowing.
 
 ## Week 15: the exam
 
@@ -182,10 +155,9 @@ Recap at the start of those later sessions is where the connection gets made.
 RH124 01.01 in week 1 is covered briefly. It sets context rather than teaching a
 skill, and no objective corresponds to it.
 
-RH134 chapters 16 to 18 in week 14 are covered at overview depth for the same
-reason: no objective corresponds to them. The aim is that students can say what
-Kickstart, containers and image mode are and where to read further, not that
-they can carry the tasks out.
+RH134 chapters 16 to 18 are taught last, in week 14, because no objective
+corresponds to them. Installation, Kickstart, containers and image mode are
+worth knowing, but every chapter the exam asks for comes first.
 
 RH124 00.01 and RH134 00.01 to 00.03 are not scheduled. They orient students to
 the courseware and the lab environment for a self-paced Red Hat course, which is
@@ -207,9 +179,9 @@ student has been taught enough to attempt them. See
 | Week 13 | RH134 19.02 to 19.04, three labs covering Red Hat System Administration II |
 | Week 14 | RH134 19.05, one lab on containers |
 
-RH134 19.05 rests on the container material covered at overview depth in week
-14, and it matches no current objective, so it is the one review lab that can be
-skipped when preparing for the exam.
+RH134 19.05 rests on the container material taught in week 14, and it matches no
+current objective, so it is the one review lab that can be skipped when
+preparing for the exam.
 
 Both chapters are available before the exam, so week 15 is when they matter
 most. See [Week 15: the exam](#week-15-the-exam).

@@ -264,8 +264,8 @@ labs sit outside that population, since labs are excluded from it throughout.
 
 No objective in [`objectives.md`](objectives.md) mentions installation,
 Kickstart, containers, or image mode, so no section of RH134 chapters 16, 17,
-or 18 appears in the matrix above. They are still taught, at overview depth in
-week 14, so that students know what the technologies are. See
+or 18 appears in the matrix above. They are still taught, in week 14, after
+every chapter that does carry an objective. See
 [`lessons.md`](lessons.md#sequencing-notes).
 
 ### Course administration

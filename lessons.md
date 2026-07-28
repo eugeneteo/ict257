@@ -6,7 +6,7 @@ material mapped in [`coverage.md`](coverage.md). Week 13 is catch-up, week 14 is
 revision, and you sit the exam in week 15. See
 [Week 15: the exam](#week-15-the-exam).
 
-The RH124 and RH134 courseware is **not** part of this repository. We cite only
+The RH124 and RH134 courseware is **not** part of this repository. I cite only
 section numbers, and they refer to version 10.0 of both courses.
 
 ## The schedule
@@ -18,7 +18,7 @@ exercises. **Own time** lists the chapter-end labs and quizzes to work through
 afterwards. Neither column is optional, and the own-time work is where you
 practise reaching a result unaided, which is what the exam asks of you.
 `11.03` means chapter 11, section 03, and the two courses reuse section numbers,
-so always read a number together with its course. We wrote the focus lines for
+so always read a number together with its course. I wrote the focus lines for
 this unit rather than taking them from the courseware.
 
 
@@ -55,7 +55,7 @@ anything you want demonstrated a second time. Whatever time the catch-up does
 not need goes to those.
 
 If more has slipped than one session can absorb, work through what is left
-yourself. We teach chapters in order and the ones carrying objectives come
+yourself. I teach chapters in order and the ones carrying objectives come
 first, so anything that falls off the end is likely to be RH134 16 to 18. Cover
 the chapters the exam asks for first, then those.
 
@@ -77,7 +77,7 @@ There is no session in week 15. You sit the RHCSA (EX200) exam.
 Revise with the comprehensive review, then the chapter labs. See
 [Your own time](#your-own-time). The labs from weeks 9 to 11 deserve the most
 attention. SELinux, storage, booting, firewalls and network file systems are
-the hardest material in the unit, and the least practised, because we teach
+the hardest material in the unit, and the least practised, because I teach
 them last.
 
 Two points from [`objectives.md`](objectives.md#exam-format) shape how to
@@ -125,7 +125,7 @@ the teaching cannot be half done. They are also the part that needs an
 instructor in the room, so protect them: come having read, and the exercises
 stay affordable.
 
-Arrive without having read and you can still follow the session, because we
+Arrive without having read and you can still follow the session, because I
 cover the main points of every section rather than assuming them. What you lose
 is the guided exercises. Ten minutes is enough to work through an exercise you
 half recognise, and not enough to meet the idea for the first time.
@@ -155,7 +155,7 @@ done it.
 The comprehensive review matters most. Each course closes with one. Its labs
 draw on the whole course rather than the chapter above them, which makes them
 the closest thing in the courseware to exam conditions. No session covers them,
-so the table below says only when we have taught you enough to attempt them.
+so the table below says only when I have taught you enough to attempt them.
 See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 
 | Taught enough by | Material |
@@ -164,33 +164,33 @@ See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 | Week 11 | RH134 19.02 to 19.04, three labs covering Red Hat System Administration II |
 | Week 12 | RH134 19.05, one lab on containers |
 
-RH134 19.05 rests on the container material we teach in week 12, and it matches
+RH134 19.05 rests on the container material I teach in week 12, and it matches
 no current objective. Do the other four review labs first.
 
 ## Sequencing notes
 
-We teach chapters in course order, RH124 first and then RH134, with one
-exception. We bring RH124 05 forward into week 1. That way you have the
+I teach chapters in course order, RH124 first and then RH134, with one
+exception. I bring RH124 05 forward into week 1. That way you have the
 command-line assistant from the start of the unit, and can use it when you get
 stuck in your own time.
 
-We cover RH124 01.01 briefly in week 1. It sets context rather than teaching a
+I cover RH124 01.01 briefly in week 1. It sets context rather than teaching a
 skill, and no objective corresponds to it.
 
-We teach RH134 chapters 16 to 18 last, in weeks 11 and 12, because no objective
+I teach RH134 chapters 16 to 18 last, in weeks 11 and 12, because no objective
 corresponds to them. Installation, Kickstart, containers and image mode are
 worth knowing. Study them after the chapters the exam asks for.
 
-We do not schedule RH124 00.01 or RH134 00.01 to 00.03. They orient you to the
+I do not schedule RH124 00.01 or RH134 00.01 to 00.03. They orient you to the
 courseware and the lab environment for a self-paced Red Hat course, which is not
-how this unit runs. We keep RH124 00.02 and 00.03 in week 1, because you need to
+how this unit runs. I keep RH124 00.02 and 00.03 in week 1, because you need to
 know how the lab environment and the exercise types work.
 
 ## Maintaining this file
 
-We keep the **Week** column in [`coverage.md`](coverage.md) in step with the
+I keep the **Week** column in [`coverage.md`](coverage.md) in step with the
 schedule above. If a week moves, both files change together.
 
-If the objectives change, we update [`objectives.md`](objectives.md) first, then
+If the objectives change, I update [`objectives.md`](objectives.md) first, then
 [`coverage.md`](coverage.md), then this file. The schedule follows the mapping
 rather than the other way round.

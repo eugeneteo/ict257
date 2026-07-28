@@ -13,11 +13,11 @@ section numbers, and they refer to version 10.0 of both courses.
 
 **In class** lists the sections taught in the session, and you read them
 beforehand. **Own time** lists the chapter-end labs and quizzes to work through
-afterwards. Neither column is optional, and the own-time work is where you
-practise reaching a result unaided, which is what the exam asks of you.
+afterwards. Neither column is optional. The own-time work is where you practise
+reaching a result on your own.
 `11.03` means chapter 11, section 03, and the two courses reuse section numbers,
 so always read a number together with its course. I wrote the focus lines for
-this unit rather than taking them from the courseware.
+this unit. They are not from the courseware.
 
 
 ### Weeks 1 to 6: Red Hat System Administration I
@@ -77,20 +77,19 @@ the hardest material in the unit, and the least practised, because I teach
 them last.
 
 Two points from [`objectives.md`](objectives.md#exam-format) shape how to
-revise. The exam is performance-based, so configurations must survive a reboot:
-practise the persistent form of a task, not the one that works until you
-restart. And it is closed book apart from the documentation shipped with the
-product, so practise finding answers in `man` pages and `/usr/share/doc` rather
-than online.
+revise. The exam is performance-based, so configurations must survive a reboot.
+Practise the version of a task that persists, not the one that works until you
+restart. It is also closed book, apart from the documentation that ships with
+the product. So practise finding answers in `man` pages and `/usr/share/doc`,
+not online.
 
 ## How the sessions work
 
 This unit is flipped. In a conventional class the instructor presents the
-material and you practise afterwards on your own. Here it is the other way
-round. You meet the material by reading it first. The session then goes on what
-is better with an instructor in the room. That means seeing commands run on a
-real system, asking questions, and getting through the exercises with help to
-hand.
+material and you practise afterwards on your own. Here you do it the other way
+round. You read the material first, and the session goes on the things that are
+better with an instructor in the room. You see commands run on a real system,
+you can ask questions, and you get through the exercises with help to hand.
 
 So read the sections listed under **In class** before each session, between 32
 and 50 pages a week.
@@ -110,9 +109,9 @@ questions surface. There are 72 of them across the twelve teaching weeks, so a
 typical week spends about an hour on them and leaves about 95 minutes to teach.
 
 Arrive without having read and you can still follow the session, because I
-cover the main points of every section rather than assuming them. What you lose
-is the guided exercises. Ten minutes is enough to work through an exercise you
-half recognise, and not enough to meet the idea for the first time.
+cover the main points of every section and do not assume you know them. What
+you lose is the guided exercises. Ten minutes is long enough for an exercise you
+half recognise. It is not long enough to meet the idea for the first time.
 
 From week 1 you have the command-line assistant (RH124 05.01), so you can ask
 questions and troubleshoot between sessions.
@@ -130,14 +129,13 @@ Everything the sessions do not cover is yours to work through.
 | Comprehensive review | 11 sections, 9 of them labs, 49 pages | Save for exam preparation, as below |
 | Course administration sections | 4 sections, 8 pages | Nothing. They orient you to a self-paced Red Hat course, which is not how this unit runs |
 
-None of this is marked, and none of it is optional in any sense that matters.
-The chapter labs and the comprehensive review are the only material that asks
-you to reach a result unaided, which is exactly what the exam asks of you.
-Attend every session and skip them, and you have watched the unit rather than
-done it.
+None of this is marked. You still have to do it. The chapter labs and the
+comprehensive review are the only work where you have to reach a result on your
+own, and that is what the exam tests. If you come to every session and skip
+them, you have watched the unit without doing it.
 
 The comprehensive review matters most. Each course closes with one. Its labs
-draw on the whole course rather than the chapter above them, which makes them
+draw on the whole course, not just the chapter above them, which makes them
 the closest thing in the courseware to exam conditions. No session covers them,
 so the table below says only when I have taught you enough to attempt them.
 See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
@@ -158,7 +156,7 @@ exception. I bring RH124 05 forward into week 1. That way you have the
 command-line assistant from the start of the unit, and can use it when you get
 stuck in your own time.
 
-I cover RH124 01.01 briefly in week 1. It sets context rather than teaching a
+I cover RH124 01.01 briefly in week 1. It sets context. It does not teach a
 skill, and no objective corresponds to it.
 
 I teach RH134 chapters 16 to 18 last, in weeks 11 and 12, because no objective
@@ -176,5 +174,5 @@ I keep the **Week** column in [`coverage.md`](coverage.md) in step with the
 schedule above. If a week moves, both files change together.
 
 If the objectives change, I update [`objectives.md`](objectives.md) first, then
-[`coverage.md`](coverage.md), then this file. The schedule follows the mapping
-rather than the other way round.
+[`coverage.md`](coverage.md), then this file. The schedule follows the mapping.
+The mapping does not follow the schedule.

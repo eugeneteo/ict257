@@ -116,28 +116,22 @@ is lost, but the material is worth knowing.
 ## Week 15: the exam
 
 There is no session in week 15. Students sit the RHCSA (EX200) exam. Week 14
-covers installation, containers and image mode, none of which is examinable, so
-the schedule provides no class time for exam revision at all. That work falls
-entirely to students.
+covers material that is not examinable, so no class time is set aside for
+revision.
 
-The comprehensive review is what to revise with. Students work both chapters in
-their own time, and no class time is set aside for them. They are the closest
-thing in the courseware to the exam, because they ask for a result without
-leading you to it. See [Important practice](#important-practice). The chapter labs
-listed through the schedule are the next best thing, and the ones from weeks 11
-to 13 deserve the most attention: storage, booting, firewalls and network file
-systems are both the hardest material in the unit and the least practised,
-because they are taught last.
+Revise with the comprehensive review. It is the closest thing in the courseware
+to the exam, because it asks for a result without leading you to it. See
+[Important practice](#important-practice). The chapter labs are the next best
+thing, and the ones from weeks 11 to 13 deserve the most attention: storage,
+booting, firewalls and network file systems are the hardest material in the unit
+and the least practised, because they are taught last.
 
-[`objectives.md`](objectives.md#exam-format) records what the exam itself asks
-for. Two points from it shape how students should revise. The exam is
-performance-based, so configurations must survive a reboot, which means
-practising the persistent form of a task rather than the one that works until
-you restart. And it is closed book apart from the documentation shipped with the
-product, so students should practise finding answers in `man` pages and
-`/usr/share/doc` rather than online.
-
-No exam date is recorded here, because candidates sit on different dates.
+Two points from [`objectives.md`](objectives.md#exam-format) shape how to
+revise. The exam is performance-based, so configurations must survive a reboot:
+practise the persistent form of a task, not the one that works until you
+restart. And it is closed book apart from the documentation shipped with the
+product, so practise finding answers in `man` pages and `/usr/share/doc` rather
+than online.
 
 ## Sequencing notes
 

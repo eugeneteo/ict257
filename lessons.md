@@ -50,8 +50,8 @@ not need goes to those.
 
 If more has slipped than one session can absorb, work through what is left
 yourself. Chapters are taught in order and the ones carrying objectives come
-first, so anything that falls off the end is likely to be RH134 16 to 18, which
-no objective covers.
+first, so anything that falls off the end is likely to be RH134 16 to 18. Cover
+the chapters the exam asks for first, then those.
 
 ### Week 14: revision
 
@@ -142,8 +142,7 @@ See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 | Week 12 | RH134 19.05, one lab on containers |
 
 RH134 19.05 rests on the container material taught in week 12, and it matches no
-current objective, so it is the one review lab you can skip when preparing for
-the exam.
+current objective. Do the other four review labs first.
 
 ## Sequencing notes
 
@@ -164,7 +163,7 @@ skill, and no objective corresponds to it.
 
 RH134 chapters 16 to 18 are taught last, in weeks 11 and 12, because no
 objective corresponds to them. Installation, Kickstart, containers and image
-mode are worth knowing, but every chapter the exam asks for comes first.
+mode are worth knowing. Study them after the chapters the exam asks for.
 
 RH124 00.01 and RH134 00.01 to 00.03 are not scheduled. They orient you to the
 courseware and the lab environment for a self-paced Red Hat course, which is not

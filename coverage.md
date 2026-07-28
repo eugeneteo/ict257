@@ -163,8 +163,8 @@ full.
 
 RH134 19.05 exercises no objective, for the same reason RH134 chapters 16 to 18
 are absent from the matrix: nothing in
-[`objectives.md`](objectives.md) covers containers. It can be skipped when
-preparing for the exam.
+[`objectives.md`](objectives.md) covers containers. Do it after the other four
+review labs.
 
 ## Adjacent mappings
 

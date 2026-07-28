@@ -12,7 +12,9 @@ section numbers, and they refer to version 10.0 of both courses.
 ## The schedule
 
 **In class** lists the sections taught in the session, and you read them
-beforehand. **Own time** lists the chapter-end labs and quizzes to work through
+beforehand. **Sections** counts them, and it runs from 6 to 9. That one number
+sets both your reading for the week and how much of the session is left for
+exercises. **Own time** lists the chapter-end labs and quizzes to work through
 afterwards. Neither column is optional, and the own-time work is where you
 practise reaching a result unaided, which is what the exam asks of you.
 `11.03` means chapter 11, section 03, and the two courses reuse section numbers,
@@ -22,29 +24,31 @@ this unit rather than taking them from the courseware.
 
 ### Weeks 1 to 6: Red Hat System Administration I
 
-| Week | Focus | In class | Own time | Objectives |
-| --- | --- | --- | --- | --- |
-| 1 | Getting oriented, the command-line assistant, and the shell | RH124 00.02, 00.03, 01.01, 02.01, 02.03, 02.05, 05.01 | RH124 01.02, 02.02, 02.06, 02.07 | RHCSA-1.1 |
-| 2 | Manual pages, registering systems, the file-system hierarchy, and working with files | RH124 03.01, 04.01, 06.01, 06.03, 07.01, 07.03, 07.05 | RH124 03.03, 04.02, 06.02, 06.04, 07.06, 07.07 | RHCSA-1.8, RHCSA-1.9, RHCSA-1.11, RHCSA-7.5 |
-| 3 | Editing text, redirecting output, users, and groups | RH124 08.01, 09.01, 10.01, 10.03, 10.05, 10.07, 10.09 | RH124 09.03, 10.02, 10.11 | RHCSA-1.2, RHCSA-1.5, RHCSA-1.7, RHCSA-9.1, RHCSA-9.2, RHCSA-9.3, RHCSA-9.4 |
-| 4 | File permissions, RPM packages, and Flatpak applications | RH124 11.01, 11.03, 11.05, 12.01, 12.03, 12.05, 13.01, 13.03 | RH124 11.02, 11.07, 12.07, 13.05 | RHCSA-1.10, RHCSA-2.1, RHCSA-2.2, RHCSA-2.3, RHCSA-2.4, RHCSA-6.5, RHCSA-7.5, RHCSA-10.2 |
-| 5 | File systems, locating files, processes, and system services | RH124 14.01, 14.03, 14.05, 15.01, 15.03, 15.05, 15.07, 16.01, 16.03 | RH124 14.02, 14.07, 15.02, 15.09, 16.05 | RHCSA-1.8, RHCSA-4.4, RHCSA-4.9, RHCSA-5.5, RHCSA-6.1, RHCSA-7.2, RHCSA-8.3 |
-| 6 | Network addressing and configuration, name resolution, and secure remote access | RH124 17.01, 17.03, 18.01, 18.03, 18.05, 19.01, 19.03 | RH124 17.02, 18.07, 19.05 | RHCSA-1.4, RHCSA-8.1, RHCSA-8.2, RHCSA-10.3 |
+| Week | Sections | Focus | In class | Own time | Objectives |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 7 | Getting oriented, the command-line assistant, and the shell | RH124 00.02, 00.03, 01.01, 02.01, 02.03, 02.05, 05.01 | RH124 01.02, 02.02, 02.06, 02.07 | RHCSA-1.1 |
+| 2 | 7 | Manual pages, registering systems, the file-system hierarchy, and working with files | RH124 03.01, 04.01, 06.01, 06.03, 07.01, 07.03, 07.05 | RH124 03.03, 04.02, 06.02, 06.04, 07.06, 07.07 | RHCSA-1.8, RHCSA-1.9, RHCSA-1.11, RHCSA-7.5 |
+| 3 | 7 | Editing text, redirecting output, users, and groups | RH124 08.01, 09.01, 10.01, 10.03, 10.05, 10.07, 10.09 | RH124 09.03, 10.02, 10.11 | RHCSA-1.2, RHCSA-1.5, RHCSA-1.7, RHCSA-9.1, RHCSA-9.2, RHCSA-9.3, RHCSA-9.4 |
+| 4 | 8 | File permissions, RPM packages, and Flatpak applications | RH124 11.01, 11.03, 11.05, 12.01, 12.03, 12.05, 13.01, 13.03 | RH124 11.02, 11.07, 12.07, 13.05 | RHCSA-1.10, RHCSA-2.1, RHCSA-2.2, RHCSA-2.3, RHCSA-2.4, RHCSA-6.5, RHCSA-7.5, RHCSA-10.2 |
+| 5 | 9 | File systems, locating files, processes, and system services | RH124 14.01, 14.03, 14.05, 15.01, 15.03, 15.05, 15.07, 16.01, 16.03 | RH124 14.02, 14.07, 15.02, 15.09, 16.05 | RHCSA-1.8, RHCSA-4.4, RHCSA-4.9, RHCSA-5.5, RHCSA-6.1, RHCSA-7.2, RHCSA-8.3 |
+| 6 | 7 | Network addressing and configuration, name resolution, and secure remote access | RH124 17.01, 17.03, 18.01, 18.03, 18.05, 19.01, 19.03 | RH124 17.02, 18.07, 19.05 | RHCSA-1.4, RHCSA-8.1, RHCSA-8.2, RHCSA-10.3 |
 
 ### Weeks 7 to 12: Red Hat System Administration II
 
-| Week | Focus | In class | Own time | Objectives |
-| --- | --- | --- | --- | --- |
-| 7 | Shell scripts, regular expressions, and scheduled jobs | RH134 01.01, 01.03, 01.05, 02.01, 03.01, 03.03 | RH134 01.07, 02.03, 03.05 | RHCSA-1.3, RHCSA-3.1, RHCSA-3.2, RHCSA-3.3, RHCSA-3.4, RHCSA-7.1 |
-| 8 | Recurring jobs, logs, journals, and keeping time | RH134 04.01, 04.03, 04.05, 05.01, 05.03, 05.05, 05.07, 05.09 | RH134 04.07, 05.02, 05.11 | RHCSA-4.7, RHCSA-4.8, RHCSA-7.1, RHCSA-7.4 |
-| 9 | SELinux, archives, secure file transfer, and tuning profiles | RH134 06.01, 06.03, 06.05, 06.07, 07.01, 08.01, 08.03, 09.01, 09.03 | RH134 06.09, 08.05, 09.05 | RHCSA-1.6, RHCSA-4.5, RHCSA-4.6, RHCSA-4.10, RHCSA-10.4, RHCSA-10.5, RHCSA-10.6, RHCSA-10.8 |
-| 10 | Partitions, swap, logical volumes, and booting | RH134 10.01, 10.03, 11.01, 11.03, 11.05, 12.01, 12.03, 12.05 | RH134 10.05, 11.06, 11.07, 12.07 | RHCSA-1.5, RHCSA-4.1, RHCSA-4.2, RHCSA-4.3, RHCSA-5.1, RHCSA-5.2, RHCSA-5.3, RHCSA-5.4, RHCSA-5.5, RHCSA-5.6, RHCSA-6.1, RHCSA-6.4, RHCSA-7.3, RHCSA-7.6 |
-| 11 | Boot troubleshooting, firewalls, network file systems, and installation | RH134 13.01, 14.01, 14.03, 15.01, 15.03, 16.01, 16.03 | RH134 14.05, 15.05, 16.05 | RHCSA-4.3, RHCSA-6.2, RHCSA-6.3, RHCSA-8.4, RHCSA-10.1, RHCSA-10.7 |
-| 12 | Containers and image mode | RH134 17.01, 17.03, 17.05, 18.01, 18.03, 18.05, 18.07 | RH134 17.02, 17.07, 18.02 | — |
+| Week | Sections | Focus | In class | Own time | Objectives |
+| --- | --- | --- | --- | --- | --- |
+| 7 | 6 | Shell scripts, regular expressions, and scheduled jobs | RH134 01.01, 01.03, 01.05, 02.01, 03.01, 03.03 | RH134 01.07, 02.03, 03.05 | RHCSA-1.3, RHCSA-3.1, RHCSA-3.2, RHCSA-3.3, RHCSA-3.4, RHCSA-7.1 |
+| 8 | 8 | Recurring jobs, logs, journals, and keeping time | RH134 04.01, 04.03, 04.05, 05.01, 05.03, 05.05, 05.07, 05.09 | RH134 04.07, 05.02, 05.11 | RHCSA-4.7, RHCSA-4.8, RHCSA-7.1, RHCSA-7.4 |
+| 9 | 9 | SELinux, archives, secure file transfer, and tuning profiles | RH134 06.01, 06.03, 06.05, 06.07, 07.01, 08.01, 08.03, 09.01, 09.03 | RH134 06.09, 08.05, 09.05 | RHCSA-1.6, RHCSA-4.5, RHCSA-4.6, RHCSA-4.10, RHCSA-10.4, RHCSA-10.5, RHCSA-10.6, RHCSA-10.8 |
+| 10 | 8 | Partitions, swap, logical volumes, and booting | RH134 10.01, 10.03, 11.01, 11.03, 11.05, 12.01, 12.03, 12.05 | RH134 10.05, 11.06, 11.07, 12.07 | RHCSA-1.5, RHCSA-4.1, RHCSA-4.2, RHCSA-4.3, RHCSA-5.1, RHCSA-5.2, RHCSA-5.3, RHCSA-5.4, RHCSA-5.5, RHCSA-5.6, RHCSA-6.1, RHCSA-6.4, RHCSA-7.3, RHCSA-7.6 |
+| 11 | 7 | Boot troubleshooting, firewalls, network file systems, and installation | RH134 13.01, 14.01, 14.03, 15.01, 15.03, 16.01, 16.03 | RH134 14.05, 15.05, 16.05 | RHCSA-4.3, RHCSA-6.2, RHCSA-6.3, RHCSA-8.4, RHCSA-10.1, RHCSA-10.7 |
+| 12 | 7 | Containers and image mode | RH134 17.01, 17.03, 17.05, 18.01, 18.03, 18.05, 18.07 | RH134 17.02, 17.07, 18.02 | — |
 
 ### Week 13: catch-up
 
-No new chapters. Sessions run over, and this is where the overflow goes.
+No new chapters. Sessions run over, and this is where the overflow goes. Weeks 5
+and 9 are the likeliest to have left something behind, because they are the
+nine-section weeks.
 
 Bring the guided exercises you did not finish, the labs that did not work, and
 anything you want demonstrated a second time. Whatever time the catch-up does
@@ -95,15 +99,31 @@ hand.
 So read the sections listed under **In class** before each session, between 32
 and 50 pages a week.
 
+A session is 180 minutes. Recap and wrap-up take 25 of them, so 155 are left to
+divide between teaching and exercises.
+
 | Part | Time | What happens |
 | --- | --- | --- |
 | Recap and administrative matters | 15 min | Questions carried over from last week |
-| Teaching and demonstration | 90 to 110 min | Main points of each section, shown on a live system |
-| Guided exercises | 10 min each | You work through the exercises in the session |
+| Teaching and demonstration | the rest, about 95 min | Main points of each section, shown on a live system |
+| Guided exercises | 10 min each, about 60 min | You work through the exercises in the session |
 | Wrap-up | 10 min | Next week's pre-reading and the practice to work through |
 
-Guided exercises are the only exercises we do in class, and they are where most
-questions surface. There are 72 of them across the twelve teaching weeks.
+Only the first and last of those are fixed. Guided exercises are the only
+exercises we do in class, and they are where most questions surface. There are
+72 of them across the twelve teaching weeks, so a typical week spends about an
+hour on them and leaves about 95 minutes to teach. The heavier the week, the
+more exercises it carries and the less teaching time is left.
+
+That is why the **Sections** column matters. In a six-section week we have
+around 17 minutes for each one. In a nine-section week we have around 9, for
+material that is no simpler. Weeks 5 and 9 are the nine-section weeks, and they
+are the two most likely to run over. Week 13 is where they land.
+
+When a session does run over, the guided exercises are what gets cut, because
+the teaching cannot be half done. They are also the part that needs an
+instructor in the room, so protect them: come having read, and the exercises
+stay affordable.
 
 Arrive without having read and you can still follow the session, because we
 cover the main points of every section rather than assuming them. What you lose

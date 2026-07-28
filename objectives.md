@@ -3,17 +3,16 @@
 Study points for the **Red Hat Certified System Administrator (RHCSA)** exam,
 EX200. This exam is based on **Red Hat Enterprise Linux 10**.
 
-Objectives are quoted from Red Hat's published exam page:
+We quote the objectives from Red Hat's published exam page:
 <https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam>
 (retrieved 2026-07-28).
 
-Each objective has a stable ID (`RHCSA-<category>.<n>`) so week notes, labs, and
-a coverage matrix can reference it without depending on wording or ordering.
-IDs are never reused or renumbered. If Red Hat revises the objectives, add or
-retire IDs rather than shifting existing ones.
+We give each objective a stable ID (`RHCSA-<category>.<n>`). Week notes, labs,
+and the coverage matrix point at the ID rather than the wording, so a
+cross-reference survives a rewording or a reordering. We never reuse or
+renumber an ID.
 
-RHCSA candidates should be able to accomplish the tasks below without
-assistance.
+You should be able to do everything below without help.
 
 See [`coverage.md`](coverage.md) for which course material teaches each
 objective.
@@ -139,14 +138,14 @@ objective.
   systems. There are no multiple-choice questions.
 - Performance-based grading: **configurations must survive a reboot without
   manual intervention**.
-- Closed book. No notes, printed material, or electronic documentation may be
-  brought in, and there is no internet access during the exam.
-- The documentation shipped with the product (man pages, `/usr/share/doc`) is
-  available during the exam, which is why RHCSA-1.11 matters in practice.
+- Closed book. You cannot bring notes, printed material, or electronic
+  documentation, and you have no internet access during the exam.
+- You do have the documentation shipped with the product, the man pages and
+  `/usr/share/doc`, which is why RHCSA-1.11 matters in practice.
 
 ## Keeping this file current
 
-Red Hat revises the objectives between RHEL major versions. Re-check the source
-URL at the start of each semester and record the new retrieval date here. When
-objectives change, retire or add IDs rather than renumbering existing ones so
-older cross-references stay valid.
+Red Hat revises the objectives between RHEL major versions. We re-check the
+source URL at the start of each semester and record the new retrieval date
+above. When the objectives change, we add or retire IDs rather than renumber
+the ones already in use, so that older cross-references stay valid.

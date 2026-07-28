@@ -10,7 +10,7 @@ Course material and notes for **ICT257 Red Hat System Administration**.
 | [`coverage.md`](coverage.md) | Which course material covers each objective |
 | [`lessons.md`](lessons.md) | Twelve weeks of teaching, then catch-up, revision, and the exam |
 
-We will add more as the semester goes on.
+I will add more as the semester goes on.
 
 ## Local files
 

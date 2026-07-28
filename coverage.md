@@ -11,8 +11,8 @@ Red Hat course material that teaches it.
 - **Week** is the ICT257 week that teaches the objective, as scheduled in
   [`lessons.md`](lessons.md).
 - A dash in **RH124** or **RH134** means that course does not teach the
-  objective; the other course usually does. Where **Week** lists two weeks, the
-  objective is taught across both.
+  objective; the other course usually does. Where **Week** lists more than one
+  week, the objective is taught across all of them.
 
 Section numbers are per-course and the two courses reuse them, so always read a
 number together with its course. RH124 16.01 and RH134 16.01 are unrelated
@@ -39,26 +39,28 @@ scheduled in [`lessons.md`](lessons.md).
 
 | Category | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1. Essential tools | 1 | 3 | 3 | 1 |  | 1 |  |  | 3 |  |  |  |  | 1 |
-| 2. Manage software |  |  |  |  | 2 | 2 |  |  |  |  |  |  |  |  |
-| 3. Shell scripts |  |  |  |  |  |  |  |  |  | 4 |  |  |  |  |
-| 4. Running systems |  |  |  |  |  |  | 3 | 1 | 1 |  | 2 |  |  | 3 |
-| 5. Local storage |  |  |  |  |  | 1 |  |  |  |  |  |  | 6 |  |
-| 6. File systems |  |  | 1 |  |  | 1 |  |  |  |  |  |  | 2 | 3 |
-| 7. Deploy and maintain |  |  |  |  | 1 |  |  | 1 |  | 1 | 1 |  |  | 2 |
-| 8. Basic networking |  |  |  |  |  |  |  | 3 |  |  |  | 1 |  |  |
-| 9. Users and groups |  |  |  | 4 |  |  |  |  |  |  |  |  |  |  |
-| 10. Security |  |  | 1 |  |  |  |  |  | 1 |  |  | 6 |  |  |
-| **Total** | **1** | **3** | **5** | **5** | **3** | **5** | **3** | **5** | **5** | **5** | **3** | **7** | **8** | **9** |
+| 1. Essential tools | 1 | 3 | 3 | 1 | 1 |  | 1 | 1 |  | 1 |  | 1 |  |  |
+| 2. Manage software |  |  |  | 2 | 2 |  |  |  |  |  |  |  |  |  |
+| 3. Shell scripts |  |  |  |  |  |  |  | 4 |  |  |  |  |  |  |
+| 4. Running systems |  |  |  |  |  | 2 |  |  | 2 | 1 | 2 | 3 | 1 |  |
+| 5. Local storage |  |  |  |  | 1 |  |  |  |  |  | 3 | 4 |  |  |
+| 6. File systems |  |  |  | 1 | 1 |  |  |  |  |  | 1 | 2 | 2 |  |
+| 7. Deploy and maintain |  | 1 |  | 1 |  | 1 |  | 1 | 2 |  |  | 2 |  |  |
+| 8. Basic networking |  |  |  |  |  | 2 | 2 |  |  |  |  |  | 1 |  |
+| 9. Users and groups |  |  | 4 |  |  |  |  |  |  |  |  |  |  |  |
+| 10. Security |  |  |  | 1 |  |  | 1 |  |  | 4 |  |  | 2 |  |
+| **Total** | **1** | **4** | **7** | **6** | **5** | **5** | **4** | **6** | **4** | **6** | **6** | **12** | **6** | **0** |
 
-The cells total 67 rather than 62 because four objectives are taught in more
-than one week, with each course covering part of them.
+The cells total 72 rather than 62 because nine objectives are taught in more
+than one week, with each course covering part of them. RHCSA-6.1 is the only
+one that spans three.
 
-Two things the grid shows. The last third of the unit is objective-dense: weeks
-12 to 14 carry 24 of the 67 cells, so about a third of the coverage falls in a
-fifth of the weeks. And category 1 runs through seven separate weeks, because
-essential tools underpin everything that follows, whereas categories 3 and 9 are
-each taught in a single week.
+Three things the grid shows. Week 14 is empty, because it covers installation,
+containers, and image mode, which no objective calls for. The middle of the unit
+is objective-dense: weeks 11 to 13 carry 24 of the 72 cells, so a third of the
+coverage falls in a fifth of the weeks. And category 1 runs through nine
+separate weeks, because essential tools underpin everything that follows,
+whereas categories 3 and 9 are each taught in a single week.
 
 ## 1. Understand and use essential tools
 
@@ -66,111 +68,111 @@ each taught in a single week.
 | --- | --- | --- | --- | --- |
 | RHCSA-1.1 | Shell prompt and command syntax | 02.01, 02.03, 02.05 | — | 1 |
 | RHCSA-1.2 | Input/output redirection | 09.01 | — | 3 |
-| RHCSA-1.3 | `grep` and regular expressions | — | 02.01 | 9 |
-| RHCSA-1.4 | Remote access using SSH | 19.01 | — | 9 |
-| RHCSA-1.5 | Log in and switch users | 10.03 | 12.03 | 4, 14 |
-| RHCSA-1.6 | `tar`, `gzip`, `bzip2` | — | 07.01 | 9 |
+| RHCSA-1.3 | `grep` and regular expressions | — | 02.01 | 8 |
+| RHCSA-1.4 | Remote access using SSH | 19.01 | — | 7 |
+| RHCSA-1.5 | Log in and switch users | 10.03 | 12.03 | 3, 12 |
+| RHCSA-1.6 | `tar`, `gzip`, `bzip2` | — | 07.01 | 10 |
 | RHCSA-1.7 | Create and edit text files | 08.01 | — | 3 |
-| RHCSA-1.8 | Create, delete, copy, move files | 06.01, 06.03, 07.01, 07.05, 14.05 | — | 2, 6 |
+| RHCSA-1.8 | Create, delete, copy, move files | 06.01, 06.03, 07.01, 07.05, 14.05 | — | 2, 5 |
 | RHCSA-1.9 | Hard and soft links | 07.03 | — | 2 |
-| RHCSA-1.10 | Standard ugo/rwx permissions | 11.01, 11.03 | — | 3 |
+| RHCSA-1.10 | Standard ugo/rwx permissions | 11.01, 11.03 | — | 4 |
 | RHCSA-1.11 | System documentation | 03.01 | — | 2 |
 
 ## 2. Manage software
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-2.1 | Configure RPM repository access | 12.05 | — | 5 |
-| RHCSA-2.2 | Install and remove RPM packages | 12.01, 12.03 | — | 5 |
-| RHCSA-2.3 | Configure Flatpak repository access | 13.01 | — | 6 |
-| RHCSA-2.4 | Install and remove Flatpak packages | 13.03 | — | 6 |
+| RHCSA-2.1 | Configure RPM repository access | 12.05 | — | 4 |
+| RHCSA-2.2 | Install and remove RPM packages | 12.01, 12.03 | — | 4 |
+| RHCSA-2.3 | Configure Flatpak repository access | 13.01 | — | 5 |
+| RHCSA-2.4 | Install and remove Flatpak packages | 13.03 | — | 5 |
 
 ## 3. Create simple shell scripts
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-3.1 | Conditional execution | — | 01.05 | 10 |
-| RHCSA-3.2 | Looping constructs | — | 01.05 | 10 |
-| RHCSA-3.3 | Script inputs (`$1`, `$2`) | — | 01.01, 01.03 | 10 |
-| RHCSA-3.4 | Process command output in a script | — | 01.03 | 10 |
+| RHCSA-3.1 | Conditional execution | — | 01.05 | 8 |
+| RHCSA-3.2 | Looping constructs | — | 01.05 | 8 |
+| RHCSA-3.3 | Script inputs (`$1`, `$2`) | — | 01.01, 01.03 | 8 |
+| RHCSA-3.4 | Process command output in a script | — | 01.03 | 8 |
 
 ## 4. Operate running systems
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-4.1 | Boot, reboot, shut down normally | — | 12.03 | 14 |
-| RHCSA-4.2 | Boot into different targets manually | — | 12.03 | 14 |
-| RHCSA-4.3 | Interrupt the boot process | — | 12.01, 12.05, 13.01 | 14 |
-| RHCSA-4.4 | Identify heavy processes and kill them | 15.01, 15.03, 15.05, 15.07 | — | 7 |
-| RHCSA-4.5 | Adjust process scheduling | — | 09.03 | 7 |
-| RHCSA-4.6 | Manage tuning profiles | — | 09.01 | 7 |
-| RHCSA-4.7 | Locate and interpret logs and journals | — | 05.01, 05.03, 05.05 | 11 |
-| RHCSA-4.8 | Preserve system journals | — | 05.07 | 11 |
-| RHCSA-4.9 | Start, stop, check network services | 16.01, 16.03 | — | 8 |
-| RHCSA-4.10 | Securely transfer files | — | 08.01, 08.03 | 9 |
+| RHCSA-4.1 | Boot, reboot, shut down normally | — | 12.03 | 12 |
+| RHCSA-4.2 | Boot into different targets manually | — | 12.03 | 12 |
+| RHCSA-4.3 | Interrupt the boot process | — | 12.01, 12.05, 13.01 | 12, 13 |
+| RHCSA-4.4 | Identify heavy processes and kill them | 15.01, 15.03, 15.05, 15.07 | — | 6 |
+| RHCSA-4.5 | Adjust process scheduling | — | 09.03 | 11 |
+| RHCSA-4.6 | Manage tuning profiles | — | 09.01 | 11 |
+| RHCSA-4.7 | Locate and interpret logs and journals | — | 05.01, 05.03, 05.05 | 9 |
+| RHCSA-4.8 | Preserve system journals | — | 05.07 | 9 |
+| RHCSA-4.9 | Start, stop, check network services | 16.01, 16.03 | — | 6 |
+| RHCSA-4.10 | Securely transfer files | — | 08.01, 08.03 | 10 |
 
 ## 5. Configure local storage
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-5.1 | Partitions on GPT disks | — | 10.01 | 13 |
-| RHCSA-5.2 | Create and remove physical volumes | — | 11.01, 11.05 | 13 |
-| RHCSA-5.3 | Assign physical volumes to volume groups | — | 11.01 | 13 |
-| RHCSA-5.4 | Create and delete logical volumes | — | 11.01 | 13 |
-| RHCSA-5.5 | Mount at boot by UUID or label | 14.01 | 10.01 | 6, 13 |
-| RHCSA-5.6 | Add partitions, volumes, swap non-destructively | — | 10.03, 11.01 | 13 |
+| RHCSA-5.1 | Partitions on GPT disks | — | 10.01 | 11 |
+| RHCSA-5.2 | Create and remove physical volumes | — | 11.01, 11.05 | 12 |
+| RHCSA-5.3 | Assign physical volumes to volume groups | — | 11.01 | 12 |
+| RHCSA-5.4 | Create and delete logical volumes | — | 11.01 | 12 |
+| RHCSA-5.5 | Mount at boot by UUID or label | 14.01 | 10.01 | 5, 11 |
+| RHCSA-5.6 | Add partitions, volumes, swap non-destructively | — | 10.03, 11.01 | 11, 12 |
 
 ## 6. Create and configure file systems
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-6.1 | VFAT, ext4, XFS file systems | 14.01, 14.03 | 10.01, 12.05 | 6, 13, 14 |
-| RHCSA-6.2 | NFS network file systems | — | 15.01 | 14 |
-| RHCSA-6.3 | Configure autofs | — | 15.03 | 14 |
-| RHCSA-6.4 | Extend existing logical volumes | — | 11.03 | 13 |
-| RHCSA-6.5 | Diagnose file permission problems | 11.01, 11.03, 11.05 | — | 3 |
+| RHCSA-6.1 | VFAT, ext4, XFS file systems | 14.01, 14.03 | 10.01, 12.05 | 5, 11, 12 |
+| RHCSA-6.2 | NFS network file systems | — | 15.01 | 13 |
+| RHCSA-6.3 | Configure autofs | — | 15.03 | 13 |
+| RHCSA-6.4 | Extend existing logical volumes | — | 11.03 | 12 |
+| RHCSA-6.5 | Diagnose file permission problems | 11.01, 11.03, 11.05 | — | 4 |
 
 ## 7. Deploy, configure, and maintain systems
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-7.1 | `at`, `cron`, systemd timer units | — | 03.01, 03.03, 04.01, 04.03, 04.05 | 10 |
-| RHCSA-7.2 | Services, and enabling them at boot | 16.01, 16.03 | — | 8 |
-| RHCSA-7.3 | Boot into a specific target automatically | — | 12.03 | 14 |
-| RHCSA-7.4 | Configure time service clients | — | 05.09 | 11 |
-| RHCSA-7.5 | Install and update from CDN, repo, local file | 04.01, 12.03, 12.05 | — | 5 |
-| RHCSA-7.6 | Modify the system bootloader | — | 12.01 | 14 |
+| RHCSA-7.1 | `at`, `cron`, systemd timer units | — | 03.01, 03.03, 04.01, 04.03, 04.05 | 8, 9 |
+| RHCSA-7.2 | Services, and enabling them at boot | 16.01, 16.03 | — | 6 |
+| RHCSA-7.3 | Boot into a specific target automatically | — | 12.03 | 12 |
+| RHCSA-7.4 | Configure time service clients | — | 05.09 | 9 |
+| RHCSA-7.5 | Install and update from CDN, repo, local file | 04.01, 12.03, 12.05 | — | 2, 4 |
+| RHCSA-7.6 | Modify the system bootloader | — | 12.01 | 12 |
 
 ## 8. Manage basic networking
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-8.1 | IPv4 and IPv6 addresses | 17.01, 17.03, 18.01, 18.03 | — | 8 |
-| RHCSA-8.2 | Hostname resolution | 18.05 | — | 8 |
-| RHCSA-8.3 | Network services automatic at boot | 16.01, 16.03 | — | 8 |
-| RHCSA-8.4 | Restrict access with `firewalld` | — | 14.01 | 12 |
+| RHCSA-8.1 | IPv4 and IPv6 addresses | 17.01, 17.03, 18.01, 18.03 | — | 6, 7 |
+| RHCSA-8.2 | Hostname resolution | 18.05 | — | 7 |
+| RHCSA-8.3 | Network services automatic at boot | 16.01, 16.03 | — | 6 |
+| RHCSA-8.4 | Restrict access with `firewalld` | — | 14.01 | 13 |
 
 ## 9. Manage users and groups
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-9.1 | Local user accounts | 10.01, 10.05 | — | 4 |
-| RHCSA-9.2 | Passwords and password aging | 10.09 | — | 4 |
-| RHCSA-9.3 | Local groups and memberships | 10.07 | — | 4 |
-| RHCSA-9.4 | Configure privileged access | 10.03 | — | 4 |
+| RHCSA-9.1 | Local user accounts | 10.01, 10.05 | — | 3 |
+| RHCSA-9.2 | Passwords and password aging | 10.09 | — | 3 |
+| RHCSA-9.3 | Local groups and memberships | 10.07 | — | 3 |
+| RHCSA-9.4 | Configure privileged access | 10.03 | — | 3 |
 
 ## 10. Manage security
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-10.1 | Firewall settings with `firewall-cmd` | — | 14.01 | 12 |
-| RHCSA-10.2 | Default file permissions | 11.05 | — | 3 |
-| RHCSA-10.3 | Key-based authentication for SSH | 19.03 | — | 9 |
-| RHCSA-10.4 | SELinux enforcing and permissive modes | — | 06.01, 06.07 | 12 |
-| RHCSA-10.5 | SELinux file and process contexts | — | 06.01, 06.03, 06.07 | 12 |
-| RHCSA-10.6 | Restore default file contexts | — | 06.03, 06.07 | 12 |
-| RHCSA-10.7 | SELinux port labels | — | 14.03 | 12 |
-| RHCSA-10.8 | SELinux Boolean settings | — | 06.05 | 12 |
+| RHCSA-10.1 | Firewall settings with `firewall-cmd` | — | 14.01 | 13 |
+| RHCSA-10.2 | Default file permissions | 11.05 | — | 4 |
+| RHCSA-10.3 | Key-based authentication for SSH | 19.03 | — | 7 |
+| RHCSA-10.4 | SELinux enforcing and permissive modes | — | 06.01, 06.07 | 10 |
+| RHCSA-10.5 | SELinux file and process contexts | — | 06.01, 06.03, 06.07 | 10 |
+| RHCSA-10.6 | Restore default file contexts | — | 06.03, 06.07 | 10 |
+| RHCSA-10.7 | SELinux port labels | — | 14.03 | 13 |
+| RHCSA-10.8 | SELinux Boolean settings | — | 06.05 | 10 |
 
 ## Adjacent mappings
 
@@ -262,7 +264,9 @@ labs sit outside that population, since labs are excluded from it throughout.
 
 No objective in [`objectives.md`](objectives.md) mentions installation,
 Kickstart, containers, or image mode, so no section of RH134 chapters 16, 17,
-or 18 appears in the matrix above.
+or 18 appears in the matrix above. They are still taught, at overview depth in
+week 14, so that students know what the technologies are. See
+[`lessons.md`](lessons.md#sequencing-notes).
 
 ### Course administration
 

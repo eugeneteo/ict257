@@ -29,11 +29,6 @@ meet the material first by reading it, and the session is spent on the things
 that are better with an instructor in the room: seeing commands run on a real
 system, asking questions, and getting through the exercises with help to hand.
 
-This unit is flipped out of necessity. It has 42 contact hours, and the two
-courses are nominally about 64 hours of instructor-led training between them.
-Reading the material aloud in class would use up the time that demonstrations
-and exercises need.
-
 What this asks of students each week is to read the sections listed under **In
 class** before the session. That comes to about 30 pages a week.
 

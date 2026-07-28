@@ -6,8 +6,8 @@ material mapped in [`coverage.md`](coverage.md). Week 13 is catch-up, week 14 is
 revision, and you sit the exam in week 15. See
 [Week 15: the exam](#week-15-the-exam).
 
-The RH124 and RH134 courseware is **not** part of this repository. Only section
-numbers are cited here, and they refer to version 10.0 of both courses.
+The RH124 and RH134 courseware is **not** part of this repository. We cite only
+section numbers, and they refer to version 10.0 of both courses.
 
 ## The schedule
 
@@ -16,8 +16,8 @@ beforehand. **Own time** lists the chapter-end labs and quizzes to work through
 afterwards. Neither column is optional, and the own-time work is where you
 practise reaching a result unaided, which is what the exam asks of you.
 `11.03` means chapter 11, section 03, and the two courses reuse section numbers,
-so always read a number together with its course. Focus lines are written for
-this unit rather than taken from the courseware.
+so always read a number together with its course. We wrote the focus lines for
+this unit rather than taking them from the courseware.
 
 
 ### Weeks 1 to 6: Red Hat System Administration I
@@ -51,7 +51,7 @@ anything you want demonstrated a second time. Whatever time the catch-up does
 not need goes to those.
 
 If more has slipped than one session can absorb, work through what is left
-yourself. Chapters are taught in order and the ones carrying objectives come
+yourself. We teach chapters in order and the ones carrying objectives come
 first, so anything that falls off the end is likely to be RH134 16 to 18. Cover
 the chapters the exam asks for first, then those.
 
@@ -72,9 +72,9 @@ There is no session in week 15. You sit the RHCSA (EX200) exam.
 
 Revise with the comprehensive review, then the chapter labs. See
 [Your own time](#your-own-time). The labs from weeks 9 to 11 deserve the most
-attention: SELinux, storage, booting, firewalls and network file systems are the
-hardest material in the unit and the least practised, because they are taught
-last.
+attention. SELinux, storage, booting, firewalls and network file systems are
+the hardest material in the unit, and the least practised, because we teach
+them last.
 
 Two points from [`objectives.md`](objectives.md#exam-format) shape how to
 revise. The exam is performance-based, so configurations must survive a reboot:
@@ -87,9 +87,10 @@ than online.
 
 This unit is flipped. In a conventional class the instructor presents the
 material and you practise afterwards on your own. Here it is the other way
-round. You meet the material by reading it first, and the session goes on what
-is better with an instructor in the room: seeing commands run on a real system,
-asking questions, and getting through the exercises with help to hand.
+round. You meet the material by reading it first. The session then goes on what
+is better with an instructor in the room. That means seeing commands run on a
+real system, asking questions, and getting through the exercises with help to
+hand.
 
 So read the sections listed under **In class** before each session, between 32
 and 50 pages a week.
@@ -101,16 +102,16 @@ and 50 pages a week.
 | Guided exercises | 10 min each | You work through the exercises in the session |
 | Wrap-up | 10 min | Next week's pre-reading and the practice to work through |
 
-Guided exercises are the only exercises done in class, and they are where most
+Guided exercises are the only exercises we do in class, and they are where most
 questions surface. There are 72 of them across the twelve teaching weeks.
 
-Arrive without having read and you can still follow the session, because the
-teaching covers the main points of every section rather than assuming them. What
-you lose is the guided exercises. Ten minutes is enough to work through an
-exercise you half recognise, and not enough to meet the idea for the first time.
+Arrive without having read and you can still follow the session, because we
+cover the main points of every section rather than assuming them. What you lose
+is the guided exercises. Ten minutes is enough to work through an exercise you
+half recognise, and not enough to meet the idea for the first time.
 
-From week 1 you have the command-line assistant (RH124 05.01), so you have a way
-to ask questions and troubleshoot between sessions.
+From week 1 you have the command-line assistant (RH124 05.01), so you can ask
+questions and troubleshoot between sessions.
 
 ## Your own time
 
@@ -131,10 +132,10 @@ you to reach a result unaided, which is exactly what the exam asks of you.
 Attend every session and skip them, and you have watched the unit rather than
 done it.
 
-The comprehensive review matters most. Each course closes with one, and its labs
+The comprehensive review matters most. Each course closes with one. Its labs
 draw on the whole course rather than the chapter above them, which makes them
 the closest thing in the courseware to exam conditions. No session covers them,
-so the table below says only when you have been taught enough to attempt them.
+so the table below says only when we have taught you enough to attempt them.
 See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 
 | Taught enough by | Material |
@@ -143,40 +144,40 @@ See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 | Week 11 | RH134 19.02 to 19.04, three labs covering Red Hat System Administration II |
 | Week 12 | RH134 19.05, one lab on containers |
 
-RH134 19.05 rests on the container material taught in week 12, and it matches no
-current objective. Do the other four review labs first.
+RH134 19.05 rests on the container material we teach in week 12, and it matches
+no current objective. Do the other four review labs first.
 
 ## Sequencing notes
 
-Chapters are taught in course order, RH124 first and then RH134, with one
-exception. RH124 05 is brought forward into week 1, so that you have the
-command-line assistant from the start of the unit and can use it when you get
+We teach chapters in course order, RH124 first and then RH134, with one
+exception. We bring RH124 05 forward into week 1. That way you have the
+command-line assistant from the start of the unit, and can use it when you get
 stuck in your own time.
 
-Teaching in course order means two pairings are given up. Tuning profiles and
-scheduling priority (RH134 09) are taught in week 9 rather than beside
-processes (RH124 15) in week 5, so objective 4 on running systems is met in
-pieces across the unit. And SSH (RH124 19) is taught in week 6, three weeks
+Teaching in course order means we give up two pairings. We teach tuning profiles
+and scheduling priority (RH134 09) in week 9, rather than beside processes
+(RH124 15) in week 5. That means you meet objective 4 on running systems in
+pieces across the unit. And we teach SSH (RH124 19) in week 6, three weeks
 before secure file transfer (RH134 08), although both rest on the same service.
-Recap at the start of those later sessions is where the connection gets made.
+We make the connection in the recap at the start of those later sessions.
 
-RH124 01.01 in week 1 is covered briefly. It sets context rather than teaching a
+We cover RH124 01.01 briefly in week 1. It sets context rather than teaching a
 skill, and no objective corresponds to it.
 
-RH134 chapters 16 to 18 are taught last, in weeks 11 and 12, because no
-objective corresponds to them. Installation, Kickstart, containers and image
-mode are worth knowing. Study them after the chapters the exam asks for.
+We teach RH134 chapters 16 to 18 last, in weeks 11 and 12, because no objective
+corresponds to them. Installation, Kickstart, containers and image mode are
+worth knowing. Study them after the chapters the exam asks for.
 
-RH124 00.01 and RH134 00.01 to 00.03 are not scheduled. They orient you to the
+We do not schedule RH124 00.01 or RH134 00.01 to 00.03. They orient you to the
 courseware and the lab environment for a self-paced Red Hat course, which is not
-how this unit runs. RH124 00.02 and 00.03 are kept in week 1 because you need to
+how this unit runs. We keep RH124 00.02 and 00.03 in week 1, because you need to
 know how the lab environment and the exercise types work.
 
 ## Maintaining this file
 
-Keep the **Week** column in [`coverage.md`](coverage.md) in step with the
+We keep the **Week** column in [`coverage.md`](coverage.md) in step with the
 schedule above. If a week moves, both files change together.
 
-If the objectives change, update [`objectives.md`](objectives.md) first, then
+If the objectives change, we update [`objectives.md`](objectives.md) first, then
 [`coverage.md`](coverage.md), then this file. The schedule follows the mapping
 rather than the other way round.

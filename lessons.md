@@ -85,9 +85,9 @@ not online.
 ## How the sessions work
 
 Every session runs the same way. You read the sections beforehand. I work
-through the main points on a live system. You do the guided exercises yourself.
-Then I walk through them, so you can check your work against mine. You can ask
-questions at any point.
+through the main points in our lab environment. You do the guided exercises
+yourself. Then I walk through them, so you can check your work against mine.
+You can ask questions at any point.
 
 Read the sections listed under **In class** before each session, between 32
 and 50 pages a week.
@@ -98,7 +98,7 @@ divide between teaching and exercises.
 | Part | Time | What happens |
 | --- | --- | --- |
 | Recap and administrative matters | 15 min | Questions carried over from last week |
-| Teaching and demonstration | the rest, about 95 min | Main points of each section, shown on a live system |
+| Teaching and demonstration | the rest, about 95 min | Main points of each section, shown in our lab environment |
 | Guided exercises | 10 min each, about 60 min | You work through the exercises in the session |
 | Wrap-up | 10 min | Next week's pre-reading and the practice to work through |
 

@@ -68,13 +68,11 @@ container material.
 
 There is no session in week 15. You sit the RHCSA (EX200) exam.
 
-Revise with the comprehensive review. It is the closest thing in the courseware
-to the exam, because it asks for a result without leading you to it. See
-[Important practice outside class](#important-practice-outside-class). The
-chapter labs are the next best thing, and the ones from weeks 9 to 11 deserve
-the most attention: SELinux, storage, booting, firewalls and network file
-systems are the hardest material in the unit and the least practised, because
-they are taught last.
+Revise with the comprehensive review, then the chapter labs. See
+[Important practice outside class](#important-practice-outside-class). The labs
+from weeks 9 to 11 deserve the most attention: SELinux, storage, booting,
+firewalls and network file systems are the hardest material in the unit and the
+least practised, because they are taught last.
 
 Two points from [`objectives.md`](objectives.md#exam-format) shape how to
 revise. The exam is performance-based, so configurations must survive a reboot:
@@ -91,8 +89,8 @@ round. You meet the material by reading it first, and the session goes on what
 is better with an instructor in the room: seeing commands run on a real system,
 asking questions, and getting through the exercises with help to hand.
 
-So each week, read the sections listed under **In class** before the session.
-That comes to between 32 and 50 pages.
+So read the sections listed under **In class** before each session, between 32
+and 50 pages a week.
 
 | Part | Time | What happens |
 | --- | --- | --- |
@@ -114,9 +112,7 @@ to ask questions and troubleshoot between sessions.
 
 ## Important practice outside class
 
-Class time covers the teaching sections listed under **In class** and the guided
-exercises that go with them. Everything else in the courseware is yours to work
-through in your own revision.
+Everything the sessions do not cover is yours to work through.
 
 | Material | Amount | What to do with it |
 | --- | --- | --- |
@@ -129,16 +125,15 @@ through in your own revision.
 
 None of this is marked, and none of it is optional in any sense that matters.
 The chapter labs and the comprehensive review are the only material that asks
-you to reach a result unaided, which is exactly what the exam asks of you. Work
-through them. Attend every session and skip the labs, and you have watched the
-unit rather than done it.
+you to reach a result unaided, which is exactly what the exam asks of you.
+Attend every session and skip them, and you have watched the unit rather than
+done it.
 
-Each course closes with a chapter of cumulative labs. Unlike a chapter lab,
-these draw on the whole course rather than the chapter above them, which makes
-them the closest thing in the courseware to exam conditions. They matter more
-than anything else you do outside class. No session covers them, so the weeks
-below say only when you have been taught enough to attempt them. See
-[Exam practice](coverage.md#exam-practice) for what each lab exercises.
+The comprehensive review matters most. Each course closes with one, and its labs
+draw on the whole course rather than the chapter above them, which makes them
+the closest thing in the courseware to exam conditions. No session covers them,
+so the table below says only when you have been taught enough to attempt them.
+See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 
 | Taught enough by | Material |
 | --- | --- |

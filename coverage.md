@@ -1,7 +1,7 @@
 # RHCSA objective coverage
 
 Maps every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to the
-Red Hat course material that teaches it, and to the ICT257 week that teaches it.
+course material and the teaching week that cover it.
 
 The RH124 and RH134 courseware is **not** part of this repository. Only section
 numbers are cited here, so you will need your own copy of the material.
@@ -132,12 +132,9 @@ numbers are cited here, so you will need your own copy of the material.
 
 ## Exam practice
 
-Each course closes with a comprehensive review chapter: a set of cumulative
-labs you work through unaided. These are the closest thing in the courseware to
-exam conditions, so they are cited here even though ordinary chapter labs are
-not.
-Unlike a chapter lab, a review lab draws on the whole course rather than
-rehearsing the section above it.
+Each course closes with a comprehensive review chapter: cumulative labs you work
+through unaided. They are cited here, unlike ordinary chapter labs, because they
+draw on the whole course rather than rehearsing the section above them.
 
 The objectives listed are those each lab's stated outcomes exercise. They are a
 guide to what a lab rehearses, not a claim that it covers those objectives in

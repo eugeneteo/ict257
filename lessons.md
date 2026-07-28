@@ -20,6 +20,28 @@ mapped in [`coverage.md`](coverage.md).
 The RH124 and RH134 courseware is **not** part of this repository. Only section
 numbers are cited here, so you will need your own copy of the material.
 
+## How the flipped format works
+
+In a conventional class the instructor presents the material and students
+practise afterwards on their own. A flipped class swaps the two around. Students
+meet the material first by reading it, and the session is spent on the things
+that are better with an instructor in the room: seeing commands run on a real
+system, asking questions, and getting through the exercises with help to hand.
+
+This unit is flipped out of necessity. It has 42 contact hours, and the two
+courses are nominally about 64 hours of instructor-led training between them.
+Reading the material aloud in class would use up the time that demonstrations
+and exercises need.
+
+What this asks of students each week is to read the sections listed under **In
+class** before the session. That comes to about 30 pages a week.
+
+To be plain about it: a student who arrives without having read can still follow
+the session, because the teaching covers the main points of every section rather
+than assuming them. What they lose is the guided exercises. Ten minutes is
+enough to work through an exercise you half recognise, and not enough to meet
+the idea for the first time.
+
 ## Session format
 
 Each session runs to three hours:
@@ -31,21 +53,37 @@ Each session runs to three hours:
 | Guided exercises | 10 min each | Students work through the exercises in the session |
 | Wrap-up | 10 min | Flag next week's pre-reading and the optional practice |
 
-Students are expected to pre-read the section text. The session covers the main
-points rather than reading the material aloud, which leaves time to demonstrate
-and to get everyone through the guided exercises.
-
 Guided exercises are the only exercises done in class. They are short, they need
-a working system, and they are where most questions surface.
-
-Chapter-end labs, quizzes and the comprehensive review are not taught and not
-marked. They are longer, and students who want more practice can work through
-them in their own time. Doing so is worthwhile before the exam, because they are
-the only material that asks students to solve a problem without being led
-through it.
+a working system, and they are where most questions surface. There are 65 across
+the fourteen weeks.
 
 From week 1 students have the command-line assistant (RH124 05.01), so they have
 a way to ask questions and troubleshoot between sessions.
+
+## What is not covered in class
+
+Class time covers the teaching sections listed under **In class**, and the
+guided exercises that go with them. Everything else in the courseware is left
+for students to work through in their own revision.
+
+| Material | Amount | What students should do with it |
+| --- | --- | --- |
+| The section text itself | 81 sections, 423 pages | Read it before the session. This is the pre-reading the flipped format depends on |
+| Chapter-end labs | 21 labs, 129 pages | Work through them during revision. They ask for a result without leading you to it |
+| Chapter quizzes | 19 quizzes, 85 pages | Use them to check understanding after a chapter |
+| Chapter summaries | 34 summaries, 34 pages | Use them for quick revision |
+| Comprehensive review | 12 sections, 9 of them labs, 49 pages | Save for exam preparation. See [Optional practice](#optional-practice) |
+| RH134 chapters 16 to 18 | 23 sections, 114 pages | Nothing. No objective corresponds to them, and they are not examinable |
+| Course administration sections | 4 sections, 8 pages | Nothing. They orient students to a self-paced Red Hat course, which is not how this unit runs |
+
+RH124 01.01 is covered briefly in week 1. It sets context rather than teaching a
+skill, and no objective corresponds to it.
+
+None of this is marked. It is listed so that students can see exactly what the
+course contains and what they are responsible for covering themselves. The
+chapter labs and the comprehensive review matter most, because they are the only
+material that asks a student to reach a result unaided, which is what the exam
+asks of them.
 
 ## Why the schedule looks like this
 
@@ -58,10 +96,10 @@ close the gap:
    installation, Kickstart, containers and image mode, and no RHCSA objective
    corresponds to them. See
    [`coverage.md`](coverage.md#course-material-without-an-objective).
-2. **Reading moves out of the session.** See [Session format](#session-format).
-3. **Only guided exercises are done in class.** Chapter-end labs and the
-   comprehensive review are left as optional practice. See
-   [Optional practice](#optional-practice).
+2. **Reading moves out of the session.** See
+   [How the flipped format works](#how-the-flipped-format-works).
+3. **Only guided exercises are done in class.** See
+   [What is not covered in class](#what-is-not-covered-in-class).
 
 Weeks were balanced by the length of the sections they contain, which is a rough
 proxy for effort rather than a measurement of it. The load works out at about 61
@@ -120,10 +158,6 @@ not how this unit runs. RH124 00.02 and 00.03 are kept in week 1 because
 students need to know how the lab environment and the exercise types work.
 
 ## Optional practice
-
-Neither the chapter-end labs listed in the schedule nor the comprehensive review
-is taught in class. Students are free to work through them, and the review in
-particular is the best preparation available for the exam.
 
 Each course closes with a chapter of cumulative labs. Unlike a chapter lab,
 these draw on the whole course rather than the chapter above them, which makes

@@ -84,13 +84,12 @@ not online.
 
 ## How the sessions work
 
-This unit is flipped. In a conventional class the instructor presents the
-material and you practise afterwards on your own. Here you do it the other way
-round. You read the material first, and the session goes on the things that are
-better with an instructor in the room. You see commands run on a real system,
-you can ask questions, and you get through the exercises with help to hand.
+Every session runs the same way. You read the sections beforehand. I work
+through the main points on a live system. You do the guided exercises yourself.
+Then I walk through them, so you can check your work against mine. You can ask
+questions at any point.
 
-So read the sections listed under **In class** before each session, between 32
+Read the sections listed under **In class** before each session, between 32
 and 50 pages a week.
 
 A session is 180 minutes. Recap and wrap-up take 25 of them, so 155 are left to
@@ -121,7 +120,7 @@ Everything the sessions do not cover is yours to work through.
 
 | Material | Amount | What to do with it |
 | --- | --- | --- |
-| The section text itself | 90 sections, 486 pages | Read it before the session. This is the pre-reading the flipped format depends on |
+| The section text itself | 90 sections, 486 pages | Read it before the session. The guided exercises assume you have |
 | Chapter-end labs | 22 labs, 134 pages | Work through them during revision. They ask for a result without leading you to it |
 | Chapter quizzes | 22 quizzes, 99 pages | Use them to check understanding after a chapter |
 | Chapter summaries | 37 summaries, 37 pages | Use them for quick revision |

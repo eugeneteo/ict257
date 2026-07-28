@@ -32,36 +32,6 @@ The RH124 and RH134 courseware is **not** part of this repository. Only section
 numbers are cited here, so you will need your own copy of the material to follow
 the references.
 
-## At a glance
-
-Objectives taught each week, by exam category. Columns are the ICT257 weeks
-scheduled in [`lessons.md`](lessons.md).
-
-| Category | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| 1. Essential tools | 1 | 3 | 3 | 1 | 1 |  | 1 | 1 |  | 1 |  | 1 |  |  |
-| 2. Manage software |  |  |  | 2 | 2 |  |  |  |  |  |  |  |  |  |
-| 3. Shell scripts |  |  |  |  |  |  |  | 4 |  |  |  |  |  |  |
-| 4. Running systems |  |  |  |  |  | 2 |  |  | 2 | 1 | 2 | 3 | 1 |  |
-| 5. Local storage |  |  |  |  | 1 |  |  |  |  |  | 3 | 4 |  |  |
-| 6. File systems |  |  |  | 1 | 1 |  |  |  |  |  | 1 | 2 | 2 |  |
-| 7. Deploy and maintain |  | 1 |  | 1 |  | 1 |  | 1 | 2 |  |  | 2 |  |  |
-| 8. Basic networking |  |  |  |  |  | 2 | 2 |  |  |  |  |  | 1 |  |
-| 9. Users and groups |  |  | 4 |  |  |  |  |  |  |  |  |  |  |  |
-| 10. Security |  |  |  | 1 |  |  | 1 |  |  | 4 |  |  | 2 |  |
-| **Total** | **1** | **4** | **7** | **6** | **5** | **5** | **4** | **6** | **4** | **6** | **6** | **12** | **6** | **0** |
-
-The cells total 72 rather than 62 because nine objectives are taught in more
-than one week, with each course covering part of them. RHCSA-6.1 is the only
-one that spans three.
-
-Three things the grid shows. Week 14 is empty, because it covers installation,
-containers, and image mode, which no objective calls for. The middle of the unit
-is objective-dense: weeks 11 to 13 carry 24 of the 72 cells, so a third of the
-coverage falls in a fifth of the weeks. And category 1 runs through nine
-separate weeks, because essential tools underpin everything that follows,
-whereas categories 3 and 9 are each taught in a single week.
-
 ## 1. Understand and use essential tools
 
 | Objective | Summary | RH124 | RH134 | Week |
@@ -282,7 +252,3 @@ When the objectives change, update [`objectives.md`](objectives.md) first, then
 add or retire rows here. Keep the **Week** cells in step with
 [`lessons.md`](lessons.md). An objective with sections but no week is material
 that is not being taught.
-
-[At a glance](#at-a-glance) is derived from the **Week** column, so redo it
-whenever a week moves. Its counts are the only figures in this file that repeat
-information held elsewhere, which makes them the ones most likely to drift.

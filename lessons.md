@@ -13,8 +13,9 @@ which has no session. See [Week 15: the exam](#week-15-the-exam).
 - **In class** lists the section numbers taught in the session. `11.03` means
   chapter 11, section 03. Section numbers are per-course and the two courses
   reuse them, so always read a number together with its course.
-- **Optional practice** lists the chapter-end labs and quizzes that go with the
-  session. They are not taught and not marked.
+- **Important practice** lists the chapter-end labs and quizzes that go with the
+  session. They are not taught in class and they are not marked, but you are
+  strongly encouraged to work through them.
 - **Objectives** lists the IDs the week covers.
 - Focus lines are written for this unit. They are not courseware section titles.
 
@@ -48,7 +49,7 @@ Each session runs to three hours:
 | Recap | 15 min | Questions carried over from last week |
 | Teaching and demonstration | 90 to 110 min | Main points of each section, shown on a live system |
 | Guided exercises | 10 min each | Students work through the exercises in the session |
-| Wrap-up | 10 min | Flag next week's pre-reading and the optional practice |
+| Wrap-up | 10 min | Flag next week's pre-reading and the practice to work through |
 
 Guided exercises are the only exercises done in class. They are short, they need
 a working system, and they are where most questions surface. There are 72 of
@@ -69,23 +70,23 @@ for students to work through in their own revision.
 | Chapter-end labs | 22 labs, 134 pages | Work through them during revision. They ask for a result without leading you to it |
 | Chapter quizzes | 22 quizzes, 99 pages | Use them to check understanding after a chapter |
 | Chapter summaries | 37 summaries, 37 pages | Use them for quick revision |
-| Comprehensive review | 12 sections, 9 of them labs, 49 pages | Save for exam preparation. See [Optional practice](#optional-practice) |
+| Comprehensive review | 12 sections, 9 of them labs, 49 pages | Save for exam preparation. See [Important practice](#important-practice) |
 | Course administration sections | 4 sections, 8 pages | Nothing. They orient students to a self-paced Red Hat course, which is not how this unit runs |
 
 RH124 01.01 is covered briefly in week 1. It sets context rather than teaching a
 skill, and no objective corresponds to it.
 
-None of this is marked. It is listed so that students can see exactly what the
-course contains and what they are responsible for covering themselves. The
-chapter labs and the comprehensive review matter most, because they are the only
-material that asks a student to reach a result unaided, which is what the exam
-asks of them.
+None of this is marked, but the chapter labs and the comprehensive review are
+not optional in any sense that matters. They are the only material that asks a
+student to reach a result unaided, which is exactly what the exam asks of them.
+Work through them. A student who attends every session and skips the labs has
+watched the unit rather than done it.
 
 ## The schedule
 
 ### Weeks 1 to 7: Red Hat System Administration I
 
-| Week | Focus | In class | Optional practice | Objectives |
+| Week | Focus | In class | Important practice | Objectives |
 | --- | --- | --- | --- | --- |
 | 1 | Getting oriented, the command-line assistant, and the shell | RH124 00.02, 00.03, 01.01, 02.01, 02.03, 02.05, 05.01 | RH124 01.02, 02.02, 02.06, 02.07 | RHCSA-1.1 |
 | 2 | Manual pages, registering systems, the file-system hierarchy, and working with files | RH124 03.01, 04.01, 06.01, 06.03, 07.01, 07.03, 07.05 | RH124 03.03, 04.02, 06.02, 06.04, 07.06, 07.07 | RHCSA-1.8, RHCSA-1.9, RHCSA-1.11, RHCSA-7.5 |
@@ -97,7 +98,7 @@ asks of them.
 
 ### Weeks 8 to 14: Red Hat System Administration II
 
-| Week | Focus | In class | Optional practice | Objectives |
+| Week | Focus | In class | Important practice | Objectives |
 | --- | --- | --- | --- | --- |
 | 8 | Shell scripts, regular expressions, and scheduled jobs | RH134 01.01, 01.03, 01.05, 02.01, 03.01, 03.03 | RH134 01.07, 02.03, 03.05 | RHCSA-1.3, RHCSA-3.1, RHCSA-3.2, RHCSA-3.3, RHCSA-3.4, RHCSA-7.1 |
 | 9 | Recurring jobs, logs, journals, and keeping time | RH134 04.01, 04.03, 04.05, 05.01, 05.03, 05.05, 05.07, 05.09 | RH134 04.07, 05.02, 05.11 | RHCSA-4.7, RHCSA-4.8, RHCSA-7.1, RHCSA-7.4 |
@@ -122,7 +123,7 @@ entirely to students.
 The comprehensive review is what to revise with. Students work both chapters in
 their own time, and no class time is set aside for them. They are the closest
 thing in the courseware to the exam, because they ask for a result without
-leading you to it. See [Optional practice](#optional-practice). The chapter labs
+leading you to it. See [Important practice](#important-practice). The chapter labs
 listed through the schedule are the next best thing, and the ones from weeks 11
 to 13 deserve the most attention: storage, booting, firewalls and network file
 systems are both the hardest material in the unit and the least practised,
@@ -164,13 +165,14 @@ the courseware and the lab environment for a self-paced Red Hat course, which is
 not how this unit runs. RH124 00.02 and 00.03 are kept in week 1 because
 students need to know how the lab environment and the exercise types work.
 
-## Optional practice
+## Important practice
 
 Each course closes with a chapter of cumulative labs. Unlike a chapter lab,
 these draw on the whole course rather than the chapter above them, which makes
-them the closest thing in the courseware to exam conditions. Students work them
-in their own time. No session covers them, and the weeks below say only when a
-student has been taught enough to attempt them. See
+them the closest thing in the courseware to exam conditions. They matter more
+than anything else you do outside class, so work through them. No session covers
+them, so they are done in your own time, and the weeks below say only when you
+have been taught enough to attempt them. See
 [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 
 | Taught enough by | Material |

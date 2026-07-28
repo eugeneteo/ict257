@@ -134,11 +134,10 @@ section numbers, and they refer to version 10.0 of both courses.
 
 Each course closes with a comprehensive review chapter: cumulative labs you work
 through unaided. I cite them here, unlike ordinary chapter labs, because they
-draw on the whole course rather than rehearsing the section above them.
+draw on the whole course, not just the section above them.
 
-The objectives listed are those each lab's stated outcomes exercise. Treat them
-as a guide to what a lab rehearses, not a claim that it covers those objectives
-in full.
+The objectives listed are those each lab's stated outcomes exercise. They show
+what a lab practises. They do not mean the lab covers those objectives in full.
 
 ### RH124
 
@@ -168,7 +167,7 @@ review labs.
 
 ## Adjacent mappings
 
-I map eight sections as adjacent rather than exact matches. Some teach a
+I map eight sections as close matches, not exact ones. Some teach a
 fundamental the objectives assume without ever naming it; others sit between
 two objectives without matching either exactly.
 
@@ -183,8 +182,7 @@ two objectives without matching either exactly.
 | RH134 06.07 | RHCSA-10.4, RHCSA-10.5, RHCSA-10.6 |
 | RH134 12.05 | RHCSA-4.3, RHCSA-6.1 |
 
-Treat them as supporting rather than sufficient on their own: an objective is
-not covered by an adjacent section alone.
+These sections support an objective. None of them covers one on its own.
 
 ## Course material without an objective
 
@@ -242,8 +240,8 @@ each course, whose labs are cumulative and appear under
 [Exam practice](#exam-practice).
 
 I wrote each **Summary** cell for this file. In the matrix it paraphrases
-[`objectives.md`](objectives.md), and further down it paraphrases each section's
-own stated objective rather than its title.
+[`objectives.md`](objectives.md). Further down it paraphrases what a section
+says it teaches, not its title.
 
 ## Maintaining this file
 

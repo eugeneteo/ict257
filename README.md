@@ -8,6 +8,7 @@ Course material and notes for **ICT257 Red Hat System Administration**.
 | --- | --- |
 | [`objectives.md`](objectives.md) | RHCSA (EX200) exam objectives, with stable IDs |
 | [`coverage.md`](coverage.md) | Which course material covers each objective |
+| [`lessons.md`](lessons.md) | The 14-week teaching schedule |
 
 More to be added.
 

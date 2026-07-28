@@ -12,15 +12,17 @@ numbers are cited here, and they refer to version 10.0 of both courses.
 ## The schedule
 
 **In class** lists the sections taught in the session, and you read them
-beforehand. **Important practice** lists the chapter-end labs and quizzes to
-work through afterwards. `11.03` means chapter 11, section 03, and the two
-courses reuse section numbers, so always read a number together with its course.
-Focus lines are written for this unit rather than taken from the courseware.
+beforehand. **Own time** lists the chapter-end labs and quizzes to work through
+afterwards. Neither column is optional, and the own-time work is where you
+practise reaching a result unaided, which is what the exam asks of you.
+`11.03` means chapter 11, section 03, and the two courses reuse section numbers,
+so always read a number together with its course. Focus lines are written for
+this unit rather than taken from the courseware.
 
 
 ### Weeks 1 to 6: Red Hat System Administration I
 
-| Week | Focus | In class | Important practice | Objectives |
+| Week | Focus | In class | Own time | Objectives |
 | --- | --- | --- | --- | --- |
 | 1 | Getting oriented, the command-line assistant, and the shell | RH124 00.02, 00.03, 01.01, 02.01, 02.03, 02.05, 05.01 | RH124 01.02, 02.02, 02.06, 02.07 | RHCSA-1.1 |
 | 2 | Manual pages, registering systems, the file-system hierarchy, and working with files | RH124 03.01, 04.01, 06.01, 06.03, 07.01, 07.03, 07.05 | RH124 03.03, 04.02, 06.02, 06.04, 07.06, 07.07 | RHCSA-1.8, RHCSA-1.9, RHCSA-1.11, RHCSA-7.5 |
@@ -31,7 +33,7 @@ Focus lines are written for this unit rather than taken from the courseware.
 
 ### Weeks 7 to 12: Red Hat System Administration II
 
-| Week | Focus | In class | Important practice | Objectives |
+| Week | Focus | In class | Own time | Objectives |
 | --- | --- | --- | --- | --- |
 | 7 | Shell scripts, regular expressions, and scheduled jobs | RH134 01.01, 01.03, 01.05, 02.01, 03.01, 03.03 | RH134 01.07, 02.03, 03.05 | RHCSA-1.3, RHCSA-3.1, RHCSA-3.2, RHCSA-3.3, RHCSA-3.4, RHCSA-7.1 |
 | 8 | Recurring jobs, logs, journals, and keeping time | RH134 04.01, 04.03, 04.05, 05.01, 05.03, 05.05, 05.07, 05.09 | RH134 04.07, 05.02, 05.11 | RHCSA-4.7, RHCSA-4.8, RHCSA-7.1, RHCSA-7.4 |
@@ -69,10 +71,10 @@ container material.
 There is no session in week 15. You sit the RHCSA (EX200) exam.
 
 Revise with the comprehensive review, then the chapter labs. See
-[Important practice outside class](#important-practice-outside-class). The labs
-from weeks 9 to 11 deserve the most attention: SELinux, storage, booting,
-firewalls and network file systems are the hardest material in the unit and the
-least practised, because they are taught last.
+[Your own time](#your-own-time). The labs from weeks 9 to 11 deserve the most
+attention: SELinux, storage, booting, firewalls and network file systems are the
+hardest material in the unit and the least practised, because they are taught
+last.
 
 Two points from [`objectives.md`](objectives.md#exam-format) shape how to
 revise. The exam is performance-based, so configurations must survive a reboot:
@@ -110,7 +112,7 @@ exercise you half recognise, and not enough to meet the idea for the first time.
 From week 1 you have the command-line assistant (RH124 05.01), so you have a way
 to ask questions and troubleshoot between sessions.
 
-## Important practice outside class
+## Your own time
 
 Everything the sessions do not cover is yours to work through.
 

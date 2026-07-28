@@ -15,6 +15,9 @@ retire IDs rather than shifting existing ones.
 RHCSA candidates should be able to accomplish the tasks below without
 assistance.
 
+See [`coverage.md`](coverage.md) for which course material teaches each
+objective.
+
 ## 1. Understand and use essential tools
 
 | ID | Objective |

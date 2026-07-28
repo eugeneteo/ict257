@@ -1,8 +1,9 @@
 # ICT257 lesson plan
 
-Fourteen weeks, one three-hour session each, covering the RHCSA (EX200)
-objectives in [`objectives.md`](objectives.md) using the Red Hat course material
-mapped in [`coverage.md`](coverage.md).
+Fourteen weeks of teaching, one three-hour session each, covering the RHCSA
+(EX200) objectives in [`objectives.md`](objectives.md) using the Red Hat course
+material mapped in [`coverage.md`](coverage.md). The exam is sat in week 15,
+which has no session. See [Week 15: the exam](#week-15-the-exam).
 
 ## How to read this
 
@@ -136,6 +137,29 @@ exercises taking 80 minutes and leaving 100 minutes to teach.
 All 62 objectives are taught in one of these weeks. Four objectives appear in two
 weeks, because the two courses each teach part of them.
 
+## Week 15: the exam
+
+There is no session in week 15. Students sit the RHCSA (EX200) exam, and the
+week before it is the only revision time the schedule provides.
+
+The comprehensive review is what to revise with. Both chapters are available by
+then, and they are the closest thing in the courseware to the exam, because they
+ask for a result without leading you to it. See
+[Optional practice](#optional-practice). The chapter labs listed through the
+schedule are the next best thing, and the ones from weeks 12 to 14 deserve the
+most attention: that material is both the hardest in the unit and the least
+practised, because it is taught last.
+
+[`objectives.md`](objectives.md#exam-format) records what the exam itself asks
+for. Two points from it shape how students should revise. The exam is
+performance-based, so configurations must survive a reboot, which means
+practising the persistent form of a task rather than the one that works until
+you restart. And it is closed book apart from the documentation shipped with the
+product, so students should practise finding answers in `man` pages and
+`/usr/share/doc` rather than online.
+
+No exam date is recorded here, because candidates sit on different dates.
+
 ## Sequencing notes
 
 Two chapters are taught out of course order, and one week is a deliberate mix:
@@ -171,6 +195,9 @@ them the closest thing in the courseware to exam conditions. See
 
 RH134 19.05 covers containers, which are not taught in this unit and match no
 current objective.
+
+Both chapters are available before the exam, so week 15 is when they matter
+most. See [Week 15: the exam](#week-15-the-exam).
 
 ## Maintaining this file
 

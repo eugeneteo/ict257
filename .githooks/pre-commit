@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Refuse to commit an excluded path or an oversized file.
+set -uo pipefail
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+. "$DIR/guard.sh"
+
+staged="$(git diff --cached --name-only --diff-filter=ACMR)"
+[[ -z "$staged" ]] && exit 0
+
+offenders="$(printf '%s\n' "$staged" | match_excluded)"
+[[ -n "$offenders" ]] && fail_paths "staged path is excluded from this repository" "$offenders"
+
+# Size check against the staged content, not the working tree.
+big=""
+while IFS= read -r f; do
+    [[ -z "$f" ]] && continue
+    size="$(git cat-file -s "$(git rev-parse ":$f" 2>/dev/null)" 2>/dev/null || echo 0)"
+    (( size > MAX_BYTES )) && big+="$(printf '%s (%s.%s MB)' "$f" \
+        "$((size / 1024 / 1024))" "$(( (size * 10 / 1024 / 1024) % 10 ))")"$'\n'
+done <<< "$staged"
+[[ -n "$big" ]] && fail_size "$big"
+
+exit 0

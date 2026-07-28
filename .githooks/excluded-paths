@@ -1,0 +1,5 @@
+# Paths that must never enter this repository, one POSIX extended regex per line.
+# Comments and blank lines are ignored.
+
+^\.private/
+^my-notes/

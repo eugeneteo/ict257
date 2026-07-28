@@ -1,0 +1,12 @@
+# Normalise line endings so Windows and macOS/Linux students never see
+# whole-file diffs caused by CRLF.
+* text=auto eol=lf
+
+*.md   text diff=markdown
+*.txt  text
+*.csv  text
+
+*.png  binary
+*.jpg  binary
+*.gif  binary
+*.pdf  binary

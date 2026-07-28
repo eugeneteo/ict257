@@ -1,0 +1,22 @@
+# Local
+.private/
+my-notes/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor and IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Built and exported output
+*.pdf
+*.docx
+*.pptx
+_site/
+.obsidian/

@@ -133,19 +133,6 @@ objective.
 > As with all Red Hat performance-based exams, configurations must persist after
 > reboot without intervention.
 
-## Preparation
-
-Red Hat's recommended path into EX200:
-
-- **Red Hat System Administration I (RH124)** followed by **Red Hat System
-  Administration II (RH134)**, or
-- **RHCSA Rapid Track (RH199)**, which combines both, or
-- comparable work experience as a system administrator on Red Hat Enterprise
-  Linux.
-
-Review the Red Hat Certification Program Guide for official policies and exam
-procedures before booking a session.
-
 ## Exam format
 
 - Hands-on and practical: you perform real system administration tasks on live

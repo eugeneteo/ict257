@@ -12,11 +12,9 @@ section numbers, and they refer to version 10.0 of both courses.
 ## The schedule
 
 **In class** lists the sections taught in the session, and you read them
-beforehand. A week carries 6 to 9 of them, and that count sets both your reading
-for the week and how much of the session is left for exercises. **Own time**
-lists the chapter-end labs and quizzes to work through afterwards. Neither
-column is optional, and the own-time work is where you practise reaching a
-result unaided, which is what the exam asks of you.
+beforehand. **Own time** lists the chapter-end labs and quizzes to work through
+afterwards. Neither column is optional, and the own-time work is where you
+practise reaching a result unaided, which is what the exam asks of you.
 `11.03` means chapter 11, section 03, and the two courses reuse section numbers,
 so always read a number together with its course. I wrote the focus lines for
 this unit rather than taking them from the courseware.
@@ -46,9 +44,7 @@ this unit rather than taking them from the courseware.
 
 ### Week 13: catch-up
 
-No new chapters. Sessions run over, and this is where the overflow goes. Weeks 5
-and 9 are the likeliest to have left something behind, because they are the
-nine-section weeks.
+No new chapters. Sessions run over, and this is where the overflow goes.
 
 Bring the guided exercises you did not finish, the labs that did not work, and
 anything you want demonstrated a second time. Whatever time the catch-up does
@@ -109,21 +105,9 @@ divide between teaching and exercises.
 | Guided exercises | 10 min each, about 60 min | You work through the exercises in the session |
 | Wrap-up | 10 min | Next week's pre-reading and the practice to work through |
 
-Only the first and last of those are fixed. Guided exercises are the only
-exercises we do in class, and they are where most questions surface. There are
-72 of them across the twelve teaching weeks, so a typical week spends about an
-hour on them and leaves about 95 minutes to teach. The heavier the week, the
-more exercises it carries and the less teaching time is left.
-
-So count the sections a week carries. In a six-section week we have around 17
-minutes for each one. In a nine-section week we have around 9, for material that
-is no simpler. Weeks 5 and 9 are the nine-section weeks, and they are the two
-most likely to run over. Week 13 is where they land.
-
-When a session does run over, the guided exercises are what gets cut, because
-the teaching cannot be half done. They are also the part that needs an
-instructor in the room, so protect them: come having read, and the exercises
-stay affordable.
+Guided exercises are the only exercises we do in class, and they are where most
+questions surface. There are 72 of them across the twelve teaching weeks, so a
+typical week spends about an hour on them and leaves about 95 minutes to teach.
 
 Arrive without having read and you can still follow the session, because I
 cover the main points of every section rather than assuming them. What you lose

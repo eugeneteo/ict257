@@ -16,6 +16,13 @@ at a glance.
 Only teaching sections are cited. Guided exercises, quizzes, labs, and chapter
 summaries reinforce the section they sit under and are not listed separately.
 
+This matrix runs objective-first, so course material that no objective calls for
+does not appear. That material was reviewed and deliberately left out rather
+than overlooked: course administration such as prefaces, orientation, and the
+comprehensive review; background the objectives assume but do not test; and
+whole topics with no objective behind them — installation and Kickstart,
+containers, image mode, and the AI command-line assistant.
+
 The RH124 and RH134 courseware is **not** part of this repository. Only section
 numbers are cited here, so you will need your own copy of the material to follow
 the references.
@@ -154,62 +161,6 @@ Points to watch when the schedule is built:
   RH134 06.07 under the SELinux objectives, and RH134 12.05 under RHCSA-4.3 and
   RHCSA-6.1. They teach skills the objectives rely on without naming, so treat
   them as supporting rather than sufficient on their own.
-
-## Sections not mapped
-
-Every teaching section in both courses is accounted for below. Guided
-exercises, quizzes, labs, and chapter summaries are excluded throughout — they
-reinforce the teaching section above them and were never separate mapping
-candidates.
-
-| Course | Teaching sections | Mapped above | Not mapped |
-| --- | --- | --- | --- |
-| RH124 | 47 | 39 | 8 |
-| RH134 | 49 | 35 | 14 |
-
-Descriptions below are written from each section's own stated objective, not
-from its title.
-
-### Out-of-scope topics
-
-Subject matter with no corresponding RHCSA objective.
-
-| Section | Topic |
-| --- | --- |
-| RH124 05.01 | AI-assisted troubleshooting with the command-line assistant |
-| RH134 16.01 | Installing RHEL interactively in package mode |
-| RH134 16.03 | Automating installation with Kickstart |
-| RH134 17.01 | Container concepts and underlying technology |
-| RH134 17.03 | Running container images with Podman |
-| RH134 17.05 | Managing and building container images |
-| RH134 18.01 | Image mode compared with package-mode installation |
-| RH134 18.03 | Building bootable container images for image mode |
-| RH134 18.05 | Installing RHEL using image mode |
-| RH134 18.07 | Day-2 management of image-mode systems |
-
-RH134 chapters 16, 17, and 18 are out of scope in their entirety. No objective
-in [`objectives.md`](objectives.md) mentions installation, Kickstart,
-containers, or image mode.
-
-### Supporting material
-
-Background that the objectives assume but do not test directly.
-
-| Section | Topic |
-| --- | --- |
-| RH124 01.01 | What Linux, open source, and RHEL are |
-| RH124 06.01 | How the file-system hierarchy is organised |
-| RH124 15.03 | Foreground and background job control |
-| RH134 01.01 | Shell variables and exporting environment variables |
-
-### Course administration
-
-| Section | Topic |
-| --- | --- |
-| RH124 00.01, RH134 00.01 | Course goals and intended audience |
-| RH124 00.02, RH134 00.02 | Classroom environment orientation |
-| RH124 00.03, RH134 00.03 | How the lab activity types work |
-| RH124 20.01, RH134 19.01 | End-of-course comprehensive review |
 
 ## Maintaining this file
 

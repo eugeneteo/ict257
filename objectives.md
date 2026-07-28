@@ -8,9 +8,8 @@ I quote the objectives from Red Hat's published exam page:
 (retrieved 2026-07-28).
 
 I give each objective a stable ID (`RHCSA-<category>.<n>`). Week notes, labs,
-and the coverage matrix point at the ID rather than the wording, so a
-cross-reference survives a rewording or a reordering. I never reuse or
-renumber an ID.
+and the coverage matrix point at the ID, not the wording, so a cross-reference
+still works after a rewording or a reordering. I never reuse or renumber an ID.
 
 You should be able to do everything below without help.
 
@@ -147,5 +146,5 @@ objective.
 
 Red Hat revises the objectives between RHEL major versions. I re-check the
 source URL at the start of each semester and record the new retrieval date
-above. When the objectives change, I add or retire IDs rather than renumber
-the ones already in use, so that older cross-references stay valid.
+above. When the objectives change, I add new IDs and retire old ones. I never
+renumber an ID that is already in use, so older cross-references keep working.

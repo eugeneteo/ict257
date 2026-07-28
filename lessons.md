@@ -17,20 +17,6 @@ work through afterwards. `11.03` means chapter 11, section 03, and the two
 courses reuse section numbers, so always read a number together with its course.
 Focus lines are written for this unit rather than taken from the courseware.
 
-```mermaid
-flowchart LR
-  subgraph I["Red Hat System Administration I"]
-    direction LR
-    W1["Week 1<br>ch 00 01 02 05"] --> W2["Week 2<br>ch 03 04 06 07"] --> W3["Week 3<br>ch 08 09 10"] --> W4["Week 4<br>ch 11 12 13"] --> W5["Week 5<br>ch 14 15 16"] --> W6["Week 6<br>ch 17 18 19"]
-  end
-  subgraph II["Red Hat System Administration II"]
-    direction LR
-    W7["Week 7<br>ch 01 02 03"] --> W8["Week 8<br>ch 04 05"] --> W9["Week 9<br>ch 06 07 08 09"] --> W10["Week 10<br>ch 10 11 12"] --> W11["Week 11<br>ch 13 14 15 16"] --> W12["Week 12<br>ch 17 18"]
-  end
-  W6 --> W7
-  W12 --> W13["Week 13<br>Catch-up"] --> W14["Week 14<br>Revision"] --> W15["Week 15<br>RHCSA exam"]
-```
-
 
 ### Weeks 1 to 6: Red Hat System Administration I
 

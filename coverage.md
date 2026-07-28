@@ -1,10 +1,10 @@
 # RHCSA objective coverage
 
-Maps every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to the
-course material and the teaching week that cover it.
+We map every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to
+the course material and the teaching week that cover it.
 
-The RH124 and RH134 courseware is **not** part of this repository. Only section
-numbers are cited here, and they refer to version 10.0 of both courses.
+The RH124 and RH134 courseware is **not** part of this repository. We cite only
+section numbers, and they refer to version 10.0 of both courses.
 
 - **Objective** is the stable ID from [`objectives.md`](objectives.md), and
   **Summary** restates it in short.
@@ -12,7 +12,7 @@ numbers are cited here, and they refer to version 10.0 of both courses.
   and II (version 10.0). `11.03` means chapter 11, section 03. A dash means that
   course does not teach the objective, and the other course usually does.
 - **Week** is the week that teaches the objective, as scheduled in
-  [`lessons.md`](lessons.md). More than one week means it is taught across all
+  [`lessons.md`](lessons.md). More than one week means we teach it across all
   of them.
 - Section numbers are per-course and the two courses reuse them, so always read
   a number together with its course. See
@@ -133,12 +133,12 @@ numbers are cited here, and they refer to version 10.0 of both courses.
 ## Exam practice
 
 Each course closes with a comprehensive review chapter: cumulative labs you work
-through unaided. They are cited here, unlike ordinary chapter labs, because they
+through unaided. We cite them here, unlike ordinary chapter labs, because they
 draw on the whole course rather than rehearsing the section above them.
 
-The objectives listed are those each lab's stated outcomes exercise. They are a
-guide to what a lab rehearses, not a claim that it covers those objectives in
-full.
+The objectives listed are those each lab's stated outcomes exercise. Treat them
+as a guide to what a lab rehearses, not a claim that it covers those objectives
+in full.
 
 ### RH124
 
@@ -168,7 +168,7 @@ review labs.
 
 ## Adjacent mappings
 
-Eight sections are mapped as adjacent rather than exact matches. Some teach a
+We map eight sections as adjacent rather than exact matches. Some teach a
 fundamental the objectives assume without ever naming it; others sit between
 two objectives without matching either exactly.
 
@@ -188,17 +188,17 @@ not covered by an adjacent section alone.
 
 ## Course material without an objective
 
-Material that exists in the courses but that no objective calls for. Every
-teaching section in both courses is accounted for either in the matrix above or
-in the tables below.
+Material that exists in the courses but that no objective calls for. We account
+for every teaching section in both courses, either in the matrix above or in
+the tables below.
 
 | Course | Teaching sections | Mapped above | Exam practice | Not mapped |
 | --- | --- | --- | --- | --- |
 | RH124 | 47 | 41 | 1 | 5 |
 | RH134 | 49 | 36 | 1 | 12 |
 
-Only the two chapter introductions count as teaching sections; the nine review
-labs sit outside that population, since labs are excluded from it throughout.
+We count only the two chapter introductions as teaching sections. The nine
+review labs fall outside that count, because we leave labs out of it throughout.
 
 ### No corresponding objective
 
@@ -218,8 +218,8 @@ labs sit outside that population, since labs are excluded from it throughout.
 
 No objective in [`objectives.md`](objectives.md) mentions installation,
 Kickstart, containers, or image mode, so no section of RH134 chapters 16, 17,
-or 18 appears in the matrix above. You are still taught them, in weeks 11 and
-12, after every chapter that does carry an objective. See
+or 18 appears in the matrix above. We still teach them, in weeks 11 and 12,
+after every chapter that does carry an objective. See
 [`lessons.md`](lessons.md#sequencing-notes).
 
 ### Course administration
@@ -235,23 +235,23 @@ or 18 appears in the matrix above. You are still taught them, in weeks 11 and
 RH124 16.01 and RH134 16.01 are unrelated sections. Read every section number
 together with its course.
 
-Only teaching sections are cited. Guided exercises, quizzes, labs, and chapter
-summaries reinforce the section they sit under and are not listed separately.
-The one exception is the comprehensive review chapter that closes each course,
-whose labs are cumulative and are listed under
+We cite only teaching sections. Guided exercises, quizzes, labs, and chapter
+summaries reinforce the section they sit under, so we do not list them
+separately. The one exception is the comprehensive review chapter that closes
+each course, whose labs are cumulative and appear under
 [Exam practice](#exam-practice).
 
-Each **Summary** cell is a short restatement written for this file. In the
-matrix it paraphrases [`objectives.md`](objectives.md), and further down it
-paraphrases each section's own stated objective rather than its title.
+We wrote each **Summary** cell for this file. In the matrix it paraphrases
+[`objectives.md`](objectives.md), and further down it paraphrases each section's
+own stated objective rather than its title.
 
 ## Maintaining this file
 
-When the objectives change, update [`objectives.md`](objectives.md) first, then
-add or retire rows here. Keep the **Week** cells in step with
+When the objectives change, we update [`objectives.md`](objectives.md) first,
+then add or retire rows here. We keep the **Week** cells in step with
 [`lessons.md`](lessons.md). An objective with sections but no week is material
-that is not being taught.
+we are not teaching.
 
 Red Hat renumbers sections between course versions. If the courseware moves off
-10.0, every section number here needs rechecking against the new release, not
-just the rows whose objectives changed.
+10.0, we recheck every section number here against the new release, not just
+the rows whose objectives changed.

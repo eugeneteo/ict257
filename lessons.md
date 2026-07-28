@@ -48,6 +48,11 @@ If nothing has slipped, the session is yours. Bring the guided exercises you did
 not finish, the labs that did not work, and anything you want demonstrated a
 second time.
 
+If more has slipped than one session can absorb, work through what is left
+yourself. Chapters are taught in order and the ones carrying objectives come
+first, so anything that falls off the end is likely to be RH134 16 to 18, which
+no objective covers.
+
 ### Week 14: revision
 
 No new chapters. The session works back through
@@ -55,8 +60,9 @@ No new chapters. The session works back through
 objective, so you can see what each one asks of you and which week taught it.
 Bring the objectives you are least sure of.
 
-Every chapter has been taught by now, so both comprehensive review chapters are
-open to you.
+Both comprehensive review chapters are open to you by now. If week 12 slipped,
+RH134 19.05 is the one review lab that may have to wait, because it rests on the
+container material.
 
 ## Week 15: the exam
 

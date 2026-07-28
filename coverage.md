@@ -18,6 +18,70 @@ numbers are cited here, so you will need your own copy of the material.
   a number together with its course. See
   [Notes on the mapping](#notes-on-the-mapping).
 
+Which weeks feed which objective category:
+
+```mermaid
+flowchart LR
+  W1(["Week 1"])
+  W2(["Week 2"])
+  W3(["Week 3"])
+  W4(["Week 4"])
+  W5(["Week 5"])
+  W6(["Week 6"])
+  W7(["Week 7"])
+  W8(["Week 8"])
+  W9(["Week 9"])
+  W10(["Week 10"])
+  W11(["Week 11"])
+  W12(["Week 12"])
+  C1["1. Understand and use essential tools"]
+  C2["2. Manage software"]
+  C3["3. Create simple shell scripts"]
+  C4["4. Operate running systems"]
+  C5["5. Configure local storage"]
+  C6["6. Create and configure file systems"]
+  C7["7. Deploy, configure, and maintain systems"]
+  C8["8. Manage basic networking"]
+  C9["9. Manage users and groups"]
+  C10["10. Manage security"]
+  W1 --> C1
+  W2 --> C1
+  W2 --> C7
+  W3 --> C1
+  W3 --> C9
+  W4 --> C1
+  W4 --> C2
+  W4 --> C6
+  W4 --> C7
+  W4 --> C10
+  W5 --> C1
+  W5 --> C4
+  W5 --> C5
+  W5 --> C6
+  W5 --> C7
+  W5 --> C8
+  W6 --> C1
+  W6 --> C8
+  W6 --> C10
+  W7 --> C1
+  W7 --> C3
+  W7 --> C7
+  W8 --> C4
+  W8 --> C7
+  W9 --> C1
+  W9 --> C4
+  W9 --> C10
+  W10 --> C1
+  W10 --> C4
+  W10 --> C5
+  W10 --> C6
+  W10 --> C7
+  W11 --> C4
+  W11 --> C6
+  W11 --> C8
+  W11 --> C10
+```
+
 ## 1. Understand and use essential tools
 
 | Objective | Summary | RH124 | RH134 | Week |

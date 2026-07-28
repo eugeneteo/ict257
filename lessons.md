@@ -122,7 +122,7 @@ Everything the sessions do not cover is yours to work through.
 | Chapter-end labs | 22 labs, 134 pages | Work through them during revision. They ask for a result without leading you to it |
 | Chapter quizzes | 22 quizzes, 99 pages | Use them to check understanding after a chapter |
 | Chapter summaries | 37 summaries, 37 pages | Use them for quick revision |
-| Comprehensive review | 12 sections, 9 of them labs, 49 pages | Save for exam preparation, as below |
+| Comprehensive review | 11 sections, 9 of them labs, 49 pages | Save for exam preparation, as below |
 | Course administration sections | 4 sections, 8 pages | Nothing. They orient you to a self-paced Red Hat course, which is not how this unit runs |
 
 None of this is marked, and none of it is optional in any sense that matters.
@@ -154,9 +154,9 @@ command-line assistant from the start of the unit and can use it when you get
 stuck in your own time.
 
 Teaching in course order means two pairings are given up. Tuning profiles and
-scheduling priority (RH134 09) are taught in week 11 rather than beside
-processes (RH124 15) in week 6, so objective 4 on running systems is met in
-pieces across the unit. And SSH (RH124 19) is taught in week 7, four weeks
+scheduling priority (RH134 09) are taught in week 9 rather than beside
+processes (RH124 15) in week 5, so objective 4 on running systems is met in
+pieces across the unit. And SSH (RH124 19) is taught in week 6, three weeks
 before secure file transfer (RH134 08), although both rest on the same service.
 Recap at the start of those later sessions is where the connection gets made.
 

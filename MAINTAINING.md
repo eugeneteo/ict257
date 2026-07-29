@@ -41,6 +41,44 @@ At the start of each semester, re-check:
 
 Record the new dates in each file.
 
+## Tagging a semester
+
+Tag at the start of a semester, not the end. What a student wants is the state
+the material was in when their semester began.
+
+Do the source checks above first and commit them. Then:
+
+    git switch main
+    git tag -a 2026-s2 -m "ICT257, 2026 semester 2"
+    git push origin 2026-s2
+
+Three things that fail quietly:
+
+- `git push` on its own doesn't push tags. Name the tag, or it never leaves
+  this machine.
+- Use `-a`. An annotated tag records who made it, when, and why, as a real
+  object. A bare `git tag 2026-s2` records none of that.
+- Don't move a tag once students have cloned it. If the name is wrong, add the
+  right one and leave the wrong one where it is.
+
+## One branch, and when to break that rule
+
+Everything lives on `main`. There are no semester branches, because there's
+nothing semester-specific to put in one. `lessons.md` runs on week numbers, not
+dates, so the same material serves every cohort.
+
+That holds only while the repository stays generic. Dated announcements,
+deadlines, and anything naming a cohort belong in the LMS. This is a public
+repository, which settles it: that material has no business here anyway. The
+moment it lands in a tracked file, one branch stops being enough.
+
+Break the rule only if Red Hat forces a disruptive change mid-semester, such as
+renumbering courseware while a cohort is halfway through it:
+
+    git switch -c 2026-s2-fixes 2026-s2
+
+Corrections only, and delete it after week 15.
+
 ## When the courseware version changes
 
 `coverage.md` and `lessons.md` cite RH124 and RH134 section numbers, currently
@@ -78,7 +116,12 @@ Anything I don't want committed or pushed goes in `.private/` or `my-notes/`.
 Both are gitignored, and the `.githooks/` pre-commit and pre-push guards refuse
 them even if I force-add them.
 
-This note used to sit in `README.md`. I moved it here because `.private/` is my
-own scratch space today, and the README should hold nothing a student can't
-use. When I work out the branching that lets students clone the repository and
-keep their own notes, this belongs back in the README, rewritten for them.
+The guards protect me and nobody else. `core.hooksPath` lives in `.git/config`,
+which doesn't survive a clone, so a student who clones this gets `.githooks/` as
+files that git never runs. That's fine, because students aren't pushing
+anything. It's why the README tells them about `my-notes/` and says nothing
+about hooks: `.gitignore` is what actually keeps their notes out of a commit,
+and `.gitignore` does travel.
+
+Since this repository is public, that matters more than it would otherwise.
+Notes committed here are notes published.

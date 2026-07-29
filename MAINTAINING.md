@@ -46,6 +46,12 @@ Record the new dates in each file.
 Tag at the start of a semester, not the end. What a student wants is the state
 the material was in when their semester began.
 
+The schedule in `lessons.md` is the reason this matters. I fine-tune it as I
+teach, to match what actually happens in the room, so it drifts through the
+semester by design. The tag holds what students were told in week 1, and `main`
+holds what turned out to be true. Prefer changing weeks not yet taught.
+Rewriting a week students have already sat through helps nobody.
+
 Do the source checks above first and commit them. Then:
 
     git switch main

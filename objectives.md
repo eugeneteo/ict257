@@ -155,10 +155,6 @@ footnotes below. When the objectives change, I add new IDs and retire old ones.
 I never renumber an ID that is already in use, so older cross-references keep
 working.
 
-One point here has a known expiry. Red Hat plans to reconsider the command-line
-assistant once it can run as a locally hosted model, so that every candidate
-gets the same controlled experience.[^cla] Check that each semester too.
-
 ## Sources
 
 [^ex200]: Red Hat, "Red Hat Certified System Administrator exam | EX200".
@@ -171,5 +167,5 @@ gets the same controlled experience.[^cla] Check that each semester too.
 
 [^cla]: Red Hat, "How the Command Line Assistant affects RHCSA and RHCE exams",
     on the Red Hat Enterprise Linux channel. <https://youtu.be/8UIi23AfQJM>
-    Availability at 0:15, the risk of a wrong answer at 0:32, and the plan to
-    reconsider it at 0:53. Retrieved 2026-07-28.
+    Availability at 0:15, and the risk of a wrong answer at 0:32.
+    Retrieved 2026-07-28.

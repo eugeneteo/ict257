@@ -68,10 +68,22 @@ about source code, object code, compiling, and linking, and none of that fits a
 repository of prose. CC BY-SA carries the same copyleft intent and is written
 for written work.
 
-The `README.md` notice carves out Red Hat's material. The 62 objective rows,
-the blockquote about configurations persisting after reboot, and the page titles
-in the footnotes are quoted, not mine, so they can't be sublicensed under my
-licence. If more quoted material lands here, the carve-out has to keep pace.
+The `README.md` notice carves out Red Hat's material, and that carve-out has to
+keep pace if more of it lands here.
+
+There are two kinds, handled differently, and the difference is the whole reason
+this is safe to publish:
+
+- **The exam page is public.** The 62 objective rows, the reboot blockquote,
+  and the page titles in the footnotes all come from it. They're quoted word
+  for word and footnoted with a retrieval date, so they can't go under my
+  licence.
+- **The courseware is not.** Nothing from RH124 or RH134 appears here. Only
+  section numbers, and summaries I wrote myself.
+
+Hold that line in the week notes, because that's where it would slip. A note on
+chapter 11 can say what to watch for, what to read next, and where students trip
+up. It can't reproduce the chapter.
 
 ## One branch, and when to break that rule
 

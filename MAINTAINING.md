@@ -61,6 +61,18 @@ Three things that fail quietly:
 - Don't move a tag once students have cloned it. If the name is wrong, add the
   right one and leave the wrong one where it is.
 
+## Licence
+
+CC BY-SA 4.0. I considered GPL-3.0 and rejected it: its operative terms are
+about source code, object code, compiling, and linking, and none of that fits a
+repository of prose. CC BY-SA carries the same copyleft intent and is written
+for written work.
+
+The `README.md` notice carves out Red Hat's material. The 62 objective rows,
+the blockquote about configurations persisting after reboot, and the page titles
+in the footnotes are quoted, not mine, so they can't be sublicensed under my
+licence. If more quoted material lands here, the carve-out has to keep pace.
+
 ## One branch, and when to break that rule
 
 Everything lives on `main`. There are no semester branches, because there's

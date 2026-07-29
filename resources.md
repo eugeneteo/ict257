@@ -29,8 +29,7 @@ You don't need these to know the objectives.
 | --- | --- |
 | [Red Hat Skills Assessment](https://www.redhat.com/en/services/skills-assessment) | Red Hat offers this at no cost on the EX200 page, as a way to find the right course |
 
-Take it early. It tells you where you are while there's still time to act on
-the answer.
+Take it early. It shows you where you are while there's still time to act.
 
 ## Reference while you work
 
@@ -38,11 +37,10 @@ the answer.
 | --- | --- |
 | [Red Hat Enterprise Linux 10 product documentation](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10) | The official RHEL 10 documentation set, free to read without an account |
 
-This is worth more than it looks. The same documentation ships with the product,
-and product documentation is what you're allowed during the exam. Practising
-with it is practising RHCSA-1.11, and it's the habit that replaces searching
-online. See [Exam format](objectives.md#exam-format) for what you may and may
-not use.
+This is more useful than it looks. The same documentation ships with the
+product, and it's what you're allowed to use during the exam. Practising with it
+reinforces RHCSA-1.11 and replaces searching online. See
+[Exam format](objectives.md#exam-format) for what you may and may not use.
 
 ## What is not here
 

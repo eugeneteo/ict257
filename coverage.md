@@ -132,9 +132,9 @@ section numbers, and they refer to version 10.0 of both courses.
 
 ## Exam practice
 
-Each course closes with a comprehensive review chapter: cumulative labs you work
-through unaided. I cite them here, unlike ordinary chapter labs, because they
-draw on the whole course, not just the section above them.
+Each course closes with a comprehensive review chapter. I cite those cumulative
+labs here because they draw on the whole course, not just the section above
+them.
 
 The objectives listed are those each lab's stated outcomes exercise. They show
 what a lab practises, but they don't mean it covers those objectives in full.
@@ -187,8 +187,7 @@ These sections support an objective. None of them covers one on its own.
 ## Course material without an objective
 
 Material in the courses that no objective calls for. I account for every
-teaching section in both courses, either in the matrix above or in the tables
-below.
+teaching section, either in the matrix above or in the tables below.
 
 | Course | Teaching sections | Mapped above | Exam practice | Not mapped |
 | --- | --- | --- | --- | --- |

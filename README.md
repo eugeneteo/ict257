@@ -14,8 +14,7 @@ Course material and notes for **ICT257 Red Hat System Administration**.
 
 I'll add more as the semester goes on.
 
-Upkeep of these files is documented separately, in
-[`MAINTAINING.md`](MAINTAINING.md). You don't need it to study.
+See [`MAINTAINING.md`](MAINTAINING.md) for upkeep. You don't need it to study.
 
 ## Local files
 

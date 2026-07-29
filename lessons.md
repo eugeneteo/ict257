@@ -1,7 +1,7 @@
 # ICT257 lesson plan
 
 Twelve weeks of teaching, one three-hour session each, covering the RHCSA
-(EX200) objectives in [`objectives.md`](objectives.md) using the Red Hat course
+(EX200) objectives in [`objectives.md`](objectives.md) with the Red Hat course
 material mapped in [`coverage.md`](coverage.md). Week 13 is catch-up, week 14 is
 revision, and you sit the exam in week 15. See
 [Week 15: the exam](#week-15-the-exam).
@@ -13,7 +13,7 @@ section numbers, and they refer to version 10.0 of both courses.
 
 **In class** lists the sections taught in the session, and you read them
 beforehand. **Own time** lists the chapter-end labs and quizzes to work through
-afterwards. Neither column is optional. The own-time work is where you practise
+afterwards. Neither column is optional. Own-time work is where you practise
 reaching a result on your own.
 `11.03` means chapter 11, section 03, and the two courses reuse section numbers,
 so always read a number together with its course. I wrote the focus lines for
@@ -47,8 +47,7 @@ this unit. They aren't from the courseware.
 No new chapters. Sessions run over, and this is where the overflow goes.
 
 Bring the guided exercises you didn't finish, the labs that didn't work, and
-anything you want demonstrated a second time. Whatever time the catch-up does
-not need goes to those.
+anything you want demonstrated again. Any spare time goes to those.
 
 If more has slipped than one session can absorb, work through what is left
 yourself. I teach chapters in order and the ones carrying objectives come
@@ -109,8 +108,8 @@ typical week spends about an hour on them and leaves about 95 minutes to teach.
 
 Arrive without having read and you can still follow the session, because I
 cover the main points of every section and don't assume you know them. What
-you lose is the guided exercises. Ten minutes is long enough for an exercise you
-half recognise. It isn't long enough to meet the idea for the first time.
+you lose is the guided exercises. Ten minutes is enough for an exercise you half
+recognise, but not for one you're meeting for the first time.
 
 From week 1 you have the command-line assistant (RH124 05.01), so you can ask
 questions and troubleshoot between sessions. Use it to learn, and check what it

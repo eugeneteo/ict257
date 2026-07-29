@@ -7,8 +7,8 @@ The objectives below are Red Hat's own wording, taken from the published exam
 page.[^ex200]
 
 I give each objective a stable ID (`RHCSA-<category>.<n>`). Week notes, labs,
-and the coverage matrix point at the ID, not the wording, so a cross-reference
-still works after a rewording or a reordering. I never reuse or renumber an ID.
+and the coverage matrix point at the ID, not the wording, so cross-references
+survive a rewording or a reordering. I never reuse or renumber an ID.
 
 You should be able to do everything below without help.
 

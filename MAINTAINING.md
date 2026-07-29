@@ -159,6 +159,10 @@ the markup of the EX200 exam page, so they are Red Hat's own view of what is
 relevant. I requested each one, and every title is the page's own title
 element, not a description I wrote.
 
+One link on that page is left out on purpose. Red Hat's hybrid cloud learning
+hub sits there, so it looks like an obvious inclusion, but it carries
+OpenShift, Kubernetes and AI material and nothing for the RHCSA. Leave it out.
+
 Some links answer 403 to a script while loading fine in a browser: the RHEL
 documentation on `docs.redhat.com`, and the SUSS course page in `README.md`.
 That is bot protection. A link checker will flag them, and there is nothing to

@@ -5,8 +5,7 @@ practice exams come through the SUSS Library. None of it is required for
 ICT257, and none of it replaces the work in [`lessons.md`](lessons.md). It is
 here for when you want more than the courseware gives you.
 
-Each entry gives the title as its publisher gives it. See
-[What is not here](#what-is-not-here) for what was left out, and why.
+Each entry gives the title as its publisher gives it.
 
 ## Know what the exam asks
 
@@ -80,15 +79,4 @@ Sit lesson 31 before you watch lesson 32.
 Whichever you choose, sit it timed and closed book, and do it after the
 comprehensive review labs. Those labs are the closest thing in the courseware
 to exam conditions. See [Week 14: revision](lessons.md#week-14-revision).
-
-## What is not here
-
-RH124 and RH134 are the courseware itself, not extras, so they are not listed
-here. You reach them through the university's Red Hat Academy access, which is
-also where the lab environment you practise in comes from. The Red Hat Learning
-Subscription is a commercial product you would have to buy yourself.
-
-Red Hat's hybrid cloud learning hub is linked from the exam page, so it looked
-like an obvious inclusion. It carries OpenShift, Kubernetes and AI material and
-nothing for the RHCSA, so it is out.
 

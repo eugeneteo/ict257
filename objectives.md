@@ -127,7 +127,7 @@ objective.
 | RHCSA-10.8 | Use Boolean settings to modify system SELinux settings |
 
 > As with all Red Hat performance-based exams, configurations must persist after
-> reboot without intervention.
+> reboot without intervention.[^ex200]
 
 ## Exam format
 

@@ -13,11 +13,3 @@ Course material and notes for **ICT257 Red Hat System Administration**.
 | [`exam-day.md`](exam-day.md) | What the exam environment is like on the day |
 
 I'll add more as the semester goes on.
-
-See [`MAINTAINING.md`](MAINTAINING.md) for upkeep. You don't need it to study.
-
-## Local files
-
-Anything you don't want committed or pushed goes in `.private/` (or
-`my-notes/`). Both are gitignored, and the `.githooks/` pre-commit and pre-push
-guards refuse them even if you force-add them.

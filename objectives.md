@@ -3,8 +3,7 @@
 Study points for the **Red Hat Certified System Administrator (RHCSA)** exam,
 EX200. This exam is based on **Red Hat Enterprise Linux 10**.
 
-The objectives below are Red Hat's own wording, taken from the published exam
-page.[^ex200]
+The objectives below are taken from Red Hat's published exam page.[^ex200]
 
 I give each objective a stable ID (`RHCSA-<category>.<n>`). Week notes, labs,
 and the coverage matrix point at the ID, not the wording, so cross-references

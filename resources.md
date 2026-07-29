@@ -1,9 +1,9 @@
 # Additional resources for the RHCSA exam
 
-Nothing here costs you anything. Most of it is published by Red Hat. The
-practice exams come through the SUSS Library. None of it is required for
-ICT257, and none of it replaces the work in [`lessons.md`](lessons.md). It is
-here for when you want more than the courseware gives you.
+Most of it is published by Red Hat. The practice exams come through the SUSS
+Library. None of it is required for ICT257, and none of it replaces the work
+in [`lessons.md`](lessons.md). It is here for when you want more than the
+courseware gives you.
 
 ## Know what the exam asks
 

@@ -68,7 +68,6 @@ helps.
 | Page | What it is |
 | --- | --- |
 | [Red Hat RHCSA RHEL 10 with Exam Labs](https://learning.oreilly.com/course/red-hat-rhcsa/9780135493137/) | Sander van Vugt, Pearson IT Certification. A video course, about 15 hours |
-| [Module 8: Sample Exam](https://learning.oreilly.com/videos/red-hat-rhcsa/9780135493137/9780135493137-RHEL10_08_00_00/) | The module the two lessons below sit in |
 | [Lesson 31: Sample Exam](https://learning.oreilly.com/videos/red-hat-rhcsa/9780135493137/9780135493137-RHEL10_08_31_00/) | The exam itself |
 | [Lesson 32: Grading the Sample Exam and Exam Solutions](https://learning.oreilly.com/videos/red-hat-rhcsa/9780135493137/9780135493137-RHEL10_08_32_00/) | How to mark your own attempt, and the solutions |
 

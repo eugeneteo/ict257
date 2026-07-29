@@ -3,9 +3,8 @@
 Study points for the **Red Hat Certified System Administrator (RHCSA)** exam,
 EX200. This exam is based on **Red Hat Enterprise Linux 10**.
 
-I quote the objectives from Red Hat's published exam page:
-<https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam>
-(retrieved 2026-07-28).
+The objectives below are Red Hat's own wording, taken from the published exam
+page.[^ex200]
 
 I give each objective a stable ID (`RHCSA-<category>.<n>`). Week notes, labs,
 and the coverage matrix point at the ID, not the wording, so a cross-reference
@@ -133,39 +132,44 @@ objective.
 
 ## Exam format
 
-Every point below comes from the exam page cited above, except two:
-
-- The point about multiple-choice questions comes from Red Hat's certification
-  overview:
-  <https://www.redhat.com/en/services/training-and-certification/why-get-certified>
-- The points about the command-line assistant come from Red Hat's video "How the
-  Command Line Assistant affects RHCSA and RHCE exams", on its Red Hat
-  Enterprise Linux channel: <https://youtu.be/8UIi23AfQJM>
-
-Both were retrieved on 2026-07-28. Timestamps below refer to the video.
-
 - Hands-on and practical: you undertake real-world tasks on live systems. Red
-  Hat validates skills "instead of memorization and multiple-choice questions",
-  so the exam has none.
+  Hat tests what you can do instead of what you can recall, and sets no
+  multiple-choice questions.[^certified]
 - Performance-based grading: **configurations must survive a reboot without
-  manual intervention**.
+  manual intervention**.[^ex200]
 - Closed book. You cannot bring notes, printed material, or electronic
-  documentation, and you have no internet access during the exam.
-- The documentation that ships with the product is available "for most exams",
-  which means the man pages and `/usr/share/doc`. That is why RHCSA-1.11
-  matters in practice.
-- **No AI assistance.** The command-line assistant is not available, because it
-  needs internet access and the exam does not allow it (0:15). Red Hat gives a
-  second reason: the assistant could give you incorrect information and unfairly
-  affect your result (0:32).
+  documentation, and you have no internet access during the exam.[^ex200]
+- The documentation that ships with the product is usually available, which
+  means the man pages and `/usr/share/doc`. Red Hat's wording covers most of its
+  exams instead of all of them, so do not count on it.[^ex200] That is why
+  RHCSA-1.11 matters in practice.
+- **No AI assistance.** The command-line assistant is not available. It needs
+  internet access, which the exam does not allow, and Red Hat also warns that it
+  could answer wrongly and affect your result unfairly.[^cla]
 
 ## Keeping this file current
 
 Red Hat revises the objectives between RHEL major versions. I re-check all three
-sources at the start of each semester and record the new retrieval dates
-above. When the objectives change, I add new IDs and retire old ones. I never
-renumber an ID that is already in use, so older cross-references keep working.
+sources at the start of each semester and record the new retrieval dates in the
+footnotes below. When the objectives change, I add new IDs and retire old ones.
+I never renumber an ID that is already in use, so older cross-references keep
+working.
 
 One point here has a known expiry. Red Hat plans to reconsider the command-line
 assistant once it can run as a locally hosted model, so that every candidate
-gets the same controlled experience (0:53). Check that each semester too.
+gets the same controlled experience.[^cla] Check that each semester too.
+
+## Sources
+
+[^ex200]: Red Hat, "Red Hat Certified System Administrator exam | EX200".
+    <https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam>
+    Retrieved 2026-07-28.
+
+[^certified]: Red Hat, "Why you should get certified by Red Hat".
+    <https://www.redhat.com/en/services/training-and-certification/why-get-certified>
+    Retrieved 2026-07-28.
+
+[^cla]: Red Hat, "How the Command Line Assistant affects RHCSA and RHCE exams",
+    on the Red Hat Enterprise Linux channel. <https://youtu.be/8UIi23AfQJM>
+    Availability at 0:15, the risk of a wrong answer at 0:32, and the plan to
+    reconsider it at 0:53. Retrieved 2026-07-28.

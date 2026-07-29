@@ -144,10 +144,9 @@ see [`exam-day.md`](exam-day.md).
   documentation, and you have no internet access during the
   exam.<sup>[1][ex200]</sup>
 - The documentation that ships with the product is usually available, which
-  means the man pages and `/usr/share/doc`. Red Hat's wording covers most of its
-  exams instead of all of them, so do not count on
-  it.<sup>[1][ex200]</sup> That is why
-  RHCSA-1.11 matters in practice.
+  means the man pages and `/usr/share/doc`. Red Hat promises this for most of
+  its exams, not for the RHCSA by name, so do not count on
+  having it.<sup>[1][ex200]</sup> That is why RHCSA-1.11 matters in practice.
 - **No AI assistance.** The command-line assistant is not available. It needs
   internet access, which the exam does not allow, and Red Hat also warns that it
   could answer wrongly and affect your result unfairly.<sup>[3][cla-video]</sup>

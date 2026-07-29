@@ -161,16 +161,14 @@ what a lab practises, but they do not mean it covers those objectives in full.
 | 19.04 | Key-based SSH, firewall settings, SELinux modes, Booleans and troubleshooting | RHCSA-10.1, RHCSA-10.3, RHCSA-10.4, RHCSA-10.8 |
 | 19.05 | Build a container image, push it to a registry, run a detached container | — |
 
-RH134 19.05 exercises no objective, for the same reason RH134 chapters 16 to 18
-are absent from the matrix: nothing in
+RH134 19.05 has no corresponding objective, for the same reason RH134 chapters
+16 to 18 are absent from the matrix: nothing in
 [`objectives.md`](objectives.md) covers containers. Do it after the other four
 review labs.
 
 ## Adjacent mappings
 
-I map eight sections as close matches, not exact ones. Some teach a
-fundamental the objectives assume without ever naming it. Others sit between
-two objectives without matching either exactly.
+I map eight sections as close matches, not exact ones.
 
 | Section | Mapped under |
 | --- | --- |
@@ -187,8 +185,8 @@ These sections support an objective. None of them covers one on its own.
 
 ## Course material without an objective
 
-Material in the courses that no objective calls for. I account for every
-teaching section, either in the matrix above or in the tables below.
+Every teaching section is counted here. Each is either mapped above, used for
+exam practice or listed below as not mapped.
 
 | Course | Teaching sections | Mapped above | Exam practice | Not mapped |
 | --- | --- | --- | --- | --- |

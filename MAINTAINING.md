@@ -69,9 +69,17 @@ Never let a hard wrap fall inside the link text. A single newline becomes a
 `<br>`, which splits the title across two lines mid-link. Break the line before
 the title instead.
 
-Marker placement goes after the punctuation, because that is the convention for
-a superscript. Verify a change by posting the file to
-`https://api.github.com/markdown` with mode `gfm` and reading the HTML back.
+Marker placement goes after the punctuation, and the source is misleading about
+this. In the raw file `page.[1][ex200]` looks like a bracketed citation sitting
+after the period, which would be wrong. Those brackets are link syntax and
+never reach the page. What renders is a bare superscript numeral.
+
+That decides the rule. Bracketed numbers on the line go before the full stop.
+Superscript numerals go after it. This is a superscript, so it goes after.
+Resist correcting it back.
+
+Verify a change by posting the file to `https://api.github.com/markdown` with
+mode `gfm` and reading the HTML back.
 
 ## Tagging a semester
 

@@ -147,8 +147,8 @@ See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 | Week 11 | RH134 19.02 to 19.04, three labs covering Red Hat System Administration II |
 | Week 12 | RH134 19.05, one lab on containers |
 
-RH134 19.05 rests on the container material I teach in week 12, and it matches
-no current objective. Do the other four review labs first.
+RH134 19.05 rests on the container material I teach in week 12, and it has no
+corresponding objective. Do the other four review labs first.
 
 ## Sequencing notes
 

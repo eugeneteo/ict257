@@ -10,14 +10,16 @@ version 10.0 of both courses.
 - **Objective** is the stable ID from [`objectives.md`](objectives.md), and
   **Summary** restates it in short.
 - **RH124** and **RH134** are section numbers in Red Hat System Administration I
-  and II (version 10.0). `11.03` means chapter 11, section 03. A dash means that
-  course does not teach the objective, and the other course usually does.
+  and II (version 10.0). `11.03` means chapter 11, section 03. The two courses
+  reuse section numbers, so always read a number together with its course. A
+  dash means that course does not teach the objective, and the other course
+  usually does.
 - **Week** is the week that teaches the objective, as scheduled in
   [`lessons.md`](lessons.md). More than one week means I teach it across all
   of them.
-- Section numbers are per-course and the two courses reuse them, so always read
-  a number together with its course. See
-  [Notes on the mapping](#notes-on-the-mapping).
+
+See [Notes on the mapping](#notes-on-the-mapping) for what I cite and what I
+leave out.
 
 ## 1. Understand and use essential tools
 

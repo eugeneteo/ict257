@@ -21,8 +21,8 @@ I will add more as the semester goes on.
     git clone https://github.com/eugeneteo/ict257.git
     cd ict257
 
-Run `git pull` now and then. I fix links and update the exam-day notes as
-things change, and you want those.
+Run `git pull` now and then. I update the repo as things change, and you want
+those.
 
 Keep your own notes in `my-notes/`. Git ignores that folder, so nothing you
 write there gets committed, and `git pull` will never touch it.

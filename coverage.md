@@ -10,7 +10,7 @@ cite only section numbers, and they refer to version 10.0 of both courses.
   **Summary** restates it in short.
 - **RH124** and **RH134** are section numbers in Red Hat System Administration I
   and II (version 10.0). `11.03` means chapter 11, section 03. A dash means that
-  course doesn't teach the objective, and the other course usually does.
+  course does not teach the objective, and the other course usually does.
 - **Week** is the week that teaches the objective, as scheduled in
   [`lessons.md`](lessons.md). More than one week means I teach it across all
   of them.
@@ -93,7 +93,7 @@ cite only section numbers, and they refer to version 10.0 of both courses.
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
 | RHCSA-7.1 | `at`, `cron`, systemd timer units | — | 03.01, 03.03, 04.01, 04.03, 04.05 | 7, 8 |
-| RHCSA-7.2 | Services, and enabling them at boot | 16.01, 16.03 | — | 5 |
+| RHCSA-7.2 | Services and enabling them at boot | 16.01, 16.03 | — | 5 |
 | RHCSA-7.3 | Boot into a specific target automatically | — | 12.03 | 10 |
 | RHCSA-7.4 | Configure time service clients | — | 05.09 | 8 |
 | RHCSA-7.5 | Install and update from CDN, repo, local file | 04.01, 12.03, 12.05 | — | 2, 4 |
@@ -137,7 +137,7 @@ labs here because they draw on the whole course, not just the section above
 them.
 
 The objectives listed are those each lab's stated outcomes exercise. They show
-what a lab practises, but they don't mean it covers those objectives in full.
+what a lab practises, but they do not mean it covers those objectives in full.
 
 ### RH124
 
@@ -148,7 +148,7 @@ what a lab practises, but they don't mean it covers those objectives in full.
 | 20.03 | Manage users and groups, set permissions, handle CPU-heavy processes | RHCSA-1.10, RHCSA-4.4, RHCSA-9.1, RHCSA-9.3 |
 | 20.04 | Secure SSH access, configure repositories, manage packages | RHCSA-1.4, RHCSA-2.1, RHCSA-2.2, RHCSA-10.3 |
 | 20.05 | Configure and test networking, set hostnames and name resolution | RHCSA-8.1, RHCSA-8.2 |
-| 20.06 | Mount a file system and find files by name, permissions, and size | RHCSA-1.8, RHCSA-6.1 |
+| 20.06 | Mount a file system and find files by name, permissions and size | RHCSA-1.8, RHCSA-6.1 |
 
 ### RH134
 
@@ -157,7 +157,7 @@ what a lab practises, but they don't mean it covers those objectives in full.
 | 19.01 | Chapter introduction and review guidance | — |
 | 19.02 | Diagnose boot problems, set the default boot target, schedule recurring jobs | RHCSA-4.3, RHCSA-7.1, RHCSA-7.3 |
 | 19.03 | Create logical volumes and swap, mount NFS persistently, clear temporary files | RHCSA-5.4, RHCSA-5.6, RHCSA-6.2, RHCSA-7.1 |
-| 19.04 | Key-based SSH, firewall settings, SELinux modes, Booleans, and troubleshooting | RHCSA-10.1, RHCSA-10.3, RHCSA-10.4, RHCSA-10.8 |
+| 19.04 | Key-based SSH, firewall settings, SELinux modes, Booleans and troubleshooting | RHCSA-10.1, RHCSA-10.3, RHCSA-10.4, RHCSA-10.8 |
 | 19.05 | Build a container image, push it to a registry, run a detached container | — |
 
 RH134 19.05 exercises no objective, for the same reason RH134 chapters 16 to 18
@@ -168,7 +168,7 @@ review labs.
 ## Adjacent mappings
 
 I map eight sections as close matches, not exact ones. Some teach a
-fundamental the objectives assume without ever naming it; others sit between
+fundamental the objectives assume without ever naming it. Others sit between
 two objectives without matching either exactly.
 
 | Section | Mapped under |
@@ -201,7 +201,7 @@ review labs fall outside that count, because I leave labs out of it throughout.
 
 | Section | Summary |
 | --- | --- |
-| RH124 01.01 | What Linux, open source, and RHEL are |
+| RH124 01.01 | What Linux, open source and RHEL are |
 | RH124 05.01 | AI-assisted troubleshooting with the command-line assistant |
 | RH134 16.01 | Installing RHEL interactively in package mode |
 | RH134 16.03 | Automating installation with Kickstart |
@@ -214,7 +214,7 @@ review labs fall outside that count, because I leave labs out of it throughout.
 | RH134 18.07 | Day-2 management of image-mode systems |
 
 No objective in [`objectives.md`](objectives.md) mentions installation,
-Kickstart, containers, or image mode, so no section of RH134 chapters 16, 17,
+Kickstart, containers or image mode, so no section of RH134 chapters 16, 17,
 or 18 appears in the matrix above. I still teach them, in weeks 11 and 12,
 after every chapter that carries an objective. See
 [`lessons.md`](lessons.md#sequencing-notes).
@@ -232,8 +232,8 @@ after every chapter that carries an objective. See
 RH124 16.01 and RH134 16.01 are unrelated sections. Read every section number
 together with its course.
 
-I cite only teaching sections. Guided exercises, quizzes, labs, and chapter
-summaries reinforce the section they sit under, so I don't list them
+I cite only teaching sections. Guided exercises, quizzes, labs and chapter
+summaries reinforce the section they sit under, so I do not list them
 separately. The one exception is the comprehensive review chapter that closes
 each course, whose labs are cumulative and appear under
 [Exam practice](#exam-practice).

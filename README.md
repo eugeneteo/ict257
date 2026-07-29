@@ -6,15 +6,15 @@ at the Singapore University of Social Sciences.
 
 ## Contents
 
-| Path | What's in it |
+| Path | What is in it |
 | --- | --- |
 | [`objectives.md`](objectives.md) | RHCSA (EX200) exam objectives, with stable IDs |
 | [`coverage.md`](coverage.md) | Which course material covers each objective |
-| [`lessons.md`](lessons.md) | Twelve weeks of teaching, then catch-up, revision, and the exam |
+| [`lessons.md`](lessons.md) | Twelve weeks of teaching, then catch-up, revision and the exam |
 | [`resources.md`](resources.md) | Free Red Hat resources for preparing beyond the courseware |
 | [`exam-day.md`](exam-day.md) | What the exam environment is like on the day |
 
-I'll add more as the semester goes on.
+I will add more as the semester goes on.
 
 ## Getting the material
 
@@ -27,7 +27,7 @@ things change, and you want those.
 Keep your own notes in `my-notes/`. Git ignores that folder, so nothing you
 write there gets committed, and `git pull` will never touch it.
 
-Don't edit the files listed above. If you do, `git pull` stops working and
+Do not edit the files listed above. If you do, `git pull` stops working and
 tells you your local changes would be overwritten.
 
 Each semester starts with a tag. To read the material as it stood at the start
@@ -42,7 +42,7 @@ of yours:
 My writing here is licensed [CC BY-SA 4.0](LICENSE). Use it, change it, share
 it, as long as you credit it and pass on the same freedom.
 
-Two things aren't mine to give. Red Hat's exam objectives and the other wording
+Two things are not mine to give. Red Hat's exam objectives and the other wording
 quoted from their pages belong to Red Hat, and appear here with attribution and
-a link to the source. Red Hat, RHCSA, and the certification names are Red Hat
+a link to the source. Red Hat, RHCSA and the certification names are Red Hat
 trademarks.

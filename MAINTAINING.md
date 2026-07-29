@@ -1,6 +1,6 @@
 # Maintaining this repository
 
-My notes for keeping these files current. Students don't need this file: the
+My notes for keeping these files current. Students do not need this file: the
 five study files carry no upkeep instructions, so the rules live here.
 
 ## The order of changes
@@ -20,10 +20,10 @@ down.
 ## Objective IDs
 
 IDs are stable. Add new ones and retire old ones. Never reuse an ID, and never
-renumber one that's already in use, so that older cross-references keep
+renumber one that is already in use, so that older cross-references keep
 working.
 
-That's why `coverage.md`, `lessons.md`, and any week notes point at the ID, not
+That is why `coverage.md`, `lessons.md` and any week notes point at the ID, not
 the wording. A cross-reference then survives Red Hat rewording or reordering an
 objective.
 
@@ -60,11 +60,11 @@ Do the source checks above first and commit them. Then:
 
 Three things that fail quietly:
 
-- `git push` on its own doesn't push tags. Name the tag, or it never leaves
+- `git push` on its own does not push tags. Name the tag, or it never leaves
   this machine.
-- Use `-a`. An annotated tag records who made it, when, and why, as a real
+- Use `-a`. An annotated tag records who made it, when and why, as a real
   object. A bare `git tag 2026-s2` records none of that.
-- Don't move a tag once students have cloned it. If the name is wrong, add the
+- Do not move a tag once students have cloned it. If the name is wrong, add the
   right one and leave the wrong one where it is.
 
 ## Licence
@@ -77,25 +77,25 @@ keep pace if more of it lands here.
 There are two kinds, handled differently, and the difference is the whole reason
 this is safe to publish:
 
-- **The exam page is public.** The 62 objective rows, the reboot blockquote,
-  and the page titles in the footnotes all come from it. They're quoted word
-  for word and footnoted with a retrieval date, so they can't go under my
+- **The exam page is public.** The 62 objective rows, the reboot blockquote
+  and the page titles in the footnotes all come from it. They are quoted word
+  for word and footnoted with a retrieval date, so they cannot go under my
   licence.
 - **The courseware is not.** Nothing from RH124 or RH134 appears here. Only
   section numbers, and summaries I wrote myself.
 
-Hold that line in the week notes, because that's where it would slip. A note on
-chapter 11 can say what to watch for, what to read next, and where students trip
-up. It can't reproduce the chapter.
+Hold that line in the week notes, because that is where it would slip. A note on
+chapter 11 can say what to watch for, what to read next and where students trip
+up. It cannot reproduce the chapter.
 
 ## One branch, and when to break that rule
 
-Everything lives on `main`. There are no semester branches, because there's
+Everything lives on `main`. There are no semester branches, because there is
 nothing semester-specific to put in one. `lessons.md` runs on week numbers, not
 dates, so the same material serves every cohort.
 
 That holds only while the repository stays generic. Dated announcements,
-deadlines, and anything naming a cohort belong in the LMS. This is a public
+deadlines and anything naming a cohort belong in the LMS. This is a public
 repository, which settles it: that material has no business here anyway. The
 moment it lands in a tracked file, one branch stops being enough.
 
@@ -115,26 +115,26 @@ the new release, not only the rows whose objectives changed.
 
 ## How I verified the resource links
 
-I didn't guess the links in [`resources.md`](resources.md). I took most from
-the markup of the EX200 exam page, so they're Red Hat's own view of what's
+I did not guess the links in [`resources.md`](resources.md). I took most from
+the markup of the EX200 exam page, so they are Red Hat's own view of what is
 relevant. I requested each one, and every title is the page's own title
 element, not a description I wrote.
 
 Two links answer 403 to a script while loading fine in a browser: the RHEL
 documentation on `docs.redhat.com`, and the SUSS course page in `README.md`.
-That's bot protection. A link checker will flag both, and there's nothing to
+That is bot protection. A link checker will flag both, and there is nothing to
 fix.
 
 ## Local files
 
-Anything I don't want committed or pushed goes in `.private/` or `my-notes/`.
+Anything I do not want committed or pushed goes in `.private/` or `my-notes/`.
 Both are gitignored, and the `.githooks/` pre-commit and pre-push guards refuse
 them even if I force-add them.
 
 The guards protect me and nobody else. `core.hooksPath` lives in `.git/config`,
-which doesn't survive a clone, so a student who clones this gets `.githooks/` as
-files that git never runs. That's fine, because students aren't pushing
-anything. It's why the README tells them about `my-notes/` and says nothing
+which does not survive a clone, so a student who clones this gets `.githooks/`
+as files that git never runs. That is fine, because students are not pushing
+anything. It is why the README tells them about `my-notes/` and says nothing
 about hooks: `.gitignore` is what actually keeps their notes out of a commit,
 and `.gitignore` does travel.
 

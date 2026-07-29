@@ -11,13 +11,13 @@ work out beforehand how you want the environment set up.
 
 You can change the document language and the keyboard layout from the browser,
 but the system defaults to English. Stay with the default and skip setup you
-don't need. (0:10, 0:41)
+do not need. (0:10, 0:41)
 
 ## Finding your way around
 
 Use the task hyperlinks to move between tasks. The "Revisit" and "Done" buttons
-are for your own reference and don't affect your grade, so don't spend exam time
-keeping them tidy.
+are for your own reference and do not affect your grade, so do not spend exam
+time keeping them tidy.
 
 Terminal windows and the VM Manager both open from the Activities menu.
 (1:12, 1:37)
@@ -29,14 +29,14 @@ or you want it back in its original state, the VM Manager offers Rebuild.
 
 **Rebuild erases everything on that node.** Every file and change is gone, and
 the node starts from scratch. Use it for an unresponsive node or a full reset.
-Don't use it to tidy up. (3:26)
+Do not use it to tidy up. (3:26)
 
 ## Making it usable
 
 Ctrl + Shift + + increases the terminal font size. Browser zoom sits in the
 hamburger menu. (4:37)
 
-Don't use Ctrl+C and Ctrl+V in the terminal. They can freeze it. Right-click
+Do not use Ctrl+C and Ctrl+V in the terminal. They can freeze it. Right-click
 and copy and paste with the mouse instead. (4:55) Those two shortcuts
 are habit by now, so practise the mouse method before the day.
 
@@ -46,7 +46,7 @@ Save the PDF files you need to your local system, to save memory.
 ## Breaks and problems
 
 Use the chat icon to alert your proctor, including when you want a break. The
-timer keeps running while you're away. Unauthorised devices are prohibited.
+timer keeps running while you are away. Unauthorised devices are prohibited.
 
 If the connection is slow, or the system misbehaves, tell your proctor
 immediately. (6:16, 7:01)

@@ -34,12 +34,46 @@ pages between course versions.
 
 At the start of each semester, re-check:
 
-- The three sources footnoted at the end of [`objectives.md`](objectives.md).
+- The three sources referenced at the end of [`objectives.md`](objectives.md).
 - Every link in [`resources.md`](resources.md), whose slugs change more often.
 - [`exam-day.md`](exam-day.md). It describes software, so it can go stale
   faster than anything else here. Buttons move and menus get renamed.
 
 Record the new dates in each file.
+
+## How citations work
+
+A citation is a `<sup>` tag wrapping a reference-style link, so the reader sees
+a superscript number that goes straight to the source:
+
+```markdown
+...published exam page.<sup>[1][ex200]</sup>
+```
+
+Each URL is defined once at the foot of the file, under `## References`, and
+used twice: in the superscript and in the numbered entry that carries the title
+and the retrieval date.
+
+```markdown
+[ex200]: https://www.redhat.com/en/services/training/ex200-...
+
+1. Red Hat, ["Red Hat Certified System Administrator exam | EX200"][ex200].
+   Retrieved 2026-07-28.
+```
+
+Two things to watch.
+
+The numbers are mine to keep in order. Nothing renumbers them for me, so
+adding a source in the middle means renumbering every marker after it. Check
+that each number still matches its entry.
+
+Never let a hard wrap fall inside the link text. A single newline becomes a
+`<br>`, which splits the title across two lines mid-link. Break the line before
+the title instead.
+
+Marker placement goes after the punctuation, because that is the convention for
+a superscript. Verify a change by posting the file to
+`https://api.github.com/markdown` with mode `gfm` and reading the HTML back.
 
 ## Tagging a semester
 
@@ -78,8 +112,8 @@ There are two kinds, handled differently, and the difference is the whole reason
 this is safe to publish:
 
 - **The exam page is public.** The 62 objective rows, the reboot blockquote
-  and the page titles in the footnotes all come from it. They are quoted word
-  for word and footnoted with a retrieval date, so they cannot go under my
+  and the page titles in the references all come from it. They are quoted word
+  for word and cited with a retrieval date, so they cannot go under my
   licence.
 - **The courseware is not.** Nothing from RH124 or RH134 appears here. Only
   section numbers, and summaries I wrote myself.

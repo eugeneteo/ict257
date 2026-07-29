@@ -3,7 +3,8 @@
 Study points for the **Red Hat Certified System Administrator (RHCSA)** exam,
 EX200. This exam is based on **Red Hat Enterprise Linux 10**.
 
-The objectives below are taken from Red Hat's published exam page.[^1]
+The objectives below are taken from Red Hat's published exam
+page.<sup>[1][ex200]</sup>
 
 I give each objective a stable ID (`RHCSA-<category>.<n>`). Week notes, labs
 and the coverage matrix point at the ID, not the wording, so cross-references
@@ -127,7 +128,7 @@ objective.
 | RHCSA-10.8 | Use Boolean settings to modify system SELinux settings |
 
 > As with all Red Hat performance-based exams, configurations must persist after
-> reboot without intervention.[^1]
+> reboot without intervention.<sup>[1][ex200]</sup>
 
 ## Exam format
 
@@ -136,30 +137,34 @@ see [`exam-day.md`](exam-day.md).
 
 - Hands-on and practical: you undertake real-world tasks on live systems. Red
   Hat tests what you can do instead of what you can recall, and sets no
-  multiple-choice questions.[^2]
+  multiple-choice questions.<sup>[2][why-certified]</sup>
 - Performance-based grading: **configurations must survive a reboot without
-  manual intervention**.[^1]
+  manual intervention**.<sup>[1][ex200]</sup>
 - Closed book. You cannot bring notes, printed material or electronic
-  documentation, and you have no internet access during the exam.[^1]
+  documentation, and you have no internet access during the
+  exam.<sup>[1][ex200]</sup>
 - The documentation that ships with the product is usually available, which
   means the man pages and `/usr/share/doc`. Red Hat's wording covers most of its
-  exams instead of all of them, so do not count on it.[^1] That is why
+  exams instead of all of them, so do not count on
+  it.<sup>[1][ex200]</sup> That is why
   RHCSA-1.11 matters in practice.
 - **No AI assistance.** The command-line assistant is not available. It needs
   internet access, which the exam does not allow, and Red Hat also warns that it
-  could answer wrongly and affect your result unfairly.[^3]
+  could answer wrongly and affect your result unfairly.<sup>[3][cla-video]</sup>
 
 ## References
 
-[^1]: Red Hat, "Red Hat Certified System Administrator exam | EX200".
-    <https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam>
-    Retrieved 2026-07-28.
+[ex200]: https://www.redhat.com/en/services/training/ex200-red-hat-certified-system-administrator-rhcsa-exam
+[why-certified]: https://www.redhat.com/en/services/training-and-certification/why-get-certified
+[cla-video]: https://youtu.be/8UIi23AfQJM
 
-[^2]: Red Hat, "Why you should get certified by Red Hat".
-    <https://www.redhat.com/en/services/training-and-certification/why-get-certified>
-    Retrieved 2026-07-28.
+1. Red Hat, ["Red Hat Certified System Administrator exam | EX200"][ex200].
+   Retrieved 2026-07-28.
 
-[^3]: Red Hat, "How the Command Line Assistant affects RHCSA and RHCE exams",
-    on the Red Hat Enterprise Linux channel. <https://youtu.be/8UIi23AfQJM>
-    Availability at 0:15, and the risk of a wrong answer at 0:32.
-    Retrieved 2026-07-28.
+2. Red Hat, ["Why you should get certified by Red Hat"][why-certified].
+   Retrieved 2026-07-28.
+
+3. Red Hat,
+   ["How the Command Line Assistant affects RHCSA and RHCE exams"][cla-video],
+   on the Red Hat Enterprise Linux channel. Availability at 0:15, and the risk
+   of a wrong answer at 0:32. Retrieved 2026-07-28.

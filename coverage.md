@@ -239,17 +239,6 @@ separately. The one exception is the comprehensive review chapter that closes
 each course, whose labs are cumulative and appear under
 [Exam practice](#exam-practice).
 
-I wrote each **Summary** cell for this file. In the matrix it paraphrases
+Each **Summary** cell is written for this file. In the matrix it paraphrases
 [`objectives.md`](objectives.md). Further down it paraphrases what a section
 says it teaches, not its title.
-
-## Maintaining this file
-
-When the objectives change, I update [`objectives.md`](objectives.md) first,
-then add or retire rows here. I keep the **Week** cells in step with
-[`lessons.md`](lessons.md). An objective with sections but no week is material
-I am not teaching.
-
-Red Hat renumbers sections between course versions. If the courseware moves off
-10.0, I recheck every section number here against the new release, not just
-the rows whose objectives changed.

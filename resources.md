@@ -6,8 +6,7 @@ required for the unit, and none of it replaces the work in
 gives you.
 
 Each entry gives the page title as Red Hat publishes it. See
-[How these links were checked](#how-these-links-were-checked) for how that was
-confirmed, and [What is not here](#what-is-not-here) for what was left out.
+[What is not here](#what-is-not-here) for what was left out, and why.
 
 ## Know what the exam asks
 
@@ -79,22 +78,3 @@ because I could not confirm the current terms from the page itself, and this
 page does not call something free without checking. If you find it, read the
 terms yourself.
 
-## How these links were checked
-
-Checked on 2026-07-29. Every title above is the page's own title as published,
-not a description written here.
-
-Most of these links were taken from the markup of the EX200 exam page, so they
-are Red Hat's own choices about what is relevant, not mine. Each was then
-requested individually, and every page on `www.redhat.com` returned HTTP 200.
-
-The documentation link sits on `docs.redhat.com`, which refuses scripted
-requests and answers 403. That is bot protection and not a broken link: the page
-returns normally in a browser, and it was confirmed through a second fetcher. If
-you check that link with a script and see 403, that is why.
-
-## Maintaining this file
-
-Red Hat moves training pages between course versions, and slugs change. I
-re-check every link here at the start of each semester, at the same time as the
-sources in [`objectives.md`](objectives.md), and record the new date above.

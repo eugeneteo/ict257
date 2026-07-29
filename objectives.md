@@ -147,14 +147,6 @@ objective.
   internet access, which the exam does not allow, and Red Hat also warns that it
   could answer wrongly and affect your result unfairly.[^cla]
 
-## Keeping this file current
-
-Red Hat revises the objectives between RHEL major versions. I re-check all three
-sources at the start of each semester and record the new retrieval dates in the
-footnotes below. When the objectives change, I add new IDs and retire old ones.
-I never renumber an ID that is already in use, so older cross-references keep
-working.
-
 ## Sources
 
 [^ex200]: Red Hat, "Red Hat Certified System Administrator exam | EX200".

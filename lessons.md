@@ -168,11 +168,3 @@ courseware and the lab environment for a self-paced Red Hat course, which is not
 how this unit runs. I keep RH124 00.02 and 00.03 in week 1, because you need to
 know how the lab environment and the exercise types work.
 
-## Maintaining this file
-
-I keep the **Week** column in [`coverage.md`](coverage.md) in step with the
-schedule above. If a week moves, both files change together.
-
-If the objectives change, I update [`objectives.md`](objectives.md) first, then
-[`coverage.md`](coverage.md), then this file. The schedule follows the mapping.
-The mapping does not follow the schedule.

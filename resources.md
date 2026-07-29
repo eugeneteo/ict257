@@ -41,14 +41,14 @@ with it reinforces RHCSA-1.11 and replaces searching online. See
 
 ## Practise with exam questions
 
-**Use all of these exam practices to test yourself, but focus on learning
-using the RH124 and RH134 official courseware from Red Hat Academy.** Working
-from several explanations of the same thing will confuse you more than it
-helps.
-
 The SUSS Library gives you O'Reilly for Higher Education. Sign in with your
 student account, then open the titles below. Neither is published by Red Hat
 and neither is part of the courseware. Both are by the same author.
+
+Use all of these exam practices to test yourself, but **focus on learning
+using the RH124 and RH134 official courseware from Red Hat Academy**. Working
+from several explanations of the same thing will confuse you more than it
+helps.
 
 | Page | What it is |
 | --- | --- |

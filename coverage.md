@@ -3,8 +3,8 @@
 I map every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to
 the course material and the teaching week that cover it.
 
-The RH124 and RH134 courseware is **not** part of this repository. I cite only
-section numbers, and they refer to version 10.0 of both courses.
+The RH124[1] and RH134[2] courseware is **not** part of this repository. I cite
+only section numbers, and they refer to version 10.0 of both courses.
 
 - **Objective** is the stable ID from [`objectives.md`](objectives.md), and
   **Summary** restates it in short.
@@ -240,4 +240,14 @@ each course, whose labs are cumulative and appear under
 
 Each **Summary** cell is written for this file. In the matrix it paraphrases
 [`objectives.md`](objectives.md). Further down it paraphrases what a section
-says it teaches, not its title.
+says it teaches, not its title, following the published course outlines.[1][2]
+
+## References
+
+1. Red Hat, "Red Hat System Administration I | RH124".
+   <https://www.redhat.com/en/services/training/rh124-red-hat-system-administration-i>
+   Retrieved 2026-07-29.
+
+2. Red Hat, "Red Hat System Administration II | RH134".
+   <https://www.redhat.com/en/services/training/rh134-red-hat-system-administration-ii>
+   Retrieved 2026-07-29.

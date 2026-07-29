@@ -70,8 +70,7 @@ and neither is part of the courseware. Both are by the same author.
 | [Lesson 31: Sample Exam](https://learning.oreilly.com/videos/red-hat-rhcsa/9780135493137/9780135493137-RHEL10_08_31_00/) | The exam itself |
 | [Lesson 32: Grading the Sample Exam and Exam Solutions](https://learning.oreilly.com/videos/red-hat-rhcsa/9780135493137/9780135493137-RHEL10_08_32_00/) | How to mark your own attempt, and the solutions |
 
-Sit lesson 31 before you watch lesson 32. A worked solution you have not
-attempted teaches you very little.
+Sit lesson 31 before you watch lesson 32.
 
 Whichever you choose, sit it timed and closed book, and do it after the
 comprehensive review labs. Those labs are the closest thing in the courseware

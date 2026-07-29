@@ -1,8 +1,7 @@
 # Maintaining this repository
 
-Notes for whoever keeps these files current. Nothing here is study material, and
-students don't need to read it. The four study files hold no upkeep
-instructions, so this is the only place these rules live.
+My notes for keeping these files current. Students don't need this file: the
+four study files carry no upkeep instructions, so the rules live here.
 
 ## The order of changes
 
@@ -12,12 +11,11 @@ Change the files in this order:
 2. [`coverage.md`](coverage.md), adding or retiring rows to match.
 3. [`lessons.md`](lessons.md), moving weeks if the mapping moved.
 
-The schedule follows the mapping. The mapping doesn't follow the schedule. If a
-week moves, `coverage.md` and `lessons.md` change together, because the **Week**
-cells in one have to agree with the schedule in the other.
+The schedule follows the mapping. If a week moves, update `coverage.md` and
+`lessons.md` together, so the **Week** cells still match the schedule.
 
-An objective with sections but no week is material nobody is teaching. Notice
-it, don't leave it.
+An objective with sections but no week is material I'm not teaching. Chase it
+down.
 
 ## Objective IDs
 
@@ -25,13 +23,13 @@ IDs are stable. Add new ones and retire old ones. Never reuse an ID, and never
 renumber one that's already in use, so that older cross-references keep
 working.
 
-This is why `coverage.md`, `lessons.md` and any week notes point at the ID
-instead of the wording. A cross-reference survives Red Hat rewording or
-reordering an objective.
+That's why `coverage.md`, `lessons.md`, and any week notes point at the ID, not
+the wording. A cross-reference then survives Red Hat rewording or reordering an
+objective.
 
 ## Checking sources each semester
 
-Red Hat revises the objectives between RHEL major versions, and moves training
+Red Hat revises the objectives between RHEL major versions and moves training
 pages between course versions.
 
 At the start of each semester, re-check:
@@ -50,23 +48,22 @@ version 10.0 of both courses. Red Hat renumbers sections between course
 versions. If the courseware moves off 10.0, recheck every section number against
 the new release, not only the rows whose objectives changed.
 
-## How the resource links were verified
+## How I verified the resource links
 
-The links in [`resources.md`](resources.md) weren't guessed. Most were taken
-from the markup of the EX200 exam page, so they are Red Hat's own view of what
-is relevant. Each was then requested individually, and every title recorded is
-the page's own title element, not a description written for the file.
+I didn't guess the links in [`resources.md`](resources.md). I took most from
+the markup of the EX200 exam page, so they're Red Hat's own view of what's
+relevant. I requested each one, and every title is the page's own title
+element, not a description I wrote.
 
 Every page on `www.redhat.com` returned HTTP 200.
 
 The RHEL documentation link sits on `docs.redhat.com`, which refuses scripted
 requests and answers 403. That's bot protection and not a broken link. The page
-returns normally in a browser, and it was confirmed through a second fetcher. If
-a link checker reports 403 on that host, that's why, and it isn't a fault to
-fix.
+loads normally in a browser, and I confirmed it through a second fetcher. If a
+link checker reports 403 on that host, that's why, and there's nothing to fix.
 
-The same host behaviour applies to `developers.redhat.com`, whose terms could
-not be confirmed from the page. It's moot now: `resources.md` no longer covers
-building a system to practise on, because students practise in the Red Hat
-Academy lab environment the university provides. If that ever changes, the terms
-still need checking before the page calls anything free.
+The same applies to `developers.redhat.com`, whose terms I couldn't confirm
+from the page. That no longer matters: `resources.md` doesn't cover building a
+system to practise on, because students use the Red Hat Academy lab the
+university provides. If that changes, check the terms before calling anything
+free.

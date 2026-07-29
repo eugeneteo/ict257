@@ -77,8 +77,8 @@ Whichever you choose, sit it timed and closed book, and do it after the
 comprehensive review labs. Those labs are the closest thing in the courseware
 to exam conditions. See [Week 14: revision](lessons.md#week-14-revision).
 
-Use all of this to test yourself. Do not learn from it. Learn from RH124 and
-RH134, which are Red Hat Academy's official courseware for this exam. Working
+**Use all of these exam practices to test yourself, but focus on learning
+using the RH124 and RH134 official courseware from Red Hat Academy.** Working
 from several explanations of the same thing will confuse you more than it
 helps.
 

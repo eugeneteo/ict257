@@ -55,6 +55,5 @@ immediately. (6:16, 7:01)
 
 [exam-video]: https://youtu.be/Me6Y12-sux8
 
-1. Red Hat,
-   ["Inside a Red Hat Certification Exam: What you need to know"][exam-video],
-   on Red Hat's YouTube channel. Retrieved 2026-07-29.
+1. Red Hat, ["Inside a Red Hat Certification Exam: What you need to
+   know"][exam-video], on Red Hat's YouTube channel. Retrieved 2026-07-29.

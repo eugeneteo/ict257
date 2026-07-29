@@ -65,10 +65,6 @@ Nothing renumbers the markers for me. Adding a source in the middle means
 renumbering every one after it, so check that each number still matches its
 entry.
 
-Never let a hard wrap fall inside the link text. A single newline becomes a
-`<br>`, which splits the title across two lines mid-link. Break the line before
-the title instead.
-
 Marker placement goes after the punctuation, and the source is misleading about
 this. In the raw file `page.[1][ex200]` looks like a bracketed citation sitting
 after the period, which would be wrong. Those brackets are link syntax and
@@ -79,7 +75,10 @@ Superscript numerals go after it. This is a superscript, so it goes after.
 Resist correcting it back.
 
 Verify a change by posting the file to `https://api.github.com/markdown` with
-mode `gfm` and reading the HTML back.
+mode `markdown`, and read the HTML back. Use that mode and not `gfm`. Both
+render tables, but `gfm` is the mode for comments, and it turns every wrapped
+line into a `<br>`. Files in a repository reflow normally, so `gfm` will show
+you line breaks that are not really there and send you chasing them.
 
 ## Tagging a semester
 

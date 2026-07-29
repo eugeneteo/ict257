@@ -163,7 +163,6 @@ see [`exam-day.md`](exam-day.md).
 2. Red Hat, ["Why you should get certified by Red Hat"][why-certified].
    Retrieved 2026-07-28.
 
-3. Red Hat,
-   ["How the Command Line Assistant affects RHCSA and RHCE exams"][cla-video],
-   on the Red Hat Enterprise Linux channel. Availability at 0:15, and the risk
-   of a wrong answer at 0:32. Retrieved 2026-07-28.
+3. Red Hat, ["How the Command Line Assistant affects RHCSA and RHCE
+   exams"][cla-video], on the Red Hat Enterprise Linux channel. Availability at
+   0:15, and the risk of a wrong answer at 0:32. Retrieved 2026-07-28.

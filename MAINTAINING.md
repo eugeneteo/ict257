@@ -1,7 +1,7 @@
 # Maintaining this repository
 
 Notes for whoever keeps these files current. Nothing here is study material, and
-students do not need to read it. The four study files hold no upkeep
+students don't need to read it. The four study files hold no upkeep
 instructions, so this is the only place these rules live.
 
 ## The order of changes
@@ -12,17 +12,17 @@ Change the files in this order:
 2. [`coverage.md`](coverage.md), adding or retiring rows to match.
 3. [`lessons.md`](lessons.md), moving weeks if the mapping moved.
 
-The schedule follows the mapping. The mapping does not follow the schedule. If a
+The schedule follows the mapping. The mapping doesn't follow the schedule. If a
 week moves, `coverage.md` and `lessons.md` change together, because the **Week**
 cells in one have to agree with the schedule in the other.
 
 An objective with sections but no week is material nobody is teaching. Notice
-it, do not leave it.
+it, don't leave it.
 
 ## Objective IDs
 
 IDs are stable. Add new ones and retire old ones. Never reuse an ID, and never
-renumber one that is already in use, so that older cross-references keep
+renumber one that's already in use, so that older cross-references keep
 working.
 
 This is why `coverage.md`, `lessons.md` and any week notes point at the ID
@@ -50,7 +50,7 @@ the new release, not only the rows whose objectives changed.
 
 ## How the resource links were verified
 
-The links in [`resources.md`](resources.md) were not guessed. Most were taken
+The links in [`resources.md`](resources.md) weren't guessed. Most were taken
 from the markup of the EX200 exam page, so they are Red Hat's own view of what
 is relevant. Each was then requested individually, and every title recorded is
 the page's own title element, not a description written for the file.
@@ -58,13 +58,13 @@ the page's own title element, not a description written for the file.
 Every page on `www.redhat.com` returned HTTP 200.
 
 The RHEL documentation link sits on `docs.redhat.com`, which refuses scripted
-requests and answers 403. That is bot protection and not a broken link. The page
+requests and answers 403. That's bot protection and not a broken link. The page
 returns normally in a browser, and it was confirmed through a second fetcher. If
-a link checker reports 403 on that host, that is why, and it is not a fault to
+a link checker reports 403 on that host, that's why, and it isn't a fault to
 fix.
 
 The same host behaviour applies to `developers.redhat.com`, whose terms could
-not be confirmed from the page. It is moot now: `resources.md` no longer covers
+not be confirmed from the page. It's moot now: `resources.md` no longer covers
 building a system to practise on, because students practise in the Red Hat
 Academy lab environment the university provides. If that ever changes, the terms
 still need checking before the page calls anything free.

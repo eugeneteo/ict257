@@ -137,14 +137,14 @@ objective.
   multiple-choice questions.[^certified]
 - Performance-based grading: **configurations must survive a reboot without
   manual intervention**.[^ex200]
-- Closed book. You cannot bring notes, printed material, or electronic
+- Closed book. You can't bring notes, printed material, or electronic
   documentation, and you have no internet access during the exam.[^ex200]
 - The documentation that ships with the product is usually available, which
   means the man pages and `/usr/share/doc`. Red Hat's wording covers most of its
-  exams instead of all of them, so do not count on it.[^ex200] That is why
+  exams instead of all of them, so don't count on it.[^ex200] That's why
   RHCSA-1.11 matters in practice.
-- **No AI assistance.** The command-line assistant is not available. It needs
-  internet access, which the exam does not allow, and Red Hat also warns that it
+- **No AI assistance.** The command-line assistant isn't available. It needs
+  internet access, which the exam doesn't allow, and Red Hat also warns that it
   could answer wrongly and affect your result unfairly.[^cla]
 
 ## Sources

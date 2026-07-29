@@ -11,13 +11,13 @@ Course material and notes for **ICT257 Red Hat System Administration**.
 | [`lessons.md`](lessons.md) | Twelve weeks of teaching, then catch-up, revision, and the exam |
 | [`resources.md`](resources.md) | Free Red Hat resources for preparing beyond the courseware |
 
-I will add more as the semester goes on.
+I'll add more as the semester goes on.
 
 Upkeep of these files is documented separately, in
-[`MAINTAINING.md`](MAINTAINING.md). You do not need it to study.
+[`MAINTAINING.md`](MAINTAINING.md). You don't need it to study.
 
 ## Local files
 
-Anything you do not want committed or pushed goes in `.private/` (or
+Anything you don't want committed or pushed goes in `.private/` (or
 `my-notes/`). Both are gitignored, and the `.githooks/` pre-commit and pre-push
 guards refuse them even if you force-add them.

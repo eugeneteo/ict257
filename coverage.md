@@ -10,7 +10,7 @@ section numbers, and they refer to version 10.0 of both courses.
   **Summary** restates it in short.
 - **RH124** and **RH134** are section numbers in Red Hat System Administration I
   and II (version 10.0). `11.03` means chapter 11, section 03. A dash means that
-  course does not teach the objective, and the other course usually does.
+  course doesn't teach the objective, and the other course usually does.
 - **Week** is the week that teaches the objective, as scheduled in
   [`lessons.md`](lessons.md). More than one week means I teach it across all
   of them.
@@ -137,7 +137,7 @@ through unaided. I cite them here, unlike ordinary chapter labs, because they
 draw on the whole course, not just the section above them.
 
 The objectives listed are those each lab's stated outcomes exercise. They show
-what a lab practises. They do not mean the lab covers those objectives in full.
+what a lab practises, but they don't mean it covers those objectives in full.
 
 ### RH124
 
@@ -186,9 +186,9 @@ These sections support an objective. None of them covers one on its own.
 
 ## Course material without an objective
 
-Material that exists in the courses but that no objective calls for. I account
-for every teaching section in both courses, either in the matrix above or in
-the tables below.
+Material in the courses that no objective calls for. I account for every
+teaching section in both courses, either in the matrix above or in the tables
+below.
 
 | Course | Teaching sections | Mapped above | Exam practice | Not mapped |
 | --- | --- | --- | --- | --- |
@@ -217,7 +217,7 @@ review labs fall outside that count, because I leave labs out of it throughout.
 No objective in [`objectives.md`](objectives.md) mentions installation,
 Kickstart, containers, or image mode, so no section of RH134 chapters 16, 17,
 or 18 appears in the matrix above. I still teach them, in weeks 11 and 12,
-after every chapter that does carry an objective. See
+after every chapter that carries an objective. See
 [`lessons.md`](lessons.md#sequencing-notes).
 
 ### Course administration
@@ -234,7 +234,7 @@ RH124 16.01 and RH134 16.01 are unrelated sections. Read every section number
 together with its course.
 
 I cite only teaching sections. Guided exercises, quizzes, labs, and chapter
-summaries reinforce the section they sit under, so I do not list them
+summaries reinforce the section they sit under, so I don't list them
 separately. The one exception is the comprehensive review chapter that closes
 each course, whose labs are cumulative and appear under
 [Exam practice](#exam-practice).

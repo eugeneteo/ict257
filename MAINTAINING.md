@@ -69,10 +69,7 @@ Three things that fail quietly:
 
 ## Licence
 
-CC BY-SA 4.0. I considered GPL-3.0 and rejected it: its operative terms are
-about source code, object code, compiling, and linking, and none of that fits a
-repository of prose. CC BY-SA carries the same copyleft intent and is written
-for written work.
+CC BY-SA 4.0.
 
 The `README.md` notice carves out Red Hat's material, and that carve-out has to
 keep pace if more of it lands here.

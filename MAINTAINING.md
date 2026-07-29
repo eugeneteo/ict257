@@ -160,10 +160,17 @@ the markup of the EX200 exam page, so they are Red Hat's own view of what is
 relevant. I requested each one, and every title is the page's own title
 element, not a description I wrote.
 
-Two links answer 403 to a script while loading fine in a browser: the RHEL
+Some links answer 403 to a script while loading fine in a browser: the RHEL
 documentation on `docs.redhat.com`, and the SUSS course page in `README.md`.
-That is bot protection. A link checker will flag both, and there is nothing to
+That is bot protection. A link checker will flag them, and there is nothing to
 fix.
+
+The `learning.oreilly.com` links answer 403 for a different reason. They sit
+behind institutional sign-in, so a script never gets past the login. The SUSS
+Library page that explains the access does answer 200, and the book details
+come from the publisher: Sander van Vugt, Pearson IT Certification. Nothing
+outside the subscription can confirm the chapter URLs, so check those from a
+signed-in browser each semester.
 
 ## Local files
 

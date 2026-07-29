@@ -11,7 +11,7 @@ at the Singapore University of Social Sciences.
 | [`objectives.md`](objectives.md) | RHCSA (EX200) exam objectives, with stable IDs |
 | [`coverage.md`](coverage.md) | Which course material covers each objective |
 | [`lessons.md`](lessons.md) | Twelve weeks of teaching, then catch-up, revision and the exam |
-| [`resources.md`](resources.md) | Red Hat resources for preparing beyond the courseware |
+| [`resources.md`](resources.md) | Resources for preparing beyond the courseware |
 | [`exam-day.md`](exam-day.md) | What the exam environment is like on the day |
 
 I will add more as the semester goes on.

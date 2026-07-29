@@ -1,4 +1,4 @@
-# Free Red Hat resources for the RHCSA exam
+# Additional Red Hat resources for the RHCSA exam
 
 Everything here is published by Red Hat and costs nothing to use. None of it is
 required for ICT257, and none of it replaces the work in

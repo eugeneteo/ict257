@@ -16,9 +16,9 @@ reviewing [`exam-day.md`](exam-day.md).
 | [Red Hat Certified System Administrator](https://www.redhat.com/en/services/certification/rhcsa) | The certification itself, and what holding it means |
 | [Why you should get certified by Red Hat](https://www.redhat.com/en/services/training-and-certification/why-get-certified) | How Red Hat describes performance-based testing |
 
-You do not need these to know the objectives.
-[`objectives.md`](objectives.md) already lists all 62 with stable IDs, and
-[`coverage.md`](coverage.md) maps each one to the material that teaches it.
+[`objectives.md`](objectives.md) already lists all 62 exam objectives with
+stable IDs, and [`coverage.md`](coverage.md) maps each one to the material
+that teaches it.
 
 ## Check where you stand
 

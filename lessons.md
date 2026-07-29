@@ -17,7 +17,7 @@ afterwards. Neither column is optional. Own-time work is where you practise
 reaching a result on your own.
 `11.03` means chapter 11, section 03, and the two courses reuse section numbers,
 so always read a number together with its course. I wrote the focus lines for
-this unit. They are not from the courseware.
+this module. They are not from the courseware.
 
 
 ### Weeks 1 to 6: Red Hat System Administration I
@@ -73,7 +73,7 @@ exam environment is like on the day, see [`exam-day.md`](exam-day.md).
 Revise with the comprehensive review, then the chapter labs. See
 [Your own time](#your-own-time). The labs from weeks 9 to 11 deserve the most
 attention. SELinux, storage, booting, troubleshooting, firewalls and network
-file systems are the hardest material in the unit.
+file systems are the hardest material in the module.
 
 Two points from [`objectives.md`](objectives.md#exam-format) shape how to
 revise. The exam is performance-based, so configurations must survive a reboot.
@@ -128,12 +128,12 @@ Hat Academy lab environment, the same one we use in class.
 | Chapter quizzes | 22 quizzes, 99 pages | Use them to check understanding after a chapter |
 | Chapter summaries | 37 summaries, 37 pages | Use them for quick revision |
 | Comprehensive review | 11 sections, 9 of them labs, 49 pages | Save for exam preparation, as below |
-| Course administration sections | 4 sections, 8 pages | Nothing. They orient you to a self-paced Red Hat course, which is not how this unit runs |
+| Course administration sections | 4 sections, 8 pages | Nothing. They orient you to a self-paced Red Hat course, which is not how this module runs |
 
 None of this is marked. You still have to do it. The chapter labs and the
 comprehensive review are the only work where you have to reach a result on your
 own, and that is what the exam tests. If you come to every session and skip
-them, you have watched the unit without doing it.
+them, you have watched the module without doing it.
 
 The comprehensive review matters most. Each course closes with one. Its labs
 draw on the whole course, which makes them the closest thing in the courseware
@@ -154,7 +154,7 @@ corresponding objective. Do the other four review labs first.
 
 I teach chapters in course order, RH124 first and then RH134, with one
 exception. I bring RH124 05 forward into week 1. That way you have the
-command-line assistant from the start of the unit, and can use it when you get
+command-line assistant from the start of the module, and can use it when you get
 stuck in your own time.
 
 I cover RH124 01.01 briefly in week 1. It sets context. It does not teach a
@@ -165,7 +165,7 @@ corresponds to them. Installation, Kickstart, containers and image mode are
 worth knowing. Study them after the chapters the exam asks for.
 
 I do not schedule RH124 00.01 or RH134 00.01 to 00.03. They orient you to the
-courseware and the lab environment for a self-paced Red Hat course, which is not
-how this unit runs. I keep RH124 00.02 and 00.03 in week 1, because you need to
-know how the lab environment and the exercise types work.
+courseware and the lab environment for a self-paced Red Hat course, which is
+not how this module runs. I keep RH124 00.02 and 00.03 in week 1, because you
+need to know how the lab environment and the exercise types work.
 

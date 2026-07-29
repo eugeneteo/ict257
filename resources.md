@@ -44,6 +44,11 @@ with it reinforces RHCSA-1.11 and replaces searching online. See
 
 ## Practise with exam questions
 
+**Use all of these exam practices to test yourself, but focus on learning
+using the RH124 and RH134 official courseware from Red Hat Academy.** Working
+from several explanations of the same thing will confuse you more than it
+helps.
+
 The SUSS Library gives you O'Reilly for Higher Education. Sign in with your
 student account, then open the titles below. Neither is published by Red Hat
 and neither is part of the courseware. Both are by the same author.
@@ -75,11 +80,6 @@ Sit lesson 31 before you watch lesson 32.
 Whichever you choose, sit it timed and closed book, and do it after the
 comprehensive review labs. Those labs are the closest thing in the courseware
 to exam conditions. See [Week 14: revision](lessons.md#week-14-revision).
-
-**Use all of these exam practices to test yourself, but focus on learning
-using the RH124 and RH134 official courseware from Red Hat Academy.** Working
-from several explanations of the same thing will confuse you more than it
-helps.
 
 ## What is not here
 

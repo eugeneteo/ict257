@@ -136,9 +136,9 @@ own, and that's what the exam tests. If you come to every session and skip
 them, you have watched the unit without doing it.
 
 The comprehensive review matters most. Each course closes with one. Its labs
-draw on the whole course, not just the chapter above them, which makes them
-the closest thing in the courseware to exam conditions. No session covers them,
-so the table below says only when I have taught you enough to attempt them.
+draw on the whole course, which makes them the closest thing in the courseware
+to exam conditions. No session covers them, so the table below says only when I
+have taught you enough to attempt them.
 See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 
 | Taught enough by | Material |

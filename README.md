@@ -4,6 +4,9 @@ Course material and notes for
 [ICT257 Red Hat System Administration](https://www.suss.edu.sg/courses/detail/ict257),
 at the Singapore University of Social Sciences.
 
+We focus on Red Hat Enterprise Linux 10. The exam is based on it, and so is
+the course material.
+
 ## Contents
 
 | Path | What is in it |

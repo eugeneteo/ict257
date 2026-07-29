@@ -1,7 +1,8 @@
 # Exam day: inside the exam environment
 
 What the Red Hat exam environment is like on the day. For what the exam asks of
-you, see [`objectives.md`](objectives.md).
+you, see [`objectives.md`](objectives.md). Everything here comes from Red Hat's
+video, reference [1], and the timestamps point into it.
 
 ## Before you start
 
@@ -10,7 +11,7 @@ work out beforehand how you want the environment set up.
 
 You can change the document language and the keyboard layout from the browser,
 but the system defaults to English. Stay with the default and skip setup you
-don't need. (0:10, 0:41)[^inside]
+don't need. (0:10, 0:41)
 
 ## Finding your way around
 
@@ -19,7 +20,7 @@ are for your own reference and don't affect your grade, so don't spend exam time
 keeping them tidy.
 
 Terminal windows and the VM Manager both open from the Activities menu.
-(1:12, 1:37)[^inside]
+(1:12, 1:37)
 
 ## The machines
 
@@ -28,19 +29,19 @@ or you want it back in its original state, the VM Manager offers Rebuild.
 
 **Rebuild erases everything on that node.** Every file and change is gone, and
 the node starts from scratch. Use it for an unresponsive node or a full reset.
-Don't use it to tidy up. (3:26)[^inside]
+Don't use it to tidy up. (3:26)
 
 ## Making it usable
 
 Ctrl + Shift + + increases the terminal font size. Browser zoom sits in the
-hamburger menu. (4:37)[^inside]
+hamburger menu. (4:37)
 
 Don't use Ctrl+C and Ctrl+V in the terminal. They can freeze it. Right-click
-and copy and paste with the mouse instead. (4:55)[^inside] Those two shortcuts
+and copy and paste with the mouse instead. (4:55) Those two shortcuts
 are habit by now, so practise the mouse method before the day.
 
 Save the PDF files you need to your local system, to save memory.
-(5:43)[^inside]
+(5:43)
 
 ## Breaks and problems
 
@@ -48,10 +49,10 @@ Use the chat icon to alert your proctor, including when you want a break. The
 timer keeps running while you're away. Unauthorised devices are prohibited.
 
 If the connection is slow, or the system misbehaves, tell your proctor
-immediately. (6:16, 7:01)[^inside]
+immediately. (6:16, 7:01)
 
-## Sources
+## References
 
-[^inside]: Red Hat, "Inside a Red Hat Certification Exam: What you need to know",
-    on Red Hat's YouTube channel. <https://youtu.be/Me6Y12-sux8>
-    Retrieved 2026-07-29.
+1. Red Hat, "Inside a Red Hat Certification Exam: What you need to know",
+   on Red Hat's YouTube channel. <https://youtu.be/Me6Y12-sux8>
+   Retrieved 2026-07-29.

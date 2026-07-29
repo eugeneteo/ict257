@@ -175,6 +175,19 @@ titles come from the publisher: Sander van Vugt, Pearson IT Certification, a
 cert guide and a video course. Nothing outside the subscription can confirm the
 chapter and lesson URLs, so check those from a signed-in browser each semester.
 
+## Where prose sits around a table in resources.md
+
+Prose that frames a section goes before its table. Prose that comments on an
+entry goes after, because it refers back to one.
+
+The test is whether the sentence parses on its own. "The SUSS Library gives you
+O'Reilly for Higher Education" does, so it opens the section. "Take it early.
+It shows you where you are" does not, because "it" is the skills assessment in
+the row above.
+
+Some sections open with the table. Those are the ones with nothing to frame.
+Adding a sentence to them for the sake of symmetry would mean writing filler.
+
 ## Local files
 
 Anything I do not want committed or pushed goes in `.private/` or `my-notes/`.

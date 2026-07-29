@@ -1,7 +1,7 @@
 # Maintaining this repository
 
 My notes for keeping these files current. Students don't need this file: the
-four study files carry no upkeep instructions, so the rules live here.
+five study files carry no upkeep instructions, so the rules live here.
 
 ## The order of changes
 
@@ -67,3 +67,14 @@ from the page. That no longer matters: `resources.md` doesn't cover building a
 system to practise on, because students use the Red Hat Academy lab the
 university provides. If that changes, check the terms before calling anything
 free.
+
+## Local files
+
+Anything I don't want committed or pushed goes in `.private/` or `my-notes/`.
+Both are gitignored, and the `.githooks/` pre-commit and pre-push guards refuse
+them even if I force-add them.
+
+This note used to sit in `README.md`. I moved it here because `.private/` is my
+own scratch space today, and the README should hold nothing a student can't
+use. When I work out the branching that lets students clone the repository and
+keep their own notes, this belongs back in the README, rewritten for them.

@@ -63,6 +63,8 @@ returns normally in a browser, and it was confirmed through a second fetcher. If
 a link checker reports 403 on that host, that is why, and it is not a fault to
 fix.
 
-The same host behaviour is why `developers.redhat.com` is absent from
-`resources.md`. Its terms could not be confirmed from the page, and a page about
-free things should not call something free without checking.
+The same host behaviour applies to `developers.redhat.com`, whose terms could
+not be confirmed from the page. It is moot now: `resources.md` no longer covers
+building a system to practise on, because students practise in the Red Hat
+Academy lab environment the university provides. If that ever changes, the terms
+still need checking before the page calls anything free.

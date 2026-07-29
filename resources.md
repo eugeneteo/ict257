@@ -66,8 +66,8 @@ shared one.
 
 Red Hat's courses are commercial products, so RH124, RH134, RH199, the Learning
 Subscription itself, and Red Hat Academy are all left out. Your access to the
-courseware is arranged through the unit. This page is only for what you can
-reach on your own at no cost.
+courseware is arranged through the university. This page is only for what you
+can reach on your own at no cost.
 
 Red Hat's hybrid cloud learning hub is linked from the exam page, so it looked
 like an obvious inclusion. It carries OpenShift, Kubernetes and AI material and

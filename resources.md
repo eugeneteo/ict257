@@ -52,7 +52,7 @@ and neither is part of the courseware. Both are by the same author.
 | --- | --- |
 | [O'Reilly for Higher Education through SUSS Library](https://libanswers.suss.edu.sg/faq/272677) | How to sign in with your student account |
 
-### Written practice exams
+### Four practice exams in the cert guide
 
 | Page | What it is |
 | --- | --- |

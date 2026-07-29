@@ -62,6 +62,10 @@ requests and answers 403. That's bot protection and not a broken link. The page
 loads normally in a browser, and I confirmed it through a second fetcher. If a
 link checker reports 403 on that host, that's why, and there's nothing to fix.
 
+The SUSS course page linked from `README.md` behaves the same way. It sits
+behind Cloudflare, so it answers 403 to a script while loading normally in a
+browser.
+
 The same applies to `developers.redhat.com`, whose terms I couldn't confirm
 from the page. That no longer matters: `resources.md` doesn't cover building a
 system to practise on, because students use the Red Hat Academy lab the

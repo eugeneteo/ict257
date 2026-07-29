@@ -1,6 +1,8 @@
 # ICT257: Red Hat System Administration
 
-Course material and notes for **ICT257 Red Hat System Administration**.
+Course material and notes for
+[ICT257 Red Hat System Administration](https://www.suss.edu.sg/courses/detail/ict257),
+at the Singapore University of Social Sciences.
 
 ## Contents
 

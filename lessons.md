@@ -118,7 +118,8 @@ tells you, because it can be wrong. You will not have it in the exam. See
 
 ## Your own time
 
-Everything the sessions do not cover is yours to work through.
+Everything the sessions do not cover is yours to work through. Do it in the Red
+Hat Academy lab environment, the same one we use in class.
 
 | Material | Amount | What to do with it |
 | --- | --- | --- |

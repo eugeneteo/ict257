@@ -5,12 +5,10 @@ practice exams come through the SUSS Library. None of it is required for
 ICT257, and none of it replaces the work in [`lessons.md`](lessons.md). It is
 here for when you want more than the courseware gives you.
 
-Each entry gives the title as its publisher gives it.
-
 ## Know what the exam asks
 
-These describe the exam. They do not teach it. For what the environment is like
-on the day, see [`exam-day.md`](exam-day.md).
+These describe the exam. Familiarise yourself with the exam environment by
+reviewing [`exam-day.md`](exam-day.md).
 
 | Page | What it is |
 | --- | --- |

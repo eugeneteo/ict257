@@ -68,7 +68,8 @@ container material.
 
 ## Week 15: the exam
 
-There's no session in week 15. You sit the RHCSA (EX200) exam.
+There's no session in week 15. You sit the RHCSA (EX200) exam. For what the
+exam environment is like on the day, see [`exam-day.md`](exam-day.md).
 
 Revise with the comprehensive review, then the chapter labs. See
 [Your own time](#your-own-time). The labs from weeks 9 to 11 deserve the most

@@ -10,7 +10,8 @@ Each entry gives the page title as Red Hat publishes it. See
 
 ## Know what the exam asks
 
-These describe the exam. They don't teach it.
+These describe the exam. They don't teach it. For what the environment is like
+on the day, see [`exam-day.md`](exam-day.md).
 
 | Page | What it is |
 | --- | --- |

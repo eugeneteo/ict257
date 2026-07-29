@@ -132,6 +132,9 @@ objective.
 
 ## Exam format
 
+This is what the exam asks of you. For what the environment is like on the day,
+see [`exam-day.md`](exam-day.md).
+
 - Hands-on and practical: you undertake real-world tasks on live systems. Red
   Hat tests what you can do instead of what you can recall, and sets no
   multiple-choice questions.[^certified]

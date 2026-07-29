@@ -27,7 +27,7 @@ You do not need these to know the objectives.
 
 | Page | What it is |
 | --- | --- |
-| [Red Hat Skills Assessment](https://www.redhat.com/en/services/skills-assessment) | Red Hat calls this "our free assessment" on the EX200 page and offers it as a way to find the right course |
+| [Red Hat Skills Assessment](https://www.redhat.com/en/services/skills-assessment) | Red Hat offers this at no cost on the EX200 page, as a way to find the right course |
 
 Take it early. It tells you where you are while there is still time to act on
 the answer.
@@ -52,7 +52,7 @@ can break and rebuild.
 | Page | What it is |
 | --- | --- |
 | [Red Hat Enterprise Linux \| Product trial](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/try-it) | Red Hat's trial of RHEL itself |
-| [Red Hat Learning Subscription \| Product Trial](https://www.redhat.com/en/services/training/learning-subscription/trial) | Red Hat's catalogue lists this as "Red Hat Learning Subscription trial (No cost)" |
+| [Red Hat Learning Subscription \| Product Trial](https://www.redhat.com/en/services/training/learning-subscription/trial) | Red Hat's catalogue lists this trial as costing nothing |
 
 Both are trials, so they run for a limited time and the terms are Red Hat's to
 change. Check the current terms on the page before you rely on either. Start a

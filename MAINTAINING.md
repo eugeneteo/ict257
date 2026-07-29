@@ -38,8 +38,10 @@ At the start of each semester, re-check:
 
 - The three sources footnoted at the end of [`objectives.md`](objectives.md).
 - Every link in [`resources.md`](resources.md), whose slugs change more often.
+- [`exam-day.md`](exam-day.md). It describes software, so it can go stale
+  faster than anything else here. Buttons move and menus get renamed.
 
-Record the new dates in both files.
+Record the new dates in each file.
 
 ## When the courseware version changes
 

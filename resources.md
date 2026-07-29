@@ -1,10 +1,9 @@
 # Additional resources for the RHCSA exam
 
 Nothing here costs you anything. Most of it is published by Red Hat. The
-practice exams are in a book you reach through the SUSS Library. None of it is
-required for ICT257, and none of it replaces the work in
-[`lessons.md`](lessons.md). It is here for when you want more than the
-courseware gives you.
+practice exams come through the SUSS Library. None of it is required for
+ICT257, and none of it replaces the work in [`lessons.md`](lessons.md). It is
+here for when you want more than the courseware gives you.
 
 Each entry gives the title as its publisher gives it. See
 [What is not here](#what-is-not-here) for what was left out, and why.
@@ -46,20 +45,42 @@ with it reinforces RHCSA-1.11 and replaces searching online. See
 ## Practise with exam questions
 
 The SUSS Library gives you O'Reilly for Higher Education. Sign in with your
-student account, then open the book below. It is not published by Red Hat and
-it is not part of the courseware.
+student account, then open the titles below. Neither is published by Red Hat
+and neither is part of the courseware. Both are by the same author.
 
 | Page | What it is |
 | --- | --- |
 | [O'Reilly for Higher Education through SUSS Library](https://libanswers.suss.edu.sg/faq/272677) | How to sign in with your student account |
+
+### Written practice exams
+
+| Page | What it is |
+| --- | --- |
 | [Red Hat RHCSA 10 Cert Guide: EX200](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780135576625/) | Sander van Vugt, Pearson IT Certification. Written for EX200 on RHEL 10 |
 | [Part V: RHCSA Practice Exams](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780135576625/part05.xhtml) | Practice exams A and B |
 | [RHCSA Practice Exam C](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780135576625/exam03.xhtml) | The third practice exam |
 | [RHCSA Practice Exam D](https://learning.oreilly.com/library/view/red-hat-rhcsa/9780135576625/exam04.xhtml) | The fourth practice exam |
 
-Sit one timed and closed book. Do it after the comprehensive review labs, which
-are the closest thing in the courseware to exam conditions. See
-[Week 14: revision](lessons.md#week-14-revision).
+### A sample exam on video, with the solutions worked through
+
+| Page | What it is |
+| --- | --- |
+| [Red Hat RHCSA RHEL 10 with Exam Labs](https://learning.oreilly.com/course/red-hat-rhcsa/9780135493137/) | Sander van Vugt, Pearson IT Certification. A video course, about 15 hours |
+| [Module 8: Sample Exam](https://learning.oreilly.com/videos/red-hat-rhcsa/9780135493137/9780135493137-RHEL10_08_00_00/) | The module the two lessons below sit in |
+| [Lesson 31: Sample Exam](https://learning.oreilly.com/videos/red-hat-rhcsa/9780135493137/9780135493137-RHEL10_08_31_00/) | The exam itself |
+| [Lesson 32: Grading the Sample Exam and Exam Solutions](https://learning.oreilly.com/videos/red-hat-rhcsa/9780135493137/9780135493137-RHEL10_08_32_00/) | How to mark your own attempt, and the solutions |
+
+Sit lesson 31 before you watch lesson 32. A worked solution you have not
+attempted teaches you very little.
+
+Whichever you choose, sit it timed and closed book, and do it after the
+comprehensive review labs. Those labs are the closest thing in the courseware
+to exam conditions. See [Week 14: revision](lessons.md#week-14-revision).
+
+Use all of this to test yourself. Do not learn from it. Learn from RH124 and
+RH134, which are Red Hat Academy's official courseware for this exam. Working
+from several explanations of the same thing will confuse you more than it
+helps.
 
 ## What is not here
 

@@ -167,10 +167,10 @@ fix.
 
 The `learning.oreilly.com` links answer 403 for a different reason. They sit
 behind institutional sign-in, so a script never gets past the login. The SUSS
-Library page that explains the access does answer 200, and the book details
-come from the publisher: Sander van Vugt, Pearson IT Certification. Nothing
-outside the subscription can confirm the chapter URLs, so check those from a
-signed-in browser each semester.
+Library page that explains the access does answer 200. The details for both
+titles come from the publisher: Sander van Vugt, Pearson IT Certification, a
+cert guide and a video course. Nothing outside the subscription can confirm the
+chapter and lesson URLs, so check those from a signed-in browser each semester.
 
 ## Local files
 

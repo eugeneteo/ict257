@@ -2,7 +2,7 @@
 
 What the Red Hat exam environment is like on the day. For what the exam asks of
 you, see [`objectives.md`](objectives.md). Everything here comes from Red Hat's
-video, reference [1], and the timestamps point into it.
+video,[^1] and the timestamps point into it.
 
 ## Before you start
 
@@ -53,6 +53,6 @@ immediately. (6:16, 7:01)
 
 ## References
 
-1. Red Hat, "Inside a Red Hat Certification Exam: What you need to know",
-   on Red Hat's YouTube channel. <https://youtu.be/Me6Y12-sux8>
-   Retrieved 2026-07-29.
+[^1]: Red Hat, "Inside a Red Hat Certification Exam: What you need to know",
+    on Red Hat's YouTube channel. <https://youtu.be/Me6Y12-sux8>
+    Retrieved 2026-07-29.

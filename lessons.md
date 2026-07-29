@@ -80,7 +80,7 @@ revise. The exam is performance-based, so configurations must survive a reboot.
 Practise the version of a task that persists, not the one that works until you
 restart. It is also closed book, apart from the documentation that ships with
 the product. So practise finding answers in `man` pages and `/usr/share/doc`,
-not online.
+not online and not with the command-line assistant.
 
 ## How the sessions work
 
@@ -112,7 +112,9 @@ you lose is the guided exercises. Ten minutes is long enough for an exercise you
 half recognise. It is not long enough to meet the idea for the first time.
 
 From week 1 you have the command-line assistant (RH124 05.01), so you can ask
-questions and troubleshoot between sessions.
+questions and troubleshoot between sessions. Use it to learn, and check what it
+tells you, because it can be wrong. You will not have it in the exam. See
+[Exam format](objectives.md#exam-format).
 
 ## Your own time
 

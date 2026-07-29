@@ -61,11 +61,9 @@ and the retrieval date.
    Retrieved 2026-07-28.
 ```
 
-Two things to watch.
-
-The numbers are mine to keep in order. Nothing renumbers them for me, so
-adding a source in the middle means renumbering every marker after it. Check
-that each number still matches its entry.
+Nothing renumbers the markers for me. Adding a source in the middle means
+renumbering every one after it, so check that each number still matches its
+entry.
 
 Never let a hard wrap fall inside the link text. A single newline becomes a
 `<br>`, which splits the title across two lines mid-link. Break the line before

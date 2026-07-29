@@ -42,7 +42,6 @@ of yours:
 My writing here is licensed [CC BY-SA 4.0](LICENSE). Use it, change it, share
 it, as long as you credit it and pass on the same freedom.
 
-Two things are not mine to give. Red Hat's exam objectives and the other wording
-quoted from their pages belong to Red Hat, and appear here with attribution and
-a link to the source. Red Hat, RHCSA and the certification names are Red Hat
-trademarks.
+Red Hat's exam objectives and the other wording quoted from their pages belong
+to Red Hat, not to me. They appear here with attribution and a link to the
+source. Red Hat, RHCSA and the certification names are Red Hat trademarks.

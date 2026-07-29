@@ -133,10 +133,16 @@ objective.
 
 ## Exam format
 
-Every point below comes from the exam page cited above, except the one about
-multiple-choice questions. That comes from Red Hat's certification overview:
-<https://www.redhat.com/en/services/training-and-certification/why-get-certified>
-(retrieved 2026-07-28).
+Every point below comes from the exam page cited above, except two:
+
+- The point about multiple-choice questions comes from Red Hat's certification
+  overview:
+  <https://www.redhat.com/en/services/training-and-certification/why-get-certified>
+- The points about the command-line assistant come from Red Hat's video "How the
+  Command Line Assistant affects RHCSA and RHCE exams", on its Red Hat
+  Enterprise Linux channel: <https://youtu.be/8UIi23AfQJM>
+
+Both were retrieved on 2026-07-28. Timestamps below refer to the video.
 
 - Hands-on and practical: you undertake real-world tasks on live systems. Red
   Hat validates skills "instead of memorization and multiple-choice questions",
@@ -148,10 +154,18 @@ multiple-choice questions. That comes from Red Hat's certification overview:
 - The documentation that ships with the product is available "for most exams",
   which means the man pages and `/usr/share/doc`. That is why RHCSA-1.11
   matters in practice.
+- **No AI assistance.** The command-line assistant is not available, because it
+  needs internet access and the exam does not allow it (0:15). Red Hat gives a
+  second reason: the assistant could give you incorrect information and unfairly
+  affect your result (0:32).
 
 ## Keeping this file current
 
-Red Hat revises the objectives between RHEL major versions. I re-check both
-source URLs at the start of each semester and record the new retrieval dates
+Red Hat revises the objectives between RHEL major versions. I re-check all three
+sources at the start of each semester and record the new retrieval dates
 above. When the objectives change, I add new IDs and retire old ones. I never
 renumber an ID that is already in use, so older cross-references keep working.
+
+One point here has a known expiry. Red Hat plans to reconsider the command-line
+assistant once it can run as a locally hosted model, so that every candidate
+gets the same controlled experience (0:53). Check that each semester too.

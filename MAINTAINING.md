@@ -120,22 +120,10 @@ the markup of the EX200 exam page, so they're Red Hat's own view of what's
 relevant. I requested each one, and every title is the page's own title
 element, not a description I wrote.
 
-Every page on `www.redhat.com` returned HTTP 200.
-
-The RHEL documentation link sits on `docs.redhat.com`, which refuses scripted
-requests and answers 403. That's bot protection and not a broken link. The page
-loads normally in a browser, and I confirmed it through a second fetcher. If a
-link checker reports 403 on that host, that's why, and there's nothing to fix.
-
-The SUSS course page linked from `README.md` behaves the same way. It sits
-behind Cloudflare, so it answers 403 to a script while loading normally in a
-browser.
-
-The same applies to `developers.redhat.com`, whose terms I couldn't confirm
-from the page. That no longer matters: `resources.md` doesn't cover building a
-system to practise on, because students use the Red Hat Academy lab the
-university provides. If that changes, check the terms before calling anything
-free.
+Two links answer 403 to a script while loading fine in a browser: the RHEL
+documentation on `docs.redhat.com`, and the SUSS course page in `README.md`.
+That's bot protection. A link checker will flag both, and there's nothing to
+fix.
 
 ## Local files
 

@@ -16,6 +16,9 @@ work with the questions at the end of each task, then reboot. Anything that does
 not come back is not finished. See [`pairings.md`](pairings.md) for the commands
 most often forgotten.
 
+If you attempt these, do consider blogging how you solved them. Let me know if
+you enjoyed them.
+
 ## Contents
 
 | # | Question | Objectives | Prepare with | Ready |

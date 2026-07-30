@@ -244,6 +244,120 @@ To check:
 - Somebody takes a copy of your private key file. What else do they need before
   they can use it?
 
+## 9. A page on a disk of its own
+
+**Objective: RHCSA-5.1, partitions on GPT disks. Also RHCSA-5.5, 10.6, 10.1.**
+
+The module timetable is published as a web page on `servera`. It is kept on a
+disk of its own, so that the disk can be handed to somebody else at the end of
+the semester with the pages still on it.
+
+Prepare with `lab start storage-partitions`, then `ssh student@servera`.
+
+That gives you `servera` with an unused 5 GiB disk at `/dev/sdb`.
+
+Start with the storage. Put a GPT label on `/dev/sdb` and cut one partition of
+about 1 GiB from it, named `timetable`. Give that partition an XFS file system
+and mount it on `/timetable`. The mount must come back on its own after a
+reboot, and the entry in `/etc/fstab` must not name the device. Name the file
+system the way Red Hat recommends.
+
+Then the service. Install the Apache web server if it is not already there, and
+serve pages from `/timetable` instead of the directory Apache ships with. Put
+one line of your own text in `/timetable/index.html`. Apache must start on its
+own after a reboot as well.
+
+Then make it reachable. A `curl http://servera` run on `workstation` must
+return your line and nothing else. SELinux must be in enforcing mode the whole
+time, and turning it off or turning it down does not count as a fix. Whatever
+labelling you do has to belong to the policy, so that relabelling `/timetable`
+afterwards leaves the page being served.
+
+Finish by rebooting `servera`. Then run the `curl` from `workstation` again
+without touching `servera` first.
+
+To check:
+
+- Which command shows the partitioning scheme on `/dev/sdb`, and which part of
+  its output would have looked different had you used MBR?
+- Which command gave you the value you put in the first field of `/etc/fstab`,
+  and why does Red Hat prefer that value to `/dev/sdb1`?
+- With Apache running and the firewall open, but before you do anything about
+  SELinux, what does the `curl` on `workstation` return? Which file on
+  `servera` names the file that was refused, and which command explains it?
+- Compare `ls -Zd /timetable` with `ls -Zd /var/www/html`. Do the two agree?
+  Which field of the context has to match before Apache may read the files,
+  and what is that field called?
+- `chcon` would also have made the page appear. Relabel `/timetable` from the
+  policy afterwards. Which of the two approaches is still standing, and why?
+- What did the firewall have to be told, and how do you tell its runtime
+  configuration apart from its permanent one?
+- Name everything that had to be made persistent before the reboot, and name
+  the command that made each one persistent.
+- What does `getenforce` report now? Somebody suggests putting SELinux in
+  permissive mode to save time. What would that have hidden?
+
+## 10. Two markers, one of them leaving
+
+**Objective: RHCSA-9.2, adjust password ageing. Also RHCSA-9.1, 9.3 and 9.4.**
+
+Two people mark coursework on `servera` this semester. One starts today and
+runs a marking script that nobody sits and watches. The other finishes today
+and must lose every way in, while the work already submitted stays where it is.
+
+Prepare with `lab start users-password`, then `ssh student@servera`.
+
+That gives you `servera` with the `operator1` user on it, whose password is
+`redhat`.
+
+Start with the accounts. Create the `markers` group and two users, `marker1`
+and `marker2`, both of them in `markers` as a supplementary group, each with a
+password of your choosing. Create an `oncall` group as well and put `marker1`
+in that too, without disturbing anything it already has. The `operator1` user
+joins `markers` and must keep every group it already belongs to.
+
+Then the ageing, on `marker1` only. The first time it logs in it has to choose
+a new password, and you should watch that happen. After that its password must
+last no more than 45 days, with 10 days of warning before it expires. The
+account itself must stop working 90 days from today, whatever the password
+does.
+
+Then the privilege. The marking script runs unattended as `marker1`, so every
+member of `markers` must be able to run any command as `root` through `sudo`
+without being asked for a password. Put the rule in a file of its own and leave
+`/etc/sudoers` alone. The course names one condition for granting a rule like
+that, so meet it as well, for both markers, from `workstation`. Then log in
+from `workstation` as `marker1` with no password at all and run something
+through `sudo` that a plain user could not.
+
+Then the leaver. Shut `marker2` the way the course recommends for somebody who
+has left, so that no login as `marker2` succeeds from `workstation` or on
+`servera`, by key or by password. Do not delete the account and do not touch
+its files. Finish by rebooting `servera` and trying both logins once more.
+
+To check:
+
+- Which command reports the ageing settings for `marker1`, and which of its
+  lines carry the three things you set?
+- What did you see the first time `marker1` logged in, and which command made
+  that happen?
+- Look at `id marker1` and `id operator1`. Is `markers` still there on both of
+  them? Which option of `usermod` adds a group and which one replaces the
+  list?
+- Which file holds your `sudo` rule? Take the line apart. What does each part
+  say about who may run what, as whom, and about the password prompt?
+- The course gives one condition for granting a rule like that. What is the
+  condition, what is the reasoning behind it, and how did you satisfy it?
+- Lock the password of `marker2` and stop there. Can you still get in from
+  `workstation` with the key? What does the course say about locking on its
+  own, and what does it recommend instead for somebody who has left?
+- Which file records both the lock and the expiry for `marker2`, and in what
+  units is the expiry held?
+- Deleting the account would also have stopped the logins. Why is that the
+  wrong answer here?
+- Reboot `servera`. Which of the things you set needed a further command to
+  survive the reboot, and why?
+
 ## References
 
 [rhlc]: https://access.redhat.com/community/learn

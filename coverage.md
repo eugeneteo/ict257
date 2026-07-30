@@ -207,7 +207,7 @@ review labs fall outside that count, because I leave labs out of it throughout.
 | RH134 16.01 | Installing RHEL interactively in package mode |
 | RH134 16.03 | Automating installation with Kickstart |
 | RH134 17.01 | Container concepts and underlying technology |
-| RH134 17.03 | Running container images with Podman |
+| RH134 17.03 | Podman and the container lifecycle |
 | RH134 17.05 | Managing and building container images |
 | RH134 18.01 | Image mode compared with package-mode installation |
 | RH134 18.03 | Building bootable container images for image mode |

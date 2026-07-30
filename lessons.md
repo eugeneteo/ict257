@@ -69,6 +69,10 @@ Read [`pairings.md`](pairings.md) before you sit either of them. It lists the
 commands that need a second command, and the forms that survive a reboot, which
 is where marks go on tasks you already know how to do.
 
+[`practice.md`](practice.md) holds exam-shaped tasks, each naming the objective
+it belongs to. Attempt them once the review labs are behind you, to find out
+whether you can reach a result with nothing open in front of you.
+
 ## Week 15: the exam
 
 There is no session in week 15. You sit the RHCSA (EX200) exam. For what the

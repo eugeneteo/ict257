@@ -13,6 +13,7 @@ Enterprise Linux 10.
 | [`coverage.md`](coverage.md) | Which course material covers each objective |
 | [`lessons.md`](lessons.md) | Twelve weeks of teaching, then catch-up, revision and the exam |
 | [`pairings.md`](pairings.md) | Commands to pair, and forms that survive a reboot |
+| [`practice.md`](practice.md) | Practice questions to attempt on your own |
 | [`resources.md`](resources.md) | Resources for preparing beyond the courseware |
 | [`exam-day.md`](exam-day.md) | What the exam environment is like on the day |
 

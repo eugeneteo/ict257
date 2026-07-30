@@ -3,8 +3,7 @@
 These questions follow three from the RHCSA Practice series that Tudor Raduta
 ran as Community Manager in the [Red Hat Learning Community][rhlc]. That
 community closed on 31 March 2026,<sup>[1][rhlc]</sup> so the original posts can
-no longer be linked to. The topics are his. I have written each one around the
-lab you have, and so any mistakes in them are mine.
+no longer be linked to. The credit is his. Any mistakes are mine.
 
 These run in the Red Hat Academy lab. Each question names the `lab start`
 command that prepares its machine, so you do not have to build the starting

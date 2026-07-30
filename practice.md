@@ -6,28 +6,34 @@ Community. That community closed on 31 March 2026,<sup>[1][rhlc]</sup> so the
 original posts can no longer be linked to. The credit is his. The questions
 below are mine, written for this module, and so are any mistakes in them.
 
-Attempt these on your Red Hat Academy lab machine, not on anything you care
-about. Each one is a single task of the kind the exam sets, and each names the
-objective it belongs to so you can look up what is being asked in
-[`objectives.md`](objectives.md).
+These run in the Red Hat Academy lab. Each question names the `lab start`
+command that prepares its machine, so you do not have to build the starting
+state yourself. Run that command on `workstation` first, then work on the
+machine the question names.
 
-No answers are given. The point is to reach a result on your own, which is what
-the exam grades. Check your work with the questions at the end of each task.
+The lab is disposable. If you break something, reset it and start again. That
+is what it is for.
 
-Reboot the machine when you think you have finished. Anything that does not
-come back is not finished. See [`pairings.md`](pairings.md) for the commands
-most often forgotten.
+Two of these reuse the setup from a guided exercise you have already met. The
+exercise walks you through the steps. These do not, and neither does the exam.
+
+No answers are given. Each question names the objective it belongs to, so you
+can look up what is being asked in [`objectives.md`](objectives.md). Check your
+work with the questions at the end of each task, then reboot. Anything that
+does not come back is not finished. See [`pairings.md`](pairings.md) for the
+commands most often forgotten.
 
 ## 1. Two streams, two files
 
-**Objective: RHCSA-1.2, input and output redirection.**
+**Objective: RHCSA-1.2, input and output redirection.** Runs on any machine and
+needs no `lab start`.
 
-You are auditing a server for packages whose files have been modified since
-installation. Running `rpm -Va` as an ordinary user produces two kinds of
-output at once. Verification results go to standard output. Complaints about
-files the user cannot read go to standard error, and there are a lot of them.
+You are looking for large files that a user has left lying around. As the
+`student` user, `find /var -size +1M` produces two kinds of output at once.
+Matches go to standard output. Complaints about directories the user cannot
+read go to standard error, and there are a lot of them.
 
-Capture the verification results in `/tmp/modified.txt` and the complaints in
+Capture the matches in `/tmp/large.txt` and the complaints in
 `/tmp/denied.txt`, using one command line and running it once.
 
 Then produce a third file, `/tmp/audit.txt`, holding both streams interleaved
@@ -35,54 +41,54 @@ in the order they were produced.
 
 To check:
 
-- Does `/tmp/denied.txt` contain only error text, with no verification results?
-- Does `/tmp/modified.txt` stay empty if you run the command as `root`, and why
-  would that be?
+- Does `/tmp/denied.txt` contain only error text, with no matches?
+- Would `/tmp/denied.txt` still have anything in it if you ran the command as
+  `root`, and why?
 - What is the difference between `2>&1 >file` and `>file 2>&1`, and which one
   did you need?
 
-## 2. A volume group with nothing left to give
+## 2. Grow a volume that is already in use
 
-**Objective: RHCSA-6.4, extend existing logical volumes. Also RHCSA-5.2 and
-RHCSA-5.3.**
+**Objective: RHCSA-6.4, extend existing logical volumes.**
 
-A logical volume named `lv_archive` in volume group `vg_data` is mounted at
-`/srv/archive` and formatted `ext4`. It is 4 GiB and nearly full. You need it
-at 9 GiB.
+Prepare with `lab start lvm-extend`, then `ssh student@servera`.
 
-The complication is that `vg_data` has no free extents. A second unused disk is
-attached to the machine.
+That gives you the volume group `vg_servera`, the logical volume `lv_servera`
+mounted on `/data`, and the disk `/dev/sdb`.
 
-Grow the volume to 9 GiB without unmounting it and without losing the contents.
+Add 300 MiB to `lv_servera` and make the filesystem use the new space, without
+unmounting `/data` and without losing what is on it.
+
+Then make sure `/data` is still mounted after a reboot, whether or not it was
+before.
 
 To check:
 
-- Does `df -h /srv/archive` report the new size, or only `lvs`? If they
-  disagree, what step is missing?
-- Does the mount survive a reboot?
-- Which command would you have needed instead of `resize2fs` had the filesystem
-  been XFS, and what can you not do to an XFS filesystem that you can do to
-  ext4?
+- Do `lvs` and `df -h /data` agree? If they do not, which step is missing?
+- Reboot. Is `/data` mounted, and is it still the larger size?
+- The filesystem here is XFS. Which command did you need, and which one would
+  you have needed for ext4? What can you do to an ext4 filesystem that you
+  cannot do to XFS?
 
-## 3. Home directories that arrive when asked for
+## 3. A share that mounts itself
 
 **Objective: RHCSA-6.3, configure autofs. Also RHCSA-6.2.**
 
-An NFS server at `filer.example.com` exports `/exports/people`. Under that
-export each user has a directory named after their account, so
-`/exports/people/asha`, `/exports/people/ben` and so on, and more accounts are
-added regularly.
+Prepare with `lab start nfsclient-autofs`, then `ssh student@servera`.
 
-Configure the client so that a user typing `cd /people/asha` finds their
-directory mounted, without you having written that user's name anywhere in the
-configuration. It must keep working for accounts created after you finish.
+That gives you `serverb` exporting `/shares`, which holds `west` and `south`.
+
+Configure `servera` so that a user typing `cd /remote/west` finds that export
+mounted, and `cd /remote/south` finds the other one, without either name
+appearing in your configuration. It must keep working for any directory added
+to `/shares` later, and it must survive a reboot.
 
 To check:
 
-- Does `ls /people` show anything before you enter a directory? Should it?
-- Add a new directory on the server. Does it appear on the client without any
-  change to the client?
-- Does it still work after a reboot?
+- Does `ls /remote` show anything before you enter a directory? Should it?
+- Add a directory to `/shares` on `serverb`. Does it appear on `servera` with
+  no change made to `servera`?
+- Reboot `servera`. Does it still mount on demand?
 - Why would an `/etc/fstab` entry be a poor fit for this?
 
 ## References

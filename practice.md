@@ -1,26 +1,19 @@
 # Additional practice questions
 
 These questions follow three from the RHCSA Practice series that Tudor Raduta
-ran as Community Manager in the [Red Hat Learning Community][rhlc]. That
-community closed on 31 March 2026,<sup>[1][rhlc]</sup> so the original posts can
-no longer be linked to. The credit is his. Any mistakes are mine.
+ran in the [Red Hat Learning Community][rhlc]. It closed on 31 March
+2026,<sup>[1][rhlc]</sup> so the posts can no longer be linked to. The credit is
+his. Any mistakes are mine.
 
-These run in the Red Hat Academy lab. Each question names the `lab start`
-command that prepares its machine, so you do not have to build the starting
-state yourself. Run that command on `workstation` first, then work on the
-machine the question names.
+They run in the Red Hat Academy lab, on top of the guided exercises and not in
+place of them. Each question names the `lab start` command that prepares its
+machine, so run that on `workstation` first. The lab is disposable, so reset it
+if you break something.
 
-The lab is disposable. If you break something, reset it and start again. That
-is what it is for.
-
-Two of these reuse the setup from a guided exercise you have already met. The
-exercise walks you through the steps. These do not, and neither does the exam.
-The questions here sit on top of the guided exercises and labs. They do not
-replace them.
-
-No answers are given. Check your work with the questions at the end of each
-task, then reboot. Anything that does not come back is not finished. See
-[`pairings.md`](pairings.md) for the commands most often forgotten.
+No answers are given, and no walkthrough. The exam gives you neither. Check your
+work with the questions at the end of each task, then reboot. Anything that does
+not come back is not finished. See [`pairings.md`](pairings.md) for the commands
+most often forgotten.
 
 ## 1. Two streams, two files
 

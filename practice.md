@@ -278,11 +278,12 @@ Prepare with `lab start ssh-keyauth`, then `ssh student@servera`.
 That gives you the `operator1` user on `servera` and on `serverb`, with
 `redhat` as the password. The `student` user on `serverb` has `student`.
 
-Working as `operator1` on `servera`, arrange two short names. `ssh backup` on
-its own must open a session as `operator1` on `serverb`. `ssh audit` on its own
-must open a session as `student` on `serverb`. Each name uses a key pair of its
-own, kept under a file name that `ssh` would not have found by itself. Neither
-name may ask for a password.
+Working as `operator1` on `servera`, arrange two short names to type in place
+of a user name and a host name. `ssh backup` on its own must open a session as
+`operator1` on `serverb`. `ssh audit` on its own must open a session as
+`student` on `serverb`. Each name uses a key pair of its own, kept under a file
+name that `ssh` would not have found by itself. Neither name may ask for a
+password.
 
 Then tighten the client. Make `ssh` refuse to connect to any host whose key it
 does not already hold, and never add one on your behalf.

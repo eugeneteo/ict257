@@ -50,6 +50,8 @@ To check:
 
 **Objective: RHCSA-6.4, extend existing logical volumes.**
 
+`/data` is filling up and nothing on it can be deleted.
+
 Prepare with `lab start lvm-extend`, then `ssh student@servera`.
 
 That gives you the volume group `vg_servera`, the logical volume `lv_servera`
@@ -72,6 +74,9 @@ To check:
 ## 3. A share that mounts itself
 
 **Objective: RHCSA-6.3, configure autofs. Also RHCSA-6.2.**
+
+`serverb` keeps a directory for each team, and new teams appear without warning.
+Nobody should have to mount anything by hand.
 
 Prepare with `lab start nfsclient-autofs`, then `ssh student@servera`.
 

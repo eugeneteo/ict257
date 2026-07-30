@@ -21,7 +21,7 @@ you enjoyed them.
 
 ## Contents
 
-| # | Question | Objectives | Prepare with | Ready |
+| # | Question | Objectives | Prepare with | Ready by |
 | --- | --- | --- | --- | --- |
 | 1 | [Two streams, two files](#1-two-streams-two-files) | RHCSA-1.2 | nothing | week 3 |
 | 2 | [One narrow permission, and one account closed](#2-one-narrow-permission-and-one-account-closed) | RHCSA-9.4, 9.1, 9.3, 9.2 | `lab start users-password` | week 3 |

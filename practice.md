@@ -32,16 +32,15 @@ read go to standard error, and there are a lot of them.
 Capture the matches in `/tmp/large.txt` and the complaints in
 `/tmp/denied.txt`, using one command line and running it once.
 
-Then produce a third file, `/tmp/audit.txt`, holding both streams interleaved
-in the order they were produced.
+Then produce a third file, `/tmp/audit.txt`, holding both streams together.
 
 To check:
 
 - Does `/tmp/denied.txt` contain only error text, with no matches?
 - Would `/tmp/denied.txt` still have anything in it if you ran the command as
   `root`, and why?
-- What is the difference between `2>&1 >file` and `>file 2>&1`, and which one
-  did you need?
+- There is more than one way to send both streams to one file. Which did you
+  use, and what does `2>&1 >file` do differently from `>file 2>&1`?
 
 ## 2. Grow a volume that is already in use
 
@@ -93,8 +92,8 @@ To check:
 - Before you touch anything, does `mount` list the export? What does it list
   after you enter one of the directories?
 - Which package did you have to install before any of this worked?
-- Add a directory to `/shares` on `serverb`. Does it appear under `/teams` with
-  no change made to `servera`?
+- A new team is added on `serverb` tomorrow. What would have to be true for it
+  to appear under `/teams` without you touching `servera` at all?
 - Reboot `servera`. Does it still mount on demand?
 - There were two kinds of map you could have used. Which did you choose, and
   what would the other one have looked like?
@@ -111,9 +110,9 @@ Prepare with `lab start netsecurity-ports`, then `ssh student@servera`.
 
 That gives you Apache installed, configured for 82/TCP and refusing to start.
 
-Move the application to a TCP port above 1024 that SELinux does not already
-associate with a web server. Which port is your decision. A `curl` from
-`workstation` must then reach the application on the new port. Nothing must
+Move the application to a TCP port above 1024 that SELinux has no label for at
+all. Which port is your decision, and checking is part of the task. A `curl`
+from `workstation` must then reach the application on the new port. Nothing must
 answer on 82/TCP. All of it must survive a reboot.
 
 To check:
@@ -207,34 +206,36 @@ To check:
 - How large is the volume group, and how many extents are still free? Which
   command told you?
 - Does `lsblk` show a partition table on `/dev/sdb`? Should it?
-- `df -h /vault` reports less than the size of the logical volume. Why?
-- Did you leave half the group unallocated? What can you do later with that
-  space that you could not do if it were all used up?
+- Compare `lvs` and `df -h /vault`. Which figure is the size of the block
+  device, and which is the space you can actually use?
+- Did you size the volume in mebibytes or in extents? What would the other one
+  have been?
 - Reboot. Is `/vault` mounted, and what in `/etc/fstab` made that happen?
 - If the disk were wanted for something else, what would you have to undo, and
   in what order?
 
-## 8. A login that needs no password
+## 8. A short name for a long login
 
 **Objective: RHCSA-10.3, key-based authentication for SSH. Also RHCSA-1.4.**
 
-The `operator1` user connects to `serverb` several times a day and types a
-password every time. The password is the weakest part of it.
+The `operator1` user copies files to `serverb` several times a day. Typing a
+user name, a host name and a password every time is tiresome, and the password
+is the weakest part of it.
 
 Prepare with `lab start ssh-keyauth`, then `ssh student@servera`.
 
 That gives you the `operator1` user on both `servera` and `serverb`, with
 `redhat` as the password.
 
-Working as `operator1` on `servera`, arrange to log in to `serverb` without
-typing a password. The key pair must be kept somewhere other than the default
-file name and must be protected by a passphrase. Within one shell session you
-should be asked for that passphrase once, however many times you connect.
+Working as `operator1` on `servera`, arrange that `ssh backup` on its own opens
+a session as `operator1` on `serverb`. Authentication must use a key pair that
+is kept somewhere other than the default file name and is protected by a
+passphrase. Within one shell session you should be asked for that passphrase
+once, however many times you connect.
 
 To check:
 
-- Your key is not in the default file. What did you have to tell `ssh` so that
-  it was used at all?
+- Which file gives the `backup` name its meaning, and what did you put in it?
 - Log out of `servera` and back in. Are you asked for the passphrase again, and
   why?
 - Which file on `serverb` changed, and what does it hold now?

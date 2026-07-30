@@ -44,21 +44,24 @@ To check:
 
 **Objective: RHCSA-6.4, extend existing logical volumes.**
 
-`/data` is filling up and nothing on it can be deleted.
+A nightly job writes to `/data` and will not start unless it has room. Nothing
+already there can be deleted.
 
 Prepare with `lab start lvm-extend`, then `ssh student@servera`.
 
 That gives you the volume group `vg_servera`, the logical volume `lv_servera`
 mounted on `/data`, and the disk `/dev/sdb`.
 
-Add 300 MiB to `lv_servera` and make the filesystem use the new space, without
-unmounting `/data` and without losing what is on it.
+Give `/data` at least 500 MiB of free space, without unmounting it and without
+losing what is on it. How much bigger the volume has to be is for you to work
+out.
 
 Then make sure `/data` is still mounted after a reboot, whether or not it was
 before.
 
 To check:
 
+- Does `df -h /data` report at least 500 MiB available?
 - Do `lvs` and `df -h /data` agree? If they do not, which step is missing?
 - Reboot. Is `/data` mounted, and is it still the larger size?
 - The filesystem here is XFS. Which command did you need, and which one would
@@ -77,18 +80,21 @@ Prepare with `lab start nfsclient-autofs`, then `ssh student@servera`.
 
 That gives you `serverb` exporting `/shares`, which holds `west` and `south`.
 
-Configure `servera` so that a user typing `cd /remote/west` finds that export
-mounted, and `cd /remote/south` finds the other one, without either name
-appearing in your configuration. It must keep working for any directory added
-to `/shares` later, and it must survive a reboot.
+Make everything under that export reachable under `/teams`, so that
+`/teams/west` and `/teams/south` both work. Nothing should be mounted until
+someone goes looking for it. A team added on `serverb` later must work with no
+further change to `servera`, and the arrangement must survive a reboot.
 
 To check:
 
-- Does `ls /remote` show anything before you enter a directory? Should it?
+- Before you touch anything, does `mount` list the export? What does it list
+  after you enter one of the directories?
 - Which package did you have to install before any of this worked?
-- Add a directory to `/shares` on `serverb`. Does it appear on `servera` with
+- Add a directory to `/shares` on `serverb`. Does it appear under `/teams` with
   no change made to `servera`?
 - Reboot `servera`. Does it still mount on demand?
+- There were two kinds of map you could have used. Which did you choose, and
+  what would the other one have looked like?
 - Why would an `/etc/fstab` entry be a poor fit for this?
 
 ## References

@@ -1,14 +1,14 @@
-# Additional practice questions
+# Additional practice challenges
 
-The following questions are inspired by the RHCSA Practice series that Tudor
+The following challenges are inspired by the RHCSA Practice series that Tudor
 Raduta ran in the [Red Hat Learning Community][rhlc]. It closed on 31 March
 2026,<sup>[1][rhlc]</sup> so I cannot link the posts any more. I used Claude
-Opus 5 to create these practice questions in a similar format, if you want more
+Opus 5 to create these practice challenges in a similar format, if you want more
 opportunities to practise for the exam. I used GPT-5.6 Sol to check that every
-question can be solved.
+challenge can be solved.
 
 They run in the Red Hat Academy lab, on top of the guided exercises and not in
-place of them. Each question names the `lab start` command that prepares its
+place of them. Each challenge names the `lab start` command that prepares its
 machine, so run that on `workstation` first. The lab is disposable, so reset it
 if you break something.
 
@@ -22,7 +22,7 @@ you enjoyed them.
 
 ## Contents
 
-| # | Question | Objectives | Prepare with | Ready |
+| # | Challenge | Objectives | Prepare with | Ready |
 | --- | --- | --- | --- | --- |
 | 1 | [Two streams, two files](#1-two-streams-two-files) | RHCSA-1.2 | nothing | week 3 |
 | 2 | [One narrow permission, and one account closed](#2-one-narrow-permission-and-one-account-closed) | RHCSA-9.4, 9.1, 9.3, 9.2 | `lab start users-password` | week 3 |

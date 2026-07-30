@@ -25,8 +25,8 @@ most often forgotten.
 | 3 | [A share that waits to be asked](#3-a-share-that-waits-to-be-asked) | RHCSA-6.2, 6.3 | `lab start nfsclient-autofs` |
 | 4 | [A port lent and then given back](#4-a-port-lent-and-then-given-back) | RHCSA-10.7, 10.1 | `lab start netsecurity-ports` |
 | 5 | [A default that follows everybody](#5-a-default-that-follows-everybody) | RHCSA-10.2, 1.10 | `lab start perms-default` |
-| 6 | [A job of your own on a clock](#6-a-job-of-your-own-on-a-clock) | RHCSA-7.1, 7.2 | `lab start systasks-timers` |
-| 7 | [A volume group with room left in it](#7-a-volume-group-with-room-left-in-it) | RHCSA-5.4, 5.2 | `lab start lvm-create` |
+| 6 | [A job of your own on a clock](#6-a-job-of-your-own-on-a-clock) | RHCSA-7.1, 1.2 | `lab start scheduling-cron` |
+| 7 | [A volume group with room left in it](#7-a-volume-group-with-room-left-in-it) | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` |
 | 8 | [Short names for long logins](#8-short-names-for-long-logins) | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` |
 | 9 | [A page on a disk of its own](#9-a-page-on-a-disk-of-its-own) | RHCSA-5.1, 5.5, 10.6, 10.1 | `lab start storage-partitions` |
 | 10 | [One narrow permission, and one account closed](#10-one-narrow-permission-and-one-account-closed) | RHCSA-9.4, 9.1, 9.2, 9.3 | `lab start users-password` |
@@ -204,40 +204,57 @@ To check:
 
 ## 6. A job of your own on a clock
 
-**Objective: RHCSA-7.1, schedule tasks with systemd timers. Also RHCSA-7.2.**
+**Objective: RHCSA-7.1, schedule tasks with `at` and `cron`. Also RHCSA-1.2.**
 
 A colleague wants to know how fast `/` is filling on `servera`. Nobody is going
-to sit and watch it.
+to sit and watch it, and nobody is going to tidy up after it either.
 
-Prepare with `lab start systasks-timers`, then `ssh student@servera`.
+Prepare with `lab start scheduling-cron`, then `ssh student@servera`.
 
-That gives you a plain `servera` and nothing else.
+That gives you `servera` with nothing of your own scheduled on it.
 
-Write a unit pair of your own, `diskwatch.service` and `diskwatch.timer`, and
-put both where a package update cannot reach them. The service must run one
-command as `root` and then exit, appending the date and the free space on `/`
-to `/var/log/diskwatch.log`. The timer must fire it every ten minutes, must be
-waiting now and must be waiting again after a reboot.
+Start with the recurring job. Every ten minutes, `root` must append the date and
+the free space on `/` to `/var/log/diskwatch.log`. The job belongs to the
+machine and not to any one person, so keep it out of a user's own crontab. Put
+it in a file of its own, so that removing the job means removing one file.
+
+Then the one-off. Somebody wants a single reading five minutes from now, and
+only that once. Schedule it without disturbing the recurring job. Before it
+runs, show that it is waiting, and be ready to say which command would throw it
+away again.
+
+Then the tidying. `/var/log/diskwatch.log` must not grow for ever. Arrange for
+the file to be removed once it has gone seven days without being written to,
+and put that rule where a package update cannot reach it. Do not write a second
+recurring job to do it.
+
+Finish by proving all three work, without waiting ten minutes, five minutes or
+a week for any of them.
 
 To check:
 
-- Which directory holds your two files, and which directory would have been the
-  wrong one? What happens to a file left in the wrong one?
-- Which section of the timer file carries the schedule, and which key did you
-  set in it?
-- Which command did you run after writing the files, and what does systemd do
-  if you forget it?
-- Which command reports when the timer is next due and which unit it triggers?
-- Wait ten minutes. Has `/var/log/diskwatch.log` grown? Which command shows
-  what the service recorded the last time it ran?
-- Reboot `servera`. Is the timer waiting again, and which command made that
-  happen?
-- You enabled one of the two units and left the other alone. Which one, and
-  what would happen if you enabled the other as well?
+- Which file holds the recurring job, and which field does it carry that a
+  user's own crontab does not?
+- Read your schedule field aloud. Which five parts does it have, and what does
+  each one say?
+- Which command lists the one-off job, and which command would remove it? What
+  happens to the queue once the job has run?
+- Where does the output of a scheduled job go if you do not redirect it, and
+  which setting names the person who receives it?
+- Which file holds your cleanup rule, and which three fields of that line decide
+  what is removed and when?
+- Which command applies the cleanup rule now? Which timer would have applied it
+  for you, and did you have to write that timer yourself?
+- Prove the cleanup works without waiting seven days. What did you change to
+  show it, and what did you change back?
+- Reboot `servera`. Which of the three arrangements survive, and why does the
+  one-off behave the way it does?
+- Your recurring job runs as `root`. What would have been different had you put
+  it in your own crontab instead?
 
 ## 7. A volume group with room left in it
 
-**Objective: RHCSA-5.4, create and delete logical volumes. Also RHCSA-5.2.**
+**Objective: RHCSA-5.4, logical volumes. Also RHCSA-5.2, 5.3 and 5.6.**
 
 An application on `servera` needs storage now and will ask for more of it later.
 The spare disk is not to be carved into partitions.
@@ -246,11 +263,22 @@ Prepare with `lab start lvm-create`, then `ssh student@servera`.
 
 That gives you `servera` with an empty 5 GiB disk at `/dev/sdb`.
 
-Build LVM storage on that disk without creating a single partition on it. Name
-the volume group `vg_vault` and the logical volume `lv_vault`. Give the logical
-volume half of the space in the group, with an XFS file system on `/vault`.
-Leave the rest of the group unallocated, and have `/vault` mounted after a
-reboot.
+Start with the storage. Build LVM on that disk without creating a single
+partition on it. Name the volume group `vg_vault` and the logical volume
+`lv_vault`. Give the logical volume half of the space in the group, with an XFS
+file system on `/vault`. Leave the rest of the group unallocated, and have
+`/vault` mounted after a reboot.
+
+Then the swap. The same application wants more swap than the machine has. Take
+another 512 MiB from the same volume group, make swap of it, and have it in use
+after a reboot as well. The machine must fall back on it only after the swap it
+already has, so give it the lower priority.
+
+Then the retreat. The swap turns out to have been a mistake. Take it out of
+use, give its space back to the volume group and leave nothing behind that
+would fail at the next boot. `/vault` must come through all of it untouched.
+
+Finish by rebooting, then check both what is still there and what is gone.
 
 To check:
 
@@ -261,9 +289,16 @@ To check:
   device, and which is the space you can actually use?
 - Did you size the volume in mebibytes or in extents? What would the other one
   have been?
-- Reboot. Is `/vault` mounted, and what in `/etc/fstab` made that happen?
-- If the disk were wanted for something else, what would you have to undo, and
-  in what order?
+- Which command shows the swap in use, and which column shows that yours is the
+  second choice?
+- Which two lines did you add to `/etc/fstab`? One field differs in kind
+  between them. Which, and why?
+- In what order did you undo the swap? What would have happened had you removed
+  the logical volume first?
+- Reboot. Is `/vault` mounted, is the swap gone, and does anything complain on
+  the way up?
+- The volume group is still half empty. Name two things you could do with that
+  space, and the command for each.
 
 ## 8. Short names for long logins
 

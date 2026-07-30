@@ -19,11 +19,9 @@ exercise walks you through the steps. These do not, and neither does the exam.
 The questions here sit on top of the guided exercises and labs. They do not
 replace them.
 
-No answers are given. Each question names the objective it belongs to, so you
-can look up what is being asked in [`objectives.md`](objectives.md). Check your
-work with the questions at the end of each task, then reboot. Anything that
-does not come back is not finished. See [`pairings.md`](pairings.md) for the
-commands most often forgotten.
+No answers are given. Check your work with the questions at the end of each
+task, then reboot. Anything that does not come back is not finished. See
+[`pairings.md`](pairings.md) for the commands most often forgotten.
 
 ## 1. Two streams, two files
 

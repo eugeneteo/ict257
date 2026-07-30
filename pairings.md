@@ -8,7 +8,7 @@ your own notes as you go through the courseware.
 Do these three things.
 
 - **Back up before you edit.** Copy the file first before you edit. Revert from
-  the backup file or `diff -Naur original modified` if necessary.
+  the backup file if necessary.
 - **Use the persistent form.** One command and a flag decides whether the
   change survives a reboot.
 - **Run the second command.** Two commands, and the first alone might not

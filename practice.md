@@ -3,9 +3,8 @@
 The following challenges are inspired by the RHCSA Practice series that Tudor
 Raduta ran in the [Red Hat Learning Community][rhlc]. It closed on 31 March
 2026,<sup>[1][rhlc]</sup> so I cannot link the posts any more. I used Claude
-Opus 5 to create these practice challenges in a similar format, if you want more
-opportunities to practise for the exam. I used GPT-5.6 Sol to check that every
-challenge can be solved.
+Opus 5 to write these in a similar format, so there is more to practise on. I
+then used GPT-5.6 Sol to check that each one can be solved.
 
 They run in the Red Hat Academy lab, on top of the guided exercises and not in
 place of them. Each challenge names the `lab start` command that prepares its

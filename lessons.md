@@ -65,6 +65,10 @@ Both comprehensive review chapters are open to you by now. If week 12 slipped,
 RH134 19.05 is the one review lab that may have to wait, because it rests on the
 container material.
 
+Read [`pairings.md`](pairings.md) before you sit either of them. It lists the
+commands that need a second command, and the forms that survive a reboot, which
+is where marks go on tasks you already know how to do.
+
 ## Week 15: the exam
 
 There is no session in week 15. You sit the RHCSA (EX200) exam. For what the

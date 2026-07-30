@@ -23,18 +23,18 @@ you enjoyed them.
 
 ## Contents
 
-| # | Challenge | Objectives | Prepare with | Ready | Difficulty |
+| # | Challenge | Ready | Difficulty | Objectives | Prepare with |
 | --- | --- | --- | --- | --- | --- |
-| 1 | [Two streams, two files](#1-two-streams-two-files) | RHCSA-1.2 | nothing | week 3 | Doable |
-| 2 | [One narrow permission, and one account closed](#2-one-narrow-permission-and-one-account-closed) | RHCSA-9.4, 9.1, 9.3, 9.2 | `lab start users-password` | week 3 | Moderate |
-| 3 | [A default that follows everybody](#3-a-default-that-follows-everybody) | RHCSA-10.2, 1.10 | `lab start perms-default` | week 4 | Doable |
-| 4 | [Short names for long logins](#4-short-names-for-long-logins) | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` | week 6 | Doable |
-| 5 | [A job of your own on a clock](#5-a-job-of-your-own-on-a-clock) | RHCSA-7.1, 1.2 | `lab start scheduling-cron` | week 8 | Moderate |
-| 6 | [Grow a volume and retire what it sat on](#6-grow-a-volume-and-retire-what-it-sat-on) | RHCSA-6.4, 5.1, 5.2, 5.3 | `lab start lvm-extend` | week 10 | Hard |
-| 7 | [A volume group with room left in it](#7-a-volume-group-with-room-left-in-it) | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` | week 10 | Hard |
-| 8 | [A share that waits to be asked](#8-a-share-that-waits-to-be-asked) | RHCSA-6.2, 6.3 | `lab start nfsclient-autofs` | week 11 | Doable |
-| 9 | [A port lent and then given back](#9-a-port-lent-and-then-given-back) | RHCSA-10.7, 10.1 | `lab start netsecurity-ports` | week 11 | Moderate |
-| 10 | [A page on a disk of its own](#10-a-page-on-a-disk-of-its-own) | RHCSA-5.1, 5.5, 10.6, 10.1 | `lab start storage-partitions` | week 11 | Hard |
+| 1 | [Two streams, two files](#1-two-streams-two-files) | week 3 | Doable | RHCSA-1.2 | nothing |
+| 2 | [One narrow permission, and one account closed](#2-one-narrow-permission-and-one-account-closed) | week 3 | Moderate | RHCSA-9.4, 9.1, 9.3, 9.2 | `lab start users-password` |
+| 3 | [A default that follows everybody](#3-a-default-that-follows-everybody) | week 4 | Doable | RHCSA-10.2, 1.10 | `lab start perms-default` |
+| 4 | [Short names for long logins](#4-short-names-for-long-logins) | week 6 | Doable | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` |
+| 5 | [A job of your own on a clock](#5-a-job-of-your-own-on-a-clock) | week 8 | Moderate | RHCSA-7.1, 1.2 | `lab start scheduling-cron` |
+| 6 | [Grow a volume and retire what it sat on](#6-grow-a-volume-and-retire-what-it-sat-on) | week 10 | Hard | RHCSA-6.4, 5.1, 5.2, 5.3 | `lab start lvm-extend` |
+| 7 | [A volume group with room left in it](#7-a-volume-group-with-room-left-in-it) | week 10 | Hard | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` |
+| 8 | [A share that waits to be asked](#8-a-share-that-waits-to-be-asked) | week 11 | Doable | RHCSA-6.2, 6.3 | `lab start nfsclient-autofs` |
+| 9 | [A port lent and then given back](#9-a-port-lent-and-then-given-back) | week 11 | Moderate | RHCSA-10.7, 10.1 | `lab start netsecurity-ports` |
+| 10 | [A page on a disk of its own](#10-a-page-on-a-disk-of-its-own) | week 11 | Hard | RHCSA-5.1, 5.5, 10.6, 10.1 | `lab start storage-partitions` |
 
 
 Every objective is listed in [`objectives.md`](objectives.md). The difficulty is

@@ -116,17 +116,18 @@ expire, the account must lock itself seven days later, without anybody
 intervening.
 
 Then the privilege, and no more of it than the job needs. Every member of
-`helpdesk` must be able to restart the `chronyd` service as `root` through
-`sudo`. Through `sudo` they must be able to do nothing else at all. Put the rule
-in a file of its own under `/etc/sudoers.d` and leave `/etc/sudoers` alone.
-Prove both halves as `relief1`: restart `chronyd`, then try to stop `sshd`.
+`helpdesk` must be able to run `/usr/bin/systemctl restart chronyd` as `root`
+through `sudo`. Through `sudo` they must be able to do nothing else at all. Put
+the rule in a file of its own under `/etc/sudoers.d` and leave `/etc/sudoers`
+alone. Prove both halves as `relief1`: restart `chronyd`, then try to stop
+`sshd`.
 
-Then the leaver. First give `relief2` a way in from `workstation` with an SSH
-key, so that you can see for yourself what each step of the shutdown does. Then
-close `relief2` the way the course recommends for somebody who has gone, so that
-no login as `relief2` succeeds from `workstation` or on `servera`, by key or by
-password. Do not delete the account and do not touch its files. Finish by
-rebooting `servera` and trying the `sudo` rule and both logins once more.
+Then the leaver. First log in as `relief2` with its password, so that you know
+the account works. Lock its password and prove that password login now fails.
+Explain why the course says that this step alone is incomplete. Then close the
+account the way the course recommends for somebody who has gone. No login as
+`relief2` may succeed. Do not delete the account and do not touch its files.
+Finish by rebooting `servera` and trying the `sudo` rule and both logins again.
 
 To check:
 
@@ -141,10 +142,8 @@ To check:
   say about who may run what, and as whom?
 - As `relief1`, run `sudo systemctl stop sshd`. Were you refused? Which part of
   your rule decided that?
-- Your rule names a command by its full path. Which command gave you that path?
-- Lock the password of `relief2` and stop there. Can you still get in from
-  `workstation` with the key? What does the course say about locking on its own,
-  and what does it recommend instead for somebody who has left?
+- Lock the password of `relief2` and stop there. Which kind of login have you
+  blocked? Which kind can still work, according to the course?
 - Which file records both the lock and the expiry for `relief2`, and in what
   units is the expiry held?
 - Deleting the account would also have stopped the logins. Why is that the wrong
@@ -172,9 +171,10 @@ the account creates files today, and write down its permissions.
 
 Then the default. Arrange that every login on `servera` starts with a umask of
 `0027`. Put the setting in one place that covers all accounts, and use neither
-`/etc/bashrc` nor a home directory. Then find the value that `operator1` and
-`operator2` carry now and take it away, so that the new default reaches them
-too. All of it must still hold after a reboot.
+`/etc/bashrc` nor a home directory. The lab has already given both operators a
+different value. Put a final setting in each account's `.bashrc`, after any
+earlier setting, so that `operator1` follows the new default. All of it must
+still hold after a reboot.
 
 Then show what it does. As `operator1`, create one file and one directory, and
 account for the permissions on each.
@@ -186,19 +186,17 @@ account, and leave the arrangement for everybody else exactly as you built it.
 Log in as each of the two users in turn from `workstation` and prove that they
 now differ.
 
-Finish with the file you left behind. It still carries the permissions it was
-born with. Bring it into line with the new default by hand. Then reboot
-`servera` and check both umask values once more.
+Finish with the file you left behind. It still has its birth permissions.
+Bring it into line by hand. Then reboot and check both umask values again.
 
 To check:
 
 - Which file did you create, and which directory holds it? Why is that a better
   place than `/etc/bashrc`?
-- What did `umask` print for `operator1` before you started, and where was that
-  value set? Which command found it?
+- What did `umask` print for `operator1` before you started? Why does the final
+  line in `.bashrc` replace that value for later login shells?
 - Your new file is `0640` and your new directory is `0750`. Show the arithmetic
   for both, and say why the two do not match.
-- What would that file have come out as under the RHEL default of `0022`?
 - The file you left behind at the start still has its old permissions. Which
   command brought it into line, and why did the new default not reach it?
 - Which value did you give `operator2`, and which file holds it? Two settings
@@ -227,26 +225,26 @@ That gives you the `operator1` user on `servera` and on `serverb`, with
 `redhat` as the password. The `student` user on `serverb` has `student`.
 
 Start with the names. Working as `operator1` on `servera`, arrange two short
-names to type in place of a user name and a host name. `ssh backup` on its own
-must open a session as `operator1` on `serverb`. `ssh audit` on its own must
-open a session as `student` on `serverb`. Each name uses a key pair of its own,
-kept under a file name that `ssh` would not have found by itself. Neither name
-may ask for a password.
+names to type in place of a user name and a host name. `ssh backup` must open a
+session as `operator1` on `serverb`. `ssh audit` must open one as `student` on
+`serverb`. Each name uses its own key pair under a non-default file name.
+Neither name may ask for a password.
 
-Then the passphrase. The key behind `backup` must be worth nothing to somebody
-who copies the file, so protect it. Running `ssh backup` must still ask you for
-nothing, so arrange for the passphrase to be given once and held for the rest of
-the session.
+Then record the identity of `serverb`. While the host is still trusted, obtain
+the fingerprint of its ED25519 host key on `serverb` and keep the value.
 
-Then the host keys. Make `ssh` refuse any host whose key it does not already
-hold, and never add one on your behalf. Put that setting where it reaches
-`operator1` alone, and put a different value where it reaches everybody. Work
-out which of the two wins, then beat both of them once from the command line
-without editing either file.
+Then the policy. Make `ssh` refuse any host whose key it does not already hold,
+and never add one on behalf of `operator1`. Put that setting in the personal
+client file. Put `accept-new` in the system-wide client file. Work out which
+value wins.
 
-Finish by making `operator1` forget the host key for `serverb` altogether.
-Restore the trust without answering a prompt and without weakening the setting
-you chose. Then run `ssh backup` one last time.
+Then remove `serverb` from the personal known-hosts file. Prove that both short
+names now fail. Scan only the ED25519 host key into a separate file. Compare
+its fingerprint with the value that you recorded before trusting it.
+
+Finish by adding the verified key to the system-wide known-hosts file. Leave no
+entry for `serverb` in the personal known-hosts file. Both short names must work
+under strict checking, including after you log out and back in.
 
 To check:
 
@@ -260,47 +258,45 @@ To check:
   differ?
 - Move one private key file aside and connect again with `ssh -v`. Which method
   does the client fall back to, and which line shows it? Put the file back.
-- Log out of `servera` and back in, then run `ssh backup`. Are you asked for the
-  passphrase now, and what does that tell you about where it was held?
 - Which two files carry the host key setting, and which one wins? Which lines of
   `ssh -v` name those files as they are read?
-- Which value did you choose, and what would each of the other three have done
-  the moment the host key went missing?
-- Which command removed the host key, and which command put the trust back with
-  nothing typed? Where did the new entry land?
+- Which command printed the trusted fingerprint on `serverb`? Which two
+  commands collected the key and printed the fingerprint of that copy?
+- Which command removed the personal host key? What did strict checking do on
+  the next connection?
+- Which file now trusts `serverb` for everybody, and why does the personal
+  strict setting still allow the two connections?
 - You set the strict value after the two names worked, not before. What would
   have failed had you set it first?
-- One private key has a passphrase and one does not. Somebody takes a copy of
-  each. What does that get them in the two cases?
 
 ## 5. A job of your own on a clock
 
 **Objective: RHCSA-7.1, schedule tasks with `at` and `cron`. Also RHCSA-1.2.**
 
-A colleague wants to know how fast `/` is filling on `servera`. Nobody is going
-to sit and watch it, and nobody is going to tidy up after it either.
+A colleague wants to know how fast `/` is filling on `servera`. Nobody will
+sit and watch it, and nobody will tidy up after it either.
 
 Prepare with `lab start scheduling-cron`, then `ssh student@servera`.
 
 That gives you `servera` with nothing of your own scheduled on it.
 
 Start with the recurring job. Every ten minutes, `root` must append the date and
-the free space on `/` to `/var/log/diskwatch.log`. The job belongs to the
-machine and not to any one person, so keep it out of a user's own crontab. Put
-it in a file of its own, so that removing the job means removing one file.
+the free space on `/` to `/var/log/diskwatch/readings.log`. The job belongs to
+the machine and not to any one person, so keep it out of a user's own crontab.
+Put it in a file of its own, so that removing the job means removing one file.
 
 Then the one-off. Somebody wants a single reading five minutes from now, and
 only that once. Schedule it without disturbing the recurring job. Before it
 runs, show that it is waiting, and be ready to say which command would throw it
 away again.
 
-Then the tidying. `/var/log/diskwatch.log` must not grow for ever. Arrange for
-the file to be removed once it has gone seven days without being written to,
-and put that rule where a package update cannot reach it. Do not write a second
-recurring job to do it.
+Then the tidying. Make `systemd-tmpfiles` create `/var/log/diskwatch` and clean
+its contents. A reading file that has gone seven days without access or change
+must be removed. Put the rule where a package update cannot reach it. Do not
+write a second recurring job to do the work.
 
-Finish by proving all three work, without waiting ten minutes, five minutes or
-a week for any of them.
+Finish by proving all three work. Do not wait ten minutes or a week for the
+recurring job and cleanup tests. Restore both intervals afterwards.
 
 To check:
 
@@ -340,10 +336,10 @@ Start with the survey. Record how many files `/data` holds, what `df` reports
 about it and what the volume group has left. You need those numbers twice, once
 to size the work and once to show at the end that nothing was lost.
 
-Then the room. Give `/data` at least 500 MiB of free space, without unmounting
-it and without losing what is on it. How much bigger the volume has to be is
-for you to work out, and so is how much of `/dev/sdb` the new physical volume
-has to take.
+Then the room. Add 1 GiB to the logical volume and its file system, without
+unmounting it and without losing what is on it. Use one new physical volume of
+at least 2 GiB on `/dev/sdb`. The result must give `/data` at least 500 MiB of
+free space.
 
 Then the retirement. Bring `vg_servera` down to one physical volume, the new
 one. The two it started on must hold no data, must no longer belong to the
@@ -365,9 +361,10 @@ To check:
 - Does `df -h /data` report at least 500 MiB available?
 - How much free space did the volume group have when you started, and what did
   you have to do about it?
-- How large did the new physical volume have to be, and what decided that? What
-  does `pvmove` do when it is too small?
-- Do `lvs` and `df -h /data` agree? If they do not, which step is missing?
+- Why did the new physical volume need room for the whole enlarged logical
+  volume? What does `pvmove` do when the destination is too small?
+- Did `df -h /data` grow as well as the logical volume? If not, which step is
+  missing?
 - Which command moved the data off a physical volume, and what does the course
   say about running it while the file system is mounted?
 - Three commands retire a physical volume. Name them, and say what order they
@@ -394,14 +391,13 @@ That gives you `servera` with an empty 5 GiB disk at `/dev/sdb`.
 
 Start with the storage. Build LVM on that disk without creating a single
 partition on it. Name the volume group `vg_vault` and the logical volume
-`lv_vault`. Give the logical volume half of the space in the group, with an XFS
-file system on `/vault`. Leave the rest of the group unallocated, and have
-`/vault` mounted after a reboot.
+`lv_vault`. Give the logical volume 2.5 GiB, with an XFS file system on
+`/vault`. Leave the rest of the group unallocated, and have `/vault` mounted
+after a reboot.
 
 Then the swap. The same application wants more swap than the machine has. Take
 another 512 MiB from the same volume group, make swap of it, and have it in use
-after a reboot as well. The machine must fall back on it only after the swap it
-already has, so give it the lower priority.
+after a reboot as well. Give the new swap a priority of `10`.
 
 Then the retreat. The swap turns out to have been a mistake. Take it out of
 use, give its space back to the volume group and leave nothing behind that
@@ -416,10 +412,10 @@ To check:
 - Does `lsblk` show a partition table on `/dev/sdb`? Should it?
 - Compare `lvs` and `df -h /vault`. Which figure is the size of the block
   device, and which is the space you can actually use?
-- Did you size the volume in mebibytes or in extents? What would the other one
-  have been?
+- Did you size the volume in gibibytes or in extents? What would the other one
+  have been with the default extent size?
 - Which command shows the swap in use, and which column shows that yours is the
-  second choice?
+  priority `10`? Which priority does the kernel use first?
 - Which two lines did you add to `/etc/fstab`? One field differs in kind
   between them. Which, and why?
 - In what order did you undo the swap? What would have happened had you removed
@@ -433,57 +429,50 @@ To check:
 
 **Objective: RHCSA-6.2, mount network file systems with NFS. Also RHCSA-6.3.**
 
-A reporting job on `servera` reads from `serverb` twice a week. A second job
-reads a set of records that must never be written to. Between those runs the
-mounts earn nothing and hold up every boot.
+Two reporting jobs on `servera` read different exports from `serverb`. The
+local names must describe the jobs, not copy the server's directory names.
+Between runs the mounts must stay out of the way.
 
 Prepare with `lab start nfsclient-autofs`, then `ssh student@servera`.
 
 That gives you `serverb` exporting directories over NFS, with nothing from it
 mounted on `servera`.
 
-Start by finding out what is on offer. Without being told the paths, list the
-directories that `serverb` exports, then leave `servera` as you found it. Say
-which NFS version made you work that way.
+Start with one indirect map under `/feeds`. The local key `weekly` must open
+`serverb:/shares/west`. The local key `monthly` must open
+`serverb:/shares/south`. Write two explicit map entries. Do not use a wildcard,
+and do not copy either server-side directory name into the local path.
 
-Then the reporting mount. Mount `serverb:/shares/west` on `/reports`, and have
-that happen only when somebody enters `/reports`. Nothing must be mounted
-before that. Do all of it from `/etc/fstab`. Do not install `autofs` and do not
-write a map file.
+Install and configure the automounter. Use a master map file under
+`/etc/auto.master.d` and a separate map file. Mount both exports with
+read/write access and synchronous transactions. Nothing from `serverb` may be
+mounted before a key is accessed.
 
-Then the records. Mount `serverb:/shares/south` on `/archive` the same way, and
-refuse writes to it from `servera`. Prove the refusal as `root`, which is the
-account most likely to get through.
+Then prove the two keys are independent. Access `/feeds/weekly` and show that
+the west export appears while the south export does not. Access
+`/feeds/monthly` and show that the second export then appears too.
 
-Then the reboot. Bring `servera` back up and show that neither mount is there
-until it is asked for, and that both arrive on the first access.
+Then reboot. Show that neither export is mounted before the first access, and
+that each local key still reaches the correct server-side export.
 
-Finish with the withdrawal. The reporting job moves to another machine, so
-`/reports` comes off `servera` altogether. Leave nothing behind that would
-mount it, wait for it or complain about it at the next boot. `/archive` must
-come through untouched. Reboot once more and show both outcomes.
+Finish with the withdrawal. Remove only the `weekly` entry from the map and
+restart the automounter. `/feeds/weekly` must no longer work.
+`/feeds/monthly` must still mount the south export. Reboot once more and prove
+both outcomes.
 
 To check:
 
-- Which option in your `/etc/fstab` lines makes a mount wait? What reads those
-  lines and builds units from them, and what are the two units called?
-- Which version of NFS does RHEL 10 use by default? Which command lists the
-  exports of a server running the older version, and what did you have to do
-  instead?
-- Run `mount` before you enter `/reports` and again afterwards. What changed?
-- Which two commands did you run after saving `/etc/fstab`, and what does each
-  one do?
-- Write to a file under `/archive` as `root`. What are you told, and which part
-  of your `/etc/fstab` line decided that?
-- Reboot `servera`. Is anything from `serverb` mounted before you look? Enter
-  both mount points. Do they come back?
-- The automounter would also have done this. Write out the master map entry and
-  the map file entry that would have replaced your `/reports` line. Which of
-  the two kinds of map is it, and why can it not be the other kind?
-- Taking `/reports` off took more than deleting a line. What else did you have
-  to do, and what would still have been running had you skipped it?
-- A plain `/etc/fstab` entry mounts at boot and stays mounted. Name two things
-  that go wrong with that when the export sits on the far side of a network.
+- Which file is the master map, and which file holds the two explicit keys?
+- Why is this an indirect map? Which directory is the base mount point?
+- Write out both map entries. Which field may use an arbitrary local name?
+- Run `mount | grep serverb` before and after each access. What changes?
+- Why would a wildcard entry be wrong for these local names?
+- Which command installed the automounter, and which command enabled it now
+  and for later boots?
+- Reboot `servera`. Is either export mounted before access? Do both keys return?
+- After removing `weekly`, why did you restart `autofs`? Which key still works?
+- A plain `/etc/fstab` entry mounts at boot and stays mounted. Name two problems
+  that causes when the server is across a network.
 
 ## 9. A port lent and then given back
 
@@ -513,9 +502,10 @@ port may survive in the policy or in the firewall. Prove from `workstation`
 that the second port answers and the first one does not. Again
 `semanage port -l -C` must list one port and nothing else.
 
-Then the trial ends and it all comes off. Apache must be stopped and must stay
-stopped after a reboot. The firewall must hold no port that you opened, and the
-policy must hold no port label that you added.
+Then the trial ends and it all comes off. Restore Apache's original port
+setting of 82/TCP. Apache must be stopped and must stay stopped after a reboot.
+The firewall must hold no port that you opened, and the policy must hold no
+port label that you added.
 
 Finish by rebooting `servera` and showing that all three are true.
 
@@ -537,8 +527,10 @@ To check:
   showed you that nothing of yours was left behind?
 - Which two `firewall-cmd` commands closed a port, and what would have been
   left behind had you run only the first one?
+- Which value is in Apache's configuration at the end, and why is restoring it
+  part of handing the borrowed ports back?
 - The service had to survive a reboot in the middle and stay dead at the end.
-  Which command arranged each, and which command reports which state it is in?
+  Which command arranged each, and which command reports each state?
 - Reboot `servera`. Is Apache stopped, is the port closed and is the label
   gone?
 
@@ -557,8 +549,8 @@ That gives you `servera` with an unused 5 GiB disk at `/dev/sdb`.
 Start with the storage. Put a GPT label on `/dev/sdb` and cut one partition of
 about 1 GiB from it, named `timetable`. Give that partition an XFS file system
 and mount it on `/timetable`. The mount must come back on its own after a
-reboot, and the entry in `/etc/fstab` must not name the device. Name the file
-system the way Red Hat recommends.
+reboot. Identify the file system in `/etc/fstab` by the value that Red Hat
+recommends, not by the device name.
 
 Then the service. Install the Apache web server if it is not already there, and
 serve pages from `/timetable` instead of the directory Apache ships with. Put

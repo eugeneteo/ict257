@@ -111,10 +111,10 @@ Prepare with `lab start netsecurity-ports`, then `ssh student@servera`.
 
 That gives you Apache installed, configured for 82/TCP and refusing to start.
 
-Move the application to a TCP port above 1024. Which port is your decision, so
-find one that nothing has claimed already. A `curl` from `workstation` must then
-reach the application on the new port. Nothing must answer on 82/TCP. All of it
-must survive a reboot.
+Move the application to a TCP port above 1024 that SELinux does not already
+associate with a web server. Which port is your decision. A `curl` from
+`workstation` must then reach the application on the new port. Nothing must
+answer on 82/TCP. All of it must survive a reboot.
 
 To check:
 
@@ -198,9 +198,9 @@ That gives you `servera` with an empty 5 GiB disk at `/dev/sdb`.
 
 Build LVM storage on that disk without creating a single partition on it. Name
 the volume group `vg_vault` and the logical volume `lv_vault`. Give the logical
-volume half of the space in the group, give or take an extent, with an XFS file
-system on `/vault`. Leave the rest of the group unallocated, and have `/vault`
-mounted after a reboot.
+volume half of the space in the group, with an XFS file system on `/vault`.
+Leave the rest of the group unallocated, and have `/vault` mounted after a
+reboot.
 
 To check:
 
@@ -208,35 +208,33 @@ To check:
   command told you?
 - Does `lsblk` show a partition table on `/dev/sdb`? Should it?
 - `df -h /vault` reports less than the size of the logical volume. Why?
-- Did you size the volume in mebibytes or in extents? What would the other one
-  have been?
+- Did you leave half the group unallocated? What can you do later with that
+  space that you could not do if it were all used up?
 - Reboot. Is `/vault` mounted, and what in `/etc/fstab` made that happen?
 - If the disk were wanted for something else, what would you have to undo, and
   in what order?
 
-## 8. A short name for a long login
+## 8. A login that needs no password
 
 **Objective: RHCSA-10.3, key-based authentication for SSH. Also RHCSA-1.4.**
 
-The `operator1` user copies files to `serverb` several times a day. Typing a
-user name, a host name and a password every time is tiresome, and the password
-is the weakest part of it.
+The `operator1` user connects to `serverb` several times a day and types a
+password every time. The password is the weakest part of it.
 
 Prepare with `lab start ssh-keyauth`, then `ssh student@servera`.
 
 That gives you the `operator1` user on both `servera` and `serverb`, with
 `redhat` as the password.
 
-Working as `operator1` on `servera`, arrange that `ssh backup` on its own opens
-a session as `operator1` on `serverb`. Authentication must use a key pair that
-is kept somewhere other than the default file name and is protected by a
-passphrase. Within one shell session you should be asked for that passphrase
-once, however many times you connect.
+Working as `operator1` on `servera`, arrange to log in to `serverb` without
+typing a password. The key pair must be kept somewhere other than the default
+file name and must be protected by a passphrase. Within one shell session you
+should be asked for that passphrase once, however many times you connect.
 
 To check:
 
-- Which file gives the `backup` name its meaning, and what did you put in it?
-- What does `ssh -v backup` say about the key that was offered?
+- Your key is not in the default file. What did you have to tell `ssh` so that
+  it was used at all?
 - Log out of `servera` and back in. Are you asked for the passphrase again, and
   why?
 - Which file on `serverb` changed, and what does it hold now?

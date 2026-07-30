@@ -31,8 +31,7 @@ most often forgotten.
 | 9 | [A page on a disk of its own](#9-a-page-on-a-disk-of-its-own) | RHCSA-5.1, 5.5, 10.6, 10.1 | `lab start storage-partitions` |
 | 10 | [One narrow permission, and one account closed](#10-one-narrow-permission-and-one-account-closed) | RHCSA-9.4, 9.1, 9.2, 9.3 | `lab start users-password` |
 
-Questions 9 and 10 are about twice the length of the others. Every objective is
-listed in [`objectives.md`](objectives.md).
+Every objective is listed in [`objectives.md`](objectives.md).
 
 ## 1. Two streams, two files
 

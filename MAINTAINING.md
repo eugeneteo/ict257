@@ -50,9 +50,11 @@ a superscript number that goes straight to the source:
 ...published exam page.<sup>[1][ex200]</sup>
 ```
 
-Each URL is defined once at the foot of the file, under `## References`, and
-used twice: in the superscript and in the numbered entry that carries the title
-and the retrieval date.
+Each URL is defined once at the foot of the file, under `## References`. It is
+used in the numbered entry that carries the title and the retrieval date, and
+again in every superscript that cites it. `objectives.md` cites one page five
+times this way. The same label can also link a name in running text, as
+`practice.md` does with the Red Hat Learning Community.
 
 ```markdown
 [ex200]: https://www.redhat.com/en/services/training/ex200-...

@@ -5,14 +5,16 @@ exam. Any changes that are not persistent will not be given marks. Take note
 that these command pairings are not exhaustive, and you are advised to take
 your own notes as you go through the courseware.
 
-Do these three things.
+Do these three things. The initials spell CPR, which is roughly what they do
+for a change that would otherwise not survive a reboot.
 
-- **Back up before you edit.** Copy the file first before you edit. Revert from
-  the backup file if necessary.
-- **Use the persistent form.** One command and a flag decides whether the
-  change survives a reboot.
-- **Run the second command.** Two commands, and the first alone might not
-  reflect the change or the change might not be persistent.
+- **Copy the file first.** Back up before you edit, and revert from the backup
+  if necessary.
+- **Persistent form, not the runtime one.** One command and a flag decides
+  whether the change survives a reboot.
+- **Reload, or run whatever the second command is.** Two commands, and the
+  first alone might not reflect the change or the change might not be
+  persistent.
 
 ## Use the persistent form
 

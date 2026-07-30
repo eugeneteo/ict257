@@ -1,0 +1,12 @@
+# Narrow exceptions to excluded-paths, one POSIX extended regex per line.
+# Comments and blank lines are ignored.
+#
+# A path has to match a rule in excluded-paths AND a rule here to be committed.
+# Keep this file short. Every line here is a hole in a guard that exists for a
+# reason.
+#
+# Images are blocked everywhere because screenshots of other people's work
+# nearly entered this repository. Charts generated from our own files are a
+# different case, so they have one directory and no more.
+
+^images/[a-z0-9-]+\.png$

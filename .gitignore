@@ -14,13 +14,15 @@ desktop.ini
 *.swo
 *~
 
-# Images, opt in deliberately with git add -f
+# Images, opt in deliberately with git add -f.
+# images/ is the one place for charts generated from our own files.
 *.webp
 *.png
 *.jpg
 *.jpeg
 *.gif
 *.svg
+!images/*.png
 
 # Built and exported output
 *.pdf

@@ -10,18 +10,34 @@ set -uo pipefail
 
 HOOKDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PATTERN_FILE="$HOOKDIR/excluded-paths"
+ALLOW_FILE="$HOOKDIR/allowed-paths"
 MAX_BYTES=$((5 * 1024 * 1024))
 
 patterns() {
     grep -Ev '^\s*(#|$)' "$PATTERN_FILE"
 }
 
+allowances() {
+    [[ -f "$ALLOW_FILE" ]] || return 0
+    grep -Ev '^\s*(#|$)' "$ALLOW_FILE"
+}
+
 # Echoes any path matching an excluded pattern. Reads paths on stdin.
+#
+# An allowance is a narrow exception carved out of a broad block, so one named
+# directory can hold what is refused everywhere else. It is applied after the
+# block, so a path has to be excluded and then allowed to get through.
 match_excluded() {
-    local pats
+    local pats allow
     pats="$(patterns)"
     [[ -z "$pats" ]] && return 0
-    grep -E -f <(printf '%s\n' "$pats") || true
+    allow="$(allowances)"
+    if [[ -z "$allow" ]]; then
+        grep -E -f <(printf '%s\n' "$pats") || true
+    else
+        grep -E -f <(printf '%s\n' "$pats") \
+            | { grep -E -v -f <(printf '%s\n' "$allow") || true; }
+    fi
 }
 
 fail_paths() {

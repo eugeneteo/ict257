@@ -41,6 +41,25 @@ At the start of each semester, re-check:
 
 Record the new dates in each file.
 
+## Images
+
+Images are blocked from this repository. `.gitignore` refuses five extensions
+and `.githooks/excluded-paths` refuses them again, so a forced `git add` still
+fails at the commit. That guard exists because screenshots of somebody else's
+forum posts nearly went in.
+
+One exception is carved out in `.githooks/allowed-paths`, for `images/*.png`.
+That directory holds charts generated from the repository's own files by
+`.private/coverage-viz/generate.py`. Run that script to rebuild them after
+changing `coverage.md`, `lessons.md`, `objectives.md` or `practice.md`.
+
+Nothing else belongs in `images/`. A screenshot of someone else's work does not
+become publishable by being moved into an allowed directory.
+
+Each chart is rendered light and dark, and embedded with a `picture` element so
+GitHub picks the right one. Write the `alt` text as the finding, not the file
+name.
+
 ## How citations work
 
 A citation is a `<sup>` tag wrapping a reference-style link, so the reader sees

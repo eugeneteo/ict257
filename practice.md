@@ -37,7 +37,7 @@ Every objective is listed in [`objectives.md`](objectives.md).
 
 **Objective: RHCSA-1.2, input and output redirection.**
 
-Runs on any machine and needs no `lab start`.
+Runs on any Linux machine and needs no `lab start`.
 
 You are looking for large files that a user has left lying around. As the
 `student` user, `find /var -size +1M` produces two kinds of output at once.

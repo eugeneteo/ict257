@@ -1,5 +1,11 @@
 # Practice questions
 
+The idea of a regular hands-on practice question came from the RHCSA Practice
+series that Tudor Raduta ran as Community Manager in the Red Hat Learning
+Community. That community closed on 31 March 2026,<sup>[1][rhlc]</sup> so the
+original posts can no longer be linked to. The credit is his. The questions
+below are mine, written for this module, and so are any mistakes in them.
+
 Attempt these on your Red Hat Academy lab machine, not on anything you care
 about. Each one is a single task of the kind the exam sets, and each names the
 objective it belongs to so you can look up what is being asked in
@@ -79,12 +85,10 @@ To check:
 - Does it still work after a reboot?
 - Why would an `/etc/fstab` entry be a poor fit for this?
 
-## Where these came from
+## References
 
-The questions above are mine, written for this module.
+[rhlc]: https://access.redhat.com/community/learn
 
-The idea of a regular hands-on practice question came from the RHCSA Practice
-series that Tudor Raduta ran as Community Manager in the Red Hat Learning
-Community. That community closed on 31 March 2026, so the original posts are no
-longer available to link to. The credit is his. The wording, the scenarios and
-any mistakes in them are mine.
+1. Red Hat, ["Red Hat Training & Certification"][rhlc], on the Red Hat Customer
+   Portal, which records the closure of the Red Hat Learning Community.
+   Retrieved 2026-07-30.

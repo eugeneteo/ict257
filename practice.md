@@ -1,6 +1,6 @@
 # Additional practice questions
 
-The first three of these follow questions from the RHCSA Practice series that
+The first two of these follow questions from the RHCSA Practice series that
 Tudor Raduta ran in the [Red Hat Learning Community][rhlc]. It closed on 31
 March 2026,<sup>[1][rhlc]</sup> so the posts can no longer be linked to. The
 credit is his. Any mistakes are mine.
@@ -17,6 +17,24 @@ No answers are given, and no walkthrough. The exam gives you neither. Check your
 work with the questions at the end of each task, then reboot. Anything that does
 not come back is not finished. See [`pairings.md`](pairings.md) for the commands
 most often forgotten.
+
+## Contents
+
+| # | Question | Objectives | Prepare with |
+| --- | --- | --- | --- |
+| 1 | [Two streams, two files](#1-two-streams-two-files) | RHCSA-1.2 | nothing |
+| 2 | [Grow a volume and retire what it sat on](#2-grow-a-volume-and-retire-what-it-sat-on) | RHCSA-6.4, 5.2, 5.3 | `lab start lvm-extend` |
+| 3 | [A share that waits to be asked](#3-a-share-that-waits-to-be-asked) | RHCSA-6.2, 6.3 | `lab start nfsclient-autofs` |
+| 4 | [A port lent and then given back](#4-a-port-lent-and-then-given-back) | RHCSA-10.7, 10.1 | `lab start netsecurity-ports` |
+| 5 | [A default that follows everybody](#5-a-default-that-follows-everybody) | RHCSA-10.2, 1.10 | `lab start perms-default` |
+| 6 | [A job of your own on a clock](#6-a-job-of-your-own-on-a-clock) | RHCSA-7.1, 7.2 | `lab start systasks-timers` |
+| 7 | [A volume group with room left in it](#7-a-volume-group-with-room-left-in-it) | RHCSA-5.4, 5.2 | `lab start lvm-create` |
+| 8 | [Short names for long logins](#8-short-names-for-long-logins) | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` |
+| 9 | [A page on a disk of its own](#9-a-page-on-a-disk-of-its-own) | RHCSA-5.1, 5.5, 10.6, 10.1 | `lab start storage-partitions` |
+| 10 | [One narrow permission, and one account closed](#10-one-narrow-permission-and-one-account-closed) | RHCSA-9.4, 9.1, 9.2, 9.3 | `lab start users-password` |
+
+Questions 9 and 10 are about twice the length of the others. Every objective is
+listed in [`objectives.md`](objectives.md).
 
 ## 1. Two streams, two files
 
@@ -42,12 +60,13 @@ To check:
 - There is more than one way to send both streams to one file. Which did you
   use, and what does `2>&1 >file` do differently from `>file 2>&1`?
 
-## 2. Grow a volume that is already in use
+## 2. Grow a volume and retire what it sat on
 
-**Objective: RHCSA-6.4, extend existing logical volumes.**
+**Objective: RHCSA-6.4, extend logical volumes. Also RHCSA-5.2 and 5.3.**
 
-A nightly job writes to `/data` and will not start unless it has room. Nothing
-already there can be deleted.
+A nightly job writes to `/data` and will not start unless it has room. The two
+small partitions the volume group sits on are being taken back. Nothing already
+on `/data` can be deleted and the job may not be stopped.
 
 Prepare with `lab start lvm-extend`, then `ssh student@servera`.
 
@@ -58,62 +77,81 @@ Give `/data` at least 500 MiB of free space, without unmounting it and without
 losing what is on it. How much bigger the volume has to be is for you to work
 out.
 
+Then bring `vg_servera` down to one physical volume, the new one. The two it
+started on must hold no data, must no longer belong to the volume group and
+must carry no LVM label. `/data` stays mounted throughout.
+
 Then make sure `/data` is still mounted after a reboot, whether or not it was
 before.
 
 To check:
 
 - Does `df -h /data` report at least 500 MiB available?
-- Do `lvs` and `df -h /data` agree? If they do not, which step is missing?
-- Reboot. Is `/data` mounted, and is it still the larger size?
-- The filesystem here is XFS. Which command did you need, and which one would
-  you have needed for ext4?
 - How much free space did the volume group have when you started, and what did
   you have to do about it?
+- Do `lvs` and `df -h /data` agree? If they do not, which step is missing?
+- Which command moved the data off a physical volume, and what does the course
+  say about running it while the file system is mounted?
+- Three commands retire a physical volume. Name them, and say what order they
+  have to run in.
+- Which command shows which physical volumes `vg_servera` now uses, and how
+  many does it report?
+- The filesystem here is XFS. Which command did you need, and which one would
+  you have needed for ext4?
+- Reboot. Is `/data` mounted, and is it still the larger size?
 
-## 3. A share that mounts itself
+## 3. A share that waits to be asked
 
-**Objective: RHCSA-6.3, configure autofs. Also RHCSA-6.2.**
+**Objective: RHCSA-6.2, mount network file systems with NFS. Also RHCSA-6.3.**
 
-`serverb` keeps a directory for each team, and new teams appear without warning.
-Nobody should have to mount anything by hand.
+A reporting job on `servera` reads from `serverb` twice a week. Between those
+runs the mount earns nothing and holds up every boot.
 
 Prepare with `lab start nfsclient-autofs`, then `ssh student@servera`.
 
 That gives you `serverb` exporting `/shares`, which holds `west` and `south`.
 
-Make everything under that export reachable under `/teams`, so that
-`/teams/west` and `/teams/south` both work. Nothing should be mounted until
-someone goes looking for it. A team added on `serverb` later must work with no
-further change to `servera`, and the arrangement must survive a reboot.
+Mount `serverb:/shares/west` on `/reports`, and have that happen only when
+somebody enters `/reports`. Nothing must be mounted before that. Do all of it
+from `/etc/fstab`. Do not install `autofs` and do not write a map file. It must
+behave the same way after a reboot.
 
 To check:
 
-- Before you touch anything, does `mount` list the export? What does it list
-  after you enter one of the directories?
-- Which package did you have to install before any of this worked?
-- A new team is added on `serverb` tomorrow. What would have to be true for it
-  to appear under `/teams` without you touching `servera` at all?
-- Reboot `servera`. Does it still mount on demand?
-- There were two kinds of map you could have used. Which did you choose, and
-  what would the other one have looked like?
-- Why would an `/etc/fstab` entry be a poor fit for this?
+- Which option in your `/etc/fstab` line makes the mount wait? What reads that
+  line and builds a unit from it, and what is the unit called?
+- Run `mount` before you enter `/reports` and again afterwards. What changed?
+- Which two commands did you run after saving `/etc/fstab`, and what does each
+  one do?
+- Reboot `servera`. Is anything from `serverb` mounted before you look? Enter
+  `/reports` again. Does it come back?
+- The automounter would also have done this. Write out the master map entry and
+  the map file entry that would have replaced your `/etc/fstab` line.
+- A plain `/etc/fstab` entry mounts at boot and stays mounted. Name two things
+  that go wrong with that when the export sits on the far side of a network.
 
-## 4. A port that SELinux has not heard of
+## 4. A port lent and then given back
 
 **Objective: RHCSA-10.7, manage SELinux port labels. Also RHCSA-10.1.**
 
-A web application on `servera` listens on 82/TCP, and the security team wants
-that port back. The application has to move and keep working.
+A web application on `servera` is being trialled for a week on a port borrowed
+from another team. When the week ends the machine has to look untouched.
 
 Prepare with `lab start netsecurity-ports`, then `ssh student@servera`.
 
 That gives you Apache installed, configured for 82/TCP and refusing to start.
 
-Move the application to a TCP port above 1024 that SELinux has no label for at
-all. Which port is your decision, and checking is part of the task. A `curl`
-from `workstation` must then reach the application on the new port. Nothing must
-answer on 82/TCP. All of it must survive a reboot.
+Start with the trial. Move the application to a TCP port above 1024 that
+`semanage port -l` does not list at all. Which port is your decision, and
+checking is part of the task. A `curl` from `workstation` must reach the
+application on the new port, nothing must answer on 82/TCP, and the service
+must come back on its own after a reboot. When this part is done,
+`semanage port -l -C` must list your port and nothing else.
+
+Then the week ends and it all comes off. Apache must be stopped and must stay
+stopped after a reboot. The firewall must hold no port that you opened, and the
+policy must hold no port label that you added. Reboot `servera` and show that
+all three are true.
 
 To check:
 
@@ -125,64 +163,80 @@ To check:
   failure, and what does SELinux call a refusal of that kind?
 - With the label corrected, `curl` from `workstation` still failed. What was
   left to do?
-- Reboot `servera`. Does `curl` from `workstation` still get an answer?
-- The firewall already decides what reaches the machine. Why does SELinux label
-  ports as well?
+- Which option of `semanage port` took the label away again, and which option
+  showed you that nothing of yours was left behind?
+- Which two `firewall-cmd` commands closed the port, and what would have been
+  left behind had you run only the first one?
+- Reboot `servera`. Is Apache stopped, is the port closed and is the label gone?
 
-## 5. A directory two people share
+## 5. A default that follows everybody
 
 **Objective: RHCSA-10.2, manage default file permissions. Also RHCSA-1.10.**
 
-Two operators hand work over to each other at the end of a shift. Each has to
-read what the other left, and neither should be able to remove it.
+Every account on `servera` is to create files the same way from now on. The
+owner reads and writes, the group reads, and nobody else gets anything.
 
 Prepare with `lab start perms-default`, then `ssh student@servera`.
 
 That gives you the `operator1` and `operator2` users, both in the `operators`
 group, with `redhat` as their password.
 
-Make `/srv/handover` a place where the two of them work. Whoever creates a file
-there, the `operators` group must own it. Neither operator may delete or rename
-a file that the other one owns. Nobody outside the group may look inside. All of
-it must still be true after a reboot.
+Arrange that every login on `servera` starts with a umask of `0027`. Put the
+setting in one place that covers all accounts, and use neither `/etc/bashrc`
+nor a home directory. Then find the value that `operator1` and
+`operator2` carry now and take it away, so that the new default reaches them
+too. All of it must still hold after a reboot.
+
+Then show what it does. As `operator1`, create one file and one directory, and
+account for the permissions on each.
 
 To check:
 
-- As `operator1`, create a file there. Which group owns it, and what made that
+- Which file did you create, and which directory holds it? Why is that a better
+  place than `/etc/bashrc`?
+- What did `umask` print for `operator1` before you started, and where was that
+  value set? Which command found it?
+- Your new file is `0640` and your new directory is `0750`. Show the arithmetic
+  for both, and say why the two do not match.
+- What would that file have come out as under the RHEL default of `0022`?
+- Log out and back in, then reboot. Does `umask` still print `0027`?
+- Can `operator2` read the new file? Look at the group that owns it, and say
+  which group `operator1` was in when the file was made.
+- An account created next term never has its home directory touched by you.
+  Does it get `0027`, and what makes that happen?
+
+## 6. A job of your own on a clock
+
+**Objective: RHCSA-7.1, schedule tasks with systemd timers. Also RHCSA-7.2.**
+
+A colleague wants to know how fast `/` is filling on `servera`. Nobody is going
+to sit and watch it.
+
+Prepare with `lab start systasks-timers`, then `ssh student@servera`.
+
+That gives you a plain `servera` and nothing else.
+
+Write a unit pair of your own, `diskwatch.service` and `diskwatch.timer`, and
+put both where a package update cannot reach them. The service must run one
+command as `root` and then exit, appending the date and the free space on `/`
+to `/var/log/diskwatch.log`. The timer must fire it every ten minutes, must be
+waiting now and must be waiting again after a reboot.
+
+To check:
+
+- Which directory holds your two files, and which directory would have been the
+  wrong one? What happens to a file left in the wrong one?
+- Which section of the timer file carries the schedule, and which key did you
+  set in it?
+- Which command did you run after writing the files, and what does systemd do
+  if you forget it?
+- Which command reports when the timer is next due and which unit it triggers?
+- Wait ten minutes. Has `/var/log/diskwatch.log` grown? Which command shows
+  what the service recorded the last time it ran?
+- Reboot `servera`. Is the timer waiting again, and which command made that
   happen?
-- As `operator2`, try to delete that file. What stops you, and which permission
-  is doing the stopping?
-- Can the `student` user look inside without `sudo`? Can `root`, and why?
-- The umask for these users is not the RHEL default. What is it, and what
-  permissions would a new file have carried under `0022`?
-- Why is `/tmp` a poor home for a directory like this one?
-
-## 6. A directory that empties itself
-
-**Objective: RHCSA-7.1, schedule tasks with systemd timer units.**
-
-A scanner drops files into a directory on `servera` and nothing ever removes
-them. Every few months the disk fills.
-
-Prepare with `lab start systasks-tempfiles`, then `ssh student@servera`.
-
-That gives you a plain `servera`, with the vendor configuration under
-`/usr/lib/tmpfiles.d` as it was shipped.
-
-Arrange for `/var/spool/scans` to exist after every boot, owned by the `student`
-user and group, with `0750` permissions. Files in it that have gone untouched
-for three days must disappear without anyone asking. A package update must not
-undo your work.
-
-To check:
-
-- Which file did you create, and why not edit one under `/usr/lib/tmpfiles.d`?
-- Which timer unit does the removing, and when is it next due to fire?
-- How did you satisfy yourself that the removal works, without waiting three
-  days?
-- Delete the directory and reboot. Does it come back, and what puts it there?
-- The `d` and `D` types differ. Which one did you need, and what would the other
-  one have done here?
+- You enabled one of the two units and left the other alone. Which one, and
+  what would happen if you enabled the other as well?
 
 ## 7. A volume group with room left in it
 
@@ -214,35 +268,47 @@ To check:
 - If the disk were wanted for something else, what would you have to undo, and
   in what order?
 
-## 8. A short name for a long login
+## 8. Short names for long logins
 
 **Objective: RHCSA-10.3, key-based authentication for SSH. Also RHCSA-1.4.**
 
-The `operator1` user copies files to `serverb` several times a day. Typing a
-user name, a host name and a password every time is tiresome, and the password
-is the weakest part of it.
+The `operator1` user on `servera` reaches `serverb` many times a day, under two
+different accounts there. The full command is long and the password is the
+weakest part of it.
 
 Prepare with `lab start ssh-keyauth`, then `ssh student@servera`.
 
-That gives you the `operator1` user on both `servera` and `serverb`, with
-`redhat` as the password.
+That gives you the `operator1` user on `servera` and on `serverb`, with
+`redhat` as the password. The `student` user on `serverb` has `student`.
 
-Working as `operator1` on `servera`, arrange that `ssh backup` on its own opens
-a session as `operator1` on `serverb`. Authentication must use a key pair that
-is kept somewhere other than the default file name and is protected by a
-passphrase. Within one shell session you should be asked for that passphrase
-once, however many times you connect.
+Working as `operator1` on `servera`, arrange two short names. `ssh backup` on
+its own must open a session as `operator1` on `serverb`. `ssh audit` on its own
+must open a session as `student` on `serverb`. Each name uses a key pair of its
+own, kept under a file name that `ssh` would not have found by itself. Neither
+name may ask for a password.
+
+Then tighten the client. Make `ssh` refuse to connect to any host whose key it
+does not already hold, and never add one on your behalf.
 
 To check:
 
-- Which file gives the `backup` name its meaning, and what did you put in it?
-- Log out of `servera` and back in. Are you asked for the passphrase again, and
-  why?
-- Which file on `serverb` changed, and what does it hold now?
-- Compare the permissions on the private key and on the public key. Why do they
+- Which file carries the two names, and which three keywords did you write
+  under each?
+- Run `ssh -v backup`. Which line names the key that was offered, and which
+  line says how you were authenticated?
+- Which file on `serverb` changed for each name, and whose home directory is it
+  in?
+- Compare the permissions on a private key and on its public half. Why do they
   differ?
-- Somebody takes a copy of your private key file. What else do they need before
-  they can use it?
+- Move one private key file aside and connect again with `ssh -v`. Which method
+  does the client fall back to, and which line shows it? Put the file back.
+- Which setting did you choose for host key checking, and what would the other
+  three have done? Which file holds it, and which file does that one override?
+- You set that last, not first. What would have gone wrong had you set it
+  before the two names worked?
+- Neither private key has a passphrase on it. Somebody takes a copy of one of
+  the files. What does that get them, and what does the course say you could
+  have done about it?
 
 ## 9. A page on a disk of its own
 
@@ -297,64 +363,64 @@ To check:
 - What does `getenforce` report now? Somebody suggests putting SELinux in
   permissive mode to save time. What would that have hidden?
 
-## 10. Two markers, one of them leaving
+## 10. One narrow permission, and one account closed
 
-**Objective: RHCSA-9.2, adjust password ageing. Also RHCSA-9.1, 9.3 and 9.4.**
+**Objective: RHCSA-9.4, configure privileged access. Also RHCSA-9.1 to 9.3.**
 
-Two people mark coursework on `servera` this semester. One starts today and
-runs a marking script that nobody sits and watches. The other finishes today
-and must lose every way in, while the work already submitted stays where it is.
+Two people cover the relief rota on `servera` this term. One starts today and
+needs to restart the time service, and nothing more than that. The other
+finishes today and must lose every way in, while the work already filed stays
+where it is.
 
 Prepare with `lab start users-password`, then `ssh student@servera`.
 
 That gives you `servera` with the `operator1` user on it, whose password is
 `redhat`.
 
-Start with the accounts. Create the `markers` group and two users, `marker1`
-and `marker2`, both of them in `markers` as a supplementary group, each with a
-password of your choosing. Create an `oncall` group as well and put `marker1`
-in that too, without disturbing anything it already has. The `operator1` user
-joins `markers` and must keep every group it already belongs to.
+Start with the accounts. Create the `helpdesk` group and two users, `relief1`
+and `relief2`, both of them in `helpdesk` as a supplementary group, each with a
+password of your choosing. The `operator1` user joins `helpdesk` as well and
+must keep every group it already belongs to.
 
-Then the ageing, on `marker1` only. The first time it logs in it has to choose
-a new password, and you should watch that happen. After that its password must
-last no more than 45 days, with 10 days of warning before it expires. The
-account itself must stop working 90 days from today, whatever the password
-does.
+Then the ageing, on `relief1` only. The first time it logs in it has to choose a
+new password, and you should watch that happen. Should it ever let its password
+expire, the account must lock itself seven days later, without anybody
+intervening.
 
-Then the privilege. The marking script runs unattended as `marker1`, so every
-member of `markers` must be able to run any command as `root` through `sudo`
-without being asked for a password. Put the rule in a file of its own and leave
-`/etc/sudoers` alone. The course names one condition for granting a rule like
-that, so meet it as well, for both markers, from `workstation`. Then log in
-from `workstation` as `marker1` with no password at all and run something
-through `sudo` that a plain user could not.
+Then the privilege, and no more of it than the job needs. Every member of
+`helpdesk` must be able to restart the `chronyd` service as `root` through
+`sudo`. Through `sudo` they must be able to do nothing else at all. Put the rule
+in a file of its own under `/etc/sudoers.d` and leave `/etc/sudoers` alone.
+Prove both halves as `relief1`: restart `chronyd`, then try to stop `sshd`.
 
-Then the leaver. Shut `marker2` the way the course recommends for somebody who
-has left, so that no login as `marker2` succeeds from `workstation` or on
-`servera`, by key or by password. Do not delete the account and do not touch
-its files. Finish by rebooting `servera` and trying both logins once more.
+Then the leaver. First give `relief2` a way in from `workstation` with an SSH
+key, so that you can see for yourself what each step of the shutdown does. Then
+close `relief2` the way the course recommends for somebody who has gone, so that
+no login as `relief2` succeeds from `workstation` or on `servera`, by key or by
+password. Do not delete the account and do not touch its files. Finish by
+rebooting `servera` and trying the `sudo` rule and both logins once more.
 
 To check:
 
-- Which command reports the ageing settings for `marker1`, and which of its
-  lines carry the three things you set?
-- What did you see the first time `marker1` logged in, and which command made
+- Which command reports the ageing settings for `relief1`, and which of its
+  lines carry the two things you set?
+- What did you see the first time `relief1` logged in, and which command made
   that happen?
-- Look at `id marker1` and `id operator1`. Is `markers` still there on both of
-  them? Which option of `usermod` adds a group and which one replaces the
+- Look at `id operator1`. Is `helpdesk` there, and is everything else still
+  there? Which option of `usermod` adds a group and which one replaces the
   list?
 - Which file holds your `sudo` rule? Take the line apart. What does each part
-  say about who may run what, as whom, and about the password prompt?
-- The course gives one condition for granting a rule like that. What is the
-  condition, what is the reasoning behind it, and how did you satisfy it?
-- Lock the password of `marker2` and stop there. Can you still get in from
-  `workstation` with the key? What does the course say about locking on its
-  own, and what does it recommend instead for somebody who has left?
-- Which file records both the lock and the expiry for `marker2`, and in what
+  say about who may run what, and as whom?
+- As `relief1`, run `sudo systemctl stop sshd`. Were you refused? Which part of
+  your rule decided that?
+- Your rule names a command by its full path. Which command gave you that path?
+- Lock the password of `relief2` and stop there. Can you still get in from
+  `workstation` with the key? What does the course say about locking on its own,
+  and what does it recommend instead for somebody who has left?
+- Which file records both the lock and the expiry for `relief2`, and in what
   units is the expiry held?
-- Deleting the account would also have stopped the logins. Why is that the
-  wrong answer here?
+- Deleting the account would also have stopped the logins. Why is that the wrong
+  answer here?
 - Reboot `servera`. Which of the things you set needed a further command to
   survive the reboot, and why?
 

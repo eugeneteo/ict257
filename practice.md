@@ -28,7 +28,7 @@ you enjoyed them.
 | 3 | [A default that follows everybody](#3-a-default-that-follows-everybody) | RHCSA-10.2, 1.10 | `lab start perms-default` | week 4 |
 | 4 | [Short names for long logins](#4-short-names-for-long-logins) | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` | week 6 |
 | 5 | [A job of your own on a clock](#5-a-job-of-your-own-on-a-clock) | RHCSA-7.1, 1.2 | `lab start scheduling-cron` | week 8 |
-| 6 | [Grow a volume and retire what it sat on](#6-grow-a-volume-and-retire-what-it-sat-on) | RHCSA-6.4, 5.2, 5.3 | `lab start lvm-extend` | week 10 |
+| 6 | [Grow a volume and retire what it sat on](#6-grow-a-volume-and-retire-what-it-sat-on) | RHCSA-6.4, 5.1, 5.2, 5.3 | `lab start lvm-extend` | week 10 |
 | 7 | [A volume group with room left in it](#7-a-volume-group-with-room-left-in-it) | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` | week 10 |
 | 8 | [A share that waits to be asked](#8-a-share-that-waits-to-be-asked) | RHCSA-6.2, 6.3 | `lab start nfsclient-autofs` | week 11 |
 | 9 | [A port lent and then given back](#9-a-port-lent-and-then-given-back) | RHCSA-10.7, 10.1 | `lab start netsecurity-ports` | week 11 |
@@ -48,10 +48,26 @@ You are looking for large files that a user has left lying around. As the
 Matches go to standard output. Complaints about directories the user cannot
 read go to standard error, and there are a lot of them.
 
-Capture the matches in `/tmp/large.txt` and the complaints in
-`/tmp/denied.txt`, using one command line and running it once.
+Start with the split. Capture the matches in `/tmp/large.txt` and the
+complaints in `/tmp/denied.txt`, using one command line and running it once.
+Neither file may hold a line that belongs in the other.
 
-Then produce a third file, `/tmp/audit.txt`, holding both streams together.
+Then the pair. Produce `/tmp/audit.txt`, holding both streams together. Run the
+search once more and have the second run join the first inside that file. When
+you have finished, `/tmp/audit.txt` carries two searches and `/tmp/large.txt`
+still carries one.
+
+Then the count. Report on the terminal how many lines the search produces in
+all, with both streams counted together. One command line, no file written and
+no arithmetic of your own. The operator that merged the two streams into
+`/tmp/audit.txt` will not serve you here. Working out why is part of the task.
+
+Then the quiet run. Save every match to `/tmp/final.txt` and put only the last
+five matches on the terminal, in one command line. The complaints must reach
+neither the file nor the screen.
+
+Finish by counting the lines in each file you have kept, so that you can say
+what every one of them holds.
 
 To check:
 
@@ -60,6 +76,20 @@ To check:
   `root`, and why?
 - There is more than one way to send both streams to one file. Which did you
   use, and what does `2>&1 >file` do differently from `>file 2>&1`?
+- Which operator made the second search join the first inside `/tmp/audit.txt`?
+  What would the plain overwriting form have cost you?
+- The count puts both streams into a pipe. Why does the merging operator fail
+  there, and which form works instead?
+- Add the lines of `/tmp/large.txt` to the lines of `/tmp/denied.txt`. Does the
+  total agree with the count you reported? Which command counted them?
+- Somebody writes `find /var -size +1M > /tmp/large.txt | wc -l` and sees `0`.
+  Why does nothing reach `wc`?
+- In the quiet run, `tee` sits in the middle of the pipeline. What reaches the
+  file, what reaches the screen and what would `tee` at the end have done?
+- Where did the complaints go in the quiet run? What would you have written to
+  keep them in a file and still keep them off the screen?
+- Compare the line count of `/tmp/audit.txt` with `/tmp/large.txt` and
+  `/tmp/denied.txt` added together. Which is larger, and why?
 
 ## 2. One narrow permission, and one account closed
 
@@ -127,21 +157,38 @@ To check:
 **Objective: RHCSA-10.2, manage default file permissions. Also RHCSA-1.10.**
 
 Every account on `servera` is to create files the same way from now on. The
-owner reads and writes, the group reads, and nobody else gets anything.
+owner reads and writes, the group reads, and nobody else gets anything. One
+account handles material that nobody else may see, and it needs a tighter rule
+of its own.
 
 Prepare with `lab start perms-default`, then `ssh student@servera`.
 
 That gives you the `operator1` and `operator2` users, both in the `operators`
 group, with `redhat` as their password.
 
-Arrange that every login on `servera` starts with a umask of `0027`. Put the
-setting in one place that covers all accounts, and use neither `/etc/bashrc`
-nor a home directory. Then find the value that `operator1` and
+Start with the evidence. Log in as `operator1` from `workstation` and note what
+`umask` prints. Leave one file behind in that home directory as a record of how
+the account creates files today, and write down its permissions.
+
+Then the default. Arrange that every login on `servera` starts with a umask of
+`0027`. Put the setting in one place that covers all accounts, and use neither
+`/etc/bashrc` nor a home directory. Then find the value that `operator1` and
 `operator2` carry now and take it away, so that the new default reaches them
 too. All of it must still hold after a reboot.
 
 Then show what it does. As `operator1`, create one file and one directory, and
 account for the permissions on each.
+
+Then the exception. A file that `operator2` creates must be readable and
+writable by `operator2` alone, and a directory it creates must be closed to
+everybody else as well. Put that where it reaches `operator2` and no other
+account, and leave the arrangement for everybody else exactly as you built it.
+Log in as each of the two users in turn from `workstation` and prove that they
+now differ.
+
+Finish with the file you left behind. It still carries the permissions it was
+born with. Bring it into line with the new default by hand. Then reboot
+`servera` and check both umask values once more.
 
 To check:
 
@@ -152,9 +199,17 @@ To check:
 - Your new file is `0640` and your new directory is `0750`. Show the arithmetic
   for both, and say why the two do not match.
 - What would that file have come out as under the RHEL default of `0022`?
-- Log out and back in, then reboot. Does `umask` still print `0027`?
-- Can `operator2` read the new file? Look at the group that owns it, and say
-  which group `operator1` was in when the file was made.
+- The file you left behind at the start still has its old permissions. Which
+  command brought it into line, and why did the new default not reach it?
+- Which value did you give `operator2`, and which file holds it? Two settings
+  now apply to that account. Which one wins, and what makes it win?
+- Log in as `operator2` from `workstation`, then reach the same account with
+  `su - operator2` on `servera`. Does the tighter value arrive both ways? What
+  does the course say the dash does?
+- Can `operator2` read the file that `operator1` made? Look at the group that
+  owns it, and say which group `operator1` was in when the file was made.
+- Log out and back in, then reboot. Does `umask` print `0027` for `operator1`
+  and your tighter value for `operator2`?
 - An account created next term never has its home directory touched by you.
   Does it get `0027`, and what makes that happen?
 
@@ -270,7 +325,7 @@ To check:
 
 ## 6. Grow a volume and retire what it sat on
 
-**Objective: RHCSA-6.4, extend logical volumes. Also RHCSA-5.2 and 5.3.**
+**Objective: RHCSA-6.4, extend logical volumes. Also RHCSA-5.1, 5.2 and 5.3.**
 
 A nightly job writes to `/data` and will not start unless it has room. The two
 small partitions the volume group sits on are being taken back. Nothing already
@@ -281,22 +336,37 @@ Prepare with `lab start lvm-extend`, then `ssh student@servera`.
 That gives you the volume group `vg_servera`, the logical volume `lv_servera`
 mounted on `/data`, and the disk `/dev/sdb`.
 
-Give `/data` at least 500 MiB of free space, without unmounting it and without
-losing what is on it. How much bigger the volume has to be is for you to work
-out.
+Start with the survey. Record how many files `/data` holds, what `df` reports
+about it and what the volume group has left. You need those numbers twice, once
+to size the work and once to show at the end that nothing was lost.
 
-Then bring `vg_servera` down to one physical volume, the new one. The two it
-started on must hold no data, must no longer belong to the volume group and
-must carry no LVM label. `/data` stays mounted throughout.
+Then the room. Give `/data` at least 500 MiB of free space, without unmounting
+it and without losing what is on it. How much bigger the volume has to be is
+for you to work out, and so is how much of `/dev/sdb` the new physical volume
+has to take.
+
+Then the retirement. Bring `vg_servera` down to one physical volume, the new
+one. The two it started on must hold no data, must no longer belong to the
+volume group and must carry no LVM label. `/data` stays mounted throughout.
+
+Then the disk itself. Take the two retired partitions off `/dev/sdb`, so that
+one partition is left and the space the other two held is free again. Nothing
+under `/data` may be disturbed by that.
 
 Then make sure `/data` is still mounted after a reboot, whether or not it was
 before.
+
+Finish by rebooting. Then, from `workstation` and without opening a session on
+`servera`, show that `/data` is mounted at its new size and still holds every
+file you counted.
 
 To check:
 
 - Does `df -h /data` report at least 500 MiB available?
 - How much free space did the volume group have when you started, and what did
   you have to do about it?
+- How large did the new physical volume have to be, and what decided that? What
+  does `pvmove` do when it is too small?
 - Do `lvs` and `df -h /data` agree? If they do not, which step is missing?
 - Which command moved the data off a physical volume, and what does the course
   say about running it while the file system is mounted?
@@ -304,9 +374,12 @@ To check:
   have to run in.
 - Which command shows which physical volumes `vg_servera` now uses, and how
   many does it report?
+- Which command took the two partitions off the disk? What would it have cost
+  you to run it before the three commands above?
 - The filesystem here is XFS. Which command did you need, and which one would
   you have needed for ext4?
-- Reboot. Is `/data` mounted, and is it still the larger size?
+- Reboot. Is `/data` mounted, and is it still the larger size? Which command
+  showed you that from `workstation` without a session on `servera`?
 
 ## 7. A volume group with room left in it
 
@@ -360,29 +433,55 @@ To check:
 
 **Objective: RHCSA-6.2, mount network file systems with NFS. Also RHCSA-6.3.**
 
-A reporting job on `servera` reads from `serverb` twice a week. Between those
-runs the mount earns nothing and holds up every boot.
+A reporting job on `servera` reads from `serverb` twice a week. A second job
+reads a set of records that must never be written to. Between those runs the
+mounts earn nothing and hold up every boot.
 
 Prepare with `lab start nfsclient-autofs`, then `ssh student@servera`.
 
-That gives you `serverb` exporting `/shares`, which holds `west` and `south`.
+That gives you `serverb` exporting directories over NFS, with nothing from it
+mounted on `servera`.
 
-Mount `serverb:/shares/west` on `/reports`, and have that happen only when
-somebody enters `/reports`. Nothing must be mounted before that. Do all of it
-from `/etc/fstab`. Do not install `autofs` and do not write a map file. It must
-behave the same way after a reboot.
+Start by finding out what is on offer. Without being told the paths, list the
+directories that `serverb` exports, then leave `servera` as you found it. Say
+which NFS version made you work that way.
+
+Then the reporting mount. Mount `serverb:/shares/west` on `/reports`, and have
+that happen only when somebody enters `/reports`. Nothing must be mounted
+before that. Do all of it from `/etc/fstab`. Do not install `autofs` and do not
+write a map file.
+
+Then the records. Mount `serverb:/shares/south` on `/archive` the same way, and
+refuse writes to it from `servera`. Prove the refusal as `root`, which is the
+account most likely to get through.
+
+Then the reboot. Bring `servera` back up and show that neither mount is there
+until it is asked for, and that both arrive on the first access.
+
+Finish with the withdrawal. The reporting job moves to another machine, so
+`/reports` comes off `servera` altogether. Leave nothing behind that would
+mount it, wait for it or complain about it at the next boot. `/archive` must
+come through untouched. Reboot once more and show both outcomes.
 
 To check:
 
-- Which option in your `/etc/fstab` line makes the mount wait? What reads that
-  line and builds a unit from it, and what is the unit called?
+- Which option in your `/etc/fstab` lines makes a mount wait? What reads those
+  lines and builds units from them, and what are the two units called?
+- Which version of NFS does RHEL 10 use by default? Which command lists the
+  exports of a server running the older version, and what did you have to do
+  instead?
 - Run `mount` before you enter `/reports` and again afterwards. What changed?
 - Which two commands did you run after saving `/etc/fstab`, and what does each
   one do?
+- Write to a file under `/archive` as `root`. What are you told, and which part
+  of your `/etc/fstab` line decided that?
 - Reboot `servera`. Is anything from `serverb` mounted before you look? Enter
-  `/reports` again. Does it come back?
+  both mount points. Do they come back?
 - The automounter would also have done this. Write out the master map entry and
-  the map file entry that would have replaced your `/etc/fstab` line.
+  the map file entry that would have replaced your `/reports` line. Which of
+  the two kinds of map is it, and why can it not be the other kind?
+- Taking `/reports` off took more than deleting a line. What else did you have
+  to do, and what would still have been running had you skipped it?
 - A plain `/etc/fstab` entry mounts at boot and stays mounted. Name two things
   that go wrong with that when the export sits on the far side of a network.
 
@@ -390,8 +489,9 @@ To check:
 
 **Objective: RHCSA-10.7, manage SELinux port labels. Also RHCSA-10.1.**
 
-A web application on `servera` is being trialled for a week on a port borrowed
-from another team. When the week ends the machine has to look untouched.
+A web application on `servera` is being trialled on a port borrowed from
+another team. The lender wants the port back sooner than agreed. When the trial
+ends the machine has to look untouched.
 
 Prepare with `lab start netsecurity-ports`, then `ssh student@servera`.
 
@@ -404,10 +504,20 @@ application on the new port, nothing must answer on 82/TCP, and the service
 must come back on its own after a reboot. When this part is done,
 `semanage port -l -C` must list your port and nothing else.
 
-Then the week ends and it all comes off. Apache must be stopped and must stay
+Then prove it. Reboot `servera` and run the `curl` from `workstation` again,
+without touching `servera` first.
+
+Then the lender asks for the port back. Move the application to a second port,
+chosen the same way, and hand the first one back in full. Nothing of the first
+port may survive in the policy or in the firewall. Prove from `workstation`
+that the second port answers and the first one does not. Again
+`semanage port -l -C` must list one port and nothing else.
+
+Then the trial ends and it all comes off. Apache must be stopped and must stay
 stopped after a reboot. The firewall must hold no port that you opened, and the
-policy must hold no port label that you added. Reboot `servera` and show that
-all three are true.
+policy must hold no port label that you added.
+
+Finish by rebooting `servera` and showing that all three are true.
 
 To check:
 
@@ -419,11 +529,18 @@ To check:
   failure, and what does SELinux call a refusal of that kind?
 - With the label corrected, `curl` from `workstation` still failed. What was
   left to do?
-- Which option of `semanage port` took the label away again, and which option
+- Name two ports above 1024 that would have let you skip SELinux altogether,
+  and say which type already holds each of them.
+- `semanage port` has an option that modifies a binding. Why was it not the one
+  for the move to the second port, and which two options did the move need?
+- Which option of `semanage port` took a label away again, and which option
   showed you that nothing of yours was left behind?
-- Which two `firewall-cmd` commands closed the port, and what would have been
+- Which two `firewall-cmd` commands closed a port, and what would have been
   left behind had you run only the first one?
-- Reboot `servera`. Is Apache stopped, is the port closed and is the label gone?
+- The service had to survive a reboot in the middle and stay dead at the end.
+  Which command arranged each, and which command reports which state it is in?
+- Reboot `servera`. Is Apache stopped, is the port closed and is the label
+  gone?
 
 ## 10. A page on a disk of its own
 

@@ -278,15 +278,27 @@ Prepare with `lab start ssh-keyauth`, then `ssh student@servera`.
 That gives you the `operator1` user on `servera` and on `serverb`, with
 `redhat` as the password. The `student` user on `serverb` has `student`.
 
-Working as `operator1` on `servera`, arrange two short names to type in place
-of a user name and a host name. `ssh backup` on its own must open a session as
-`operator1` on `serverb`. `ssh audit` on its own must open a session as
-`student` on `serverb`. Each name uses a key pair of its own, kept under a file
-name that `ssh` would not have found by itself. Neither name may ask for a
-password.
+Start with the names. Working as `operator1` on `servera`, arrange two short
+names to type in place of a user name and a host name. `ssh backup` on its own
+must open a session as `operator1` on `serverb`. `ssh audit` on its own must
+open a session as `student` on `serverb`. Each name uses a key pair of its own,
+kept under a file name that `ssh` would not have found by itself. Neither name
+may ask for a password.
 
-Then tighten the client. Make `ssh` refuse to connect to any host whose key it
-does not already hold, and never add one on your behalf.
+Then the passphrase. The key behind `backup` must be worth nothing to somebody
+who copies the file, so protect it. Running `ssh backup` must still ask you for
+nothing, so arrange for the passphrase to be given once and held for the rest of
+the session.
+
+Then the host keys. Make `ssh` refuse any host whose key it does not already
+hold, and never add one on your behalf. Put that setting where it reaches
+`operator1` alone, and put a different value where it reaches everybody. Work
+out which of the two wins, then beat both of them once from the command line
+without editing either file.
+
+Finish by making `operator1` forget the host key for `serverb` altogether.
+Restore the trust without answering a prompt and without weakening the setting
+you chose. Then run `ssh backup` one last time.
 
 To check:
 
@@ -300,13 +312,18 @@ To check:
   differ?
 - Move one private key file aside and connect again with `ssh -v`. Which method
   does the client fall back to, and which line shows it? Put the file back.
-- Which setting did you choose for host key checking, and what would the other
-  three have done? Which file holds it, and which file does that one override?
-- You set that last, not first. What would have gone wrong had you set it
-  before the two names worked?
-- Neither private key has a passphrase on it. Somebody takes a copy of one of
-  the files. What does that get them, and what does the course say you could
-  have done about it?
+- Log out of `servera` and back in, then run `ssh backup`. Are you asked for the
+  passphrase now, and what does that tell you about where it was held?
+- Which two files carry the host key setting, and which one wins? Which lines of
+  `ssh -v` name those files as they are read?
+- Which value did you choose, and what would each of the other three have done
+  the moment the host key went missing?
+- Which command removed the host key, and which command put the trust back with
+  nothing typed? Where did the new entry land?
+- You set the strict value after the two names worked, not before. What would
+  have failed had you set it first?
+- One private key has a passphrase and one does not. Somebody takes a copy of
+  each. What does that get them in the two cases?
 
 ## 9. A page on a disk of its own
 

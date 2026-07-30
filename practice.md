@@ -1,9 +1,12 @@
 # Additional practice questions
 
-These questions follow three from the RHCSA Practice series that Tudor Raduta
-ran in the [Red Hat Learning Community][rhlc]. It closed on 31 March
-2026,<sup>[1][rhlc]</sup> so the posts can no longer be linked to. The credit is
-his. Any mistakes are mine.
+The first three of these follow questions from the RHCSA Practice series that
+Tudor Raduta ran in the [Red Hat Learning Community][rhlc]. It closed on 31
+March 2026,<sup>[1][rhlc]</sup> so the posts can no longer be linked to. The
+credit is his. Any mistakes are mine.
+
+I used Claude Opus 5 to draft the rest, then checked every command, path and
+machine name in them against the courseware.
 
 They run in the Red Hat Academy lab, on top of the guided exercises and not in
 place of them. Each question names the `lab start` command that prepares its
@@ -96,6 +99,151 @@ To check:
 - There were two kinds of map you could have used. Which did you choose, and
   what would the other one have looked like?
 - Why would an `/etc/fstab` entry be a poor fit for this?
+
+## 4. A port that SELinux has not heard of
+
+**Objective: RHCSA-10.7, manage SELinux port labels. Also RHCSA-10.1.**
+
+A web application on `servera` listens on 82/TCP, and the security team wants
+that port back. The application has to move and keep working.
+
+Prepare with `lab start netsecurity-ports`, then `ssh student@servera`.
+
+That gives you Apache installed, configured for 82/TCP and refusing to start.
+
+Move the application to a TCP port above 1024. Which port is your decision, so
+find one that nothing has claimed already. A `curl` from `workstation` must then
+reach the application on the new port. Nothing must answer on 82/TCP. All of it
+must survive a reboot.
+
+To check:
+
+- Which file held the port number, and how did you find it?
+- What did `semanage port -l` tell you about your chosen port before you changed
+  anything? What would you have done if that port had already been labelled for
+  another service?
+- Start the service before you relabel the port. Which command explains the
+  failure, and what does SELinux call a refusal of that kind?
+- With the label corrected, `curl` from `workstation` still failed. What was
+  left to do?
+- Reboot `servera`. Does `curl` from `workstation` still get an answer?
+- The firewall already decides what reaches the machine. Why does SELinux label
+  ports as well?
+
+## 5. A directory two people share
+
+**Objective: RHCSA-10.2, manage default file permissions. Also RHCSA-1.10.**
+
+Two operators hand work over to each other at the end of a shift. Each has to
+read what the other left, and neither should be able to remove it.
+
+Prepare with `lab start perms-default`, then `ssh student@servera`.
+
+That gives you the `operator1` and `operator2` users, both in the `operators`
+group, with `redhat` as their password.
+
+Make `/srv/handover` a place where the two of them work. Whoever creates a file
+there, the `operators` group must own it. Neither operator may delete or rename
+a file that the other one owns. Nobody outside the group may look inside. All of
+it must still be true after a reboot.
+
+To check:
+
+- As `operator1`, create a file there. Which group owns it, and what made that
+  happen?
+- As `operator2`, try to delete that file. What stops you, and which permission
+  is doing the stopping?
+- Can the `student` user look inside without `sudo`? Can `root`, and why?
+- The umask for these users is not the RHEL default. What is it, and what
+  permissions would a new file have carried under `0022`?
+- Why is `/tmp` a poor home for a directory like this one?
+
+## 6. A directory that empties itself
+
+**Objective: RHCSA-7.1, schedule tasks with systemd timer units.**
+
+A scanner drops files into a directory on `servera` and nothing ever removes
+them. Every few months the disk fills.
+
+Prepare with `lab start systasks-tempfiles`, then `ssh student@servera`.
+
+That gives you a plain `servera`, with the vendor configuration under
+`/usr/lib/tmpfiles.d` as it was shipped.
+
+Arrange for `/var/spool/scans` to exist after every boot, owned by the `student`
+user and group, with `0750` permissions. Files in it that have gone untouched
+for three days must disappear without anyone asking. A package update must not
+undo your work.
+
+To check:
+
+- Which file did you create, and why not edit one under `/usr/lib/tmpfiles.d`?
+- Which timer unit does the removing, and when is it next due to fire?
+- How did you satisfy yourself that the removal works, without waiting three
+  days?
+- Delete the directory and reboot. Does it come back, and what puts it there?
+- The `d` and `D` types differ. Which one did you need, and what would the other
+  one have done here?
+
+## 7. A volume group with room left in it
+
+**Objective: RHCSA-5.4, create and delete logical volumes. Also RHCSA-5.2.**
+
+An application on `servera` needs storage now and will ask for more of it later.
+The spare disk is not to be carved into partitions.
+
+Prepare with `lab start lvm-create`, then `ssh student@servera`.
+
+That gives you `servera` with an empty 5 GiB disk at `/dev/sdb`.
+
+Build LVM storage on that disk without creating a single partition on it. Name
+the volume group `vg_vault` and the logical volume `lv_vault`. Give the logical
+volume half of the space in the group, give or take an extent, with an XFS file
+system on `/vault`. Leave the rest of the group unallocated, and have `/vault`
+mounted after a reboot.
+
+To check:
+
+- How large is the volume group, and how many extents are still free? Which
+  command told you?
+- Does `lsblk` show a partition table on `/dev/sdb`? Should it?
+- `df -h /vault` reports less than the size of the logical volume. Why?
+- Did you size the volume in mebibytes or in extents? What would the other one
+  have been?
+- Reboot. Is `/vault` mounted, and what in `/etc/fstab` made that happen?
+- If the disk were wanted for something else, what would you have to undo, and
+  in what order?
+
+## 8. A short name for a long login
+
+**Objective: RHCSA-10.3, key-based authentication for SSH. Also RHCSA-1.4.**
+
+The `operator1` user copies files to `serverb` several times a day. Typing a
+user name, a host name and a password every time is tiresome, and the password
+is the weakest part of it.
+
+Prepare with `lab start ssh-keyauth`, then `ssh student@servera`.
+
+That gives you the `operator1` user on both `servera` and `serverb`, with
+`redhat` as the password.
+
+Working as `operator1` on `servera`, arrange that `ssh backup` on its own opens
+a session as `operator1` on `serverb`. Authentication must use a key pair that
+is kept somewhere other than the default file name and is protected by a
+passphrase. Within one shell session you should be asked for that passphrase
+once, however many times you connect.
+
+To check:
+
+- Which file gives the `backup` name its meaning, and what did you put in it?
+- What does `ssh -v backup` say about the key that was offered?
+- Log out of `servera` and back in. Are you asked for the passphrase again, and
+  why?
+- Which file on `serverb` changed, and what does it hold now?
+- Compare the permissions on the private key and on the public key. Why do they
+  differ?
+- Somebody takes a copy of your private key file. What else do they need before
+  they can use it?
 
 ## References
 

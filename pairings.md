@@ -69,7 +69,6 @@ Same command, two forms. The left one is gone after a reboot.
 | `firewall-cmd --add-service=NAME` without `--permanent` | `firewall-cmd --runtime-to-permanent` | the rule vanishes on reboot or reload | persistence | RHCSA-8.4, RHCSA-10.1 |
 | `semanage port -a -t TYPE -p tcp PORT` | `systemctl restart httpd` | the daemon never retries its failed bind | activation | RHCSA-10.7 |
 | write `/etc/auto.master.d/NAME.autofs` and its map file | `systemctl enable --now autofs` | nothing mounts on demand, now or after reboot | activation | RHCSA-6.3 |
-| `bootc upgrade` | reboot, or use `bootc upgrade --apply` | the staged image is not booted into | activation | — |
 
 ## Before you finish a task
 

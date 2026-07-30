@@ -1,12 +1,10 @@
 # Additional practice questions
 
-The first three of these follow questions from the RHCSA Practice series that
-Tudor Raduta ran in the [Red Hat Learning Community][rhlc]. It closed on 31
-March 2026,<sup>[1][rhlc]</sup> so the posts can no longer be linked to. The
-credit is his. Any mistakes are mine.
-
-I used Claude Opus 5 to draft the rest, then checked every command, path and
-machine name in them against the courseware.
+The following questions are inspired by the RHCSA Practice series that Tudor
+Raduta ran in the [Red Hat Learning Community][rhlc]. It closed on 31 March
+2026,<sup>[1][rhlc]</sup> so I cannot link the posts any more. I used Claude
+Opus 5 to create these practice questions in a similar format, if you want more
+opportunities to practise for the exam.
 
 They run in the Red Hat Academy lab, on top of the guided exercises and not in
 place of them. Each question names the `lab start` command that prepares its

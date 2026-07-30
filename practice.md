@@ -1,4 +1,4 @@
-# Practice questions
+# Additional practice questions
 
 These questions follow three from the RHCSA Practice series that Tudor Raduta
 ran as Community Manager in the [Red Hat Learning Community][rhlc]. That
@@ -16,6 +16,8 @@ is what it is for.
 
 Two of these reuse the setup from a guided exercise you have already met. The
 exercise walks you through the steps. These do not, and neither does the exam.
+The questions here sit on top of the guided exercises and labs. They do not
+replace them.
 
 No answers are given. Each question names the objective it belongs to, so you
 can look up what is being asked in [`objectives.md`](objectives.md). Check your

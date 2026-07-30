@@ -1,7 +1,7 @@
 # Maintaining this repository
 
 My notes for keeping these files current. Students do not need this file: the
-five study files carry no upkeep instructions, so the rules live here.
+student-facing files carry no upkeep instructions, so the rules live here.
 
 ## The order of changes
 
@@ -67,14 +67,7 @@ Nothing renumbers the markers for me. Adding a source in the middle means
 renumbering every one after it, so check that each number still matches its
 entry.
 
-Marker placement goes after the punctuation, and the source is misleading about
-this. In the raw file `page.[1][ex200]` looks like a bracketed citation sitting
-after the period, which would be wrong. Those brackets are link syntax and
-never reach the page. What renders is a bare superscript numeral.
-
-That decides the rule. Bracketed numbers on the line go before the full stop.
-Superscript numerals go after it. This is a superscript, so it goes after.
-Resist correcting it back.
+The `<sup>` tag renders a superscript numeral. Put it after the full stop.
 
 Verify a change by posting the file to `https://api.github.com/markdown` with
 mode `markdown`, and read the HTML back. Use that mode and not `gfm`. Both
@@ -90,8 +83,8 @@ the material was in when their semester began.
 The schedule in `lessons.md` is the reason this matters. I fine-tune it as I
 teach, to match what actually happens in the room, so it drifts through the
 semester by design. The tag holds what students were told in week 1, and `main`
-holds what turned out to be true. Prefer changing weeks not yet taught.
-Rewriting a week students have already sat through helps nobody.
+holds what turned out to be true. Prefer changing weeks not yet taught. Do not
+rewrite a week after it has been taught.
 
 Do the source checks above first and commit them. Then:
 
@@ -99,7 +92,7 @@ Do the source checks above first and commit them. Then:
     git tag -a 2026-s2 -m "ICT257, 2026 semester 2"
     git push origin 2026-s2
 
-Three things that fail quietly:
+Watch for failures that Git does not report clearly:
 
 - `git push` on its own does not push tags. Name the tag, or it never leaves
   this machine.
@@ -115,19 +108,17 @@ CC BY-SA 4.0.
 The `README.md` notice carves out Red Hat's material, and that carve-out has to
 keep pace if more of it lands here.
 
-There are two kinds, handled differently, and the difference is the whole reason
-this is safe to publish:
+Handle the public exam page and the licensed courseware differently:
 
 - **The exam page is public.** The 62 objective rows, the reboot blockquote
   and the page titles in the references all come from it. They are quoted word
   for word and cited with a retrieval date, so they cannot go under my
   licence.
-- **The courseware is not.** Nothing from RH124 or RH134 appears here. Only
-  section numbers, and summaries I wrote myself.
+- **The courseware is not.** These files use section numbers and summaries I
+  wrote myself. They must not reproduce courseware wording.
 
-Hold that line in the week notes, because that is where it would slip. A note on
-chapter 11 can say what to watch for, what to read next and where students trip
-up. It cannot reproduce the chapter.
+Keep week notes to my own teaching advice and references. Do not reproduce a
+chapter.
 
 ## One branch, and when to break that rule
 
@@ -136,9 +127,9 @@ nothing semester-specific to put in one. `lessons.md` runs on week numbers, not
 dates, so the same material serves every cohort.
 
 That holds only while the repository stays generic. Dated announcements,
-deadlines and anything naming a cohort belong in the LMS. This is a public
-repository, which settles it: that material has no business here anyway. The
-moment it lands in a tracked file, one branch stops being enough.
+deadlines and anything naming a cohort belong in the LMS because this
+repository is public. The moment that material lands in a tracked file, one
+branch stops being enough.
 
 Break the rule only if Red Hat forces a disruptive change mid-semester, such as
 renumbering courseware while a cohort is halfway through it:
@@ -156,25 +147,21 @@ the new release, not only the rows whose objectives changed.
 
 ## How I verified the resource links
 
-I did not guess the links in [`resources.md`](resources.md). I took most from
-the markup of the EX200 exam page, so they are Red Hat's own view of what is
-relevant. I requested each one, and every title is the page's own title
-element, not a description I wrote.
+I requested each Red Hat link in [`resources.md`](resources.md) and checked
+its title against the page.
 
 One link on that page is left out on purpose. Red Hat's hybrid cloud learning
 hub sits there, so it looks like an obvious inclusion, but it carries
 OpenShift, Kubernetes and AI material and nothing for the RHCSA. Leave it out.
 
-Some links answer 403 to a script while loading fine in a browser: the RHEL
-documentation on `docs.redhat.com`, and the SUSS course page in `README.md`.
-That is bot protection. A link checker will flag them, and there is nothing to
-fix.
+If an automated check is blocked by the RHEL documentation or SUSS module
+page, check the same link in a browser before changing it.
 
 The `learning.oreilly.com` links answer 403 for a different reason. They sit
 behind institutional sign-in, so a script never gets past the login. The SUSS
 Library page that explains the access does answer 200. The details for both
 titles come from the publisher: Sander van Vugt, Pearson IT Certification, a
-cert guide and a video course. Nothing outside the subscription can confirm the
+cert guide and a video series. Nothing outside the subscription can confirm the
 chapter and lesson URLs, so check those from a signed-in browser each semester.
 
 ## Where prose sits around a table in resources.md

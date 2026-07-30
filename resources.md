@@ -1,9 +1,8 @@
 # Additional resources for the RHCSA exam
 
-Most of it is published by Red Hat. The practice exams come through the SUSS
+The first sections use Red Hat pages. The practice exams come through the SUSS
 Library. None of it is required for ICT257, and none of it replaces the work
-in [`lessons.md`](lessons.md). It is here for when you want more than the
-courseware gives you.
+in [`lessons.md`](lessons.md).
 
 ## Know what the exam asks
 
@@ -34,10 +33,10 @@ Take it early. It shows you where you are while there is still time to act.
 | --- | --- |
 | [Red Hat Enterprise Linux 10 product documentation](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10) | The official RHEL 10 documentation set, free to read without an account |
 
-This is more useful than it looks. The same documentation ships with the
-product, and it is what you are allowed to use during the exam. Practising
-with it reinforces RHCSA-1.11 and replaces searching online. See
-[Exam format](objectives.md#exam-format) for what you may and may not use.
+Use this set while you study. Red Hat says documentation that ships with the
+product is available for most exams, but does not promise it for the RHCSA.
+Practising with official documentation supports RHCSA-1.11. See
+[Exam format](objectives.md#exam-format).
 
 ## Practise with exam questions
 
@@ -67,13 +66,12 @@ helps.
 
 | Page | What it is |
 | --- | --- |
-| [Red Hat RHCSA RHEL 10 with Exam Labs](https://learning.oreilly.com/course/red-hat-rhcsa/9780135493137/) | Sander van Vugt, Pearson IT Certification. A video course, about 15 hours |
-| [Lesson 31: Sample Exam](https://learning.oreilly.com/videos/red-hat-rhcsa/9780135493137/9780135493137-RHEL10_08_31_00/) | The exam itself |
-| [Lesson 32: Grading the Sample Exam and Exam Solutions](https://learning.oreilly.com/videos/red-hat-rhcsa/9780135493137/9780135493137-RHEL10_08_32_00/) | How to mark your own attempt, and the solutions |
+| [Red Hat RHCSA RHEL 10 with Exam Labs](https://learning.oreilly.com/course/red-hat-rhcsa/9780135493137/) | Sander van Vugt, Pearson IT Certification. A video series, about 15 hours |
 
-Sit lesson 31 before you watch lesson 32.
+The publisher says the final part contains a sample exam, followed by its
+grading and solutions. Find that part from the contents after you
+sign in.
 
 Whichever you choose, sit it timed and closed book, and do it after the
-comprehensive review labs. Those labs are the closest thing in the courseware
-to exam conditions. See [Week 14: revision](lessons.md#week-14-revision).
-
+comprehensive review labs. See
+[Week 14: revision](lessons.md#week-14-revision).

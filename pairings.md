@@ -1,12 +1,11 @@
 # Commands to pair, and forms to remember
 
 Assume that your machines will be rebooted immediately after the end of the
-exam. Any changes that are not persistent will not be given marks. Take note
-that these command pairings are not exhaustive, and you are advised to take
-your own notes as you go through the courseware.
+exam. Red Hat requires configurations to persist after reboot. Take note that
+these command pairings are not exhaustive, and you are advised to take your
+own notes as you go through the courseware.
 
-Do these three things. The initials spell CPR, which is roughly what they do
-for a change that would otherwise not survive a reboot.
+Use this routine for changes that must survive a reboot.
 
 - **Copy the file first.** Back up before you edit, and revert from the backup
   if necessary.
@@ -18,12 +17,13 @@ for a change that would otherwise not survive a reboot.
 
 ## Use the persistent form
 
-Same command, two forms. The left one is gone after a reboot.
+The runtime form changes the current state. It does not by itself make a
+setting persistent.
 
 | Command | Runtime only | Persistent | What changes | Objective |
 | --- | --- | --- | --- | --- |
 | `systemctl` | `systemctl start UNIT` | `systemctl enable --now UNIT` | enables it for boot and starts it now, in one command | RHCSA-7.2, RHCSA-8.3 |
-| `nmcli` | `nmcli con up NAME` | `nmcli con mod NAME connection.autoconnect yes`, then `nmcli con up NAME` | comes up at the next boot as well as now | RHCSA-8.1 |
+| `nmcli` | `nmcli con up NAME` | `nmcli con mod NAME connection.autoconnect yes`, then `nmcli con up NAME` | sets autoconnect for later boots, then activates it now | RHCSA-8.1 |
 | `hostnamectl` | `hostname NAME` | `hostnamectl hostname NAME` | writes the static name into `/etc/hostname` | RHCSA-8.2 |
 | `setsebool` | `setsebool BOOLEAN on` | `setsebool -P BOOLEAN on` | writes the boolean to policy, not just memory | RHCSA-10.8 |
 | `firewall-cmd` | `firewall-cmd --add-service=SERVICE` | `firewall-cmd --permanent --add-service=SERVICE`, then `firewall-cmd --reload` | saves the rule to disk, then applies it to the running firewall | RHCSA-8.4, RHCSA-10.1 |
@@ -53,7 +53,7 @@ Same command, two forms. The left one is gone after a reboot.
 
 | After you | You must also | Or else | Fails how | Objective |
 | --- | --- | --- | --- | --- |
-| `export EDITOR=nano` | add the export to `~/.bash_profile` | at the next login the default returns, and the default is `vim` | persistence | RHCSA-3.3 |
+| `export EDITOR=nano` | add the export to `~/.bash_profile` | the variable is lost at the next login | persistence | RHCSA-3.3 |
 | edit a `.timer` unit under `/etc/systemd/system` | `systemctl daemon-reload` | systemd still has the stale unit cached | visibility | RHCSA-7.1 |
 | create `/etc/tmpfiles.d/NAME.conf` | `systemd-tmpfiles --create /etc/tmpfiles.d/NAME.conf` | the described directory does not exist yet | activation | RHCSA-7.1 |
 | `mkdir /var/log/journal` | `journalctl --flush` | the journal still lives only in memory | activation | RHCSA-4.8 |
@@ -69,11 +69,10 @@ Same command, two forms. The left one is gone after a reboot.
 | reset the root password from the rescue prompt | `touch /.autorelabel` | unlabelled files leave SELinux wrong at boot | visibility | RHCSA-4.3 |
 | `firewall-cmd --permanent --add-service=NAME` | `firewall-cmd --reload` | the running firewall still blocks the traffic | activation | RHCSA-8.4, RHCSA-10.1 |
 | `firewall-cmd --add-service=NAME` without `--permanent` | `firewall-cmd --runtime-to-permanent` | the rule vanishes on reboot or reload | persistence | RHCSA-8.4, RHCSA-10.1 |
-| `semanage port -a -t TYPE -p tcp PORT` | `systemctl restart httpd` | the daemon never retries its failed bind | activation | RHCSA-10.7 |
+| correct a port label after `httpd` fails to bind | `systemctl restart httpd` | the daemon does not retry the failed bind by itself | activation | RHCSA-10.7 |
 | write `/etc/auto.master.d/NAME.autofs` and its map file | `systemctl enable --now autofs` | nothing mounts on demand, now or after reboot | activation | RHCSA-6.3 |
 
 ## Before you finish a task
 
 Ask what happens to it at the next reboot. If you are not sure, reboot the
-machine and check. That is how the exam is graded, so it is worth doing in
-practice.
+machine and check. Red Hat grades whether the configuration persists.

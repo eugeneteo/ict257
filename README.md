@@ -1,6 +1,6 @@
 # ICT257: Red Hat System Administration
 
-Course material and notes for
+Module material and notes for
 [ICT257 Red Hat System Administration](https://www.suss.edu.sg/courses/detail/ict257),
 at the Singapore University of Social Sciences (SUSS). We focus on Red Hat
 Enterprise Linux 10.
@@ -10,7 +10,7 @@ Enterprise Linux 10.
 | Path | What is in it |
 | --- | --- |
 | [`objectives.md`](objectives.md) | RHCSA (EX200) exam objectives, with stable IDs |
-| [`coverage.md`](coverage.md) | Which course material covers each objective |
+| [`coverage.md`](coverage.md) | How RH124 and RH134 cover each objective |
 | [`lessons.md`](lessons.md) | Twelve weeks of teaching, then catch-up, revision and the exam |
 | [`pairings.md`](pairings.md) | Commands to pair, and forms that survive a reboot |
 | [`practice.md`](practice.md) | Practice challenges to attempt on your own |
@@ -24,19 +24,21 @@ I will add more as the semester goes on.
     git clone https://github.com/eugeneteo/ict257.git
     cd ict257
 
-Run `git pull` now and then. I update the repo as things change, and you want
-those.
+Run `git pull` now and then to receive updates.
 
 Keep your own notes in `my-notes/`. Git ignores that folder, so nothing you
 write there gets committed, and `git pull` will never touch it.
 
-Do not edit the files listed above. If you do, `git pull` stops working and
-tells you your local changes would be overwritten.
+Do not edit the files listed above. If you and I change the same file,
+`git pull` may stop to protect your local changes.
 
-Each semester starts with a tag. To read the material as it stood at the start
-of yours:
+Semester snapshots can use tags. List the tags that are available:
 
-    git checkout 2026-s2
+    git tag --list
+
+To read one of them:
+
+    git checkout TAG
 
 `git switch main` brings you back to the current version.
 

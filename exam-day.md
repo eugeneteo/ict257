@@ -1,31 +1,32 @@
 # Exam day: inside the exam environment
 
-What the Red Hat exam environment is like on the day. For what the exam asks of
-you, see [`objectives.md`](objectives.md). Everything here comes from Red Hat's
-video,<sup>[1][exam-video]</sup> and the timestamps point into it.
+Red Hat published the cited video in 2022. This file records the interface
+shown there, and does not establish that every current screen is unchanged.
+For what the exam asks of you, see [`objectives.md`](objectives.md).
+The timestamps point into the video.<sup>[1][exam-video]</sup>
 
 ## Before you start
 
-The timer is always running. Once the exam begins, nothing you do stops it, so
-work out beforehand how you want the environment set up.
+The video says the timer begins with the exam and that you are responsible for
+tracking the remaining time. (0:10)
 
-You can change the document language and the keyboard layout from the browser,
-but the system defaults to English. Stay with the default and skip setup you
-do not need. (0:10, 0:41)
+You can change the document language in the exam browser. The operating system
+and applications remain in English. You can change keyboard layouts during
+setup and on the exam machines, but Red Hat recommends keeping the English
+layout. (0:27, 0:41)
 
 ## Finding your way around
 
-Use the task hyperlinks to move between tasks. The "Revisit" and "Done" buttons
-are for your own reference and do not affect your grade, so do not spend exam
-time keeping them tidy.
+The video shows task hyperlinks for moving between tasks. It says the "Revisit"
+and "Done" buttons are for your own reference and do not affect your grade.
 
-Terminal windows and the VM Manager both open from the Activities menu.
+In the video, terminal windows and the VM Manager open from the Activities menu.
 (1:12, 1:37)
 
 ## The machines
 
-You connect to a node by SSH or through its console. If a node stops responding,
-or you want it back in its original state, the VM Manager offers Rebuild.
+The video shows connecting to a node by SSH or through its console. Its VM
+Manager includes a Rebuild action.
 
 **Rebuild erases everything on that node.** Every file and change is gone, and
 the node starts from scratch. Use it for an unresponsive node or a full reset.
@@ -33,23 +34,24 @@ Do not use it to tidy up. (3:26)
 
 ## Making it usable
 
-Ctrl + Shift + + increases the terminal font size. Browser zoom sits in the
-hamburger menu. (4:37)
+In the video, Ctrl + Shift + + increases the terminal font size. Browser zoom
+sits in the hamburger menu. (4:37)
 
-Do not use Ctrl+C and Ctrl+V in the terminal. They can freeze it. Right-click
-and copy and paste with the mouse instead. (4:55) Those two shortcuts
-are habit by now, so practise the mouse method before the day.
+Red Hat's video recommends not using Ctrl+C, Ctrl+X or Ctrl+V. It says these
+shortcuts can freeze a terminal, console or exam browser. Use the mouse for
+copy and paste. (4:55)
 
-Save the PDF files you need to your local system, to save memory.
-(5:43)
+The video recommends saving required PDF files to the local system and using
+the operating system's PDF viewer to reduce memory use. (5:43)
 
 ## Breaks and problems
 
-Use the chat icon to alert your proctor, including when you want a break. The
-timer keeps running while you are away. Unauthorised devices are prohibited.
+The video shows using the chat icon to request a break. It says the timer keeps
+running while you are away. Do not use phones, tablets or anything that could
+be used to cheat.
 
-If the connection is slow, or the system misbehaves, tell your proctor
-immediately. (6:16, 7:01)
+If the connection is slow, the video says to tell your proctor immediately.
+(7:01)
 
 ## References
 

@@ -1,7 +1,8 @@
 # RHCSA objective coverage
 
 I map every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to
-the course material and the teaching week that cover it.
+the RH124 and RH134 material and teaching week. Partial mappings are noted
+below.
 
 The RH124<sup>[1][rh124]</sup> and RH134<sup>[2][rh134]</sup> courseware is
 **not** part of this repository. I cite only section numbers, and they refer to
@@ -133,13 +134,20 @@ leave out.
 | RHCSA-10.7 | SELinux port labels | — | 14.03 | 11 |
 | RHCSA-10.8 | SELinux Boolean settings | — | 06.05 | 9 |
 
+## Coverage gaps
+
+- **RHCSA-1.11:** RH124 03.01 teaches manual pages. It does not teach the
+  `info` command or how to use files in `/usr/share/doc`.
+- **RHCSA-6.1:** The cited sections teach XFS and ext4. They identify VFAT,
+  but do not teach how to create and use a VFAT file system.
+
 ## Exam practice
 
 Each course closes with a comprehensive review chapter. I cite those cumulative
 labs here because they draw on the whole course, not just the section above
 them.
 
-The objectives listed are those each lab's stated outcomes exercise. They show
+The objectives listed are my mapping of each lab's stated outcomes. They show
 what a lab practises, but they do not mean it covers those objectives in full.
 
 ### RH124
@@ -192,7 +200,7 @@ exam practice or listed below as not mapped.
 
 | Course | Teaching sections | Mapped above | Exam practice | Not mapped |
 | --- | --- | --- | --- | --- |
-| RH124 | 47 | 41 | 1 | 5 |
+| RH124 | 47 | 40 | 1 | 6 |
 | RH134 | 49 | 36 | 1 | 12 |
 
 I count only the two chapter introductions as teaching sections. The nine

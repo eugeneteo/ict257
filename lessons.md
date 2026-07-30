@@ -66,8 +66,7 @@ RH134 19.05 is the one review lab that may have to wait, because it rests on the
 container material.
 
 Read [`pairings.md`](pairings.md) before you sit either of them. It lists the
-commands that need a second command, and the forms that survive a reboot, which
-is where marks go on tasks you already know how to do.
+commands that need a second command, and the forms that survive a reboot.
 
 [`practice.md`](practice.md) holds exam-shaped tasks, each naming the objective
 it belongs to. Attempt them once the review labs are behind you, to find out
@@ -83,12 +82,11 @@ Revise with the comprehensive review, then the chapter labs. See
 attention. SELinux, storage, booting, troubleshooting, firewalls and network
 file systems are the hardest material in the module.
 
-Two points from [`objectives.md`](objectives.md#exam-format) shape how to
-revise. The exam is performance-based, so configurations must survive a reboot.
+The exam is performance-based, so configurations must survive a reboot.
 Practise the version of a task that persists, not the one that works until you
-restart. It is also closed book, apart from the documentation that ships with
-the product. So practise finding answers in `man` pages and `/usr/share/doc`,
-not online and not with the command-line assistant.
+restart. Red Hat does not promise product documentation for the RHCSA by name.
+Practise finding answers in `man` pages and `/usr/share/doc` because RHCSA-1.11
+requires it, but do not rely on having them in the exam.
 
 ## How the sessions work
 
@@ -135,18 +133,17 @@ Hat Academy lab environment, the same one we use in class.
 | Chapter-end labs | 22 labs, 134 pages | Work through them during revision. They ask for a result without leading you to it |
 | Chapter quizzes | 22 quizzes, 99 pages | Use them to check understanding after a chapter |
 | Chapter summaries | 37 summaries, 37 pages | Use them for quick revision |
-| Comprehensive review | 11 sections, 9 of them labs, 49 pages | Save for exam preparation, as below |
+| Comprehensive review | 11 review sections and one summary, 9 of them labs, 49 pages | Save for exam preparation, as below |
 | Course administration sections | 4 sections, 8 pages | Nothing. They orient you to a self-paced Red Hat course, which is not how this module runs |
 
 None of this is marked. You still have to do it. The chapter labs and the
 comprehensive review are the only work where you have to reach a result on your
-own, and that is what the exam tests. If you come to every session and skip
-them, you have watched the module without doing it.
+own, and that is what the exam tests. Attendance does not replace that
+independent practice.
 
-The comprehensive review matters most. Each course closes with one. Its labs
-draw on the whole course, which makes them the closest thing in the courseware
-to exam conditions. No session covers them, so the table below says only when I
-have taught you enough to attempt them.
+Each course closes with a comprehensive review. Its labs draw on the whole
+course and give no guided steps. No session covers them, so the table below
+says only when I have taught you enough to attempt them.
 See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 
 | Taught enough by | Material |
@@ -169,11 +166,9 @@ I cover RH124 01.01 briefly in week 1. It sets context. It does not teach a
 skill, and no objective corresponds to it.
 
 I teach RH134 chapters 16 to 18 last, in weeks 11 and 12, because no objective
-corresponds to them. Installation, Kickstart, containers and image mode are
-worth knowing. Study them after the chapters the exam asks for.
+corresponds to them. Study them after the chapters the exam asks for.
 
 I do not schedule RH124 00.01 or RH134 00.01 to 00.03. They orient you to the
 courseware and the lab environment for a self-paced Red Hat course, which is
 not how this module runs. I keep RH124 00.02 and 00.03 in week 1, because you
 need to know how the lab environment and the exercise types work.
-

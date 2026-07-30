@@ -12,7 +12,7 @@ survive a rewording or a reordering. I never reuse or renumber an ID.
 
 You should be able to do everything below without help.
 
-See [`coverage.md`](coverage.md) for which course material teaches each
+See [`coverage.md`](coverage.md) for which RH124 and RH134 sections teach each
 objective.
 
 ## 1. Understand and use essential tools
@@ -132,8 +132,8 @@ objective.
 
 ## Exam format
 
-This is what the exam asks of you. For what the environment is like on the day,
-see [`exam-day.md`](exam-day.md).
+For the interface shown in Red Hat's 2022 exam video, see
+[`exam-day.md`](exam-day.md).
 
 - Hands-on and practical: you undertake real-world tasks on live systems. Red
   Hat tests what you can do instead of what you can recall, and sets no
@@ -143,10 +143,9 @@ see [`exam-day.md`](exam-day.md).
 - Closed book. You cannot bring notes, printed material or electronic
   documentation, and you have no internet access during the
   exam.<sup>[1][ex200]</sup>
-- The documentation that ships with the product is usually available, which
-  means the man pages and `/usr/share/doc`. Red Hat promises this for most of
-  its exams, not for the RHCSA by name, so do not count on
-  having it.<sup>[1][ex200]</sup> That is why RHCSA-1.11 matters in practice.
+- Red Hat says the documentation that ships with the product is available for
+  most exams. It does not promise this for the RHCSA by name, so do not count
+  on having it.<sup>[1][ex200]</sup>
 - **No AI assistance.** The command-line assistant is not available. It needs
   internet access, which the exam does not allow, and Red Hat also warns that it
   could answer wrongly and affect your result unfairly.<sup>[3][cla-video]</sup>

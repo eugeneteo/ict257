@@ -1,11 +1,10 @@
 # Additional practice challenges
 
-The following challenges are inspired by the RHCSA Practice series that Tudor
-Raduta ran in the [Red Hat Learning Community][rhlc]. It closed on 31 March
-2026,<sup>[1][rhlc]</sup> so I cannot link the posts any more. I used Claude
-Opus 5 to write these in a similar format, so there is more to practise on. I
-then used GPT-5.6 Sol to check that each one can be solved. If you find a
-mistake in one, please
+The following challenges take the RHCSA Practice series that Tudor Raduta ran
+in the [Red Hat Learning Community][rhlc] as a starting point. It closed on
+31 March 2026,<sup>[1][rhlc]</sup> so I cannot link the posts any more. I used
+Claude Opus 5 to draft new challenges, then used GPT-5.6 Sol to check that each
+one can be solved. If you find a mistake in one, please
 [open an issue](https://github.com/eugeneteo/ict257/issues/new).
 
 They run in the Red Hat Academy lab, on top of the guided exercises and not in
@@ -13,13 +12,9 @@ place of them. Each challenge names the `lab start` command that prepares its
 machine, so run that on `workstation` first. The lab is disposable, so reset it
 if you break something.
 
-No answers are given, and no walkthrough. The exam gives you neither. Check your
-work with the questions at the end of each task, then reboot. Anything that does
-not come back is not finished. See [`pairings.md`](pairings.md) for the commands
-most often forgotten.
-
-If you attempt these, do consider blogging how you solved them. Let me know if
-you enjoyed them.
+No answers or walkthroughs are given. Check your work with the questions at the
+end of each task, then reboot and check each required result again. See
+[`pairings.md`](pairings.md) for the commands most often forgotten.
 
 ## Contents
 
@@ -219,8 +214,7 @@ To check:
 **Objective: RHCSA-10.3, key-based authentication for SSH. Also RHCSA-1.4.**
 
 The `operator1` user on `servera` reaches `serverb` many times a day, under two
-different accounts there. The full command is long and the password is the
-weakest part of it.
+different accounts there. Neither login should require a password.
 
 Prepare with `lab start ssh-keyauth`, then `ssh student@servera`.
 
@@ -412,7 +406,7 @@ To check:
 
 - How large is the volume group, and how many extents are still free? Which
   command told you?
-- Does `lsblk` show a partition table on `/dev/sdb`? Should it?
+- Does `lsblk` show any partitions on `/dev/sdb`? Should it?
 - Compare `lvs` and `df -h /vault`. Which figure is the size of the block
   device, and which is the space you can actually use?
 - Did you size the volume in gibibytes or in extents? What would the other one

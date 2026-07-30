@@ -61,8 +61,9 @@ To check:
 - Do `lvs` and `df -h /data` agree? If they do not, which step is missing?
 - Reboot. Is `/data` mounted, and is it still the larger size?
 - The filesystem here is XFS. Which command did you need, and which one would
-  you have needed for ext4? What can you do to an ext4 filesystem that you
-  cannot do to XFS?
+  you have needed for ext4?
+- How much free space did the volume group have when you started, and what did
+  you have to do about it?
 
 ## 3. A share that mounts itself
 
@@ -83,6 +84,7 @@ to `/shares` later, and it must survive a reboot.
 To check:
 
 - Does `ls /remote` show anything before you enter a directory? Should it?
+- Which package did you have to install before any of this worked?
 - Add a directory to `/shares` on `serverb`. Does it appear on `servera` with
   no change made to `servera`?
 - Reboot `servera`. Does it still mount on demand?

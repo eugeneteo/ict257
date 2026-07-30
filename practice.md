@@ -17,7 +17,8 @@ not come back is not finished. See [`pairings.md`](pairings.md) for the commands
 most often forgotten.
 
 If you attempt these, do consider blogging how you solved them. Let me know if
-you enjoyed them.
+you enjoyed them. If you find a mistake in one, please
+[open an issue](https://github.com/eugeneteo/ict257/issues/new).
 
 ## Contents
 

@@ -13,7 +13,7 @@ Enterprise Linux 10.
 | [`coverage.md`](coverage.md) | How RH124 and RH134 cover each objective |
 | [`lessons.md`](lessons.md) | Twelve weeks of teaching, then catch-up, revision and the exam |
 | [`pairings.md`](pairings.md) | Commands to pair, and forms that survive a reboot |
-| [`practice.md`](practice.md) | Practice challenges to attempt on your own |
+| [`practice.md`](practice.md) | Optional practice challenges to attempt on your own |
 | [`resources.md`](resources.md) | Resources for preparing beyond the courseware |
 | [`exam-day.md`](exam-day.md) | What the exam environment is like on the day |
 
@@ -23,20 +23,20 @@ I will add more as the semester goes on.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/01-what-each-week-teaches-dark.png">
-  <img alt="One bar for each teaching week, showing how many exam objectives it covers. Week 10 towers over the rest at 14. By week 11 everything the exam asks about has been taught, and week 12 goes to containers, which the exam leaves alone." src="images/01-what-each-week-teaches-light.png">
+  <img alt="One bar for each teaching week, showing how many exam objectives it covers. Week 10 is the heaviest at 14. Every exam objective is taught by week 11. Week 12 covers containers, which are not examined." src="images/01-what-each-week-teaches-light.png">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/04-when-each-topic-is-taught-dark.png">
-  <img alt="A grid of topics against weeks, shaded where a topic is taught that week. The essential tools row is shaded in nine weeks and keeps coming back. Every other topic sits in six weeks or fewer, usually in one or two runs." src="images/04-when-each-topic-is-taught-light.png">
+  <img alt="A grid of topics against weeks, shaded where a topic is taught. Essential tools appear in nine weeks. Every other topic appears in six or fewer, usually in one or two runs." src="images/04-when-each-topic-is-taught-light.png">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/03-when-you-can-practise-dark.png">
-  <img alt="The fifteen weeks in a row, marked where challenges become possible. Two open in week 3, then a few more through the term, and the last three in week 11. Six teaching weeks bring nothing new, and the final three weeks are catch-up, revision and the exam." src="images/03-when-you-can-practise-light.png">
+  <img alt="The fifteen weeks in a row, marked when additional practice challenges become possible. Two are ready in week 3, then more through the term. The last three are ready in week 11. Six teaching weeks add none. The final three are catch-up, revision and the exam." src="images/03-when-you-can-practise-light.png">
 </picture>
 
-I generated these from the files above, so they change when the material does.
+I generated these from the files above.
 
 ## Getting the material
 

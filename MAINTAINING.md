@@ -53,12 +53,12 @@ That directory holds charts generated from the repository's own files by
 `.private/coverage-viz/generate.py`. Run that script to rebuild them after
 changing `coverage.md`, `lessons.md`, `objectives.md` or `practice.md`.
 
-Nothing else belongs in `images/`. A screenshot of someone else's work does not
-become publishable by being moved into an allowed directory.
+Nothing else belongs in `images/`. Do not use the exception for screenshots of
+somebody else's work.
 
 Each chart is rendered light and dark, and embedded with a `picture` element so
-GitHub picks the right one. Write the `alt` text as the finding, not the file
-name.
+GitHub picks the right one. After rebuilding them, check the `alt` text in
+`README.md`. Write it as the finding, not the file name.
 
 ## How citations work
 

@@ -23,21 +23,20 @@ I will add more as the semester goes on.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/01-what-each-week-teaches-dark.png">
-  <img alt="Teaching load by week. Every exam objective is taught by week 11. Week 10 is the heaviest with 14 objectives, against 8 in weeks 4 and 9. Week 12 teaches no examined objective." src="images/01-what-each-week-teaches-light.png">
+  <img alt="One bar for each teaching week, showing how many exam objectives it covers. Week 10 towers over the rest at 14. By week 11 everything the exam asks about has been taught, and week 12 goes to containers, which the exam leaves alone." src="images/01-what-each-week-teaches-light.png">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/04-when-each-topic-is-taught-dark.png">
-  <img alt="Heatmap of topic against teaching week. Essential tools appear in nine weeks. Most other topics sit in one or two." src="images/04-when-each-topic-is-taught-light.png">
+  <img alt="A grid of topics against weeks, shaded where a topic is taught that week. The essential tools row is shaded in nine weeks and keeps coming back. Every other topic sits in six weeks or fewer, usually in one or two runs." src="images/04-when-each-topic-is-taught-light.png">
 </picture>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/03-when-you-can-practise-dark.png">
-  <img alt="The week each additional practice challenge becomes possible. The first opens in week 3 and all ten are open by week 11. The guided exercises run from week 1." src="images/03-when-you-can-practise-light.png">
+  <img alt="The fifteen weeks in a row, marked where challenges become possible. Two open in week 3, then a few more through the term, and the last three in week 11. Six teaching weeks bring nothing new, and the final three weeks are catch-up, revision and the exam." src="images/03-when-you-can-practise-light.png">
 </picture>
 
-These are drawn from the files above. They follow the material, so nobody has to
-keep them up to date by hand.
+I generated these from the files above, so they change when the material does.
 
 ## Getting the material
 

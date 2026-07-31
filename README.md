@@ -19,25 +19,6 @@ Enterprise Linux 10.
 
 I will add more as the semester goes on.
 
-## What is taught and when
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="images/01-what-each-week-teaches-dark.png">
-  <img alt="One bar for each teaching week, showing how many exam objectives it covers. Week 10 is the heaviest at 14. Every exam objective is taught by week 11. Week 12 covers containers, which are not examined." src="images/01-what-each-week-teaches-light.png">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="images/04-when-each-topic-is-taught-dark.png">
-  <img alt="A grid of topics against weeks, shaded where a topic is taught. Essential tools appear in nine weeks. Every other topic appears in six or fewer, usually in one or two runs." src="images/04-when-each-topic-is-taught-light.png">
-</picture>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="images/03-when-you-can-practise-dark.png">
-  <img alt="The fifteen weeks in a row, marked when additional practice challenges become possible. Two are ready in week 3, then more through the term. The last three are ready in week 11. Six teaching weeks add none. The final three are catch-up, revision and the exam." src="images/03-when-you-can-practise-light.png">
-</picture>
-
-I generated these from the files above.
-
 ## Getting the material
 
     git clone https://github.com/eugeneteo/ict257.git
@@ -60,6 +41,26 @@ To read one of them:
     git checkout TAG
 
 `git switch main` brings you back to the current version.
+
+## What is taught and when
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/01-what-each-week-teaches-dark.png">
+  <img alt="One bar for each teaching week, showing how many exam objectives it covers. Week 10 is the heaviest at 14. Every exam objective is taught by week 11. Week 12 covers containers, which are not examined." src="images/01-what-each-week-teaches-light.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/04-when-each-topic-is-taught-dark.png">
+  <img alt="A grid of topics against weeks, shaded where a topic is taught. Essential tools appear in nine weeks. Every other topic appears in six or fewer, usually in one or two runs." src="images/04-when-each-topic-is-taught-light.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/03-when-you-can-practise-dark.png">
+  <img alt="The fifteen weeks in a row, marked when additional practice challenges become possible. Two are ready in week 3, then more through the term. The last three are ready in week 11. Six teaching weeks add none. The final three are catch-up, revision and the exam." src="images/03-when-you-can-practise-light.png">
+</picture>
+
+I generated these from `coverage.md`, `lessons.md`, `objectives.md` and
+`practice.md`.
 
 ## Licence
 

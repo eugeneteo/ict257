@@ -56,7 +56,12 @@ To read one of them:
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/03-when-you-can-practise-dark.png">
-  <img alt="The fifteen weeks in a row, marked when additional practice challenges become possible. Two are ready in week 3, then more through the term. The last three are ready in week 11. Six teaching weeks add none. The final three are catch-up, revision and the exam." src="images/03-when-you-can-practise-light.png">
+  <img alt="The fifteen weeks in a row, with a bar in each for how many additional practice challenges become possible that week. The first two arrive in week 3, and every week from 4 to 11 adds more. Week 11 adds five, the most of any week. Weeks 1, 2 and 12 add none, and the last three weeks are catch-up, revision and the exam." src="images/03-when-you-can-practise-light.png">
+</picture>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="images/02-practice-coverage-by-topic-dark.png">
+  <img alt="A bar for each of the ten exam topics, showing how many of its objectives appear in the practice challenges. Every objective in every topic is covered. Essential tools is the largest topic at eleven, and operate running systems follows at ten. Objective 6.1 is practised for XFS and ext4 only, because neither course teaches how to make a VFAT file system." src="images/02-practice-coverage-by-topic-light.png">
 </picture>
 
 I generated these from `coverage.md`, `lessons.md`, `objectives.md` and

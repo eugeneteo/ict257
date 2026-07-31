@@ -19,7 +19,7 @@ Enterprise Linux 10.
 
 I will add more as the semester goes on.
 
-## The shape of the module
+## What is taught, and when
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/01-what-each-week-teaches-dark.png">
@@ -36,8 +36,8 @@ I will add more as the semester goes on.
   <img alt="The week each practice challenge becomes possible. The first opens in week 3 and all ten are open by week 11." src="images/03-when-you-can-practise-light.png">
 </picture>
 
-These are drawn from the files above, so they follow the material rather than
-being kept up to date by hand.
+These are drawn from the files above. They follow the material, so nobody has to
+keep them up to date by hand.
 
 ## Getting the material
 

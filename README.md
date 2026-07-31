@@ -19,7 +19,7 @@ Enterprise Linux 10.
 
 I will add more as the semester goes on.
 
-## What is taught, and when
+## What is taught and when
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/01-what-each-week-teaches-dark.png">
@@ -33,7 +33,7 @@ I will add more as the semester goes on.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/03-when-you-can-practise-dark.png">
-  <img alt="The week each practice challenge becomes possible. The first opens in week 3 and all ten are open by week 11." src="images/03-when-you-can-practise-light.png">
+  <img alt="The week each additional practice challenge becomes possible. The first opens in week 3 and all ten are open by week 11. The guided exercises run from week 1." src="images/03-when-you-can-practise-light.png">
 </picture>
 
 These are drawn from the files above. They follow the material, so nobody has to

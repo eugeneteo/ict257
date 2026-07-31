@@ -7,10 +7,10 @@ Claude Opus 5 to draft new challenges, then used GPT-5.6 Sol to check that each
 one can be solved. If you find a mistake in one, please
 [open an issue](https://github.com/eugeneteo/ict257/issues/new).
 
-They run in the Red Hat Academy lab, on top of the guided exercises and not in
-place of them. Each challenge names the `lab start` command that prepares its
-machine, so run that on `workstation` first. The lab is disposable, so reset it
-if you break something.
+None of this is required for ICT257. They run in the Red Hat Academy lab, on
+top of the guided exercises and not in place of them. Each challenge names the
+`lab start` command that prepares its machine, so run that on `workstation`
+first. The lab is disposable, so reset it if you break something.
 
 No answers or walkthroughs are given. Check your work with the questions at the
 end of each task, then reboot and check each required result again. See

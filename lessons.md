@@ -68,9 +68,9 @@ container material.
 Read [`pairings.md`](pairings.md) before you sit either of them. It lists the
 commands that need a second command, and the forms that survive a reboot.
 
-[`practice.md`](practice.md) holds exam-shaped tasks, each naming the objective
-it belongs to. Attempt them once the review labs are behind you, to find out
-whether you can reach a result with nothing open in front of you.
+[`practice.md`](practice.md) holds optional practice challenges, each naming the
+objective it belongs to. Attempt them once the review labs are behind you, to
+find out whether you can reach a result with nothing open in front of you.
 
 ## Week 15: the exam
 

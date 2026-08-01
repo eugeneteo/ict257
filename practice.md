@@ -510,9 +510,9 @@ Then remove `serverb` from the personal known-hosts file. Prove that both short
 names now fail. Scan only the ED25519 host key into a separate file. Compare
 its fingerprint with the value that you recorded before trusting it.
 
-Finish by adding the verified key to the system-wide known-hosts file. Leave no
-entry for `serverb` in the personal known-hosts file. Both short names must work
-under strict checking, including after you log out and back in.
+Finish by putting the verified key where every account on the machine reads it,
+and leave no entry for `serverb` in your personal known-hosts file. Both short
+names must work under strict checking, including after you log out and back in.
 
 To check:
 
@@ -1186,8 +1186,8 @@ Prepare with `lab start storage-partitions`, then `ssh student@servera`.
 That gives you `servera` with an unused 5 GiB disk at `/dev/sdb`.
 
 Start with the storage. Put a GPT label on `/dev/sdb` and cut one partition of
-about 1 GiB from it, named `timetable`. Give that partition an XFS file system
-and mount it on `/timetable`. The mount must come back on its own after a
+about 1 GiB from it, named `timetable`. Format that partition as XFS and
+mount it on `/timetable`. The mount must come back on its own after a
 reboot. Identify the file system in `/etc/fstab` by the value that Red Hat
 recommends, not by the device name.
 

@@ -166,7 +166,7 @@ what a lab practises, but they do not mean it covers those objectives in full.
 | Section | Summary | Objectives exercised |
 | --- | --- | --- |
 | 19.01 | Chapter introduction and review guidance | — |
-| 19.02 | Diagnose boot problems, set the default boot target, schedule recurring jobs | RHCSA-4.3, RHCSA-7.1, RHCSA-7.3 |
+| 19.02 | Boot troubleshooting, which target the system starts in, timed jobs for an ordinary user | RHCSA-4.3, RHCSA-7.1, RHCSA-7.3 |
 | 19.03 | Create logical volumes and swap, mount NFS persistently, clear temporary files | RHCSA-5.4, RHCSA-5.6, RHCSA-6.2, RHCSA-7.1 |
 | 19.04 | Key-based SSH, firewall settings, SELinux modes, Booleans and troubleshooting | RHCSA-10.1, RHCSA-10.3, RHCSA-10.4, RHCSA-10.8 |
 | 19.05 | Build a container image, push it to a registry, run a detached container | — |

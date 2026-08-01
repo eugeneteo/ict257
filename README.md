@@ -64,9 +64,6 @@ To read one of them:
   <img alt="A bar for each of the ten exam topics, showing how many of its objectives appear in the optional practice challenges. Every objective in every topic is covered. Essential tools is the largest topic at eleven, and operate running systems follows at ten. Objective 6.1 is practised for XFS and ext4 only, because neither course teaches how to make a VFAT file system." src="images/02-practice-coverage-by-topic-light.png">
 </picture>
 
-I generated these from `coverage.md`, `lessons.md`, `objectives.md` and
-`practice.md`.
-
 ## Licence
 
 My writing here is licensed [CC BY-SA 4.0](LICENSE). Use it, change it, share

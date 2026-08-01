@@ -1,4 +1,4 @@
-# Optional practice challenges
+# Down the rabbit hole: optional practice challenges
 
 The following challenges take the RHCSA Practice series that Tudor Raduta ran
 in the [Red Hat Learning Community][rhlc] as a starting point. It closed on

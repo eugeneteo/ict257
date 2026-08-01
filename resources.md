@@ -1,4 +1,4 @@
-# Additional resources for the RHCSA exam
+# Resources for the RHCSA exam
 
 The first sections use Red Hat pages. The practice exams come through the SUSS
 Library. None of it is required for ICT257, and none of it replaces the work

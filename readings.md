@@ -462,6 +462,7 @@ front of you on the day.
 | --- | --- |
 | [Exit Codes With Special Meanings](https://tldp.org/LDP/abs/html/exitcodes.html#EXITCODESREF) | The exit codes the shell has already claimed, and the 128 plus signal number rule behind a status of 130 or 137. RHCSA-3.1, RHCSA-3.4 |
 | [Regular Expressions, in the GNU grep manual](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html) | The syntax as the `grep` command on your machine implements it, including where basic and extended expressions part company. RHCSA-1.3 |
+| [Dotfiles, and which one runs when](https://samthor.au/2019/dotfiles-highlights/) | Sam Thorogood on the startup files, and why a setting works in one shell and not another. RHCSA-3.3 |
 
 RH134 01.05 teaches the `exit` command and the `$?` variable. It does not tell
 you which values are already spoken for. Read the table on that page and stop
@@ -471,6 +472,40 @@ That is his suggestion and no standard, so ignore it.
 The grep manual is on your lab machine too, as `info grep`. Reading it there is
 practice for RHCSA-1.11, and the local copy matches the version you are
 running.
+
+### Why `~/.bashrc` runs whichever way you log in
+
+Bash reads a different startup file depending on how it was started. A login
+shell, which is what you get over SSH or at a text console, reads
+`~/.bash_profile`. A non-login shell, which is what you get opening a terminal
+inside a desktop session, reads `~/.bashrc`. RH134 01.01 draws that
+distinction.
+
+So a setting placed in one of them ought to be missing from the other. In
+practice it is not, and `~/.bashrc` runs both ways round.
+
+The reason is not something Bash does. It is the file Red Hat ships. Look at
+the `~/.bash_profile` on any lab machine and it opens by sourcing `~/.bashrc`
+if that file exists. RH134 01.01 prints it. A login shell therefore reads
+`~/.bash_profile`, which immediately reads `~/.bashrc`, and both files have
+run before you see a prompt.
+
+That is worth knowing for two reasons.
+
+It tells you where to put things. Anything you want in every interactive
+shell goes in `~/.bashrc`, and it will be read either way. `~/.bash_profile`
+is for the few things that should happen once at login and not again in every
+terminal you open.
+
+And it tells you when the arrangement stops holding. Replace `~/.bash_profile`
+with your own and drop that block, and a login shell will no longer read
+`~/.bashrc`. Your aliases will work in a desktop terminal and vanish over SSH,
+which is a confusing afternoon.
+
+One limit on the word always. Both files are for interactive shells. A script
+runs in a non-interactive shell and reads neither, which is why a script cannot
+see an alias you defined in `~/.bashrc`. RH134 01.01 makes the interactive and
+non-interactive split as well, and it is the half people forget.
 
 ## Week 8: Recurring jobs, logs, journals and keeping time
 

@@ -173,6 +173,14 @@ One link on that page is left out on purpose. Red Hat's hybrid cloud learning
 hub sits there, so it looks like an obvious inclusion, but it carries
 OpenShift, Kubernetes and AI material and nothing for the RHCSA. Leave it out.
 
+Red Hat's "Introducing Red Hat Enterprise Linux 10" playlist is left out for
+the same reason, and for a second one. Nineteen videos, none of them a task
+walkthrough, and six of them about Lightspeed. `objectives.md` warns that the
+command line assistant is absent from the exam, so putting a playlist that
+sells it in front of students would argue against our own warning. Leave it
+out, and do not name it in a student file either. Naming a resource in order
+to warn students off it gives it attention it has not earned.
+
 If an automated check is blocked by the RHEL documentation or SUSS module
 page, check the same link in a browser before changing it.
 

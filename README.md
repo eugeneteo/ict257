@@ -20,7 +20,7 @@ Enterprise Linux 10.
 | [`planner/`](planner/) | A study planner spreadsheet, with revision dates worked out for you |
 | [`exam-day.md`](exam-day.md) | What the exam environment is like on the day |
 
-I will add more as the semester goes on.
+I may add more as the semester goes on.
 
 ## Getting the material
 

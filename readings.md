@@ -102,10 +102,10 @@ next to each other, so it removes nothing useful until the input is sorted.
 That is the whole reason `sort` comes first.
 
 And neither course teaches `uniq`. It appears nowhere in RH124 or RH134, and
-`sort` turns up only in passing, in a pipeline in RH124 chapter 12 and as an option
-to `ps`. So take the shape of this and not the tools. No exam task will ask you
-for `uniq`, and if you go hunting for it in the courseware you will not find
-it.
+`sort` turns up only in passing, in a pipeline in RH124 chapter 12 and as an
+option to `ps`. So take the shape of this and not the tools. No exam task will
+ask you for `uniq`, and if you go hunting for it in the courseware you will not
+find it.
 
 What carries over is the numbering. Stream 1 flows to the next command in a
 pipeline, and it is the same stream 1 that `>` sends to a file. Stream 2 does

@@ -80,6 +80,64 @@ Check `/etc/login.defs` yourself and see.
 That site sits behind a bot check, so it may ask you to prove you are a person
 before it loads.
 
+### Sending both streams to the same file
+
+A command writes on two streams and redirection moves one of them. `find` makes
+that obvious, because it reports what it found on standard output and complains
+about what it could not read on standard error.
+
+```
+[student@workstation ~]$ find /etc/ -name passwd > /tmp/x
+find: '/etc/polkit-1/localauthority': Permission denied
+find: '/etc/cups/ssl': Permission denied
+find: '/etc/ssl/private': Permission denied
+```
+
+The file caught the results. The complaints came to the screen, because `>`
+moves standard output alone. Add `2>&1` and the second stream follows the
+first.
+
+```
+[student@workstation ~]$ find /etc/ -name passwd > /tmp/x 2>&1
+[student@workstation ~]$
+```
+
+Nothing on the screen now. Read `2>&1` as "send stream 2 wherever stream 1 is
+already going", and the order becomes the whole trick. RH124 09.03 shows the
+reverse form, `2>&1 > file`, and it does not do the same job. There the errors
+are pointed at the terminal, which is where standard output still is at that
+moment, and only afterwards does standard output move to the file. The section
+offers `&> file` as the shorthand that cannot be got the wrong way round. A
+quiz question in that chapter turns on exactly this, so it is worth ten minutes
+now.
+
+Then look at what landed in the file.
+
+```
+[student@workstation ~]$ cat /tmp/x
+find: '/etc/polkit-1/localauthority': Permission denied
+find: '/etc/cups/ssl': Permission denied
+/etc/pam.d/passwd
+/etc/passwd
+find: '/etc/ssl/private': Permission denied
+```
+
+The order is wrong, and nothing is broken. `find` walked `/etc` alphabetically,
+so `/etc/pam.d` came before `/etc/polkit-1` and `/etc/ssl` came last. The file
+does not show that.
+
+This catches people out and neither course explains it. Standard error is
+unbuffered, so each complaint is written the instant it happens. Standard
+output changes behaviour when it is a file instead of a terminal. It collects
+output in memory and writes it in blocks. So the errors reach the file straight
+away while the results wait in a buffer, and what you read back is not the
+order in which things occurred.
+
+Two things follow. Never read a merged log as a timeline. And if you are
+hunting for which directory caused an error, keep the streams apart with
+`> results 2> errors` instead of merging them, which is what the challenges in
+[`practice.md`](practice.md) ask you to do.
+
 ## Week 4: File permissions, RPM packages and Flatpak applications
 
 | Page | Why it matters |

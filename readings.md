@@ -1,8 +1,8 @@
-# Optional reading, week by week
+# Additional reading, week by week
 
-Extra reading for the schedule in [`lessons.md`](lessons.md). None of it is
-required and none of it is examined. Reach for a row when a session has left
-you wanting the same idea from a second angle.
+These pages sit alongside the schedule in [`lessons.md`](lessons.md). None of
+it is required and none of it is examined. Reach for a row when a session has
+left you wanting the same idea from a second angle.
 
 Each row says what a page is and why it is worth your time. **Objective** names
 the entry in [`objectives.md`](objectives.md) that it supports. A dash means the

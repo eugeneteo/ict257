@@ -3,11 +3,11 @@
 The following challenges take the RHCSA Practice series that Tudor Raduta ran
 in the [Red Hat Learning Community][rhlc] as a starting point. It closed on
 31 March 2026,<sup>[1][rhlc]</sup> so I cannot link the posts any more. I wrote
-these with my virtual teaching assistants, Claude Opus 5 and GPT-5.6 Sol.
-Opus 5 drafted the new challenges. GPT-5.6 Sol checked that each one can be
-solved and rewrote the ones that could not. The published text is the work of
-both. If you find a mistake in one, please
-[open an issue](https://github.com/eugeneteo/ict257/issues/new).
+these with my virtual teaching assistant agents, using the Claude Opus 5 and
+GPT-5.6 Sol models. The Opus 5 agent drafted the new challenges. The
+GPT-5.6 Sol agent checked that each one can be solved and rewrote the ones
+that could not. The published text is the work of both. If you find a mistake
+in one, please [open an issue](https://github.com/eugeneteo/ict257/issues/new).
 
 None of this is required for ICT257. They run in the Red Hat Academy lab, on
 top of the guided exercises and not in place of them. Each challenge names the

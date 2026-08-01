@@ -60,6 +60,66 @@ Prove the NIST table on your own machine. `df -h` counts in powers of 1024 and
 `df -H` counts in powers of 1000, so one disk reports two different sizes. It
 pays off again in week 5, when you start creating file systems of your own.
 
+### One name, several manual pages
+
+A manual page is addressed by a name and a section number, and the number is
+not decoration. Search for a name and you may get several answers.
+
+```
+[student@workstation ~]$ man -k ^passwd
+passwd (1)           - change user password
+passwd (1ossl)       - compute password hashes
+passwd (5)           - the password file
+```
+
+Section 1 holds user commands and section 5 holds file formats. So `passwd` in
+section 1 is the command that changes a password, and `passwd` in section 5 is
+the file that stores account records. Same name, two different things, and the
+one you want depends on what you are being asked.
+
+This is where marks go. Plain `man passwd` gives you the lowest numbered
+section it can find, which is the command. A student sent to read about the
+format of the password file opens that page, sees a command, and reads on
+without noticing they are in the wrong document. Ask for the section you want.
+
+```
+[student@workstation ~]$ man 5 passwd
+```
+
+RH124 chapter 3 teaches this search as `man -k`, and mentions `apropos` as
+another name for the same thing. It also shows `man -f`, which lists the
+sections for an exact name and nothing else. The `^` in the search above is a
+regular expression anchor, so it matches names beginning with `passwd` instead
+of names containing it anywhere. Week 3 covers that syntax properly.
+
+The exam gives you the manual pages and no internet, so knowing how to find
+the right page is worth practising now. That is RHCSA-1.11.
+
+### Reading a long manual page away from the terminal
+
+Neither course teaches this and no exercise will ask for it. It is here
+because it is useful. `bash(1)` runs to hundreds of pages and nobody reads
+that in a pager.
+
+```
+[student@workstation ~]$ man -t bash > /tmp/x
+[student@workstation ~]$ file /tmp/x
+/tmp/x: PostScript document text conforming DSC level 3.0
+[student@workstation ~]$ ps2pdf /tmp/x /tmp/x.pdf
+```
+
+`man -t` does not make a PDF. It makes PostScript, which is why the second
+command exists. The `file` command is what tells you that, and it is a small
+lesson in itself. A file's type is decided by what is inside it and not by the
+name you gave it.
+
+One thing to know before you try it. `ps2pdf` arrives with the `ghostscript`
+package, which is not installed by default, so install it first. Unlike
+`nmtui` in week 6, this one will not simply be there.
+
+This is for studying and not for the day. The exam has no internet and no
+reason to make a PDF.
+
 ## Week 3: Editing text, redirecting output, users and groups
 
 Editing text, redirecting output, users and groups.

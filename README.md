@@ -17,6 +17,7 @@ Enterprise Linux 10.
 | [`hints.md`](hints.md) | Hints for those challenges, for when you are stuck |
 | [`readings.md`](readings.md) | Optional reading for each week with some exam tips sprinkled in |
 | [`resources.md`](resources.md) | Resources for preparing beyond the courseware |
+| [`planner/`](planner/) | A study planner spreadsheet, with revision dates worked out for you |
 | [`exam-day.md`](exam-day.md) | What the exam environment is like on the day |
 
 I will add more as the semester goes on.

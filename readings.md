@@ -183,6 +183,73 @@ bit is set. Fix the older files with `chgrp -R` and be done.
 Two bits, one directory, opposite jobs. Setgid decides the group of new
 files. The sticky bit decides who may delete an old one.
 
+### Read and execute are not the same thing on a directory
+
+On a file, `r` lets you read it and `x` lets you run it. On a directory they
+mean something else, and the difference is where marks go missing. Read lets
+you list the names inside. Execute lets you reach what those names point at.
+You need execute to do almost anything useful, including reading a file you
+already know the name of.
+
+The quickest way to see it is to take every permission away and put them back
+one at a time. Build a directory with a file in it, then remove the lot.
+
+```
+[student@workstation ~]$ chmod 0 dir
+[student@workstation ~]$ ls -l dir
+ls: cannot open directory 'dir': Permission denied
+```
+
+Now grant read on its own. The listing works, and nothing else does.
+
+```
+[student@workstation ~]$ chmod 400 dir
+[student@workstation ~]$ ls -l dir
+ls: cannot access 'dir/file.txt': Permission denied
+total 0
+-????????? ? ? ? ?            ? file.txt
+```
+
+That row of question marks is the lesson. The name came back, because read was
+enough to list it. Everything else is unknown, because `ls` has to reach the
+file itself to learn its size, its owner and its mode, and reaching it needs
+execute. A directory you can list but not enter is a table of contents for a
+book you cannot open.
+
+Adding write changes nothing, which surprises people.
+
+```
+[student@workstation ~]$ chmod 600 dir
+[student@workstation ~]$ rm dir/file.txt
+rm: cannot remove 'dir/file.txt': Permission denied
+```
+
+Write on a directory is permission to change the list of names in it, and
+deleting a file is a change to that list. So write ought to be enough. It is
+not, because the kernel has to reach the entry before it can remove it, and
+reaching it needs execute. Write without execute is a permission you cannot
+use.
+
+Add execute and the same command works.
+
+```
+[student@workstation ~]$ chmod 700 dir
+[student@workstation ~]$ rm dir/file.txt
+[student@workstation ~]$
+```
+
+Note what that last command did. The file was owned by `student` and its own
+mode never changed throughout. Deleting a file is governed by the permissions
+on the directory holding it, not by the permissions on the file. That is why
+the sticky bit exists, and it is worth reading this section and the one above
+it together.
+
+Three things to carry into the exam. A directory almost always wants `x`
+wherever it has `r`, which is why `755` and `750` are so common and `640` on a
+directory is a mistake. A row of question marks in a listing means execute is
+missing, not that the file is broken. And if you cannot delete a file you own,
+look at the directory.
+
 ## Week 5: File systems, locating files, processes and system services
 
 | Page | Why it matters |

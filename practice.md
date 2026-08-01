@@ -27,34 +27,34 @@ the work.
 
 | # | Challenge | Ready | Difficulty | Objectives | Prepare with |
 | --- | --- | --- | --- | --- | --- |
-| 1 | [Two streams, two files](#1-two-streams-two-files) | week 3 | Doable | RHCSA-1.2, 1.1 | nothing |
-| 2 | [One narrow permission, and one account closed](#2-one-narrow-permission-and-one-account-closed) | week 3 | Moderate | RHCSA-9.4, 9.1, 9.3, 9.2 | `lab start users-password` |
-| 3 | [A default that follows everybody](#3-a-default-that-follows-everybody) | week 4 | Doable | RHCSA-10.2, 1.10 | `lab start perms-default` |
-| 4 | [A package that only one repository has](#4-a-package-that-only-one-repository-has) | week 4 | Moderate | RHCSA-2.1, 2.2, 7.5 | `lab start software-dnf` |
-| 5 | [An application for one account only](#5-an-application-for-one-account-only) | week 4 | Doable | RHCSA-2.3, 2.4 | `lab start flatpak-configure` |
-| 6 | [A shared directory that keeps losing files](#6-a-shared-directory-that-keeps-losing-files) | week 5 | Moderate | RHCSA-6.5, 1.8, 1.9, 1.10 | `lab start perms-cli` |
-| 7 | [Services that must be right in the morning](#7-services-that-must-be-right-in-the-morning) | week 5 | Doable | RHCSA-7.2, 4.9, 8.3 | `lab start services-identify` |
-| 8 | [Short names for long logins](#8-short-names-for-long-logins) | week 6 | Doable | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` |
-| 9 | [A script that takes its list from you](#9-a-script-that-takes-its-list-from-you) | week 7 | Moderate | RHCSA-3.3, 3.1, 3.2, 3.4 | `lab start scripts-loops` |
-| 10 | [One line in a hundred thousand](#10-one-line-in-a-hundred-thousand) | week 7 | Doable | RHCSA-1.3, 1.7, 1.11 | `lab start regexes-regex` |
-| 11 | [A job of your own on a clock](#11-a-job-of-your-own-on-a-clock) | week 8 | Moderate | RHCSA-7.1 (at and cron only), 1.2 | `lab start scheduling-cron` |
-| 12 | [What the machine wrote down](#12-what-the-machine-wrote-down) | week 8 | Moderate | RHCSA-4.7, 4.8, 7.4 | `lab start logs-systemd` |
-| 13 | [A machine that is working too hard](#13-a-machine-that-is-working-too-hard) | week 9 | Moderate | RHCSA-4.4, 4.5, 4.6 | `lab start tuning-nice` |
-| 14 | [Modes, labels and one switch](#14-modes-labels-and-one-switch) | week 9 | Moderate | RHCSA-10.4, 10.5, 10.8 | `lab start selinux-booleans` |
-| 15 | [Grow a volume and retire what it sat on](#15-grow-a-volume-and-retire-what-it-sat-on) | week 10 | Hard | RHCSA-6.4, 5.1, 5.2, 5.3 | `lab start lvm-extend` |
-| 16 | [A volume group with room left in it](#16-a-volume-group-with-room-left-in-it) | week 10 | Hard | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` |
-| 17 | [A place to put a backup, and a backup to put there](#17-a-place-to-put-a-backup-and-a-backup-to-put-there) | week 10 | Hard | RHCSA-6.1 (XFS and ext4 only), 1.6, 4.10, 5.5 | `lab start archive-manage` |
-| 18 | [A share that waits to be asked](#18-a-share-that-waits-to-be-asked) | week 11 | Doable | RHCSA-6.2, 6.3, 4.9 | `lab start nfsclient-autofs` |
-| 19 | [A port lent and then given back](#19-a-port-lent-and-then-given-back) | week 11 | Moderate | RHCSA-10.7, 10.1 | `lab start netsecurity-ports` |
-| 20 | [A page on a disk of its own](#20-a-page-on-a-disk-of-its-own) | week 11 | Hard | RHCSA-5.1, 5.5, 10.6, 10.1 | `lab start storage-partitions` |
-| 21 | [A link of their own](#21-a-link-of-their-own) | week 11 | Moderate | RHCSA-8.1, 8.2, 8.4 | `lab start net-edit` |
-| 22 | [How the machine decides to start](#22-how-the-machine-decides-to-start) | week 11 | Hard | RHCSA-7.6, 4.1, 4.2, 4.3, 7.3, 1.5 | `lab start boot-grub` |
+| 1 | [The pool of tears, and another beside it](#1-the-pool-of-tears-and-another-beside-it) | week 3 | Doable | RHCSA-1.2, 1.1 | nothing |
+| 2 | [A small door, and one sentence from the Queen](#2-a-small-door-and-one-sentence-from-the-queen) | week 3 | Moderate | RHCSA-9.4, 9.1, 9.3, 9.2 | `lab start users-password` |
+| 3 | [Everybody has won, and all must have prizes](#3-everybody-has-won-and-all-must-have-prizes) | week 4 | Doable | RHCSA-10.2, 1.10 | `lab start perms-default` |
+| 4 | [The bottle marked drink me, and where it came from](#4-the-bottle-marked-drink-me-and-where-it-came-from) | week 4 | Moderate | RHCSA-2.1, 2.2, 7.5 | `lab start software-dnf` |
+| 5 | [A cake marked eat me, for one guest only](#5-a-cake-marked-eat-me-for-one-guest-only) | week 4 | Doable | RHCSA-2.3, 2.4 | `lab start flatpak-configure` |
+| 6 | [Clean cup, move down](#6-clean-cup-move-down) | week 5 | Moderate | RHCSA-6.5, 1.8, 1.9, 1.10 | `lab start perms-cli` |
+| 7 | [The White Rabbit must not be late](#7-the-white-rabbit-must-not-be-late) | week 5 | Doable | RHCSA-7.2, 4.9, 8.3 | `lab start services-identify` |
+| 8 | [Who are you, said the Caterpillar](#8-who-are-you-said-the-caterpillar) | week 6 | Doable | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` |
+| 9 | [Two, Five and Seven paint the roses](#9-two-five-and-seven-paint-the-roses) | week 7 | Moderate | RHCSA-3.3, 3.1, 3.2, 3.4 | `lab start scripts-loops` |
+| 10 | [One card in the whole pack](#10-one-card-in-the-whole-pack) | week 7 | Doable | RHCSA-1.3, 1.7, 1.11 | `lab start regexes-regex` |
+| 11 | [A watch that tells the day of the month](#11-a-watch-that-tells-the-day-of-the-month) | week 8 | Moderate | RHCSA-7.1 (at and cron only), 1.2 | `lab start scheduling-cron` |
+| 12 | [The jury writes it all down](#12-the-jury-writes-it-all-down) | week 8 | Moderate | RHCSA-4.7, 4.8, 7.4 | `lab start logs-systemd` |
+| 13 | [A caucus race with no winner](#13-a-caucus-race-with-no-winner) | week 9 | Moderate | RHCSA-4.4, 4.5, 4.6 | `lab start tuning-nice` |
+| 14 | [The Cheshire Cat fades, but the grin stays](#14-the-cheshire-cat-fades-but-the-grin-stays) | week 9 | Moderate | RHCSA-10.4, 10.5, 10.8 | `lab start selinux-booleans` |
+| 15 | [Alice grows, and the bottle is put away](#15-alice-grows-and-the-bottle-is-put-away) | week 10 | Hard | RHCSA-6.4, 5.1, 5.2, 5.3 | `lab start lvm-extend` |
+| 16 | [No room, said the Hare, and there was plenty](#16-no-room-said-the-hare-and-there-was-plenty) | week 10 | Hard | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` |
+| 17 | [The treacle well, and what was drawn from it](#17-the-treacle-well-and-what-was-drawn-from-it) | week 10 | Hard | RHCSA-6.1 (XFS and ext4 only), 1.6, 4.10, 5.5 | `lab start archive-manage` |
+| 18 | [A door that opens only when asked](#18-a-door-that-opens-only-when-asked) | week 11 | Doable | RHCSA-6.2, 6.3, 4.9 | `lab start nfsclient-autofs` |
+| 19 | [The flamingo lent for the game, and given back](#19-the-flamingo-lent-for-the-game-and-given-back) | week 11 | Moderate | RHCSA-10.7, 10.1 | `lab start netsecurity-ports` |
+| 20 | [What is the use of a book without pictures](#20-what-is-the-use-of-a-book-without-pictures) | week 11 | Hard | RHCSA-5.1, 5.5, 10.6, 10.1 | `lab start storage-partitions` |
+| 21 | [A passage of their own to the garden](#21-a-passage-of-their-own-to-the-garden) | week 11 | Moderate | RHCSA-8.1, 8.2, 8.4 | `lab start net-edit` |
+| 22 | [Begin at the beginning, said the King](#22-begin-at-the-beginning-said-the-king) | week 11 | Hard | RHCSA-7.6, 4.1, 4.2, 4.3, 7.3, 1.5 | `lab start boot-grub` |
 
 
 Every objective is listed in [`objectives.md`](objectives.md). The difficulty is
 relative to the others. None of them is a five minute job.
 
-## 1. Two streams, two files
+## 1. The pool of tears, and another beside it
 
 **Objective: RHCSA-1.2, input and output redirection. Also RHCSA-1.1.**
 
@@ -115,7 +115,7 @@ To check:
 - Which character continued a command onto a second line? Which command lists
   what you have run, and which form brought one back without retyping it?
 
-## 2. One narrow permission, and one account closed
+## 2. A small door, and one sentence from the Queen
 
 **Objective: RHCSA-9.4, configure privileged access. Also RHCSA-9.1 to 9.3.**
 
@@ -175,7 +175,7 @@ To check:
 - Reboot `servera`. Which of the things you set needed a further command to
   survive the reboot, and why?
 
-## 3. A default that follows everybody
+## 3. Everybody has won, and all must have prizes
 
 **Objective: RHCSA-10.2, manage default file permissions. Also RHCSA-1.10.**
 
@@ -235,7 +235,7 @@ To check:
 - An account created next term never has its home directory touched by you.
   Does it get `0027`, and what makes that happen?
 
-## 4. A package that only one repository has
+## 4. The bottle marked drink me, and where it came from
 
 **Objective: RHCSA-2.1, RPM repositories. Also RHCSA-2.2 and 7.5.**
 
@@ -296,7 +296,7 @@ To check:
 - Reboot `servera`. Does `dnf repolist` list either of your repositories? Does
   `dnf repolist all`?
 
-## 5. An application for one account only
+## 5. A cake marked eat me, for one guest only
 
 **Objective: RHCSA-2.3, Flatpak repositories. Also RHCSA-2.4.**
 
@@ -357,7 +357,7 @@ To check:
 - You switched the remote off before deleting it. What is the practical
   difference between those two, for software already installed?
 
-## 6. A shared directory that keeps losing files
+## 6. Clean cup, move down
 
 **Objective: RHCSA-6.5, file permission problems. Also RHCSA-1.8 to 1.10.**
 
@@ -418,7 +418,7 @@ To check:
 - Reboot `servera`. Do the two special permissions survive? Which command shows
   you both at once?
 
-## 7. Services that must be right in the morning
+## 7. The White Rabbit must not be late
 
 **Objective: RHCSA-7.2, services at boot. Also RHCSA-4.9 and 8.3.**
 
@@ -479,7 +479,7 @@ To check:
 - Everything is back as you found it. Which two commands did you use to prove
   that, and what did each print for the three services?
 
-## 8. Short names for long logins
+## 8. Who are you, said the Caterpillar
 
 **Objective: RHCSA-10.3, key-based authentication for SSH. Also RHCSA-1.4.**
 
@@ -536,7 +536,7 @@ To check:
 - You set the strict value after the two names worked, not before. What would
   have failed had you set it first?
 
-## 9. A script that takes its list from you
+## 9. Two, Five and Seven paint the roses
 
 **Objective: RHCSA-3.3, process script inputs. Also RHCSA-3.1, 3.2 and 3.4.**
 
@@ -595,7 +595,7 @@ To check:
 - Run the script three ways and report the exit code each time. Which line of
   the script produced each one?
 
-## 10. One line in a hundred thousand
+## 10. One card in the whole pack
 
 **Objective: RHCSA-1.3, regular expressions. Also RHCSA-1.7 and 1.11.**
 
@@ -656,7 +656,7 @@ To check:
 - In the editor, which key starts a search inside a file and which one repeats
   it? Which keys write the file and which leave it without saving?
 
-## 11. A job of your own on a clock
+## 11. A watch that tells the day of the month
 
 **Objective: Part of RHCSA-7.1, `at` and `cron`. Also RHCSA-1.2.**
 
@@ -706,7 +706,7 @@ To check:
 - Your recurring job runs as `root`. What would have been different had you put
   it in your own crontab instead?
 
-## 12. What the machine wrote down
+## 12. The jury writes it all down
 
 **Objective: RHCSA-4.7, logs and journals. Also RHCSA-4.8 and 7.4.**
 
@@ -766,7 +766,7 @@ To check:
 - Your own message reached both the journal and a file. Which service wrote the
   file, which file was it, and which rule sent it there?
 
-## 13. A machine that is working too hard
+## 13. A caucus race with no winner
 
 **Objective: RHCSA-4.4, heavy processes. Also RHCSA-4.5 and 4.6.**
 
@@ -827,7 +827,7 @@ To check:
 - Reboot `servera`. Which profile is active, and why did the change survive?
   Which directory would you have copied a profile into to edit it?
 
-## 14. Modes, labels and one switch
+## 14. The Cheshire Cat fades, but the grin stays
 
 **Objective: RHCSA-10.4, SELinux modes. Also RHCSA-10.5 and 10.8.**
 
@@ -888,7 +888,7 @@ To check:
 - Which command lists only the settings that differ from the shipped values?
   What does it show once you have put everything back?
 
-## 15. Grow a volume and retire what it sat on
+## 15. Alice grows, and the bottle is put away
 
 **Objective: RHCSA-6.4, extend logical volumes. Also RHCSA-5.1, 5.2 and 5.3.**
 
@@ -947,7 +947,7 @@ To check:
 - Reboot. Is `/data` mounted, and is it still the larger size? Which command
   showed you that from `workstation` without a session on `servera`?
 
-## 16. A volume group with room left in it
+## 16. No room, said the Hare, and there was plenty
 
 **Objective: RHCSA-5.4, logical volumes. Also RHCSA-5.2, 5.3 and 5.6.**
 
@@ -994,7 +994,7 @@ To check:
 - The volume group is still half empty. Name two things you could do with that
   space, and the command for each.
 
-## 17. A place to put a backup, and a backup to put there
+## 17. The treacle well, and what was drawn from it
 
 **Objective: Part of RHCSA-6.1, XFS and ext4. Also RHCSA-1.6, 4.10 and 5.5.**
 
@@ -1054,7 +1054,7 @@ To check:
 - Reboot `servera`. Are both file systems mounted? Which command shows you the
   type of each and where it came from?
 
-## 18. A share that waits to be asked
+## 18. A door that opens only when asked
 
 **Objective: RHCSA-6.2, network file systems. Also RHCSA-6.3 and 4.9.**
 
@@ -1112,7 +1112,7 @@ To check:
 - A plain `/etc/fstab` entry mounts at boot and stays mounted. Name two problems
   that causes when the server is across a network.
 
-## 19. A port lent and then given back
+## 19. The flamingo lent for the game, and given back
 
 **Objective: RHCSA-10.7, manage SELinux port labels. Also RHCSA-10.1.**
 
@@ -1172,7 +1172,7 @@ To check:
 - Reboot `servera`. Is Apache stopped, is the port closed and is the label
   gone?
 
-## 20. A page on a disk of its own
+## 20. What is the use of a book without pictures
 
 **Objective: RHCSA-5.1, partitions on GPT disks. Also RHCSA-5.5, 10.6, 10.1.**
 
@@ -1225,7 +1225,7 @@ To check:
 - What does `getenforce` report now? Somebody suggests putting SELinux in
   permissive mode to save time. What would that have hidden?
 
-## 21. A link of their own
+## 21. A passage of their own to the garden
 
 **Objective: RHCSA-8.1, IPv4 and IPv6 addresses. Also RHCSA-8.2 and 8.4.**
 
@@ -1286,7 +1286,7 @@ To check:
 - Which option made the firewall change permanent, and which command applied it
   to the running firewall? What happens if you use the first without the second?
 
-## 22. How the machine decides to start
+## 22. Begin at the beginning, said the King
 
 **Objective: RHCSA-7.6, bootloader. Also RHCSA-4.1 to 4.3, 7.3 and 1.5.**
 

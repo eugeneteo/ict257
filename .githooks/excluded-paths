@@ -3,4 +3,4 @@
 
 ^\.private/
 ^my-notes/
-\.(webp|png|jpe?g|gif|svg)$
+\.(webp|png|jpe?g|gif|svg|avif|heic|bmp|tiff?)$

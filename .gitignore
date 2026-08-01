@@ -22,6 +22,10 @@ desktop.ini
 *.jpeg
 *.gif
 *.svg
+*.avif
+*.heic
+*.bmp
+*.tiff
 !images/*.png
 
 # Built and exported output

@@ -18,12 +18,39 @@ five minutes spent reading.
 Each challenge below has one, two or three tiers. Each tier stays hidden until
 you click it. Open them in order and stop as soon as you can carry on alone.
 The easier challenges have fewer tiers, because a pointer is usually enough.
-The harder ones have three.
+The harder ones have three. The table below says how many each one has.
 
 Section numbers refer to version 10.0 of both courses. "RH134 chapter 11,
 section 3" means the third section of the eleventh chapter of Red Hat System
 Administration II. [`coverage.md`](coverage.md) maps every objective to its
 sections.
+
+## Contents
+
+| # | Challenge | Difficulty | Hints |
+| --- | --- | --- | --- |
+| 1 | [The pool of tears, and another beside it](#1-the-pool-of-tears-and-another-beside-it) | Doable | 1 tier |
+| 2 | [A small door, and one sentence from the Queen](#2-a-small-door-and-one-sentence-from-the-queen) | Moderate | 3 tiers |
+| 3 | [Everybody has won, and all must have prizes](#3-everybody-has-won-and-all-must-have-prizes) | Doable | 1 tier |
+| 4 | [The bottle marked drink me, and where it came from](#4-the-bottle-marked-drink-me-and-where-it-came-from) | Moderate | 3 tiers |
+| 5 | [A cake marked eat me, for one guest only](#5-a-cake-marked-eat-me-for-one-guest-only) | Doable | 1 tier |
+| 6 | [Clean cup, move down](#6-clean-cup-move-down) | Moderate | 3 tiers |
+| 7 | [The White Rabbit must not be late](#7-the-white-rabbit-must-not-be-late) | Doable | 1 tier |
+| 8 | [Who are you, said the Caterpillar](#8-who-are-you-said-the-caterpillar) | Doable | 2 tiers |
+| 9 | [Two, Five and Seven paint the roses](#9-two-five-and-seven-paint-the-roses) | Moderate | 3 tiers |
+| 10 | [One card in the whole pack](#10-one-card-in-the-whole-pack) | Doable | 1 tier |
+| 11 | [A watch that tells the day of the month](#11-a-watch-that-tells-the-day-of-the-month) | Moderate | 3 tiers |
+| 12 | [The jury writes it all down](#12-the-jury-writes-it-all-down) | Moderate | 3 tiers |
+| 13 | [A caucus race with no winner](#13-a-caucus-race-with-no-winner) | Moderate | 3 tiers |
+| 14 | [The Cheshire Cat fades, but the grin stays](#14-the-cheshire-cat-fades-but-the-grin-stays) | Moderate | 3 tiers |
+| 15 | [Alice grows, and the bottle is put away](#15-alice-grows-and-the-bottle-is-put-away) | Hard | 3 tiers |
+| 16 | [No room, said the Hare, and there was plenty](#16-no-room-said-the-hare-and-there-was-plenty) | Hard | 3 tiers |
+| 17 | [The treacle well, and what was drawn from it](#17-the-treacle-well-and-what-was-drawn-from-it) | Hard | 3 tiers |
+| 18 | [A door that opens only when asked](#18-a-door-that-opens-only-when-asked) | Doable | 1 tier |
+| 19 | [The flamingo lent for the game, and given back](#19-the-flamingo-lent-for-the-game-and-given-back) | Moderate | 3 tiers |
+| 20 | [What is the use of a book without pictures](#20-what-is-the-use-of-a-book-without-pictures) | Hard | 3 tiers |
+| 21 | [A passage of their own to the garden](#21-a-passage-of-their-own-to-the-garden) | Moderate | 3 tiers |
+| 22 | [Begin at the beginning, said the King](#22-begin-at-the-beginning-said-the-king) | Hard | 3 tiers |
 
 ## 1. The pool of tears, and another beside it
 

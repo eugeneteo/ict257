@@ -16,12 +16,13 @@ first. The lab is disposable, so reset it if you break something.
 
 No answers or walkthroughs are given. Check your work with the questions at the
 end of each task, then reboot and check each required result again. See
-[`pairings.md`](pairings.md) for the commands most often forgotten.
+[`pairings.md`](pairings.md) for the commands most often forgotten. If you are
+stuck, [`hints.md`](hints.md) points you at the right part of the courseware
+without giving the answer away. Try the challenge properly first.
 
 If you work through any of these, I strongly encourage you to commit your
-answers to GitHub or write about them on a blog. Explaining a solution is how
-you find out whether you understood it, and it gives you something to show for
-the work.
+answers to a GitHub repository of your own, or write about them on a blog.
+Explaining a solution is how you find out whether you understood it.
 
 ## Contents
 

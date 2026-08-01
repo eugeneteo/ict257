@@ -14,6 +14,7 @@ Enterprise Linux 10.
 | [`lessons.md`](lessons.md) | Twelve weeks of teaching, then catch-up, revision and the exam |
 | [`pairings.md`](pairings.md) | Commands to pair, and forms that survive a reboot |
 | [`practice.md`](practice.md) | Optional practice challenges to attempt on your own |
+| [`hints.md`](hints.md) | Hints for those challenges, for when you are stuck |
 | [`resources.md`](resources.md) | Resources for preparing beyond the courseware |
 | [`exam-day.md`](exam-day.md) | What the exam environment is like on the day |
 

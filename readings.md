@@ -1,4 +1,4 @@
-# Additional reading, week by week
+# Optional reading, week by week
 
 These pages sit alongside the schedule in [`lessons.md`](lessons.md). None of
 it is required and none of it is examined. Reach for a row when a session has

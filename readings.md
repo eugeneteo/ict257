@@ -28,9 +28,11 @@ what follows fills that context out, for anyone who wants it.
 | [Bash prompt generator](https://bash-prompt-generator.org) | Assemble a prompt and watch which escape produces which piece of it. Afterwards you can read the prompt in front of you and say which user you are, which host you are on and whether you hold root | RHCSA-1.1 |
 
 The prompt generator earns its place for the escapes and not for the colours.
-`\u`, `\h`, `\w` and `\$` are the ones in the default RHEL prompt, and `\$` is
-the one that prints `#` for root and `$` for everyone else. That is worth
-knowing before week 3, when you start switching users. Set `PS1` in your own
+RHEL 10 sets `PS1` to `[\u@\h \W]\$ ` in `/etc/bashrc`, so four escapes carry
+everything the prompt tells you. Mind the capital in `\W`, which prints the
+last part of the working directory where lowercase `\w` prints all of it. And
+`\$` prints `#` for root and `$` for everyone else. That is worth knowing
+before week 3, when you start switching users. Set `PS1` in your own
 `~/.bashrc` and it follows you into every login shell.
 
 The HashiCorp page is one issue of a weekly newsletter. The licensing story
@@ -58,18 +60,20 @@ section on inodes and filenames. Everything from there on is exact.
 
 Prove the NIST table on your own machine. `df -h` counts in powers of 1024 and
 `df -H` counts in powers of 1000, so one disk reports two different sizes. It
-pays off again in week 5, when you start creating file systems of your own.
+pays off again in week 10, when you size partitions and logical volumes of
+your own.
 
 ### One name, several manual pages
 
 A manual page is addressed by a name and a section number, and the number is
-not decoration. Search for a name and you may get several answers.
+not decoration. Search for a name and you may get several answers. Cut the
+descriptions away and what is left is the point.
 
 ```
-[student@workstation ~]$ man -k ^passwd
-passwd (1)           - change user password
-passwd (1ossl)       - compute password hashes
-passwd (5)           - the password file
+[student@workstation ~]$ man -k ^passwd | cut -d' ' -f1,2
+passwd (1)
+passwd (1ossl)
+passwd (5)
 ```
 
 Section 1 holds user commands and section 5 holds file formats. So `passwd` in
@@ -77,10 +81,19 @@ section 1 is the command that changes a password, and `passwd` in section 5 is
 the file that stores account records. Same name, two different things, and the
 one you want depends on what you are being asked.
 
-This is where marks go. Plain `man passwd` gives you the lowest numbered
-section it can find, which is the command. A student sent to read about the
-format of the password file opens that page, sees a command, and reads on
-without noticing they are in the wrong document. Ask for the section you want.
+Drop the `cut` and each line carries a one line summary as well, which is worth
+reading once. Mind the middle line either way. RHEL 10 answers this search with
+a page OpenSSL ships, and its section name is `1ossl` and not `1ssl`.
+
+This is where marks go. Plain `man passwd` does not weigh the sections up
+against each other. It walks a fixed order and stops at the first page it
+finds. On RHEL 10 that order opens 1, 1p, 8, 2, 3 and reaches 5 a long way
+down, and the `SECTION` line in `/etc/man_db.conf` is what sets it. Section 1
+therefore wins here, and section 1 is the command. Read that order again and
+note that 8 is consulted before 2, so it is not the numbers in sequence. A
+student sent to read about the format of the password file opens the wrong
+page, sees a command, and reads on without noticing. Ask for the section you
+want.
 
 ```
 [student@workstation ~]$ man 5 passwd
@@ -97,9 +110,9 @@ the right page is worth practising now. That is RHCSA-1.11.
 
 ### Reading a long manual page away from the terminal
 
-Neither course teaches this and no exercise will ask for it. It is here
-because it is useful. `bash(1)` runs to hundreds of pages and nobody reads
-that in a pager.
+`man -t` turns up once in RH124, in a lab step about printing, and no exercise
+asks you to make a PDF. It is here because it is useful. `bash(1)` runs to
+hundreds of pages and nobody reads that in a pager.
 
 ```
 [student@workstation ~]$ man -t bash > /tmp/x
@@ -120,13 +133,170 @@ package, which is not installed by default, so install it first. Unlike
 This is for studying and not for the day. The exam has no internet and no
 reason to make a PDF.
 
+### What `ls -li` proves about a hard link
+
+The diagram in the table above shows the shape of a hard link. This shows the
+numbers, and the numbers are the part you have to read. Make a file with
+something in it, then give it a second name.
+
+```
+[student@workstation ~]$ echo hello > file.txt
+[student@workstation ~]$ ln file.txt file-hlink.txt
+[student@workstation ~]$ ls -li *.txt
+54614180 -rw-r--r--. 2 student student 6 Aug  1 23:45 file-hlink.txt
+54614180 -rw-r--r--. 2 student student 6 Aug  1 23:45 file.txt
+```
+
+Two numbers carry the lesson. The first column is the inode number, and it is
+identical on both rows. There is one file and it has two names. The number
+just before the owner is the link count, and it says 2 for the same reason.
+Your own inode number will differ, because it is whatever the file system had
+free.
+
+So a hard link is not a copy. Nor does it point at a name. Both entries are
+equal and neither of them is the original. The count is how the file system
+knows how many names are left.
+
+Now remove the name you made first.
+
+```
+[student@workstation ~]$ rm file.txt
+[student@workstation ~]$ ls -li file-hlink.txt
+54614180 -rw-r--r--. 1 student student 6 Aug  1 23:45 file-hlink.txt
+[student@workstation ~]$ cat file-hlink.txt
+hello
+```
+
+Nothing broke. The inode number has not moved, the count is down to 1 and the
+six bytes are still there to read. Removing a name removes the name and
+decrements the count. Two things have to be true before the storage goes back.
+The count has to be zero, and no process may still hold the file open.
+`unlink(2)` on your own machine states both. So
+delete the last name of a file that a running program is reading and the data
+stays where it is until that program closes it. There was no original to lose,
+and that is the whole contrast with the other kind of link. A symbolic link
+points at a name, so removing that name leaves it dangling.
+
+RH124 07.03 teaches both kinds. It uses `ls -il` for the test above, so that
+two names showing one inode number settle the question between them. Its
+symbolic link example uses `ls -l` instead, because a symbolic link has no
+inode to share and so there is nothing to compare. It also gives you two
+limits. A hard link works on a regular file alone, so `ln` refuses a directory.
+And a hard link cannot reach across a file system. The course states that
+second rule and never shows you what it looks like, so here it is. That is
+RHCSA-1.9.
+
+Try to put the second name in `/dev/shm`.
+
+```
+[student@workstation ~]$ ln file.txt /dev/shm/file-hlink.txt
+ln: failed to create hard link '/dev/shm/file-hlink.txt' => 'file.txt': Invalid cross-device link
+```
+
+Read that error instead of guessing at it. Nothing here is a permission and
+nothing here is missing. `/dev/shm` is a tmpfs and it is mounted separately
+from your home directory, so it is a second file system on every RHEL 10
+machine without you building one. Run `df` and it has a line of its own. That
+is the check RH124 07.03 puts in front of you, and RH124 14.01 shows `df -h`
+again when it identifies the file systems on a machine.
+
+The mechanism from the first block is what costs you this. A directory entry
+holds an inode number, and an inode number means something only inside its own
+file system. So an entry in one file system cannot name an inode in another.
+The number would land on a different file there, or on nothing at all. The
+kernel refuses rather than write an entry that points at the wrong thing.
+
+That is the practical reason to reach for a symbolic link. A symbolic link
+stores a path and not an inode number, so a file system boundary means nothing
+to it. Take that as the rule of thumb rather than a table of differences to
+memorise. If the two names have to sit on separate file systems, only one kind
+of link can do the job.
+
+Week 4 carries the other half of this. There you learn that deleting a file is
+governed by the directory holding the name and not by the file. The link count
+is what decides whether the data goes with the name.
+
+### The size of a symbolic link is the path inside it
+
+The other kind of link has no inode to share. It holds a path as its contents,
+and everything else about it follows from that one fact. Assume `file.txt` in
+your home directory and a `dir` directory beside it. There are three ways to
+reach the same place, and two of them turn out to be the same thing.
+
+```
+[student@workstation ~]$ pwd
+/home/student
+[student@workstation ~]$ ln -s ~/file.txt dir/file-s.txt
+[student@workstation ~]$ ls -l dir/file-s.txt
+lrwxrwxrwx. 1 student student 22 Aug 17 23:17 dir/file-s.txt -> /home/student/file.txt
+```
+
+Now build the same link from inside `dir`, with a relative path.
+
+```
+[student@workstation ~]$ rm dir/file-s.txt
+[student@workstation ~]$ cd dir
+[student@workstation dir]$ ln -s ../file.txt file-s.txt
+[student@workstation dir]$ ls -l file-s.txt
+lrwxrwxrwx. 1 student student 11 Aug 17 23:18 file-s.txt -> ../file.txt
+```
+
+And once more from inside `dir`, this time with the tilde.
+
+```
+[student@workstation dir]$ rm file-s.txt
+[student@workstation dir]$ ln -s ~/file.txt file-s.txt
+[student@workstation dir]$ ls -l file-s.txt
+lrwxrwxrwx. 1 student student 22 Aug 17 23:19 file-s.txt -> /home/student/file.txt
+```
+
+Read the size column. It says 22 twice and 11 once. Count the characters in
+`/home/student/file.txt` and you get 22. Count `../file.txt` and you get 11.
+The size of a symbolic link is the length of the text it holds, because that
+text is the whole of it.
+
+That single fact explains the rest. It is why a symbolic link crosses a file
+system where a hard link cannot. A path is text and it reads the same
+anywhere, while an inode number does not. It is also why a symbolic link can
+end up pointing at nothing. The path is worked out when the link is followed
+rather than when it is made, so nothing checks the target at the time.
+
+It is why the first and third commands built one and the same link from
+different directories. The shell expands `~` before `ln` runs, so `ln` was
+handed `/home/student/file.txt` on both occasions. Only the middle command
+stored anything that depends on where you were standing.
+
+One more row to read correctly. The mode says `lrwxrwxrwx` on every symbolic
+link and it always will. Those bits are never consulted. What decides whether
+you may read the data is the mode on the target, so do not take that row as a
+world writable file.
+
+So which path should you store? An absolute path survives the link being moved
+and breaks when the target moves. A relative path survives the two being moved
+together, which is what happens when a tree is copied, archived or relocated,
+and it breaks when the distance between them changes. Neither one is correct.
+Relative suits a link and a target that travel as a unit. Absolute suits a
+target at an address you control and do not expect to move. RHEL ships plenty
+of both, so do not go hunting for a house style.
+
+RH124 07.03 teaches `ln -s`, the `l` at the front of the mode and what happens
+when the target goes away. It does not set out this trade-off, and its own
+examples are all absolute. One of the RH124 review labs asks you for a short
+relative path and never says why. So take the syntax from the course and the
+choice from here.
+
+Then go and settle it yourself, because ten minutes in the lab beats a rule
+you half remember. Build both links. Move `dir` elsewhere and see which one
+still resolves. Put it back, move `file.txt` instead, and see which one breaks
+this time.
+
 ## Week 3: Editing text, redirecting output, users and groups
 
 Editing text, redirecting output, users and groups.
 
 | Page | Why it is worth your time | Objective |
 | --- | --- | --- |
-| [Thinking in pipelines](https://effective-shell.com/part-2-core-skills/thinking-in-pipelines/) | It draws standard input, standard output and standard error as three files with numbers on them, then builds pipelines out of those numbers. Redirection stops being syntax you memorise once you can see where each stream goes | RHCSA-1.2 |
+| [Thinking in pipelines](https://effective-shell.com/part-2-core-skills/thinking-in-pipelines/) | It draws the three streams as files with numbers on them, 0 for standard input, 1 for standard output and 2 for standard error, then builds pipelines out of those numbers. Redirection stops being syntax you memorise once you can see where each stream goes | RHCSA-1.2 |
 | [Understanding the /etc/shadow file](https://www.cyberciti.biz/faq/understanding-etcshadow-file/) | It walks the colon-separated fields one at a time, including the ageing fields that `chage` writes. Afterwards you can read a shadow entry yourself and check your own work instead of trusting the command that produced it | RHCSA-9.2 |
 
 Read the shadow page beside `man 5 shadow` on a lab system. The manual page
@@ -139,6 +309,281 @@ Check `/etc/login.defs` yourself and see.
 
 That site sits behind a bot check, so it may ask you to prove you are a person
 before it loads.
+
+### Building a hash you can take apart
+
+A shadow entry is hard to learn from, because you cannot see where any of it
+came from. So build one instead. `openssl passwd` takes a password and a salt
+and prints the result, which means every field has a known origin.
+
+```
+[student@workstation ~]$ echo "redhat" | openssl passwd -stdin -6 -salt iGMT29O4MP5ngN4a
+$6$iGMT29O4MP5ngN4a$.1FWXa2f2g6YPLK3ri7NtduRh.xlZjEEK/4p6gL8vj.jl7JmemyG8mKbb02C2ZIXNRRi.DV8M8o2HTxKVgmRo/
+```
+
+Three fields, each opened by a dollar sign. First the algorithm, then the salt
+you handed in, then the hash. RH124 10.09 takes a real entry apart, and
+`crypt(5)` on your own machine lists the formats.
+
+Now the part that catches people out. `-6` asks for SHA-512, which is what
+RHEL 9 stored. Look in `/etc/shadow` after running this and your own password
+starts `$y$` instead, as the note above says. Neither one is broken. You have
+made the older format deliberately, and `openssl passwd` on RHEL 10 has no
+yescrypt option at all, so it cannot make the newer one.
+
+What does not carry over is the number of fields. Only the first one is fixed.
+The leading letter names the algorithm, and the algorithm then decides what
+comes after it. A `6` is SHA-512, a `5` is SHA-256 and a `y` is yescrypt.
+
+SHA-512 gives you three parts, which is what you have just built.
+
+```
+$6$salt$hash
+```
+
+Yescrypt gives you four, and the extra one sits second.
+
+```
+$y$j9T$salt$hash
+```
+
+That extra part tunes how hard yescrypt works, and whatever set the password
+picked it for you. RH124 10.09 prints it and says plainly that a different
+algorithm need not carry such a part at all. So count the dollar signs before
+you name anything in a real record. Take the third part of a `$y$` entry for
+the hash and you have picked up the salt.
+
+Why is a salt in there at all? Hashing is deterministic, so one password gives
+one value every time. Somebody can therefore work out the values for every
+common password once, then match a stolen hash against that list in seconds.
+The salt is random text folded in before the hashing happens. The same
+password then comes out differently on each machine, and a list built anywhere
+else buys nothing here. The salt is no secret. It sits in the clear beside the
+hash, because the system needs it again to check your next login.
+
+Three practical notes. Neither course teaches `openssl passwd`, so no exercise
+will ask for it. It is here because a hash you built yourself is the quickest
+way to stop a shadow entry looking like noise. The `passwd (1ossl)` page you
+met in week 2 is OpenSSL's command index and not this command, so ask for
+`openssl-passwd(1ossl)` when you want the options. And `openssl` is a package
+of its own, in BaseOS but in no install group, so a minimal machine wants
+`dnf install openssl` first. Your lab machine has it, which is why that search
+in week 2 found a `1ossl` page to list.
+
+Last, do not carry the shape of that command into real work. Piping a password
+through `echo` writes it into your shell history in plain text. Here you are
+demonstrating with a password everybody in the room already knows. Set a real
+one with `passwd` and let the tool choose the salt.
+
+### The same record, read two ways
+
+The note above sends you to `man 5 shadow` so you can check your own work. This
+is the other end of that. `chage -l` prints the same record in English, and you
+may run it on your own account without becoming root.
+
+```
+[student@workstation ~]$ chage -l student
+Last password change                                    : never
+Password expires                                        : never
+Password inactive                                       : never
+Account expires                                         : never
+...output omitted...
+```
+
+Three more lines follow the four above. They carry the minimum, the maximum
+and the warning period, and on a fresh lab account they read 0, then 99999,
+then 7. Every line but two comes from one numbered field of the shadow entry,
+and the numbering is the one `shadow(5)` uses. The labels below are shortened,
+because the real ones run to half a terminal width.
+
+| Line of `chage -l` | Field in `/etc/shadow` |
+| --- | --- |
+| Last password change | 3 |
+| Password expires | none, worked out |
+| Password inactive | none, worked out |
+| Account expires | 8 |
+| Minimum number of days | 4 |
+| Maximum number of days | 5 |
+| Number of days of warning | 6 |
+
+Those two exceptions matter. Neither is stored anywhere. Both are dates that
+`chage` works out from the numbers that are stored. Expiry is the day of the
+last change plus the maximum age. Inactivity is that expiry plus the
+inactivity period. The arithmetic is fixed, so leave the stored fields alone
+and those two lines read the same next month as they do today. In this listing
+the change date is not recorded at all, so nothing counting forward from it can
+be worked out either, and both come back as `never`.
+
+Which brings us to that word. Nothing in the file says `never`. The field is
+simply empty, and `chage` prints `never` when it finds nothing there. RH124
+10.09 says as much of an empty maximum and an empty expiry date. So a student
+reading the raw line first meets `::` and wonders what broke. Nothing did.
+
+Setting the expiry shows the gap from the other side.
+
+```
+[root@workstation ~]# chage -E $(date -d +180days +%F) student
+```
+
+`chage -E` wants a date, and working out what the date will be in 180 days is
+nobody's idea of a good time. So `date -d` does the arithmetic and `+%F` hands
+it back in the form `chage` accepts. RH124 10.09 pairs those two commands the
+same way over a 30 day window. What the file then stores is not a date at all.
+Field 8 holds a count of days since 1 January 1970, so the two views sit a long
+way apart even when they agree.
+
+That is the habit worth taking from this. Make the change with `chage`, then
+read the line back out of `/etc/shadow` and satisfy yourself that the field you
+meant to touch is the field that moved.
+
+### Where the defaults come from
+
+The section above reads one account's record. This is the template every new
+account is cut from. RH124 10.05 says outright that `useradd` takes its
+configuration from `/etc/login.defs`, so this is the answer to a question the
+`chage -l` output raises and does not settle. Where did those numbers come from
+before anybody set them?
+
+Look at the file with the comments stripped out, because they outnumber the
+settings roughly four to one.
+
+```
+[student@workstation ~]$ grep -v ^# /etc/login.defs | grep -v ^$
+...output omitted...
+UMASK           022
+HOME_MODE       0700
+PASS_MAX_DAYS   99999
+PASS_MIN_DAYS   0
+...output omitted...
+PASS_WARN_AGE   7
+UID_MIN                  1000
+UID_MAX                 60000
+SYS_UID_MIN               201
+SYS_UID_MAX               999
+...output omitted...
+GID_MIN                  1000
+GID_MAX                 60000
+...output omitted...
+ENCRYPT_METHOD YESCRYPT
+...output omitted...
+```
+
+That pair of greps is worth more than the output it produced. The first drops
+comment lines, the second drops blank ones, and what is left is what the file
+actually sets. Most configuration files on a RHEL system are mostly comments,
+so you will want this often.
+
+Know what it misses before you trust it. `^#` catches a `#` in the first column
+only, so an indented comment survives. `^$` catches an empty line only, so a
+line holding two spaces survives. Neither one touches a comment written after a
+setting on the same line, and a file that marks its comments with something
+other than `#` comes through untouched. One expression handles the first two
+faults.
+
+```
+[student@workstation ~]$ grep -Ev '^[[:space:]]*(#|$)' /etc/login.defs
+```
+
+The `-E` asks for extended syntax, which week 7 covers. Even then, open the
+file itself before you decide that any filter has shown you all of it.
+
+Now read three of those lines back against the previous section. `PASS_MAX_DAYS`
+is where 99999 came from. `PASS_MIN_DAYS` is where 0 came from, and
+`PASS_WARN_AGE` is where 7 came from. One file is the template and the other is
+the record for one person, which is why editing this changes nothing about
+accounts that already exist. RH124 10.09 covers those three parameters.
+
+The UID pair earns a sentence of its own. Regular accounts start at 1000, and
+the numbers below that belong to the system. RH124 10.05 sets out the whole
+range, with 0 for root, 1 to 200 assigned statically and 201 to 999 handed out
+to software that wants an unprivileged identity. Knowing where the boundary
+sits means you can read `/etc/passwd` and tell a person from a service without
+looking anything up.
+
+One more line, because it is the reason this block is here at all. RHEL 10
+sets `ENCRYPT_METHOD YESCRYPT`, which is what the note earlier in this week
+told you and what produces a `$y$` hash. Older transcripts of this file show
+`SHA512` there, and they are RHEL 9 or earlier. If you go looking for `SHA512`
+in your own copy you will find it, on the `HMAC_CRYPTO_ALGO` line, which is
+used by a PAM module and has nothing to do with how your password is stored.
+
+### Four times `ALL`, four different questions
+
+RH124 10.03 shows one line, and it is the line that gives you `sudo` at all.
+
+```
+%wheel        ALL=(ALL:ALL)       ALL
+```
+
+The `%` marks a group rather than a user, so this is a rule about everyone in
+`wheel`. What follows answers four questions in a fixed order, and three of the
+four answers are spelled the same. That is what makes the line look like an
+incantation instead of a sentence.
+
+| Where it sits | The question it answers | What `ALL` says there |
+| --- | --- | --- |
+| Before the `=` | On which machines does the rule hold? | On every machine that reads this file |
+| In the brackets, left of the colon | As which user may the command run? | As anybody |
+| In the brackets, right of the colon | With which group may it run? | With any group |
+| After the brackets | Which commands are permitted? | Every command |
+
+Read it that way and the point arrives. Each `ALL` is a separate decision, and
+each one happens to be the widest answer available to its own question. They
+are not one permission written four times.
+
+Now look at your own machine, because RHEL 10 does not ship the line above.
+What the `sudo` package installs is shorter.
+
+```
+%wheel  ALL=(ALL)  ALL
+```
+
+Three answers rather than four. The brackets hold no colon and no group, so the
+third question is never put. A command then runs with the primary group of
+whichever user it runs as, and the missing half is exactly what would let you
+choose something else. The line arrives live rather than commented out, so
+membership of `wheel` is still what grants `sudo` on RHEL 10. Run `id` and see
+whether you are in it.
+
+Both forms are valid, and you will meet both. RH124 10.03 explains the longer
+one. That section is also where the course covers `visudo`, the drop-in
+directory beside `/etc/sudoers` and the worked rules that use them, and the lab
+in RH124 10.11 puts you to work there. Anything this page leaves out is in
+`sudoers(5)` and `visudo(8)` on your own machine. Reading them there is
+RHCSA-1.11 practice on a topic that is RHCSA-9.4.
+
+### `NOPASSWD`, and what it costs you
+
+`NOPASSWD` is not a fifth position in the rule. It is a tag fixed to the
+command part, so it belongs to the last of the four and travels with it. Read
+it as a property of the permission and not of the person holding it. This rule,
+for these commands, asks for nothing.
+
+```
+backupsvc  ALL=(ALL)  NOPASSWD: ALL
+```
+
+You have met the tag already without noticing. The `/etc/sudoers` that RHEL 10
+installs carries the same tag on a second `%wheel` line, and that line arrives
+commented out. It is there to be found rather than to be used.
+
+Why anyone wants it is easy enough. A job that runs at three in the morning has
+nobody at the keyboard, so a prompt protects nothing. It only stops the job. A
+backup account or a monitoring account is the ordinary case, and the need is
+genuine. RH124 10.03 shows the same tag on an account belonging to a cloud
+image, for the same reason.
+
+The cost is not the missing prompt. It is the `ALL` sitting beside it. The tag
+reaches exactly as far as the commands it is attached to. Attach it to one
+named program and the account gains one thing it can do quietly. Attach it to
+`ALL` and whatever reaches that account has the machine, whether that is a
+stolen key, a service with a hole in it or somebody who found a screen left
+unlocked. Nothing will be asked of them at any stage.
+
+So the answer is not to put the prompt back, because the prompt was never going
+to be answered. The answer is to keep the tag well away from `ALL`. RH124 10.03
+shows the wide form on a cloud account and says what it costs, so read that
+beside this.
 
 ### Where the streams go in a pipeline
 
@@ -173,59 +618,63 @@ neither of those things unless you say so, which is the next section.
 
 ### Sending both streams to the same file
 
-A command writes on two streams and redirection moves one of them. `find` makes
-that obvious, because it reports what it found on standard output and complains
-about what it could not read on standard error.
+A command writes on two streams and redirection moves one of them. Hand `sed`
+two file names, one that exists and one that does not, and it uses both. What
+it manages to read comes back on standard output. What it cannot open is
+reported on standard error.
 
 ```
-[student@workstation ~]$ find /etc/ -name passwd > /tmp/x
-find: '/etc/polkit-1/localauthority': Permission denied
-find: '/etc/cups/ssl': Permission denied
-find: '/etc/ssl/private': Permission denied
+[student@workstation ~]$ echo "kept line" > /tmp/keep.log
+[student@workstation ~]$ sed -n p /tmp/keep.log /tmp/missing.log > /tmp/both
+sed: can't read /tmp/missing.log: No such file or directory
 ```
 
-The file caught the results. The complaints came to the screen, because `>`
-moves standard output alone. Add `2>&1` and the second stream follows the
-first.
+Build the first file yourself and leave the second name unused, so this comes
+out the same on every machine. The file caught the reading. The complaint came
+to the screen, because `>` moves standard output alone. Add `2>&1` and the
+second stream follows the first.
 
 ```
-[student@workstation ~]$ find /etc/ -name passwd > /tmp/x 2>&1
+[student@workstation ~]$ sed -n p /tmp/keep.log /tmp/missing.log > /tmp/both 2>&1
 [student@workstation ~]$
 ```
 
 Nothing on the screen now. Read `2>&1` as "send stream 2 wherever stream 1 is
-already going", and the order becomes the whole trick. RH124 09.03 shows the
+already going", and the order becomes the whole trick. RH124 09.01 shows the
 reverse form, `2>&1 > file`, and it does not do the same job. There the errors
 are pointed at the terminal, which is where standard output still is at that
-moment, and only afterwards does standard output move to the file. The section
-offers `&> file` as the shorthand that cannot be got the wrong way round. A
-quiz question in that chapter turns on exactly this, so it is worth ten minutes
-now.
+moment, and only afterwards does standard output move to the file. That
+section offers `&> file` as the shorthand that cannot be got the wrong way
+round. A quiz question in RH124 09.03 turns on exactly this, so it is worth
+ten minutes now.
 
 Then look at what landed in the file.
 
 ```
-[student@workstation ~]$ cat /tmp/x
-find: '/etc/polkit-1/localauthority': Permission denied
-find: '/etc/cups/ssl': Permission denied
-/etc/pam.d/passwd
-/etc/passwd
-find: '/etc/ssl/private': Permission denied
+[student@workstation ~]$ cat /tmp/both
+sed: can't read /tmp/missing.log: No such file or directory
+kept line
 ```
 
-The order is wrong, and nothing is broken. `find` walked `/etc` alphabetically,
-so `/etc/pam.d` came before `/etc/polkit-1` and `/etc/ssl` came last. The file
-does not show that.
+The order is wrong, and nothing is broken. `sed` took the names in the order
+you gave them. It read `/tmp/keep.log` first and printed its line before it had
+so much as looked at the second name. Yet in the file that line sits underneath
+a complaint about a name reached after it.
 
 This catches people out and neither course explains it. Standard error is
-unbuffered, so each complaint is written the instant it happens. Standard
-output changes behaviour when it is a file instead of a terminal. It collects
-output in memory and writes it in blocks. So the errors reach the file straight
-away while the results wait in a buffer, and what you read back is not the
-order in which things occurred.
+unbuffered, so the complaint is written the instant it happens. Standard output
+behaves differently when it is a file instead of a terminal. It gathers what
+you print in memory and hands it over in blocks. One short line comes nowhere
+near filling a block, so it waited until `sed` exited, and by then the
+complaint had been on the disk for a while.
+
+Not every program does this. Plenty of them empty what is waiting on standard
+output before they complain, and those keep the two in step. So the lesson is
+not that errors always come first. It is that a merged file records no timing
+at all, and you cannot recover the order of events by reading one.
 
 Two things follow. Never read a merged log as a timeline. And if you are
-hunting for which directory caused an error, keep the streams apart with
+hunting for which name caused an error, keep the streams apart with
 `> results 2> errors` instead of merging them, which is what the challenges in
 [`practice.md`](practice.md) ask you to do.
 
@@ -327,10 +776,38 @@ Then make one more file from the second account and compare all three.
 Only the file made after the bit went on carries the group. Setgid governs
 what happens next and repairs nothing already sitting there. That is the part
 students miss, and it is why a shared directory still looks broken after the
-bit is set. Fix the older files with `chgrp -R` and be done.
+bit is set.
+
+Then read the mode on `report3`, because the group name is only half the
+story. It says `rw-` for the owner and `r--` for the group. Everyone in
+`analysts` may read that file and nobody in `analysts` may write it. Setgid
+settled which group owns the file. It said nothing at all about the permission
+bits, and those came from the umask, which RHEL 10 leaves at 0022 for every
+user.
+
+So a shared directory takes two repairs and not one. Put the content that is
+already there right by hand.
+
+```
+[root@workstation ~]# chgrp -R analysts /srv/team
+[root@workstation ~]# chmod -R g+rwX /srv/team
+```
+
+The capital `X` is the reason to write it that way. It adds execute to a
+directory, and to any file that already had execute somewhere, and it leaves
+an ordinary file alone. Lowercase `x` would mark every file in the tree
+runnable, which is not what you meant.
+
+Then settle what happens to the next file, because nothing above touches that.
+The accounts working here need a collaborative umask, so `0002` where others
+may read and `0007` where they may not. A default ACL on the directory does
+the same job and neither course teaches one, so take the umask road in this
+module. RH124 11.06 takes it too. That exercise sets `0007` before you start,
+which is why its new files come out group writable and the ones above do not.
 
 Two bits, one directory, opposite jobs. Setgid decides the group of new
-files. The sticky bit decides who may delete an old one.
+files. The sticky bit decides who may delete an old one. Neither of them
+decides a permission bit, and the umask is what does.
 
 ### Read and execute are not the same thing on a directory
 
@@ -403,10 +880,9 @@ look at the directory.
 
 | Page | Why it matters |
 | --- | --- |
-| [Linux process states](https://idea.popcount.org/2012-12-11-linux-process-states/) | Stops a process from the shell and shows the state letter change in `ps`. Afterwards the `S` column reports something you have watched happen. RHCSA-4.4 |
+| [Linux process states](https://idea.popcount.org/2012-12-11-linux-process-states/) | Stops a process from the shell and shows the state letter change in `ps`. Afterwards the `STAT` column of `ps aux` reports something you have watched happen. RHCSA-4.4 |
 | [systemd "static" unit file state](https://bbs.archlinux.org/viewtopic.php?id=147964) | Answers why some units refuse to be enabled. A unit with no `[Install]` section gives `systemctl` nowhere to put the symlink. RHCSA-7.2 |
 | [What is the difference between `systemctl mask` and `systemctl disable`?](https://askubuntu.com/questions/816285/what-is-the-difference-between-systemctl-mask-and-systemctl-disable) | Both look like off and they are not the same. A disabled unit still starts when something else pulls it in. A masked unit cannot start at all. RHCSA-7.2, RHCSA-4.9 |
-| [What is the difference between Process and Main PID in the output of `systemctl`?](https://unix.stackexchange.com/questions/378019/what-is-the-difference-between-process-and-main-pid-in-the-output-of-systemctl) | `systemctl status` prints more than one process and you have to read which is which. Main PID is the one `ExecStart` launched. RHCSA-4.9 |
 
 The process states post is from 2012 and it still holds, because the kernel
 state names have not moved. It stops short of the full picture. RH124 15.01
@@ -425,11 +901,18 @@ troubleshooting. Unit files ship under `/usr/lib/systemd/system` on RHEL 10,
 not `/lib/systemd/system`, and nothing there is repaired by reinstalling a
 package with `apt`. Read down to the paragraph on masking and stop.
 
+For the status output itself, stay with the course. RH124 16.02 has the table
+that names every field, and its `chronyd` example is the one to study. The
+`Process` line and the `Main PID` line there hold two different numbers, which
+is what a service that forks looks like. Answers online tend to say that the
+main process is whatever `ExecStart` named, and that example shows why the
+short version is not safe.
+
 ## Week 6: Network configuration, name resolution and secure remote access
 
 | Page | Why it matters |
 | --- | --- |
-| [RFC 1122: Requirements for Internet Hosts, Communication Layers](https://datatracker.ietf.org/doc/html/rfc1122) | The document RH124 17.01 names when it defines the four-layer model. Read section 1.1.3 and you will see where the layer names came from and who assigned them. RHCSA-8.1 |
+| [RFC 1122](https://datatracker.ietf.org/doc/html/rfc1122) | The document RH124 17.01 names when it defines the four-layer model. Read section 1.1.3 and you will see where the layer names came from and who assigned them. RHCSA-8.1 |
 | [How the TCP/IP Protocols Handle Data Communications](https://docs.oracle.com/cd/E18752_01/html/816-4554/ipov-29.html) | Follows one packet down the sending stack and back up the receiving one. Encapsulation stops being a word and becomes a sequence you can recite. RHCSA-8.1 |
 | [Benefits of IPv6](https://www.catchpoint.com/benefits-of-ipv6) | Explains why RHEL 10 brings up IPv6 alongside IPv4 without being asked, and where a link-local address comes from. RHCSA-8.1 |
 | [Why Authentication Using SSH Public Key is Better than Using Password and How Do They Work?](https://runcloud.io/blog/ssh-public-key-authentication) | Sets out why a key pair beats a password before you type `ssh-keygen`. Afterwards you know which half of the pair is safe to copy to a server. RHCSA-10.3 |
@@ -486,8 +969,9 @@ it is a default member of the `core` package group. Every RHEL 10 system gets
 it. That is wrong, and we checked the package set instead of the claim.
 
 Learn `nmcli` anyway. RHCSA-8.1 and RHCSA-8.2 are what the exam scores, and
-RH124 17.01 and 17.03 teach `nmcli` because that is the tool the exam expects.
-A student who can only drive the menu stops dead the moment a task wants
+RH124 18.01 teaches `nmcli` because that is the tool the exam expects. Chapter
+17 names no configuration tool at all, so do not go hunting for one there. A
+student who can only drive the menu stops dead the moment a task wants
 something the menu does not offer. Use `nmtui` to fill in a long profile
 safely and to read back what is set. Do not use it to avoid the command.
 
@@ -499,22 +983,20 @@ Red Hat's own documentation shows the two tools side by side.
 
 ### Tools, not readings
 
-The pages below are calculators. Reading them teaches you nothing. The exam
-gives you no internet, so do not build a habit on any of them. Use them to
-check work you have already done by hand, then move to `ipcalc`, which RHEL 10
-ships in BaseOS and RH124 17.01 teaches.
+The page below is a calculator. Reading it teaches you nothing. The exam gives
+you no internet, so do not build a habit on it. Use it to check work you have
+already done by hand, then move to `ipcalc`, which RHEL 10 ships in BaseOS and
+RH124 17.01 teaches.
 
 | Tool | What it does |
 | --- | --- |
 | [IP Calculator / IP Subnetting](https://jodies.de/ipcalc?host=203.217.187.35&mask1=30&mask2=) | Prints address, netmask and network in binary beside the decimal, with the prefix boundary marked in the bit string. The one to use while the bitwise AND is still slow |
-| [IP Subnet Calculator](https://www.calculator.net/ip-subnet-calculator.html) | Covers IPv4 and IPv6. Use it to check a host range and a broadcast address |
-| [Binary to Decimal Converter](https://www.rapidtables.com/convert/number/binary-to-decimal.html) | Converts one octet at a time. Its calculation steps show the working, so check yours against them |
-| [IPv6 Address Validator](http://sqa.fyicenter.com/1000334_IPv6_Address_Validator.html) | Expands and compresses an IPv6 address. Use it to test your own `::` compression against the rules in RH124 17.01 |
 
 Krischan Jodies wrote the tool at jodies.de, and it is not the `ipcalc` that
 sits on your RHEL machine. The output labels line up closely and the two
 programs are different, with different options. Learn the one you will have in
-front of you on the day.
+front of you on the day. Other subnet calculators, IPv6 validators and binary
+converters are a search away and none of them adds anything to this one.
 
 ## Week 7: Shell scripts, regular expressions and scheduled jobs
 
@@ -529,7 +1011,9 @@ you which values are already spoken for. Read the table on that page and stop
 there. The author goes on to propose keeping your own codes between 64 and 113.
 That is his suggestion and no standard, so ignore it.
 
-The grep manual is on your lab machine too, as `info grep`. Reading it there is
+The grep manual is on your lab machine too. The `grep` package ships it as an
+`info` document, so `info grep` opens the same text. The reader is a separate
+package, so install `info` if the command is not found. Reading it there is
 practice for RHCSA-1.11, and the local copy matches the version you are
 running.
 
@@ -636,7 +1120,8 @@ Red Hat rates the `scp` flaw Moderate. It records a fix for RHEL 8, marks RHEL
 `scp` command transfers over SFTP by default, so what stays exposed is the
 legacy protocol you reach with the `-O` option. Use `sftp` or `rsync` and the
 question does not arise. The flaw itself is not examinable. It is the reason
-behind an instruction the course gives you without explaining it.
+behind an instruction the course gives you without explaining it, and RH134
+08.01 names this very page in its own list of references.
 
 ## Week 10: Partitions, swap, logical volumes and booting
 
@@ -644,16 +1129,14 @@ Partitions, swap, logical volumes and booting.
 
 | Page | Why it is worth reading | Objective |
 | --- | --- | --- |
-| [Linux on 4 KB sector disks: practical advice](https://web.archive.org/web/20210125124010/https://developer.ibm.com/tutorials/l-linux-on-4kb-sector-disks/) | Rod Smith measures what a misaligned partition costs on an Advanced Format disk. RH134 10.01 gives you 2048 as a safe first sector without saying why. This is why | RHCSA-5.1 |
-| [The gen on disc partition alignment](https://jdebp.uk/FGA/disc-partition-alignment.html) | Jonathan de Boyne Pollard takes apart the cylinder alignment rule that older partitioning guides still repeat. Read it so you can recognise that advice as dead when you meet it | RHCSA-5.1 |
+| [Linux on 4 KB sector disks: practical advice](https://web.archive.org/web/20210125124010/https://developer.ibm.com/tutorials/l-linux-on-4kb-sector-disks/) | Rod Smith measures what a misaligned partition costs on an Advanced Format disk. RH134 10.01 names 2048 as a safe first sector and says only that it aligns. This puts a number on getting it wrong | RHCSA-5.1 |
 | [LVM volume group: what are extents?](https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extents) | The accepted answer explains the unit that LVM actually allocates in. It is why `lvcreate -l` and `lvcreate -L` take different numbers, and why a size rounds up | RHCSA-5.4, RHCSA-6.4 |
 | [`bootup(7)`](https://man7.org/linux/man-pages/man7/bootup.7.html) | The systemd boot sequence as RHEL 10 runs it, from firmware through the initial RAM file system to the default target | RHCSA-4.2, RHCSA-7.3 |
 | [Configuring and managing logical volumes](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_logical_volumes/index) | Red Hat's own LVM guide for RHEL 10. Use it when a `pvs`, `vgs` or `lvs` field means nothing to you | RHCSA-5.2, RHCSA-5.3, RHCSA-5.4 |
 
-Both alignment pages cover the same ground, and one of them is enough. They
-were written long before RHEL 10, so read them for the principle and not for
-the tools they name. RH134 teaches `parted`, which reads the disk topology
-itself and warns you when a start position lands badly.
+The alignment page was written long before RHEL 10, so read it for the
+principle and not for the tools it names. RH134 teaches `parted`, which reads
+the disk topology itself and warns you when a start position lands badly.
 
 Read `bootup(7)` on your own machine as well, with `man 7 bootup`. That lookup
 is what RHCSA-1.11 asks of you, and the exam may leave you nothing else to
@@ -685,17 +1168,26 @@ from 1MiB to 301MiB is 300 MiB in size, not 301 MiB.
 Starting at 1MiB keeps the first partition aligned to the underlying storage.
 Sector 0 does not. Ending one partition where the next begins leaves no gap.
 
-Register the new device files before you use them.
+Wait for the new device files before you use them.
 
 ```
 [root@rhel ~]# udevadm settle
 [root@rhel ~]# lsblk /dev/vdb
 ```
 
+Be exact about what that first command does, because it is easy to credit it
+with more. It watches the udev event queue and returns once the events already
+sitting in it have been dealt with. That is the whole of it. It never asks the
+kernel to read a partition table again. `parted` is what tells the kernel about
+the new table, and `udevadm settle` then holds you back until the device files
+have caught up.
+
 `lsblk` shows you the two partitions as children of the disk. If it shows the
-disk alone, the kernel has not caught up and `udevadm settle` is the command
-you missed. Formatting a device that does not exist yet fails in a way that
-reads like a hardware problem and is not one.
+disk alone, the kernel has not taken the new table, and waiting on an empty
+queue will not mend that. The usual cause is something still holding the
+device. Free it, ask for the reread with `partprobe` or with `partx -u`, then
+run `lsblk` again. Formatting a device that does not exist yet fails in a way
+that reads like a hardware problem and is not one.
 
 Naming the partitions `data` and `logs` costs nothing and the name survives in
 the GPT. On a machine with several disks it is worth the two seconds.
@@ -705,19 +1197,21 @@ the GPT. On a machine with several disks it is worth the two seconds.
 You will make a mess of an LVM build sooner or later and want to start again.
 RH134 11.05 gives you the order. Unmount the file system, then `lvremove`,
 `vgremove` and `pvremove`, and take the `/etc/fstab` line out while you are
-there. One state the section never reaches is a logical volume that is
-unmounted and still active. `lvremove` refuses to touch it.
+there. Two states the section never reaches are worth knowing. `lvremove`
+refuses outright while the volume is open, and a mounted file system holds it
+open. On a volume that is merely active it stops and asks you to confirm the
+deactivation, which is a prompt you do not want in a script.
 
 ```
 [root@rhel ~]# lvchange -an /dev/vgdata/lvdata
 [root@rhel ~]# lvremove /dev/vgdata/lvdata
 ```
 
-`lvchange -an` deactivates the volume and takes its device node away, after
-which the removal goes through. Neither course teaches `lvchange`, because in
-the courseware the build always works. Run `lsblk` between steps to see where
-you have got to, since it prints the disks, the volume group and the logical
-volumes as one tree.
+`lvchange -an` deactivates the volume and takes its device node away, so the
+removal goes through with nothing to answer. Neither course teaches
+`lvchange`, because in the courseware the build always works. Run `lsblk`
+between steps to see where you have got to, since it prints the disks, the
+volume group and the logical volumes as one tree.
 
 ## Week 11: Boot troubleshooting, firewalls and network file systems
 
@@ -739,12 +1233,17 @@ check each directive and run `ksvalidator` over the result.
 
 ### Zones, services and the two-step
 
-Nothing you type at `firewall-cmd` takes effect until `firewalld` is running,
-so check the daemon before you blame your rules. A stopped daemon will accept
-a permanent rule and enforce none of it.
+Nothing you type at `firewall-cmd` reaches anywhere until `firewalld` is
+running, so check the daemon before you blame your rules. Stop the service and
+the command has nobody left to speak to. It is a client, it talks to the daemon
+over D-Bus, and with the daemon down it exits and tells you so. Adding
+`--permanent` changes none of that. There is a separate `firewall-offline-cmd`
+for editing the saved configuration while the service is stopped, which is what
+an installer uses. In this module, start the service before you try anything
+else on this page.
 
 A zone is a named set of rules with interfaces and source addresses attached
-to it. The package ships about ten of them and you will use two.
+to it. The package ships a dozen of them and you will use two.
 
 ```
 [root@rhel ~]# firewall-cmd --get-zones
@@ -822,78 +1321,32 @@ Testing your own server, on a lab network, on a port you opened a minute ago,
 that costs you nothing. Away from the lab it costs you the guarantee. Reach
 for `-k` to answer whether a service is up, then put it down.
 
-### Why port 8888 is open on workstation
+### An open port you did not put there
 
-The classroom workstation listens on a port that no exercise ever asked for.
-That is a small mystery, and running it to ground is the skill.
-
-```
-[root@workstation ~]# firewall-cmd --info-zone=public
-[root@workstation ~]# ss -tulnp | grep 8888
-[root@workstation ~]# rpm -qf /usr/bin/conmon
-[root@workstation ~]# rpm -qi conmon
-```
-
-The zone listing carries `8888/tcp` on its `ports` line. `ss` names the
-process holding the socket, which is `conmon`. `rpm -qf` names the package the
-program came from, and `rpm -qi` prints the description, which calls `conmon`
-the monitoring program for OCI container runtimes. Podman starts one for each
-container it runs. Nothing is broken. Something is simply running, and you now
-know what.
-
-Four commands, and each answers one question. What is open, what is listening,
-which package put it there and what that package is for. Practise the chain on
-any port you did not expect, because the exam environment will show you one.
-
-Use `ss` and not `netstat` here. RH124 17.03 states that `ss` superseded
-`netstat`, which arrives in the `net-tools` package and is not installed for
-you, so an older note leaves you with a command that is not found. The five
-options carry over unchanged. `-t` for TCP, `-u` for UDP, `-l` for listening
-sockets, `-n` for numbers in place of names and `-p` for the process behind
-each one. You meet `ss` in week 6, and this is what it is for.
-
-### When `showmount` tells you nothing
-
-You have an NFS server and you do not know what it exports. The obvious
-command is `showmount`, and on a modern server it fails.
+A port is open and you do not know why. That is a question with a fixed shape,
+and four commands answer it in order.
 
 ```
-[root@rhel ~]# showmount -e files.example.com
-clnt_create: RPC: Unable to receive
+[root@rhel ~]# firewall-cmd --info-zone=public
+[root@rhel ~]# ss -tulnp
+[root@rhel ~]# rpm -qf /usr/bin/name
+[root@rhel ~]# rpm -qi package
 ```
 
-Read that failure carefully, because it is not what it looks like. The server
-is up. The network is fine. `showmount` asks the `rpcbind` service on port 111
-which port the NFS service is using, and an NFSv4-only server does not run
-`rpcbind`. There is nothing listening to answer the question. You have proved
-which protocol version the server speaks. You have not found a fault.
+Each one answers a different question. The zone listing says what the firewall
+allows through, on its `ports` and `services` lines. `ss` says what is
+listening and names the process holding the socket. `rpm -qf` takes the path of
+that program and names the package it arrived in. `rpm -qi` prints the
+description of the package, which is usually where the answer finally is. Most
+surprises end there. Nothing is broken and something is simply running, and now
+you know what.
 
-NFSv4 answers a different question instead. Every export hangs off a single
-tree, and the root of that tree is itself mountable. Mount it and look.
-
-```
-[root@rhel ~]# mkdir /mnt/exports
-[root@rhel ~]# mount -t nfs files.example.com:/ /mnt/exports
-[root@rhel ~]# ls -R /mnt/exports
-```
-
-What you get back is the shape of the server, and it is browseable. Nothing
-under it is mounted yet. Changing into one of those directories mounts the
-export it stands for.
-
-When you know which export you want, unmount the tree and mount that one
-export on the mount point it should have.
-
-```
-[root@rhel ~]# umount /mnt/exports
-[root@rhel ~]# mkdir /data/reports
-[root@rhel ~]# mount -t nfs files.example.com:/reports /data/reports
-```
-
-Two habits are worth forming here. Use `/mnt` to look and use a real mount
-point to work, because `/mnt` is a scratch space and something else will want
-it. And if the exam asks for a mount, it wants the mount to survive a reboot,
-so the `/etc/fstab` entry is part of the task and not an extra.
+Use `ss` and not `netstat`. RH124 17.03 states that `ss` superseded `netstat`,
+which arrives in the `net-tools` package. That package sits in the `base`
+package group and not in `core`, so a minimal install leaves you with a command
+that is not found. `ss` comes from `iproute`, which every install gets. The
+options are the same on both and RH124 17.03 tables them, so learn them once.
+You meet `ss` in week 6, and this is what it is for.
 
 ## Week 12: Containers and image mode
 
@@ -909,7 +1362,6 @@ the work itself. Finish the chapters that carry objectives first.
 | [Podman pull "official" images from Docker Hub](https://stackoverflow.com/questions/69162077/podman-pull-official-images-from-docker-hub) | Why a short image name behaves differently under Podman, and what the search list in `/etc/containers/registries.conf` does with it |
 | [Why a privileged container in Docker is a bad idea](https://www.trendmicro.com/en_gb/research/19/l/why-running-a-privileged-container-in-docker-is-a-bad-idea.html) | What `--privileged` actually hands over. RH134 18.05 asks you to run the image builder with that flag, so understand the trade before you type it |
 | [Podman's new network stack](https://www.redhat.com/en/blog/podman-new-network-stack) | Matthew Heon on why netavark and aardvark replaced CNI. Background for the container networking you get by default on RHEL 10 |
-| [Podman in Action, chapter 1](https://livebook.manning.com/book/podman-in-action/chapter-1/43) | Daniel Walsh on what makes Podman different from Docker, which is that it runs without a daemon and can run without root |
 
 The comic reaches back to week 11 on purpose. Meeting `chroot` twice, once for
 repairing a system and once for running a container, is the point.
@@ -921,6 +1373,3 @@ under Podman.
 The network stack post closes by saying CNI stays available as an option.
 That part has gone stale. RHEL 10 ships Podman 5, where netavark is the only
 backend.
-
-Only the opening of the Manning chapter is free to read. That much carries the
-point worth taking, so stop when the page stops.

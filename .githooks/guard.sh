@@ -5,6 +5,10 @@
 #   Fails if any path matches a pattern in excluded-paths.
 # check_sizes <blob-list>
 #   Fails if any blob exceeds MAX_BYTES.
+# check_message <file>
+#   Fails if the message in <file> names a file inside an ignored directory.
+# check_message_text <context> <text>
+#   The same test against a string, used by the pre-push hook.
 
 set -uo pipefail
 
@@ -68,14 +72,32 @@ fail_size() {
 # directory tells the world what is kept in there, even though the file itself
 # never lands. Only the directory name may appear, because .gitignore carries
 # it anyway and it says nothing about the contents.
-check_message() {
-    local file="${1:-}" body offenders
-    [[ -n "$file" && -f "$file" ]] || return 0
-    body="$(grep -Ev '^\s*#' "$file")"
-    offenders="$(printf '%s\n' "$body" \
-        | grep -oE '\.?(private|my-notes)/[A-Za-z0-9_.-]+' | sort -u || true)"
+#
+# The directory names come from excluded-paths, which is the single source of
+# truth for the path guard. Add a fourth ignored directory there one day and
+# this check covers it without anyone remembering to edit two files. Only the
+# anchored directory rules are used. The file extension rules are not
+# directories and must not become message patterns.
+ignored_dirs() {
+    patterns() { grep -Ev '^\s*(#|$)' "$PATTERN_FILE"; }
+    patterns | grep -E '^\^.*/$' | sed -E 's|^\^||; s|/$||'
+}
+
+message_offenders() {
+    local dirs pattern
+    dirs="$(ignored_dirs | paste -sd '|' -)"
+    [[ -z "$dirs" ]] && return 0
+    pattern="(${dirs})/[A-Za-z0-9_.-]+"
+    grep -oE "$pattern" | sort -u || true
+}
+
+# Refuses text naming a file inside an ignored directory. Used by pre-push,
+# where the message is read from a commit rather than from a file.
+check_message_text() {
+    local context="$1" text="$2" offenders
+    offenders="$(printf '%s\n' "$text" | grep -Ev '^\s*#' | message_offenders)"
     [[ -z "$offenders" ]] && return 0
-    echo "BLOCKED: the commit message names a file inside an ignored directory" >&2
+    echo "BLOCKED: $context names a file inside an ignored directory" >&2
     echo >&2
     while IFS= read -r p; do
         [[ -n "$p" ]] && echo "    $p" >&2
@@ -84,4 +106,10 @@ check_message() {
     echo "Commit messages are public. Name the directory if you must, never a" >&2
     echo "file inside it. Say 'my local notes' instead." >&2
     exit 1
+}
+
+check_message() {
+    local file="${1:-}"
+    [[ -n "$file" && -f "$file" ]] || return 0
+    check_message_text "the commit message" "$(cat "$file")"
 }

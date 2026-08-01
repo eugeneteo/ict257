@@ -26,6 +26,16 @@ while read -r _local_ref local_sha _remote_ref remote_sha; do
     if [[ -n "$offenders" ]]; then
         fail_paths "a commit being pushed contains an excluded path" "$offenders"
     fi
+
+    # The tree is only half of what gets published. A commit made with
+    # --no-verify skips the commit-msg hook, so its message has never been
+    # checked. Read every message in the range and refuse the push if one
+    # names a file inside an ignored directory.
+    while IFS= read -r sha; do
+        [[ -z "$sha" ]] && continue
+        check_message_text "a commit being pushed ($(git log -1 --format=%h "$sha"))" \
+            "$(git log -1 --format=%B "$sha")"
+    done < <(git rev-list "${range[@]}" 2>/dev/null)
 done
 
 exit $status

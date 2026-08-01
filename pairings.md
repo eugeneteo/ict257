@@ -62,6 +62,8 @@ setting persistent.
 | `semanage fcontext -a -t TYPE '/path(/.*)?'` | `restorecon -Rv /path` | existing files keep their wrong labels | visibility | RHCSA-10.5, RHCSA-10.6 |
 | create a partition with `parted` | `udevadm settle` | the device file under `/dev` may not exist yet | visibility | RHCSA-5.1 |
 | `mount /dev/sdb1 /mnt` | add the device to `/etc/fstab` | the mount is gone after reboot | persistence | RHCSA-5.5, RHCSA-6.1 |
+| `lvremove /dev/vg/lv` | remove the volume's line from `/etc/fstab` | the next boot stops in emergency mode waiting for a device that is gone | persistence | RHCSA-5.4, RHCSA-5.5 |
+| `semanage port -a -t ssh_port_t -p tcp PORT` for a new sshd port | `firewall-cmd --permanent --add-port=PORT/tcp`, then `firewall-cmd --reload`, then `systemctl restart sshd` | the label is right and the door is still shut, so the new port refuses connections | activation | RHCSA-10.7, RHCSA-8.3 |
 | edit `/etc/fstab` | `findmnt --verify`, then `systemctl daemon-reload`, then `mount -a` | a bad entry can stop the next boot, and nothing is mounted until you do | activation | RHCSA-5.5, RHCSA-6.1 |
 | `swapon /dev/sdb2` | add a `swap` line to `/etc/fstab` | the swap area is inactive after reboot | persistence | RHCSA-5.6 |
 | `lvextend -L +SIZE /dev/vg/lv` | `xfs_growfs MOUNTPOINT` or `resize2fs /dev/vg/lv` | the filesystem still reports the old size | activation | RHCSA-6.4 |

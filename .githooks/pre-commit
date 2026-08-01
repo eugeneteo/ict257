@@ -21,4 +21,32 @@ while IFS= read -r f; do
 done <<< "$staged"
 [[ -n "$big" ]] && fail_size "$big"
 
+# Copyright. No published file may reproduce a run of RH124 or RH134 wording.
+# The rule is non-negotiable, so it is machine-checked rather than trusted to
+# whoever is writing that day.
+#
+# This runs only when markdown is staged, and only when the extracted
+# courseware is present. The extracts live in .private and are not in the
+# repository, so on a fresh clone there is nothing to compare against and the
+# check stands aside rather than blocking every commit.
+#
+# It reads the working tree rather than the staged content. For a single
+# maintainer those are the same thing, and reading the index would mean
+# rebuilding every file in a temporary directory for no gain here.
+if printf '%s\n' "$staged" | grep -q '\.md$'; then
+    root="$(git rev-parse --show-toplevel)"
+    harness="$root/.private/source/verify_practice.py"
+    if [[ -f "$harness" && -f "$root/.private/source/extracted/RH124.txt" ]] \
+        && command -v python3 >/dev/null 2>&1; then
+        if ! out="$(python3 "$harness" 2>&1)"; then
+            printf '%s\n' "$out" | grep -E '^\s+FAIL' >&2
+            echo "" >&2
+            echo "  Refusing the commit. Fix the above, then commit again." >&2
+            echo "  Cut the offending text. Do not reword it, because the" >&2
+            echo "  structure is the thing that infringes." >&2
+            exit 1
+        fi
+    fi
+fi
+
 exit 0

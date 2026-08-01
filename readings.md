@@ -80,6 +80,37 @@ Check `/etc/login.defs` yourself and see.
 That site sits behind a bot check, so it may ask you to prove you are a person
 before it loads.
 
+### Where the streams go in a pipeline
+
+A pipeline is easier to hold in your head once you count the streams. Every
+command has standard input numbered 0, standard output numbered 1 and standard
+error numbered 2. A pipe joins one command's stream 1 to the next command's
+stream 0.
+
+```
+[student@workstation ~]$ cat file.txt | sort | uniq
+```
+
+Standard output of `cat` becomes standard input of `sort`. Standard output of
+`sort` becomes standard input of `uniq`. Standard output of `uniq` has nothing
+after it, so it arrives on your terminal.
+
+Two things that example is worth knowing about before you rely on it.
+
+The order is not arbitrary. `uniq` collapses repeated lines only when they sit
+next to each other, so it removes nothing useful until the input is sorted.
+That is the whole reason `sort` comes first.
+
+And neither course teaches `uniq`. It appears nowhere in RH124 or RH134, and
+`sort` turns up only in passing, in a pipeline in RH124 chapter 12 and as an option
+to `ps`. So take the shape of this and not the tools. No exam task will ask you
+for `uniq`, and if you go hunting for it in the courseware you will not find
+it.
+
+What carries over is the numbering. Stream 1 flows to the next command in a
+pipeline, and it is the same stream 1 that `>` sends to a file. Stream 2 does
+neither of those things unless you say so, which is the next section.
+
 ### Sending both streams to the same file
 
 A command writes on two streams and redirection moves one of them. `find` makes

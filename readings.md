@@ -98,6 +98,90 @@ fault before you can correct it. The page adds one fact the course leaves out.
 The kernel ignores setuid and setgid on shell scripts. Set the bit on a script
 in the lab environment and watch it do nothing.
 
+### A shared directory, watched from both sides
+
+What follows is a transcript from a lab machine, taken on 1 February 2024,
+with the account names changed. Two commands in it fail. Those two are the
+ones worth your attention.
+
+Build the directory as root. The group owns it, the group may write to it and
+the sticky bit is set.
+
+```
+[root@workstation ~]# groupadd analysts
+[root@workstation ~]# useradd -G analysts jaya
+[root@workstation ~]# useradd -G analysts wenli
+[root@workstation ~]# mkdir /srv/team
+[root@workstation ~]# chown root:analysts /srv/team
+[root@workstation ~]# chmod 775 /srv/team
+[root@workstation ~]# chmod +t /srv/team
+[root@workstation ~]# ls -ld /srv/team
+drwxrwxr-t. 2 root analysts 6 Feb  1 09:14 /srv/team
+```
+
+The `t` prints where the other execute bit would. Now log in as the first
+account and leave a file behind.
+
+```
+[jaya@workstation ~]$ cd /srv/team
+[jaya@workstation team]$ touch report1
+[jaya@workstation team]$ ls -l report1
+-rw-r--r--. 1 jaya jaya 0 Feb  1 09:16 report1
+```
+
+Read the group on that file. It says `jaya` and not `analysts`. The group of
+the directory did not carry over, so nobody else in the team may write to the
+file. A shared directory that shares nothing is the usual complaint here.
+
+Now the second account, and the first failure.
+
+```
+[wenli@workstation ~]$ cd /srv/team
+[wenli@workstation team]$ touch report2
+[wenli@workstation team]$ rm report1
+rm: cannot remove 'report1': Operation not permitted
+```
+
+That account may write to the directory. Write permission on a directory
+normally lets you unlink anything inside it. The sticky bit takes that back.
+Only the owner of the file, the owner of the directory and root may remove
+anything here.
+
+The second failure comes from trying to correct the group from the wrong
+account.
+
+```
+[wenli@workstation team]$ chmod g+s /srv/team
+chmod: changing permissions of '/srv/team': Operation not permitted
+```
+
+`chmod` obeys the owner of a file and nobody else. Membership of `analysts`
+is not ownership. Set the bit as root instead.
+
+```
+[root@workstation ~]# chmod g+s /srv/team
+[root@workstation ~]# ls -ld /srv/team
+drwxrwsr-t. 2 root analysts 40 Feb  1 09:19 /srv/team
+```
+
+Then make one more file from the second account and compare all three.
+
+```
+[wenli@workstation team]$ touch report3
+[wenli@workstation team]$ ls -l
+-rw-r--r--. 1 jaya  jaya     0 Feb  1 09:16 report1
+-rw-r--r--. 1 wenli wenli    0 Feb  1 09:17 report2
+-rw-r--r--. 1 wenli analysts 0 Feb  1 09:20 report3
+```
+
+Only the file made after the bit went on carries the group. Setgid governs
+what happens next and repairs nothing already sitting there. That is the part
+students miss, and it is why a shared directory still looks broken after the
+bit is set. Fix the older files with `chgrp -R` and be done.
+
+Two bits, one directory, opposite jobs. Setgid decides the group of new
+files. The sticky bit decides who may delete an old one.
+
 ## Week 5: File systems, locating files, processes and system services
 
 | Page | Why it matters |
@@ -162,6 +246,40 @@ checker reports a failure. Everything you need about `-t` is also in the
 `ssh-add(1)` manual page on your own machine, which is RHCSA-1.11 practice and
 needs no network.
 
+### `nmtui`, which the course never mentions
+
+`nmtui` appears nowhere in RH124 and nowhere in RH134. No exercise will ask
+for it and no marker expects it. It is still worth ten minutes of your time,
+because it is on the exam machine and it can save you a mark.
+
+```
+[root@rhel ~]# nmtui
+```
+
+It edits NetworkManager connection profiles, which is what `nmcli` edits.
+Nothing in the menu is beyond `nmcli` and nothing in it is a separate system.
+The gain is narrow and it is real. A long `nmcli` line carrying an address, a
+prefix, a gateway and a DNS server is easy to mistype when you are against the
+clock, and the menu asks for each field by name. It also shows you the current
+settings without you having to recall the query that prints them.
+
+The tool will be there. `NetworkManager-tui` ships in BaseOS on RHEL 10, and
+it is a default member of the `core` package group. Every RHEL 10 system gets
+`core`, including a minimal install. You may read online that RHEL 10 removed
+it. That is wrong, and we checked the package set instead of the claim.
+
+Learn `nmcli` anyway. RHCSA-8.1 and RHCSA-8.2 are what the exam scores, and
+RH124 17.01 and 17.03 teach `nmcli` because that is the tool the exam expects.
+A student who can only drive the menu stops dead the moment a task wants
+something the menu does not offer. Use `nmtui` to fill in a long profile
+safely and to read back what is set. Do not use it to avoid the command.
+
+Red Hat's own documentation shows the two tools side by side.
+
+| Page | Why it is worth your time |
+| --- | --- |
+| [Configuring an Ethernet connection](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_networking/configuring-an-ethernet-connection) | Red Hat builds one connection profile by several routes, with `nmcli` and with `nmtui` among them. Read those two sections one after the other and you will see that they write the same profile |
+
 ### Tools, not readings
 
 The pages below are calculators. Reading them teaches you nothing. The exam
@@ -216,6 +334,40 @@ says why a bare user name stopped being enough. Read it once. Leave the rest of
 rsyslog to `rsyslog.conf(5)`, and to the HTML manual that arrives with the
 `rsyslog-doc` package.
 
+### Making the journal outlive a reboot
+
+By default the journal lives in memory. Reboot the machine and the last boot
+is gone. You notice this the first time somebody asks you why a server fell
+over.
+
+```
+[root@rhel ~]# mkdir /var/log/journal
+[root@rhel ~]# journalctl --flush
+[root@rhel ~]# systemctl reboot
+```
+
+The directory is what does the work. `systemd-journald` reads `Storage=auto`
+from `/etc/systemd/journald.conf`, and `auto` means write to disk whenever
+`/var/log/journal` is there. You are not switching a feature on. You are
+making the place it writes to. Enabling the service is not a step, because
+the service already starts on every boot.
+
+`journalctl --flush` moves what is in memory into the new directory at once.
+Leave it out and the directory sits empty until the next boot, which reads
+like a failure and is not one.
+
+After the machine returns, look at the directory and then read the boot
+before this one.
+
+```
+[root@rhel ~]# ls /var/log/journal
+[root@rhel ~]# journalctl -b -1 -p err
+```
+
+`-b -1` selects the previous boot and `-p err` keeps errors and anything
+worse. Those two options are the reason to do any of this. A machine that
+cannot tell you why it went down is a machine you have to guess about.
+
 ## Week 9: SELinux, archives, secure file transfer and tuning profiles
 
 | Page | What it is |
@@ -255,6 +407,66 @@ Read `bootup(7)` on your own machine as well, with `man 7 bootup`. That lookup
 is what RHCSA-1.11 asks of you, and the exam may leave you nothing else to
 work from.
 
+### Partitioning a second disk on a machine of your own
+
+The `parted` command takes a subcommand on the command line, so you do not
+have to work interactively. Interactive mode is useful while you are
+learning. Once you know what you want, one line per step is faster and it
+leaves a record you can read back.
+
+Start with the label. A GPT label needs no primary and extended distinction,
+so every partition is simply a partition.
+
+```
+[root@rhel ~]# parted /dev/vdb mklabel gpt
+```
+
+Now the partitions. Both arguments to `mkpart` are positions on the disk and
+neither is a length. This is where students lose marks. A partition that runs
+from 1MiB to 301MiB is 300 MiB in size, not 301 MiB.
+
+```
+[root@rhel ~]# parted /dev/vdb mkpart data xfs 1MiB 301MiB
+[root@rhel ~]# parted /dev/vdb mkpart logs xfs 301MiB 1501MiB
+```
+
+Starting at 1MiB keeps the first partition aligned to the underlying storage.
+Sector 0 does not. Ending one partition where the next begins leaves no gap.
+
+Register the new device files before you use them.
+
+```
+[root@rhel ~]# udevadm settle
+[root@rhel ~]# lsblk /dev/vdb
+```
+
+`lsblk` shows you the two partitions as children of the disk. If it shows the
+disk alone, the kernel has not caught up and `udevadm settle` is the command
+you missed. Formatting a device that does not exist yet fails in a way that
+reads like a hardware problem and is not one.
+
+Naming the partitions `data` and `logs` costs nothing and the name survives in
+the GPT. On a machine with several disks it is worth the two seconds.
+
+### When `lvremove` argues with you
+
+You will make a mess of an LVM build sooner or later and want to start again.
+RH134 11.05 gives you the order. Unmount the file system, then `lvremove`,
+`vgremove` and `pvremove`, and take the `/etc/fstab` line out while you are
+there. One state the section never reaches is a logical volume that is
+unmounted and still active. `lvremove` refuses to touch it.
+
+```
+[root@rhel ~]# lvchange -an /dev/vgdata/lvdata
+[root@rhel ~]# lvremove /dev/vgdata/lvdata
+```
+
+`lvchange -an` deactivates the volume and takes its device node away, after
+which the removal goes through. Neither course teaches `lvchange`, because in
+the courseware the build always works. Run `lsblk` between steps to see where
+you have got to, since it prints the disks, the volume group and the logical
+volumes as one tree.
+
 ## Week 11: Boot troubleshooting, firewalls and network file systems
 
 Boot troubleshooting, firewalls, network file systems and installation.
@@ -272,6 +484,164 @@ changes is what stops the rescue steps being a recipe you half remember.
 Older Kickstart files circulate widely and most of them are from the RHEL 7
 era. A file that installed a system then can fail outright on RHEL 10, so
 check each directive and run `ksvalidator` over the result.
+
+### Zones, services and the two-step
+
+Nothing you type at `firewall-cmd` takes effect until `firewalld` is running,
+so check the daemon before you blame your rules. A stopped daemon will accept
+a permanent rule and enforce none of it.
+
+A zone is a named set of rules with interfaces and source addresses attached
+to it. The package ships about ten of them and you will use two.
+
+```
+[root@rhel ~]# firewall-cmd --get-zones
+[root@rhel ~]# firewall-cmd --get-default-zone
+[root@rhel ~]# firewall-cmd --info-zone=public
+```
+
+Read the third output as far as the `services` line and stop. What sits below
+it, for forwarding, masquerading, port forwarding and rich rules, belongs to
+work no objective asks of you. The `firewalld.zones(5)` manual page says what
+each shipped zone is for. Look it up there instead of online, because that is
+RHCSA-1.11 practice and the exam gives you no browser.
+
+Service names are the other half. A service is a small XML file naming the
+ports one application needs.
+
+```
+[root@rhel ~]# firewall-cmd --get-services | tr ' ' '\n' | wc -l
+[root@rhel ~]# ls /usr/lib/firewalld/services/
+```
+
+The count comes back in the hundreds and nobody memorises it. The point is
+that `--add-service=nfs` beats remembering which ports NFS wants, and that
+you can open the file and read the answer when you need it.
+
+Now watch the two-step work. Run the listing before and after every command.
+
+```
+[root@rhel ~]# firewall-cmd --list-services
+cockpit dhcpv6-client ssh
+[root@rhel ~]# firewall-cmd --permanent --add-service=smtp
+success
+[root@rhel ~]# firewall-cmd --list-services
+cockpit dhcpv6-client ssh
+[root@rhel ~]# firewall-cmd --reload
+success
+[root@rhel ~]# firewall-cmd --list-services
+cockpit dhcpv6-client smtp ssh
+```
+
+The listing does not move in the middle. `--permanent` writes to the file on
+disk and leaves the running firewall alone. `--reload` is what loads the file.
+Removal behaves the same way and goes wrong in the same way.
+
+```
+[root@rhel ~]# firewall-cmd --permanent --remove-service=smtp
+[root@rhel ~]# firewall-cmd --reload
+[root@rhel ~]# firewall-cmd --list-services
+cockpit dhcpv6-client ssh
+```
+
+Miss the reload and you will test a rule that is not loaded. Miss
+`--permanent` and your rule disappears at the next boot. Both faults look
+exactly like a rule that does not work.
+
+When a port is open, prove that something answers on it. `curl` is the tool
+for that, and against a lab server on 443 it stops before it tells you
+anything useful. The certificate is self-signed or missing, no local authority
+vouches for it and `curl` declines the connection instead of trusting it.
+
+```
+[root@rhel ~]# curl -k https://web.example.com
+```
+
+The `-k` option skips that check, and `--insecure` is the same option written
+out. RH134 14.02 uses it twice in exactly this way and describes it as the way
+past strict host checking. So it is not a trick and it needs no apology. It is
+the normal move when you want to tell a firewall problem apart from a
+certificate problem.
+
+Know what you have switched off. The certificate check is what proves you are
+talking to the machine you meant to reach. Without it, anything sitting
+between you and the server can answer in its place and you will not know.
+Testing your own server, on a lab network, on a port you opened a minute ago,
+that costs you nothing. Away from the lab it costs you the guarantee. Reach
+for `-k` to answer whether a service is up, then put it down.
+
+### Why port 8888 is open on workstation
+
+The classroom workstation listens on a port that no exercise ever asked for.
+That is a small mystery, and running it to ground is the skill.
+
+```
+[root@workstation ~]# firewall-cmd --info-zone=public
+[root@workstation ~]# ss -tulnp | grep 8888
+[root@workstation ~]# rpm -qf /usr/bin/conmon
+[root@workstation ~]# rpm -qi conmon
+```
+
+The zone listing carries `8888/tcp` on its `ports` line. `ss` names the
+process holding the socket, which is `conmon`. `rpm -qf` names the package the
+program came from, and `rpm -qi` prints the description, which calls `conmon`
+the monitoring program for OCI container runtimes. Podman starts one for each
+container it runs. Nothing is broken. Something is simply running, and you now
+know what.
+
+Four commands, and each answers one question. What is open, what is listening,
+which package put it there and what that package is for. Practise the chain on
+any port you did not expect, because the exam environment will show you one.
+
+Use `ss` and not `netstat` here. RH124 17.03 states that `ss` superseded
+`netstat`, which arrives in the `net-tools` package and is not installed for
+you, so an older note leaves you with a command that is not found. The five
+options carry over unchanged. `-t` for TCP, `-u` for UDP, `-l` for listening
+sockets, `-n` for numbers in place of names and `-p` for the process behind
+each one. You meet `ss` in week 6, and this is what it is for.
+
+### When `showmount` tells you nothing
+
+You have an NFS server and you do not know what it exports. The obvious
+command is `showmount`, and on a modern server it fails.
+
+```
+[root@rhel ~]# showmount -e files.example.com
+clnt_create: RPC: Unable to receive
+```
+
+Read that failure carefully, because it is not what it looks like. The server
+is up. The network is fine. `showmount` asks the `rpcbind` service on port 111
+which port the NFS service is using, and an NFSv4-only server does not run
+`rpcbind`. There is nothing listening to answer the question. You have proved
+which protocol version the server speaks. You have not found a fault.
+
+NFSv4 answers a different question instead. Every export hangs off a single
+tree, and the root of that tree is itself mountable. Mount it and look.
+
+```
+[root@rhel ~]# mkdir /mnt/exports
+[root@rhel ~]# mount -t nfs files.example.com:/ /mnt/exports
+[root@rhel ~]# ls -R /mnt/exports
+```
+
+What you get back is the shape of the server, and it is browseable. Nothing
+under it is mounted yet. Changing into one of those directories mounts the
+export it stands for.
+
+When you know which export you want, unmount the tree and mount that one
+export on the mount point it should have.
+
+```
+[root@rhel ~]# umount /mnt/exports
+[root@rhel ~]# mkdir /data/reports
+[root@rhel ~]# mount -t nfs files.example.com:/reports /data/reports
+```
+
+Two habits are worth forming here. Use `/mnt` to look and use a real mount
+point to work, because `/mnt` is a scratch space and something else will want
+it. And if the exam asks for a mount, it wants the mount to survive a reboot,
+so the `/etc/fstab` entry is part of the task and not an extra.
 
 ## Week 12: Containers and image mode
 

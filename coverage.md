@@ -200,7 +200,7 @@ exam practice or listed below as not mapped.
 
 | Course | Teaching sections | Mapped above | Exam practice | Not mapped |
 | --- | --- | --- | --- | --- |
-| RH124 | 47 | 40 | 1 | 6 |
+| RH124 | 47 | 41 | 1 | 5 |
 | RH134 | 49 | 36 | 1 | 12 |
 
 I count only the two chapter introductions as teaching sections. The nine

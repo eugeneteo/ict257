@@ -45,7 +45,7 @@ objective.
 | ID | Objective |
 | --- | --- |
 | RHCSA-3.1 | Conditionally execute code (use of: `if`, `test`, `[]`, etc.) |
-| RHCSA-3.2 | Use looping constructs (`for`, etc.) to process file, command line input |
+| RHCSA-3.2 | Use Looping constructs (`for`, etc.) to process file, command line input |
 | RHCSA-3.3 | Process script inputs (`$1`, `$2`, etc.) |
 | RHCSA-3.4 | Processing output of shell commands within a script |
 
@@ -135,9 +135,9 @@ objective.
 For the interface shown in Red Hat's 2022 exam video, see
 [`exam-day.md`](exam-day.md).
 
-- Hands-on and practical: you undertake real-world tasks on live systems. Red
-  Hat tests what you can do instead of what you can recall, and sets no
-  multiple-choice questions.<sup>[2][why-certified]</sup>
+- Hands-on and practical: you undertake real-world tasks. Red Hat tests what
+  you can do instead of what you can recall, and sets no multiple-choice
+  questions.<sup>[2][why-certified]</sup>
 - Performance-based grading: **configurations must survive a reboot without
   manual intervention**.<sup>[1][ex200]</sup>
 - Closed book. You cannot bring notes, printed material or electronic

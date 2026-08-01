@@ -2,9 +2,11 @@
 
 The following challenges take the RHCSA Practice series that Tudor Raduta ran
 in the [Red Hat Learning Community][rhlc] as a starting point. It closed on
-31 March 2026,<sup>[1][rhlc]</sup> so I cannot link the posts any more. I used
-Claude Opus 5 to draft new challenges, then used GPT-5.6 Sol to check that each
-one can be solved. If you find a mistake in one, please
+31 March 2026,<sup>[1][rhlc]</sup> so I cannot link the posts any more. I wrote
+these with my virtual teaching assistants, Claude Opus 5 and GPT-5.6 Sol.
+Opus 5 drafted the new challenges. GPT-5.6 Sol checked that each one can be
+solved and rewrote the ones that could not. The published text is the work of
+both. If you find a mistake in one, please
 [open an issue](https://github.com/eugeneteo/ict257/issues/new).
 
 None of this is required for ICT257. They run in the Red Hat Academy lab, on
@@ -15,6 +17,11 @@ first. The lab is disposable, so reset it if you break something.
 No answers or walkthroughs are given. Check your work with the questions at the
 end of each task, then reboot and check each required result again. See
 [`pairings.md`](pairings.md) for the commands most often forgotten.
+
+If you work through any of these, I strongly encourage you to commit your
+answers to GitHub or write about them on a blog. Explaining a solution is how
+you find out whether you understood it, and it gives you something to show for
+the work.
 
 ## Contents
 
@@ -30,7 +37,7 @@ end of each task, then reboot and check each required result again. See
 | 8 | [Short names for long logins](#8-short-names-for-long-logins) | week 6 | Doable | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` |
 | 9 | [A script that takes its list from you](#9-a-script-that-takes-its-list-from-you) | week 7 | Moderate | RHCSA-3.3, 3.1, 3.2, 3.4 | `lab start scripts-loops` |
 | 10 | [One line in a hundred thousand](#10-one-line-in-a-hundred-thousand) | week 7 | Doable | RHCSA-1.3, 1.7, 1.11 | `lab start regexes-regex` |
-| 11 | [A job of your own on a clock](#11-a-job-of-your-own-on-a-clock) | week 8 | Moderate | RHCSA-7.1, 1.2 | `lab start scheduling-cron` |
+| 11 | [A job of your own on a clock](#11-a-job-of-your-own-on-a-clock) | week 8 | Moderate | RHCSA-7.1 (at and cron only), 1.2 | `lab start scheduling-cron` |
 | 12 | [What the machine wrote down](#12-what-the-machine-wrote-down) | week 8 | Moderate | RHCSA-4.7, 4.8, 7.4 | `lab start logs-systemd` |
 | 13 | [A machine that is working too hard](#13-a-machine-that-is-working-too-hard) | week 9 | Moderate | RHCSA-4.4, 4.5, 4.6 | `lab start tuning-nice` |
 | 14 | [Modes, labels and one switch](#14-modes-labels-and-one-switch) | week 9 | Moderate | RHCSA-10.4, 10.5, 10.8 | `lab start selinux-booleans` |
@@ -651,7 +658,7 @@ To check:
 
 ## 11. A job of your own on a clock
 
-**Objective: RHCSA-7.1, schedule tasks with `at` and `cron`. Also RHCSA-1.2.**
+**Objective: Part of RHCSA-7.1, `at` and `cron`. Also RHCSA-1.2.**
 
 A colleague wants to know how fast `/` is filling on `servera`. Nobody will
 sit and watch it, and nobody will tidy up after it either.
@@ -1334,8 +1341,9 @@ To check:
   does the configuration file say while that argument is in force?
 - Which command added the argument to the default entry for good? Which option
   took it away again, and which argument did that option need?
-- In that target, which command listed the mounted file systems? Was the root
-  file system writable, and what would you have run if it were not?
+- In the target that repairs a system, which command listed the mounted file
+  systems? Was the root file system writable, and what would you have run if
+  it were not?
 - Which command reports the default target and which one changes it? Which two
   commands reach another account, and which of them starts a fresh login?
 

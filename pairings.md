@@ -53,7 +53,7 @@ setting persistent.
 
 | After you | You must also | Or else | Fails how | Objective |
 | --- | --- | --- | --- | --- |
-| `export EDITOR=nano` | add the export to `~/.bash_profile` | the variable is lost at the next login | persistence | RHCSA-3.3 |
+| `export EDITOR=nano  # although vim is superior` | add the export to `~/.bash_profile` | the variable is lost at the next login | persistence | RHCSA-3.3 |
 | edit a `.timer` unit under `/etc/systemd/system` | `systemctl daemon-reload` | systemd still has the stale unit cached | visibility | RHCSA-7.1 |
 | create `/etc/tmpfiles.d/NAME.conf` | `systemd-tmpfiles --create /etc/tmpfiles.d/NAME.conf` | the described directory does not exist yet | activation | RHCSA-7.1 |
 | `mkdir /var/log/journal` | `journalctl --flush` | the journal still lives only in memory | activation | RHCSA-4.8 |

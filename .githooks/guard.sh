@@ -63,3 +63,25 @@ fail_size() {
     echo "Large files bloat history permanently. Keep them out, or use Git LFS." >&2
     exit 1
 }
+
+# A commit message is as public as the tree. Naming a file inside an ignored
+# directory tells the world what is kept in there, even though the file itself
+# never lands. Only the directory name may appear, because .gitignore carries
+# it anyway and it says nothing about the contents.
+check_message() {
+    local file="${1:-}" body offenders
+    [[ -n "$file" && -f "$file" ]] || return 0
+    body="$(grep -Ev '^\s*#' "$file")"
+    offenders="$(printf '%s\n' "$body" \
+        | grep -oE '\.?(private|my-notes)/[A-Za-z0-9_.-]+' | sort -u || true)"
+    [[ -z "$offenders" ]] && return 0
+    echo "BLOCKED: the commit message names a file inside an ignored directory" >&2
+    echo >&2
+    while IFS= read -r p; do
+        [[ -n "$p" ]] && echo "    $p" >&2
+    done <<< "$offenders"
+    echo >&2
+    echo "Commit messages are public. Name the directory if you must, never a" >&2
+    echo "file inside it. Say 'my local notes' instead." >&2
+    exit 1
+}

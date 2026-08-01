@@ -49,9 +49,9 @@ fails at the commit. That guard exists because screenshots of somebody else's
 forum posts nearly went in.
 
 One exception is carved out in `.githooks/allowed-paths`, for `images/*.png`.
-That directory holds charts generated from the repository's own files by
-`.private/coverage-viz/generate.py`. Run that script to rebuild them after
-changing `coverage.md`, `lessons.md`, `objectives.md` or `practice.md`.
+That directory holds charts generated from the repository's own files by a
+script I keep with my local notes. Run it to rebuild them after changing
+`coverage.md`, `lessons.md`, `objectives.md` or `practice.md`.
 
 Nothing else belongs in `images/`. Do not use the exception for screenshots of
 somebody else's work.
@@ -198,8 +198,14 @@ Adding a sentence to them for the sake of symmetry would mean writing filler.
 
 ## Local files
 
-Anything I do not want committed or pushed goes in `.private/` or `my-notes/`.
-Both are gitignored, and the `.githooks/` pre-commit and pre-push guards refuse
+A verification script kept with my local notes checks `practice.md` and
+`hints.md`. Run it after editing either one. It enforces the width and style
+rules, refuses any wording taken from the courseware, and refuses a command, an
+option or a shell prompt reaching `hints.md`, which must point a student at the
+material without working for them.
+
+Anything I do not want committed or pushed goes in the two ignored directories
+named in `.gitignore`. The `.githooks/` pre-commit and pre-push guards refuse
 them even if I force-add them.
 
 The guards protect me and nobody else. `core.hooksPath` lives in `.git/config`,

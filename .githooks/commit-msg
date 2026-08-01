@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Refuse a commit message that names a file inside an ignored directory.
+set -uo pipefail
+
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+. "$DIR/guard.sh"
+
+check_message "${1:-}"
+
+exit 0

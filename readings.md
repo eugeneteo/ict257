@@ -2,7 +2,8 @@
 
 These pages sit alongside the schedule in [`lessons.md`](lessons.md). None of
 it is required and none of it is examined. Reach for a row when a session has
-left you wanting the same idea from a second angle.
+left you wanting the same idea from a second angle. I have put some exam tips
+in here as well, so do read this page at least.
 
 Each row says what a page is and why it is worth your time. **Objective** names
 the entry in [`objectives.md`](objectives.md) that it supports. A dash means the

@@ -191,6 +191,12 @@ titles come from the publisher: Sander van Vugt, Pearson IT Certification, a
 cert guide and a video series. Nothing outside the subscription can confirm the
 chapter and lesson URLs, so check those from a signed-in browser each semester.
 
+Check the running time of the video series at the same time. `resources.md`
+says about 15 hours. No public page states a duration for that ISBN, and the
+nearest third-party figures for comparable bundles run lower, so the number
+cannot be confirmed from outside the subscription. It is the one claim on that
+page that rests on nothing a reader can check.
+
 ## Where prose sits around a table in resources.md
 
 Prose that frames a section goes before its table. Prose that comments on an

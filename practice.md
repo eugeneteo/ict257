@@ -3,9 +3,8 @@
 The following challenges take the RHCSA Practice series that Tudor Raduta ran
 in the [Red Hat Learning Community][rhlc] as a starting point. It closed on
 31 March 2026,<sup>[1][rhlc]</sup> so I cannot link the posts any more. I wrote
-these with my virtual teaching assistant agents, using the Claude Opus 5 and
-GPT-5.6 Sol models. The Opus 5 agent drafted the new challenges. The
-GPT-5.6 Sol agent checked that each one can be solved and rewrote the ones
+these with my virtual teaching assistant agents. One drafted the new
+challenges. The other checked that each one can be solved and rewrote the ones
 that could not. The published text is the work of both. If you find a mistake
 in one, please [open an issue](https://github.com/eugeneteo/ict257/issues/new).
 

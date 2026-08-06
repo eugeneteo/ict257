@@ -36,7 +36,7 @@ leave out.
 | RHCSA-1.8 | Create, delete, copy, move files | 06.01, 06.03, 07.01, 07.05, 14.05 | — | 2, 5 |
 | RHCSA-1.9 | Hard and soft links | 07.03 | — | 2 |
 | RHCSA-1.10 | Standard ugo/rwx permissions | 11.01, 11.03 | — | 4 |
-| RHCSA-1.11 | System documentation | 03.01 | — | 2 |
+| RHCSA-1.11 | System documentation | 03.01 | — | 1 |
 
 ## 2. Manage software
 

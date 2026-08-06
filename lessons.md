@@ -24,8 +24,8 @@ this module. They are not from the courseware.
 
 | Week | Focus | In class | Own time | Objectives |
 | --- | --- | --- | --- | --- |
-| 1 | Getting oriented, the command-line assistant and the shell | RH124 00.02, 00.03, 01.01, 02.01, 02.03, 02.05, 05.01 | RH124 01.02, 02.02, 02.06, 02.07 | RHCSA-1.1 |
-| 2 | Manual pages, registering systems, the file-system hierarchy and working with files | RH124 03.01, 04.01, 06.01, 06.03, 07.01, 07.03, 07.05 | RH124 03.03, 04.02, 06.02, 06.04, 07.06, 07.07 | RHCSA-1.8, RHCSA-1.9, RHCSA-1.11, RHCSA-7.5 |
+| 1 | Getting oriented, system documentation, the command-line assistant and the shell | RH124 0A.01, 0A.02, 01.01, 02.01, 02.02, 02.03, 02.04, 02.05, 02.06, 03.01, 03.02, 05.01, 05.02 | RH124 01.02, 02.07, 03.03, 05.03 | RHCSA-1.1, RHCSA-1.11 |
+| 2 | Registering systems, the file-system hierarchy and working with files | RH124 04.01, 06.01, 06.03, 07.01, 07.03, 07.05 | RH124 04.02, 06.02, 06.04, 07.06, 07.07 | RHCSA-1.8, RHCSA-1.9, RHCSA-7.5 |
 | 3 | Editing text, redirecting output, users and groups | RH124 08.01, 09.01, 10.01, 10.03, 10.05, 10.07, 10.09 | RH124 09.03, 10.02, 10.11 | RHCSA-1.2, RHCSA-1.5, RHCSA-1.7, RHCSA-9.1, RHCSA-9.2, RHCSA-9.3, RHCSA-9.4 |
 | 4 | File permissions, RPM packages and Flatpak applications | RH124 11.01, 11.03, 11.05, 12.01, 12.03, 12.05, 13.01, 13.03 | RH124 11.02, 11.07, 12.07, 13.05 | RHCSA-1.10, RHCSA-2.1, RHCSA-2.2, RHCSA-2.3, RHCSA-2.4, RHCSA-6.5, RHCSA-7.5, RHCSA-10.2 |
 | 5 | File systems, locating files, processes and system services | RH124 14.01, 14.03, 14.05, 15.01, 15.03, 15.05, 15.07, 16.01, 16.03 | RH124 14.02, 14.07, 15.02, 15.09, 16.05 | RHCSA-1.8, RHCSA-4.4, RHCSA-4.9, RHCSA-5.5, RHCSA-6.1, RHCSA-7.2, RHCSA-8.3 |

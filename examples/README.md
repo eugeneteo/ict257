@@ -4,7 +4,7 @@ This directory contains lab examples and exercises that accompany specific cours
 
 ## Contents
 
-The [`chapter10-group-permissions-example.md`](chapter10-group-permissions-example.md) file provides a group permissions lab that accompanies RH124 section 10.07 (Managing Local Group Accounts).
+The [`chapter10-group-permissions-newgrp-example.md`](chapter10-group-permissions-newgrp-example.md) file provides a group permissions and newgrp lab that accompanies RH124 section 10.07 (Managing Local Group Accounts).
 
 ## How to use these examples
 

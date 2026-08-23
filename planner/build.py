@@ -137,7 +137,7 @@ NOTES = {
 # becomes possible.
 PRACTICE = [
     (1, "The pool of tears, and another beside it", 3, "Doable", "RHCSA-1.2, 1.1", "nothing"),
-    (2, "A small door, and one sentence from the Queen", 3, "Moderate", "RHCSA-9.4, 9.1, 9.3, 9.2", "lab start users-password"),
+    (2, "A small door, and one sentence from the Queen", 4, "Moderate", "RHCSA-9.4, 9.1, 9.3, 9.2", "lab start users-password"),
     (3, "Everybody has won, and all must have prizes", 4, "Doable", "RHCSA-10.2, 1.10", "lab start perms-default"),
     (4, "The bottle marked drink me, and where it came from", 4, "Moderate", "RHCSA-2.1, 2.2, 7.5", "lab start software-dnf"),
     (5, "A cake marked eat me, for one guest only", 4, "Doable", "RHCSA-2.3, 2.4", "lab start flatpak-configure"),

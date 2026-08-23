@@ -30,16 +30,13 @@ ict257:x:1001:
 
 **Note:** An alternative method is `getent group ict257`, which returns the same output. This is shown for reference only and you do not need to run it.
 
-### Step 2: Create two student users and add them to the group
+### Step 2: Create two student users
 
-Create two users for the ICT257 module and add them to the group:
+Create two users for the ICT257 module. Do not add them to the group yet. Step 8 adds the membership while one of them is already logged in, because a running session is exactly where `newgrp` matters:
 
 ```bash
 sudo useradd student1
 sudo useradd student2
-
-sudo usermod -aG ict257 student1
-sudo usermod -aG ict257 student2
 ```
 
 Set passwords for the users:
@@ -51,21 +48,9 @@ echo 'tR7#jN8wL5hX9z' | sudo passwd --stdin student2
 
 **Alternative method:** You can also run `sudo passwd student1` and `sudo passwd student2` manually to set passwords interactively.
 
-Verify the group membership:
-
-```bash
-grep ict257 /etc/group
-```
-
-Expected output (the GID may differ):
-
-```
-ict257:x:1001:student1,student2
-```
-
 ### Step 3: Create a third student (outside the group)
 
-Create a user who is not in the ict257 group:
+Create a user who will not be in the ict257 group at any point in this lab:
 
 ```bash
 sudo useradd student3
@@ -84,19 +69,7 @@ Expected output:
 student3 : student3
 ```
 
-For comparison, check a group member's groups:
-
-```bash
-groups student1
-```
-
-Expected output:
-
-```
-student1 : student1 ict257
-```
-
-This shows that student1 is in both their personal group and the ict257 group, while student3 is only in their personal group.
+At this stage `groups student1` prints the same shape of output, `student1 : student1`, because nobody has been added to the group yet.
 
 ### Step 4: Create the shared folder
 
@@ -154,7 +127,7 @@ The permission string `rwxrwx---` confirms that owner and group can read, write,
 
 Set the setgid bit on the directory. The `g+s` command sets a special permission bit that makes new files and subdirectories created inside this directory automatically inherit the group ownership from the parent directory, rather than taking the creator's primary group.
 
-Without this step, when student1 creates a file, it would be owned by `student1:student1`. With setgid, the file becomes `student1:ict257`, allowing all group members to modify it.
+Without this step, when student1 creates a file, it would be owned by `student1:student1`. With setgid, the file becomes `student1:ict257`, allowing all group members to modify it. The inheritance happens regardless of which groups are active in the creator's session, as Step 8 shows.
 
 ```bash
 sudo chmod g+s /home/ict257-shared
@@ -178,18 +151,68 @@ The `s` in the group permissions (where you would normally see `x` or `-`) indic
 
 ### Step 8: Create the report file as one of the group members
 
-Switch to student1 and activate the ict257 group membership:
+Switch to student1 and look at the active groups:
 
 ```bash
 su - student1
-newgrp ict257
+groups
 ```
 
-The `newgrp` command activates the group membership in the current session. Without it, you would need to log out and log back in for the group change to take effect.
+Expected output:
 
-Verify your active groups:
+```
+student1
+```
+
+The account has no ict257 membership yet, so the group permissions on the shared folder do not apply. Try to create a file there:
 
 ```bash
+touch /home/ict257-shared/group-report.md
+```
+
+Expected output (permission denied):
+
+```
+touch: cannot touch '/home/ict257-shared/group-report.md': Permission denied
+```
+
+Membership of the group decides whether you may write at all. Keep this shell open, and leave student1 logged in.
+
+Open a second terminal on the same machine as root (or with sudo), and add both students to the group:
+
+```bash
+sudo usermod -aG ict257 student1
+sudo usermod -aG ict257 student2
+```
+
+Verify the group membership from that second terminal:
+
+```bash
+grep ict257 /etc/group
+```
+
+Expected output (the GID may differ):
+
+```
+ict257:x:1001:student1,student2
+```
+
+Return to the student1 shell from before and check its groups again:
+
+```bash
+groups
+```
+
+Expected output:
+
+```
+student1
+```
+
+Nothing has changed for this session. A running shell reads `/etc/group` when it starts and never rereads it, so the membership added a moment ago is not active here. Logging out and back in would pick it up. The `newgrp` command activates it without logging out:
+
+```bash
+newgrp ict257
 groups
 ```
 
@@ -199,7 +222,7 @@ Expected output:
 ict257 student1
 ```
 
-Create the report:
+The ict257 group is now the primary group of this shell, and the write permission works. Create the report:
 
 ```bash
 cat > /home/ict257-shared/group-report.md
@@ -237,35 +260,31 @@ ls -l /home/ict257-shared/group-report.md
 Expected output:
 
 ```
--rw-rw-r-- 1 student1 ict257 234 Aug 23 12:05 /home/ict257-shared/group-report.md
+-rw-rw-r-- 1 student1 ict257 203 Aug 23 12:05 /home/ict257-shared/group-report.md
 ```
 
-Notice that the group ownership is `ict257` (inherited from the directory due to setgid) and permissions are `rw-rw-r--`.
+The group ownership is `ict257`. Notice where that came from: the setgid bit on the directory, not the `newgrp` command. `newgrp` let student1 write to the directory at all, by activating the group membership in a session that predated it. Had student1 logged in after the membership was added, the file would have carried the same `ict257` group with no `newgrp` at all, because setgid inheritance does not depend on which groups are active.
 
-**What it would look like without newgrp:** If you had run `cat > /home/ict257-shared/group-report.md` without first activating the group membership with `newgrp ict257`, the file would look like this:
-
-```
--rw-rw-r-- 1 student1 student1 234 Aug 23 12:05 /home/ict257-shared/group-report.md
-```
-
-The group would be `student1` instead of `ict257`, meaning other group members could not modify the file. This is why the `newgrp` command is important even though setgid is set on the directory.
-
-Exit the student1 shell:
-
-```bash
-exit
-```
+Leave both shells. You are two shells deep as student1, so run `exit` twice: once to leave the `newgrp` shell, once to leave the student1 session.
 
 ### Step 9: Verify that group members can read and modify the file
 
-Test that student2 can read and modify the file:
+Log in as student2:
 
 ```bash
 su - student2
-newgrp ict257
+groups
 ```
 
-Activate the group membership, then read the file:
+Expected output:
+
+```
+student2 ict257
+```
+
+No `newgrp` is needed here. This session started after the membership was added, so it picked the group up at login. That is the other way a new membership takes effect, and it is the alternative to `newgrp` from Step 8.
+
+Read the file:
 
 ```bash
 cat /home/ict257-shared/group-report.md
@@ -286,20 +305,6 @@ This report is a collaborative effort by the ICT257 student group.
 This document demonstrates proper group permissions configuration.
 ```
 
-Verify your current groups before appending:
-
-```bash
-groups
-```
-
-Expected output:
-
-```
-ict257 student2
-```
-
-If you see only `student2`, you need to run `newgrp ict257` again.
-
 Check the file permissions and ownership:
 
 ```bash
@@ -309,10 +314,8 @@ ls -l /home/ict257-shared/group-report.md
 Expected output:
 
 ```
--rw-rw-r-- 1 student1 ict257 234 Aug 23 12:05 /home/ict257-shared/group-report.md
+-rw-rw-r-- 1 student1 ict257 203 Aug 23 12:05 /home/ict257-shared/group-report.md
 ```
-
-If you see different permissions or group ownership, the file may have been created incorrectly. Delete and recreate it.
 
 Append content to the file:
 
@@ -332,6 +335,18 @@ Expected output:
 ## Content
 This document demonstrates proper group permissions configuration.
 ## Updated by student2
+```
+
+The file has grown by 23 bytes:
+
+```bash
+ls -l /home/ict257-shared/group-report.md
+```
+
+Expected output:
+
+```
+-rw-rw-r-- 1 student1 ict257 226 Aug 23 12:05 /home/ict257-shared/group-report.md
 ```
 
 Exit the student2 shell:
@@ -369,7 +384,7 @@ ls /home/ict257-shared/
 Expected output (permission denied):
 
 ```
-ls: cannot access '/home/ict257-shared': Permission denied
+ls: cannot open directory '/home/ict257-shared': Permission denied
 ```
 
 Exit the student3 shell:

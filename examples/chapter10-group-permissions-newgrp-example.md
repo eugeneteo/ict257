@@ -1,6 +1,6 @@
 # Linux Group Permissions and newgrp Lab Example
 
-This lab supplements RH124 Chapter 10, Section 10.7 (Managing Local Group Accounts).
+This lab supplements RH124 Chapter 10, Section 10.07 (Managing Local Group Accounts).
 
 ## Scenario
 
@@ -32,7 +32,7 @@ ict257:x:1001:
 
 ### Step 2: Create two student users
 
-Create two users for the ICT257 module. Do not add them to the group yet. Step 8 adds the membership while one of them is already logged in, because a running session is exactly where `newgrp` matters:
+Create two users for the ICT257 module. Do not add them to the group yet. Step 8 adds the membership while one of them is already logged in, because a running session is exactly where `newgrp` matters. Create the two users:
 
 ```bash
 sudo useradd student1
@@ -176,7 +176,7 @@ Expected output (permission denied):
 touch: cannot touch '/home/ict257-shared/group-report.md': Permission denied
 ```
 
-Membership of the group decides whether you may write at all. Keep this shell open, and leave student1 logged in.
+Membership of the group decides whether you may write at all. Keep this shell open.
 
 Open a second terminal on the same machine as root (or with sudo), and add both students to the group:
 
@@ -282,7 +282,7 @@ Expected output:
 student2 ict257
 ```
 
-No `newgrp` is needed here. This session started after the membership was added, so it picked the group up at login. That is the other way a new membership takes effect, and it is the alternative to `newgrp` from Step 8.
+No `newgrp` is needed here. This session started after the membership was added, so it picked the group up at login. That is the alternative to `newgrp` from Step 8.
 
 Read the file:
 

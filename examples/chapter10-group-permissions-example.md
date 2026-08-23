@@ -1,6 +1,6 @@
 # Linux Group Permissions Lab Example
 
-This lab accompanies RH124 Chapter 10, Section 10.8.
+This lab supplements RH124 Chapter 10, Section 10.8.
 
 ## Scenario
 

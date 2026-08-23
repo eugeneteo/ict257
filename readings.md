@@ -1,13 +1,8 @@
 # Optional reading, week by week
 
-These pages sit alongside the schedule in [`lessons.md`](lessons.md). None of
-it is required and none of it is examined. Reach for a row when a session has
-left you wanting the same idea from a second angle. I have put some exam tips
-in here as well, so do read this page at least.
+These pages accompany the schedule in [`lessons.md`](lessons.md). None of this is required and none of it is examined. Use a row when a session leaves you wanting the same idea from a second angle. Some exam tips are included here, so read this page at least once.
 
-Each row says what a page is and why it is worth your time. **Objective** names
-the entry in [`objectives.md`](objectives.md) that it supports. A dash means the
-page sets context and carries no objective.
+Each row explains what a page is and why it is worth your time. **Objective** names the entry in [`objectives.md`](objectives.md) that it supports. A dash means the page sets context and carries no objective.
 
 Some of these pages are old. Where one is still exact, it is here because the
 idea has not moved. Where one is wrong for RHEL 10, the note under the table

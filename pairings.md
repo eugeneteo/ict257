@@ -1,9 +1,6 @@
 # Commands to pair, and forms to remember
 
-Assume that your machines will be rebooted immediately after the end of the
-exam. Red Hat requires configurations to persist after reboot. Take note that
-these command pairings are not exhaustive, and you are advised to take your
-own notes as you go through the courseware.
+Assume that your machines will be rebooted immediately after the exam ends. Red Hat requires configurations to persist after reboot. These command pairings are not exhaustive, so take your own notes as you go through the courseware.
 
 Use this routine for changes that must survive a reboot.
 

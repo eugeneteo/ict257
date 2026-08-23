@@ -1,12 +1,8 @@
 # RHCSA objective coverage
 
-I map every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to
-the RH124 and RH134 material and teaching week. Partial mappings are noted
-below.
+This file maps every RHCSA (EX200) objective from [`objectives.md`](objectives.md) to the RH124 and RH134 material and teaching week. Partial mappings are noted below.
 
-The RH124<sup>[1][rh124]</sup> and RH134<sup>[2][rh134]</sup> courseware is
-**not** part of this repository. I cite only section numbers, and they refer to
-version 10.0 of both courses.
+The RH124<sup>[1][rh124]</sup> and RH134<sup>[2][rh134]</sup> courseware is **not** part of this repository. The file cites only section numbers from version 10.0 of both courses.
 
 - **Objective** is the stable ID from [`objectives.md`](objectives.md), and
   **Summary** restates it in short.

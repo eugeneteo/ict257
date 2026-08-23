@@ -1,7 +1,6 @@
 # Maintaining this repository
 
-My notes for keeping these files current. Students do not need this file: the
-student-facing files carry no upkeep instructions, so the rules live here.
+These notes explain how to keep these files current. Students do not need this file: the student-facing files carry no upkeep instructions, so the rules live here.
 
 ## The order of changes
 

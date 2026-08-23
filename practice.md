@@ -1,17 +1,8 @@
 # Down the rabbit hole: optional practice challenges
 
-The following challenges take the RHCSA Practice series that Tudor Raduta ran
-in the [Red Hat Learning Community][rhlc] as a starting point. It closed on
-31 March 2026,<sup>[1][rhlc]</sup> so I cannot link the posts any more. I wrote
-these with my virtual teaching assistant agents. One drafted the new
-challenges. The other checked that each one can be solved and rewrote the ones
-that could not. The published text is the work of both. If you find a mistake
-in one, please [open an issue](https://github.com/eugeneteo/ict257/issues/new).
+These challenges build on the RHCSA Practice series that Tudor Raduta ran in the [Red Hat Learning Community][rhlc]. That community closed on 31 March 2026,<sup>[1][rhlc]</sup> so I cannot link to the original posts. I wrote these challenges with virtual teaching assistant agents. One agent drafted the challenges. The other verified that each one can be solved and rewrote those that could not. The published text represents work from both. If you find a mistake, please [open an issue](https://github.com/eugeneteo/ict257/issues/new).
 
-None of this is required for ICT257. They run in the Red Hat Academy lab, on
-top of the guided exercises and not in place of them. Each challenge names the
-`lab start` command that prepares its machine, so run that on `workstation`
-first. The lab is disposable, so reset it if you break something.
+These challenges are optional for ICT257. They run in the Red Hat Academy lab, alongside the guided exercises. Each challenge names the `lab start` command that prepares its machine, so run that command on `workstation` first. The lab is disposable, so reset it if you break something.
 
 No answers or walkthroughs are given. Check your work with the questions at the
 end of each task, then reboot and check each required result again. See

@@ -1,13 +1,8 @@
 # ICT257 lesson plan
 
-Twelve weeks of teaching, one three-hour session each, covering the RHCSA
-(EX200) objectives in [`objectives.md`](objectives.md) with the Red Hat course
-material mapped in [`coverage.md`](coverage.md). Week 13 is catch-up, week 14 is
-revision, and you sit the exam in week 15. See
-[Week 15: the exam](#week-15-the-exam).
+Twelve weeks of teaching, with one three-hour session each week, covering the RHCSA (EX200) objectives in [`objectives.md`](objectives.md) and the Red Hat course material mapped in [`coverage.md`](coverage.md). Week 13 is catch-up, week 14 is revision, and you take the exam in week 15. See [Week 15: the exam](#week-15-the-exam).
 
-The RH124 and RH134 courseware is **not** part of this repository. I cite only
-section numbers, and they refer to version 10.0 of both courses.
+The RH124 and RH134 courseware is **not** part of this repository. The file cites only section numbers, which refer to version 10.0 of both courses.
 
 ## The schedule
 

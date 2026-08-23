@@ -1,19 +1,10 @@
 # Which way you ought to go: hints for the practice challenges
 
-These hints belong to the optional challenges in
-[`practice.md`](practice.md). None of it is required for ICT257. Nothing here
-is marked and nothing here appears in an examination.
+These hints support the optional challenges in [`practice.md`](practice.md). None of this is required for ICT257. Nothing here is marked and nothing here appears in an examination.
 
-**No answers are given.** You will not find a command here. You will not find
-an option, a configuration line or a file path that settles a question. A hint
-names the chapter and section where the material is taught. It may restate the
-problem in plainer words. It may name the idea you are missing. The rest is the
-exercise. The Cat tells Alice which way to go. He does not walk it for her.
+**No answers are given.** You will not find a command here. You will not find an option, a configuration line, or a file path that settles a question. A hint names the chapter and section where the material is taught. It may restate the problem in plainer words. It may name the idea you are missing. The rest is the exercise. The Cat tells Alice which way to go. He does not walk it for her.
 
-Attempt a challenge properly before you open a hint. Read the task twice. Try
-the manual pages. Get something wrong first. A hint opened too early costs you
-the part of the work that teaches most. An hour spent stuck is worth more than
-five minutes spent reading.
+Attempt a challenge properly before you open a hint. Read the task twice. Try the manual pages. Get something wrong first. A hint opened too early costs you the part of the work that teaches most. An hour spent stuck is worth more than five minutes spent reading.
 
 Each challenge below has one, two or three tiers. Each tier stays hidden until
 you click it. Open them in order and stop as soon as you can carry on alone.

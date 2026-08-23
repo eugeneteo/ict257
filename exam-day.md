@@ -1,9 +1,6 @@
 # Exam day: inside the exam environment
 
-Red Hat published the cited video in 2022. This file records the interface
-shown there, and does not establish that every current screen is unchanged.
-For what the exam asks of you, see [`objectives.md`](objectives.md).
-The timestamps point into the video.<sup>[1][exam-video]</sup>
+Red Hat published the cited video in 2022. This file records the interface shown in that video and does not establish that every current screen is unchanged. For what the exam asks of you, see [`objectives.md`](objectives.md). The timestamps reference points in the video.<sup>[1][exam-video]</sup>
 
 ## Before you start
 

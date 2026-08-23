@@ -1,11 +1,23 @@
 # Teaching examples
 
-This directory contains lab examples and exercises that accompany specific course sections.
+This directory contains worked examples and lab exercises that accompany specific course sections. Each week of [`readings.md`](../readings.md) names the examples that go with it.
 
 ## Contents
 
-The [`chapter10-group-permissions-newgrp-example.md`](chapter10-group-permissions-newgrp-example.md) file provides a group permissions and newgrp lab that accompanies RH124 section 10.07 (Managing Local Group Accounts).
+| Example | Supplements |
+| --- | --- |
+| [`chapter10-group-permissions-newgrp-example.md`](chapter10-group-permissions-newgrp-example.md) | RH124 10.07, group permissions and `newgrp` |
+| [`manual-pages.md`](manual-pages.md) | RH124 03.01, finding the right manual page |
+| [`links.md`](links.md) | RH124 07.03, hard and soft links |
+| [`password-records.md`](password-records.md) | RH124 10.05 and 10.09, password hashes and account defaults |
+| [`sudoers.md`](sudoers.md) | RH124 10.03, reading a sudoers rule |
+| [`streams.md`](streams.md) | RH124 09.01, streams and redirection |
+| [`directory-permissions.md`](directory-permissions.md) | RH124 11.01 and 11.05, setgid, the sticky bit and the umask |
+| [`network-and-firewall-tools.md`](network-and-firewall-tools.md) | RH124 18.01 and RH134 14.01, `nmtui` and `firewall-cmd` |
+| [`shell-startup-files.md`](shell-startup-files.md) | RH134 01.01, shell startup files |
+| [`journal-persistence.md`](journal-persistence.md) | RH134 05.07, preserving the journal |
+| [`partitioning-and-lvm.md`](partitioning-and-lvm.md) | RH134 10.01 and 11.05, `parted` and LVM cleanup |
 
 ## How to use these examples
 
-Each example is a standalone lab exercise. Work through each example on your own system to practice the concepts taught in the corresponding course section. The examples complement the guided exercises in the RH124 and RH134 courseware.
+Each example is standalone. Work through it on your own system to practise the concepts taught in the corresponding course section. The examples complement the guided exercises in the RH124 and RH134 courseware.

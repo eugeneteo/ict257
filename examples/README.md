@@ -6,12 +6,12 @@ This directory contains worked examples and lab exercises that accompany specifi
 
 | Example | Supplements |
 | --- | --- |
-| [`group-permissions.md`](group-permissions.md) | RH124 10.07, group permissions and `newgrp` |
 | [`manual-pages.md`](manual-pages.md) | RH124 03.01, finding the right manual page |
 | [`links.md`](links.md) | RH124 07.03, hard and soft links |
-| [`password-records.md`](password-records.md) | RH124 10.05 and 10.09, password hashes and account defaults |
-| [`sudoers.md`](sudoers.md) | RH124 10.03, reading a sudoers rule |
 | [`streams.md`](streams.md) | RH124 09.01, streams and redirection |
+| [`sudoers.md`](sudoers.md) | RH124 10.03, reading a sudoers rule |
+| [`password-records.md`](password-records.md) | RH124 10.05 and 10.09, password hashes and account defaults |
+| [`group-permissions.md`](group-permissions.md) | RH124 10.07, group permissions and `newgrp` |
 | [`directory-permissions.md`](directory-permissions.md) | RH124 11.01 and 11.05, setgid, the sticky bit and the umask |
 | [`network-and-firewall-tools.md`](network-and-firewall-tools.md) | RH124 18.01 and RH134 14.01, `nmtui` and `firewall-cmd` |
 | [`shell-startup-files.md`](shell-startup-files.md) | RH134 01.01, shell startup files |

@@ -1,6 +1,6 @@
 # Linux Group Permissions Lab Example
 
-This lab supplements RH124 Chapter 10, Section 10.8.
+This lab supplements RH124 Chapter 10, Section 10.7 (Managing Local Group Accounts).
 
 ## Scenario
 

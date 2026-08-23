@@ -2,11 +2,9 @@
 
 These examples supplement RH124 chapter 18, section 1 (configuring network connections) and RH134 chapter 14, section 1 (controlling network traffic with firewalls). They cover RHCSA-8.1, RHCSA-8.4 and RHCSA-10.1.
 
-## `nmtui`, which the course never mentions
+## What you will learn
 
-`nmtui` appears nowhere in RH124 and nowhere in RH134. No exercise will ask
-for it and no marker expects it. It is still worth ten minutes of your time,
-because it is on the exam machine and it can save you a mark.
+Use `nmtui` for safer network configuration edits, and understand how `firewall-cmd` applies rules permanently versus temporarily.
 
 ```
 [root@rhel ~]# nmtui

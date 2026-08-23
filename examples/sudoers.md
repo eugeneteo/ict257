@@ -2,9 +2,13 @@
 
 These examples supplement RH124 chapter 10, section 3 (gaining superuser access). That is RHCSA-9.4.
 
+## What you will learn
+
+Each `ALL` in a sudoers rule answers a different question. Understanding what each position means helps you read rules correctly and avoid security mistakes.
+
 ## Four times `ALL`, four different questions
 
-RH124 10.03 shows one line, and it is the line that gives you `sudo` at all.
+RH124 10.03 shows the line that gives you `sudo` access.
 
 ```
 %wheel        ALL=(ALL:ALL)       ALL

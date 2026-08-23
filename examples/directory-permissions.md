@@ -2,11 +2,9 @@
 
 These examples supplement RH124 chapter 11, sections 1 and 5 (controlling access to files, and managing default permissions). They cover RHCSA-1.10 and RHCSA-10.2.
 
-## A shared directory, watched from both sides
+## What you will learn
 
-What follows is a transcript from a lab machine, taken on 1 February 2024,
-with the account names changed. Two commands in it fail. Those two are the
-ones worth your attention.
+Special permission bits like setgid and the sticky bit control how new files inherit permissions and who can delete files in shared directories. Understanding these bits helps you avoid common permission problems.
 
 Build the directory as root. The group owns it, the group may write to it and
 the sticky bit is set.

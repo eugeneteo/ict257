@@ -2,9 +2,9 @@
 
 These examples supplement RH124 chapter 3, section 1 (using man pages). Finding the right page is RHCSA-1.11.
 
-A manual page is addressed by a name and a section number, and the number is
-not decoration. Search for a name and you may get several answers. Cut the
-descriptions away and what is left is the point.
+## What you will learn
+
+Manual pages use both a name and a section number to identify the correct documentation. When multiple pages share the same name, you need to specify which section you want to avoid reading the wrong documentation.
 
 ```
 [student@workstation ~]$ man -k ^passwd | cut -d' ' -f1,2
@@ -49,9 +49,7 @@ right page is worth practising now. That is RHCSA-1.11.
 
 ## Reading a long manual page away from the terminal
 
-`man -t` turns up once in RH124, in a lab step about printing, and no exercise
-asks you to make a PDF. It is here because it is useful. `bash(1)` runs to
-hundreds of pages and nobody reads that in a pager.
+Convert a manual page to PDF when you need to study it away from the terminal. The `bash(1)` manual page runs to hundreds of pages and is difficult to read in a terminal pager.
 
 ```
 [student@workstation ~]$ man -t bash > /tmp/x

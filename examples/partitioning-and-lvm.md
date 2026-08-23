@@ -2,12 +2,9 @@
 
 These examples supplement RH134 chapter 10, section 1 (managing storage with parted) and chapter 11, section 5 (removing storage layers). They cover RHCSA-5.1 and RHCSA-5.4.
 
-## Partitioning a second disk on a machine of your own
+## What you will learn
 
-The `parted` command takes a subcommand on the command line, so you do not
-have to work interactively. Interactive mode is useful while you are
-learning. Once you know what you want, one line per step is faster and it
-leaves a record you can read back.
+Use `parted` to create partitions non-interactively, and learn how to cleanly remove LVM storage layers when you need to start over.
 
 Start with the label. A GPT label needs no primary and extended distinction,
 so every partition is simply a partition.

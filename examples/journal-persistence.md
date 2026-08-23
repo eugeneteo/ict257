@@ -2,9 +2,9 @@
 
 This example supplements RH134 chapter 5, section 7 (preserving the system journal). That is RHCSA-4.8.
 
-By default the journal lives in memory. Reboot the machine and the last boot
-is gone. You notice this the first time somebody asks you why a server fell
-over.
+## What you will learn
+
+By default, the systemd journal lives in memory and disappears when you reboot. Create a directory to make the journal persistent so you can diagnose problems after a server crashes.
 
 ```
 [root@rhel ~]# mkdir /var/log/journal

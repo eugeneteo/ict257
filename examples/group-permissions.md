@@ -2,9 +2,9 @@
 
 This lab supplements RH124 Chapter 10, Section 10.07 (Managing Local Group Accounts).
 
-## Scenario
+## What you will learn
 
-Two students in the ICT257 module need to collaborate on a short report. They must share files in a folder where both group members can create and modify content, but other users cannot access the files. A third student from a different module will attempt to access the report to verify that the permissions work correctly.
+Configure group permissions so multiple users can collaborate on files while preventing others from accessing them. Use the `newgrp` command to activate group membership in a running session.
 
 ## Step-by-step solution
 

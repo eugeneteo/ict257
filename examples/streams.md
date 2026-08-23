@@ -2,12 +2,9 @@
 
 These examples supplement RH124 chapter 9, section 1 (piping and redirection). That is RHCSA-1.2.
 
-## Where the streams go in a pipeline
+## What you will learn
 
-A pipeline is easier to hold in your head once you count the streams. Every
-command has standard input numbered 0, standard output numbered 1 and standard
-error numbered 2. A pipe joins one command's stream 1 to the next command's
-stream 0.
+Every command has three streams: standard input (0), standard output (1), and standard error (2). Understanding how these streams work in pipelines helps you redirect output correctly and avoid common mistakes.
 
 ```
 [student@workstation ~]$ cat file.txt | sort | uniq

@@ -2,11 +2,9 @@
 
 These examples supplement RH124 chapter 10, sections 5 and 9 (managing local user accounts, and passwords and password ageing). They cover RHCSA-9.1 and RHCSA-9.2.
 
-## Building a hash you can take apart
+## What you will learn
 
-A shadow entry is hard to learn from, because you cannot see where any of it
-came from. So build one instead. `openssl passwd` takes a password and a salt
-and prints the result, which means every field has a known origin.
+Build and examine password hashes to understand their structure. Learn how password records work and how system defaults apply to new accounts.
 
 ```
 [student@workstation ~]$ echo "redhat" | openssl passwd -stdin -6 -salt iGMT29O4MP5ngN4a

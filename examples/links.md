@@ -2,11 +2,13 @@
 
 These examples supplement RH124 chapter 7, section 3 (managing links). That is RHCSA-1.9.
 
+## What you will learn
+
+Hard links and soft links behave differently when you remove or move files. Understanding the difference helps you avoid common mistakes when working with links.
+
 ## What `ls -li` proves about a hard link
 
-The diagram in [`readings.md`](../readings.md) shows the shape of a hard link. This shows the
-numbers, and the numbers are the part you have to read. Make a file with
-something in it, then give it a second name.
+Create a file and give it a second name to see how hard links work.
 
 ```
 [student@workstation ~]$ echo hello > file.txt

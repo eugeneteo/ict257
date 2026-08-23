@@ -2,13 +2,9 @@
 
 This example supplements RH134 chapter 1, section 1 (writing simple bash scripts). That is RHCSA-3.3.
 
-## Why `~/.bashrc` runs whichever way you log in
+## What you will learn
 
-Bash reads a different startup file depending on how it was started. A login
-shell, which is what you get over SSH or at a text console, reads
-`~/.bash_profile`. A non-login shell, which is what you get opening a terminal
-inside a desktop session, reads `~/.bashrc`. RH134 01.01 draws that
-distinction.
+Bash reads different startup files depending on how you log in. Understanding when each file runs helps you place your configuration in the right location.
 
 So a setting placed in one of them ought to be missing from the other. In
 practice it is not, and `~/.bashrc` runs both ways round.

@@ -5,8 +5,3 @@
 # Keep this file short. Every line here is a hole in a guard that exists for a
 # reason.
 #
-# Images are blocked everywhere because screenshots of other people's work
-# nearly entered this repository. Charts generated from our own files are a
-# different case, so they have one directory and no more.
-
-^images/[a-z0-9-]+\.png$

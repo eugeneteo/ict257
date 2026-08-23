@@ -202,6 +202,12 @@ exam practice or listed below as not mapped.
 I count only the two chapter introductions as teaching sections. The nine
 review labs fall outside that count, because I leave labs out of it throughout.
 
+**Not mapped** includes the course administration sections in the table at the
+foot of this file, not just the rows under
+[No corresponding objective](#no-corresponding-objective). RH124 has two
+sections with no objective plus three administration ones, which makes five,
+and RH134 has nine plus three, which makes twelve.
+
 ### No corresponding objective
 
 | Section | Summary |

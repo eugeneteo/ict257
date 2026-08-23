@@ -92,8 +92,8 @@ CHAPTERS = {
 
 # Teaching week -> (course, chapter numbers, focus). Taken from lessons.md.
 WEEKS = {
-    1: ("RH124", [0, 1, 2, 5], "Getting oriented, the command-line assistant and the shell"),
-    2: ("RH124", [3, 4, 6, 7], "Manual pages, registering systems, the file-system hierarchy and working with files"),
+    1: ("RH124", [0, 1, 2, 3, 5], "Getting oriented, system documentation, the command-line assistant and the shell"),
+    2: ("RH124", [4, 6, 7], "Registering systems, the file-system hierarchy and working with files"),
     3: ("RH124", [8, 9, 10], "Editing text, redirecting output, users and groups"),
     4: ("RH124", [11, 12, 13], "File permissions, RPM packages and Flatpak applications"),
     5: ("RH124", [14, 15, 16], "File systems, locating files, processes and system services"),

@@ -11,7 +11,9 @@ LibreOffice Calc, Numbers or Google Sheets.
 
 One cell. On the **Start here** sheet, put in the date of your week 1 class.
 Every other date in the workbook follows from it, including the exam date and
-the two revision dates for each of the 41 chapters.
+the revision dates for the chapters. The 39 teaching chapters carry two
+revision dates each. The two course prefaces carry none, and the two
+comprehensive reviews carry one.
 
 If you have already booked your exam, type that date over the one it works out
 for you.

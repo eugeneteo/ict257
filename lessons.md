@@ -19,7 +19,7 @@ this module. They are not from the courseware.
 
 | Week | Focus | In class | Own time | Objectives |
 | --- | --- | --- | --- | --- |
-| 1 | Getting oriented, system documentation, the command-line assistant and the shell | RH124 0A.01, 0A.02, 01.01, 02.01, 02.02, 02.03, 02.04, 02.05, 02.06, 03.01, 03.02, 05.01, 05.02 | RH124 01.02, 02.07, 03.03, 05.03 | RHCSA-1.1, RHCSA-1.11 |
+| 1 | Getting oriented, system documentation, the command-line assistant and the shell | RH124 00.02, 00.03, 01.01, 02.01, 02.02, 02.03, 02.04, 02.05, 02.06, 03.01, 03.02, 05.01, 05.02 | RH124 01.02, 02.07, 03.03, 05.03 | RHCSA-1.1, RHCSA-1.11 |
 | 2 | Registering systems, the file-system hierarchy and working with files | RH124 04.01, 06.01, 06.03, 07.01, 07.03, 07.05 | RH124 04.02, 06.02, 06.04, 07.06, 07.07 | RHCSA-1.8, RHCSA-1.9, RHCSA-7.5 |
 | 3 | Editing text, redirecting output, users and groups | RH124 08.01, 09.01, 10.01, 10.03, 10.05, 10.07 | RH124 09.03, 10.02, 10.11 | RHCSA-1.2, RHCSA-1.5, RHCSA-1.7, RHCSA-9.1, RHCSA-9.3, RHCSA-9.4 |
 | 4 | File permissions, RPM packages and Flatpak applications | RH124 10.09, 11.01, 11.03, 11.05, 12.01, 12.03, 12.05, 13.01, 13.03 | RH124 11.02, 11.07, 12.07, 13.05 | RHCSA-1.10, RHCSA-2.1, RHCSA-2.2, RHCSA-2.3, RHCSA-2.4, RHCSA-6.5, RHCSA-7.5, RHCSA-9.2, RHCSA-10.2 |
@@ -131,7 +131,7 @@ Hat Academy lab environment, the same one we use in class.
 | Chapter quizzes | 22 quizzes, 99 pages | Use them to check understanding after a chapter |
 | Chapter summaries | 37 summaries, 37 pages | Use them for quick revision |
 | Comprehensive review | 11 review sections and one summary, 9 of them labs, 49 pages | Save for exam preparation, as below |
-| Course administration sections | 4 sections, 8 pages | Nothing. They orient you to a self-paced Red Hat course, which is not how this module runs |
+| Course administration sections | 6 sections, 8 pages | Nothing. They orient you to a self-paced Red Hat course, which is not how this module runs |
 
 None of this is marked. You still have to do it. The chapter labs and the
 comprehensive review are the only work where you have to reach a result on your

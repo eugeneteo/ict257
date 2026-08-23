@@ -82,8 +82,10 @@ a page OpenSSL ships, and its section name is `1ossl` and not `1ssl`.
 
 This is where marks go. Plain `man passwd` does not weigh the sections up
 against each other. It walks a fixed order and stops at the first page it
-finds. On RHEL 10 that order opens 1, 1p, 8, 2, 3 and reaches 5 a long way
-down, and the `SECTION` line in `/etc/man_db.conf` is what sets it. Section 1
+finds. On RHEL 10 that order is the man-db default, `1 n l 8 3 0 2 5`, with
+the rest of the numbers behind that. The `SECTION` line in
+`/etc/man_db.conf` would override it, but the shipped file has that line
+commented out, so the built-in order is what runs. Section 1
 therefore wins here, and section 1 is the command. Read that order again and
 note that 8 is consulted before 2, so it is not the numbers in sequence. A
 student sent to read about the format of the password file opens the wrong
@@ -184,8 +186,8 @@ RHCSA-1.9.
 Try to put the second name in `/dev/shm`.
 
 ```
-[student@workstation ~]$ ln file.txt /dev/shm/file-hlink.txt
-ln: failed to create hard link '/dev/shm/file-hlink.txt' => 'file.txt': Invalid cross-device link
+[student@workstation ~]$ ln file-hlink.txt /dev/shm/file-hlink2.txt
+ln: failed to create hard link '/dev/shm/file-hlink2.txt' => 'file-hlink.txt': Invalid cross-device link
 ```
 
 Read that error instead of guessing at it. Nothing here is a permission and
@@ -777,8 +779,12 @@ Then read the mode on `report3`, because the group name is only half the
 story. It says `rw-` for the owner and `r--` for the group. Everyone in
 `analysts` may read that file and nobody in `analysts` may write it. Setgid
 settled which group owns the file. It said nothing at all about the permission
-bits, and those came from the umask, which RHEL 10 leaves at 0022 for every
-user.
+bits, and those came from the umask in force in that shell. A fresh login
+shell on RHEL 10 usually gets 002 rather than 022, because `/etc/bashrc`
+grants 002 to every ordinary user whose private group carries their own name,
+which would make the file group writable. The 644 above is what a 022 umask
+produces, such as when a shell reached by `su` without the dash carries the
+setting of the shell before it.
 
 So a shared directory takes two repairs and not one. Put the content that is
 already there right by hand.

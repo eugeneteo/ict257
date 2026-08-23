@@ -1,4 +1,4 @@
-# ICT257 Linux Group Permissions Lab
+# ICT257 Linux Group Permissions Lab Example
 
 ## Scenario
 

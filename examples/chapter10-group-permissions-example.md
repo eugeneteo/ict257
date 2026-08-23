@@ -4,14 +4,6 @@
 
 Two students in the ICT257 module need to collaborate on a short report. They must share files in a folder where both group members can create and modify content, but other users cannot access the files. A third student from a different module will attempt to access the report to verify that the permissions work correctly.
 
-## Prerequisites
-
-Before you begin, ensure you have:
-- A Linux system with root or sudo access
-- Basic familiarity with the command line
-
-**Important:** When setting file or directory ownership, always use the `user:group` format (for example, `chown root:ict257`). Avoid the shorthand `:group` syntax, which is prone to typos and mistakes.
-
 ## Step-by-step solution
 
 ### Step 1: Create the ict257 group

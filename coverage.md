@@ -113,7 +113,7 @@ leave out.
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
 | RHCSA-9.1 | Local user accounts | 10.01, 10.05 | — | 3 |
-| RHCSA-9.2 | Passwords and password aging | 10.09 | — | 3 |
+| RHCSA-9.2 | Passwords and password aging | 10.09 | — | 4 |
 | RHCSA-9.3 | Local groups and memberships | 10.07 | — | 3 |
 | RHCSA-9.4 | Configure privileged access | 10.03 | — | 3 |
 

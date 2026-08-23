@@ -1,4 +1,4 @@
-# Linux Group Permissions Lab Example
+# Linux Group Permissions and newgrp Lab Example
 
 This lab supplements RH124 Chapter 10, Section 10.7 (Managing Local Group Accounts).
 

@@ -6,7 +6,7 @@ This directory contains worked examples and lab exercises that accompany specifi
 
 | Example | Supplements |
 | --- | --- |
-| [`chapter10-group-permissions-newgrp-example.md`](chapter10-group-permissions-newgrp-example.md) | RH124 10.07, group permissions and `newgrp` |
+| [`group-permissions.md`](group-permissions.md) | RH124 10.07, group permissions and `newgrp` |
 | [`manual-pages.md`](manual-pages.md) | RH124 03.01, finding the right manual page |
 | [`links.md`](links.md) | RH124 07.03, hard and soft links |
 | [`password-records.md`](password-records.md) | RH124 10.05 and 10.09, password hashes and account defaults |

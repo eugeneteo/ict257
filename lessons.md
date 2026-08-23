@@ -26,7 +26,7 @@ this module. They are not from the courseware.
 | 5 | File systems, locating files, processes and system services | RH124 14.01, 14.03, 14.05, 15.01, 15.03, 15.05, 15.07, 16.01, 16.03 | RH124 14.02, 14.07, 15.02, 15.09, 16.05 | RHCSA-1.8, RHCSA-4.4, RHCSA-4.9, RHCSA-5.5, RHCSA-6.1, RHCSA-7.2, RHCSA-8.3 |
 | 6 | Network addressing and configuration, name resolution and secure remote access | RH124 17.01, 17.03, 18.01, 18.03, 18.05, 19.01, 19.03 | RH124 17.02, 18.07, 19.05 | RHCSA-1.4, RHCSA-8.1, RHCSA-8.2, RHCSA-10.3 |
 
-A group permissions lab example that accompanies RH124 section 10.07 (Managing Local Group Accounts) is available at [`examples/chapter10-group-permissions-newgrp-example.md`](examples/chapter10-group-permissions-newgrp-example.md).
+A group permissions lab example that accompanies RH124 section 10.07 (Managing Local Group Accounts) is available at [`examples/group-permissions.md`](examples/group-permissions.md).
 
 ### Weeks 7 to 12: Red Hat System Administration II
 

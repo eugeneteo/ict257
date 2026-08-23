@@ -1,4 +1,6 @@
-# ICT257 Linux Group Permissions Lab Example
+# Linux Group Permissions Lab Example
+
+This lab accompanies RH124 Chapter 10, Section 10.8.
 
 ## Scenario
 

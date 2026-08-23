@@ -15,7 +15,7 @@ Enterprise Linux 10.
 | [`pairings.md`](pairings.md) | Commands to pair, and forms that survive a reboot |
 | [`practice.md`](practice.md) | Optional practice challenges to attempt on your own |
 | [`hints.md`](hints.md) | Hints for those challenges, for when you are stuck |
-| [`readings.md`](readings.md) | Optional reading for each week with some exam tips sprinkled in |
+| [`readings.md`](readings.md) | Readings for each week with some exam tips sprinkled in |
 | [`resources.md`](resources.md) | Resources for preparing the exam beyond the courseware |
 | [`examples/`](examples/) | Teaching examples and lab exercises for specific chapters |
 | [`planner/`](planner/) | A study planner spreadsheet, with revision dates worked out for you |

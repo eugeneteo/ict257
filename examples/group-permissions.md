@@ -149,6 +149,8 @@ The `s` in the group permissions (where you would normally see `x` or `-`) indic
 
 **Note:** You will learn more about setgid and special permission bits in RH124 Chapter 11, Controlling Access to Files.
 
+**Why `newgrp` is needed:** The users have already been added to the `ict257` group, but the current shell was started before that change, so it doesn’t see the new membership. `newgrp ict257` switches the primary group of the running shell to `ict257`, activating the membership without logging out. This step demonstrates how to refresh group membership in an active session.
+
 ### Step 8: Create the report file as one of the group members
 
 Switch to student1 and look at the active groups:

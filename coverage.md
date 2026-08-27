@@ -38,7 +38,7 @@ leave out.
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-2.1 | Configure RPM repository access | 12.05 | — | 4 |
+| RHCSA-2.1 | Configure RPM repository access | 12.05 | — | 5 |
 | RHCSA-2.2 | Install and remove RPM packages | 12.01, 12.03 | — | 4 |
 | RHCSA-2.3 | Configure Flatpak repository access | 13.01 | — | 5 |
 | RHCSA-2.4 | Install and remove Flatpak packages | 13.03 | — | 5 |

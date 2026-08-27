@@ -14,6 +14,7 @@ This directory contains worked examples and lab exercises that accompany specifi
 | [`group-permissions.md`](group-permissions.md) | RH124 10.07, group permissions and `newgrp` |
 | [`directory-permissions.md`](directory-permissions.md) | RH124 11.01 and 11.05, setgid, the sticky bit and the umask |
 | [`network-and-firewall-tools.md`](network-and-firewall-tools.md) | RH124 18.01 and RH134 14.01, `nmtui` and `firewall-cmd` |
+| [`umask_explanation.md`](umask_explanation.md) | Hand‑calc & kernel view of umask permissions |
 | [`shell-startup-files.md`](shell-startup-files.md) | RH134 01.01, shell startup files |
 | [`journal-persistence.md`](journal-persistence.md) | RH134 05.07, preserving the journal |
 | [`partitioning-and-lvm.md`](partitioning-and-lvm.md) | RH134 10.01 and 11.05, `parted` and LVM cleanup |

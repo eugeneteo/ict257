@@ -24,16 +24,17 @@ Because `~umask` (within the 9 permission bits) is equivalent to `0777 – umask
 
 | Umask | **Hand‑calc** File (octal) | File (symbolic) | **Hand‑calc** Dir (octal) | Dir (symbolic) |
 |-------|---------------------------|-----------------|---------------------------|----------------|
-| 022   | 644 | rw‑r‑‑r‑‑ | 755 | rwxr‑x‑r‑x |
-| 027   | 640 | rw‑r‑‑‑‑‑ | 750 | rwxr‑x‑--- |
-| 007   | 660 | rw‑rw‑‑‑‑ | 770 | rwxrwx--- |
-| 002   | 664 | rw‑rw‑r‑‑ | 775 | rwxrwxr‑x |
-| 077   | 600 | rw‑------ | 700 | rwx------ |
-| 037   | 630 | rw‑‑‑wx--- | 740 | rwxr---- |
-| 055   | 611 | rw‑‑x‑‑x | 722 | rwx‑w‑‑w‑ |
-| 133   | 533 | r‑‑‑wx‑wx | 644 | rwxr‑‑r‑‑ |
+| 022   | 0644 | rw‑r‑‑r‑‑ | 0755 | rwxr‑x‑r‑x |
+| 027   | 0640 | rw‑r‑‑‑‑‑ | 0750 | rwxr‑x‑--- |
+| 007   | 0660 | rw‑rw‑‑‑‑ | 0770 | rwxrwx--- |
+| 002   | 0664 | rw‑rw‑r‑‑ | 0775 | rwxrwxr‑x |
+| 077   | 0600 | rw‑------ | 0700 | rwx------ |
+| 037   | 0630 | rw‑‑‑wx--- | 0740 | rwxr---- |
+| 055   | 0611 | rw‑‑x‑‑x | 0722 | rwx‑w‑‑w‑ |
+| 133   | 0533 | r‑‑‑wx‑wx | 0644 | rwxr‑‑r‑‑ |
 
 ## Detailed calculations
+
 
 Below are the step‑by‑step calculations for each umask, comparing the hand‑calculation (digit‑wise subtraction) and the kernel view (bitwise XOR and AND) for both files and directories.
 
@@ -106,13 +107,13 @@ Below are the step‑by‑step calculations for each umask, comparing the hand�
 
 | Umask | Kernel File (octal) | File (symbolic) | Kernel Dir (octal) | Dir (symbolic) |
 |-------|---------------------|-----------------|--------------------|----------------|
-| 022   | 644 | rw‑r‑‑r‑‑ | 755 | rwxr‑x‑r‑x |
-| 027   | 640 | rw‑r‑‑‑‑‑ | 750 | rwxr‑x‑--- |
-| 007   | 660 | rw‑rw‑‑‑‑ | 770 | rwxrwx--- |
-| 002   | 664 | rw‑rw‑r‑‑ | 775 | rwxrwxr‑x |
-| 077   | 600 | rw‑------ | 700 | rwx------ |
-| 037   | 630 | rw‑‑‑wx--- | 740 | rwxr---- |
-| 055   | 611 | rw‑‑x‑‑x | 722 | rwx‑w‑‑w‑ |
-| 133   | 533 | r‑‑‑wx‑wx | 644 | rwxr‑‑r‑‑ |
+| 022   | 0644 | rw‑r‑‑r‑‑ | 0755 | rwxr‑x‑r‑x |
+| 027   | 0640 | rw‑r‑‑‑‑‑ | 0750 | rwxr‑x‑--- |
+| 007   | 0660 | rw‑rw‑‑‑‑ | 0770 | rwxrwx--- |
+| 002   | 0664 | rw‑rw‑r‑‑ | 0775 | rwxrwxr‑x |
+| 077   | 0600 | rw‑------ | 0700 | rwx------ |
+| 037   | 0630 | rw‑‑‑wx--- | 0740 | rwxr---- |
+| 055   | 0611 | rw‑‑x‑‑x | 0722 | rwx‑w‑‑w‑ |
+| 133   | 0533 | r‑‑‑wx‑wx | 0644 | rwxr‑‑r‑‑ |
 
 Both tables demonstrate that the traditional hand‑calculation yields the same results as the kernel’s bitwise computation.

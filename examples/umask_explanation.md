@@ -102,6 +102,3 @@ Below are the step‑by‑step calculations for each umask, comparing the hand�
 | **File Permissions** | `6‑1=5`, `6‑3=3`, `6‑3=3` → **`0533`** (`r‑‑‑wx‑wx`) | `0666 & 0644` → **`0533`** (`r‑‑‑wx‑wx`) |
 | **Directory Permissions** | `7‑1=6`, `7‑3=4`, `7‑3=4` → **`0644`** (`rwxr‑‑r‑‑`) | `0777 & 0644` → **`0644`** (`rwxr‑‑r‑‑`) |
 
-
-This overview table demonstrates that the traditional hand‑calculation yields the identical resulting permissions as the kernel’s bitwise computation.
-

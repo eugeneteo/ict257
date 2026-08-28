@@ -103,17 +103,5 @@ Below are the step‑by‑step calculations for each umask, comparing the hand�
 | **Directory Permissions** | `7‑1=6`, `7‑3=4`, `7‑3=4` → **`0644`** (`rwxr‑‑r‑‑`) | `0777 & 0644` → **`0644`** (`rwxr‑‑r‑‑`) |
 
 
-## 4. Kernel‑view table (bitwise) – identical to hand‑calc
+This overview table demonstrates that the traditional hand‑calculation yields the identical resulting permissions as the kernel’s bitwise computation.
 
-| Umask | Kernel File (octal) | File (symbolic) | Kernel Dir (octal) | Dir (symbolic) |
-|-------|---------------------|-----------------|--------------------|----------------|
-| 022   | 0644 | rw‑r‑‑r‑‑ | 0755 | rwxr‑x‑r‑x |
-| 027   | 0640 | rw‑r‑‑‑‑‑ | 0750 | rwxr‑x‑--- |
-| 007   | 0660 | rw‑rw‑‑‑‑ | 0770 | rwxrwx--- |
-| 002   | 0664 | rw‑rw‑r‑‑ | 0775 | rwxrwxr‑x |
-| 077   | 0600 | rw‑------ | 0700 | rwx------ |
-| 037   | 0630 | rw‑‑‑wx--- | 0740 | rwxr---- |
-| 055   | 0611 | rw‑‑x‑‑x | 0722 | rwx‑w‑‑w‑ |
-| 133   | 0533 | r‑‑‑wx‑wx | 0644 | rwxr‑‑r‑‑ |
-
-Both tables demonstrate that the traditional hand‑calculation yields the same results as the kernel’s bitwise computation.

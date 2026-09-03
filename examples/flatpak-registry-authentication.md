@@ -65,7 +65,8 @@ not your own:
      flatpaks.registry.redhat.io
 ```
 
-Then install the file with its final permissions in one step:
+Then install the file with its final permissions, and remove the private
+copy:
 
 ```console
 # install -m 644 /root/flatpak-auth.json /etc/flatpak/oci-auth.json

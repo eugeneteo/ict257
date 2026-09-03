@@ -27,9 +27,9 @@ be set).
 - `2` (group) = **write**
 - `4` (other) = **read**
 
-So it finds files where the owner can write and enter/execute, the group can
-write, and others can read — regardless of anything extra like setgid or
-owner-read.
+So it finds files where the owner can write and execute — or enter, if the
+file is a directory — the group can write, and others can read. Extra bits
+such as setgid or owner-read do not disqualify a file.
 
 ### Matches
 

@@ -117,6 +117,8 @@ also lists the `K` and `I` states and the post does not. Read the post for the
 states you can produce yourself, then take the rest from the course table. Most
 of the page is about `ptrace`, which no objective asks for.
 
+One worked example goes with this week: [`examples/flatpak-registry-authentication.md`](examples/flatpak-registry-authentication.md) on persisting Flatpak registry credentials without exposing your personal login.
+
 ## Week 6: System services, network configuration, name resolution and secure remote access
 
 | Page | Why it matters |

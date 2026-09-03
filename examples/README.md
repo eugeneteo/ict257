@@ -16,6 +16,7 @@ The following table lists the available examples and the course sections they su
 | [`group-permissions.md`](group-permissions.md) | RH124 10.07, group permissions and `newgrp` |
 | [`directory-permissions.md`](directory-permissions.md) | RH124 11.01 and 11.05, setgid, the sticky bit and the umask |
 | [`umask_explanation.md`](umask_explanation.md) | RH124 11.05, hand-calc and kernel view of umask permissions |
+| [`flatpak-registry-authentication.md`](flatpak-registry-authentication.md) | RH124 13.01, persisting Flatpak registry credentials safely |
 | [`network-and-firewall-tools.md`](network-and-firewall-tools.md) | RH124 18.01 and RH134 14.01, `nmtui` and `firewall-cmd` |
 | [`shell-startup-files.md`](shell-startup-files.md) | RH134 01.01, shell startup files |
 | [`journal-persistence.md`](journal-persistence.md) | RH134 05.07, preserving the journal |

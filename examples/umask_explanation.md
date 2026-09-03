@@ -30,14 +30,14 @@ The following table provides the resulting file and directory permissions for ei
 
 | Umask | File (octal) | File (symbolic) | Dir (octal) | Dir (symbolic) |
 |-------|--------------|-----------------|-------------|----------------|
-| 022   | 0644 | rw-r--r-- | 0755 | rwxr-x-r-x |
+| 022   | 0644 | rw-r--r-- | 0755 | rwxr-xr-x |
 | 027   | 0640 | rw-r----- | 0750 | rwxr-x--- |
 | 007   | 0660 | rw-rw---- | 0770 | rwxrwx--- |
 | 002   | 0664 | rw-rw-r-- | 0775 | rwxrwxr-x |
 | 077   | 0600 | rw------- | 0700 | rwx------ |
-| 037   | 0640 | rw-r----- | 0740 | rwxr---- |
-| 055   | 0611 | rw---x--x | 0722 | rwx-w--w- |
-| 133   | 0644 | rw-r--r-- | 0644 | rwxr--r-- |
+| 037   | 0640 | rw-r----- | 0740 | rwxr----- |
+| 055   | 0622 | rw--w--w- | 0722 | rwx-w--w- |
+| 133   | 0644 | rw-r--r-- | 0644 | rw-r--r-- |
 
 This overview table demonstrates that the hand-calculation method yields the same resulting permissions as the bitwise operations in the kernel.
 
@@ -53,7 +53,7 @@ The following table shows the calculations for a umask of `022`:
 | :--- | :--- | :--- |
 | **Common Setup** | Default File: `0666`<br>Default Dir: `0777`<br>Umask: `022` | Default File: `0666`<br>Default Dir: `0777`<br>Inverted Mask: `0777 ^ 022 = 0755` |
 | **File Permissions** | `6-0=6`, `6-2=4`, `6-2=4` → **`0644`** (`rw-r--r--`) | `0666 & 0755` → **`0644`** (`rw-r--r--`) |
-| **Directory Permissions** | `7-0=7`, `7-2=5`, `7-2=5` → **`0755`** (`rwxr-x-r-x`) | `0777 & 0755` → **`0755`** (`rwxr-x-r-x`) |
+| **Directory Permissions** | `7-0=7`, `7-2=5`, `7-2=5` → **`0755`** (`rwxr-xr-x`) | `0777 & 0755` → **`0755`** (`rwxr-xr-x`) |
 
 ### 027
 
@@ -103,7 +103,7 @@ The following table shows the calculations for a umask of `037`:
 | :--- | :--- | :--- |
 | **Common Setup** | Default File: `0666`<br>Default Dir: `0777`<br>Umask: `037` | Default File: `0666`<br>Default Dir: `0777`<br>Inverted Mask: `0777 ^ 037 = 0740` |
 | **File Permissions** | `owner: 6-0=6`, `group: 6-3=4(bitwise)`, `others: 6-7 → 0` → **`0640`** (`rw---wx---`) | `0666 & 0740` → **`0640`** (`rw---wx---`) |
-| **Directory Permissions** | `7-0=7`, `7-3=4`, `7-7 → 0` → **`0740`** (`rwxr----`) | `0777 & 0740` → **`0740`** (`rwxr----`) |
+| **Directory Permissions** | `7-0=7`, `7-3=4`, `7-7 → 0` → **`0740`** (`rwxr-----`) | `0777 & 0740` → **`0740`** (`rwxr-----`) |
 
 ### 055
 
@@ -112,7 +112,7 @@ The following table shows the calculations for a umask of `055`:
 | Step / Method | Hand-calc (Digit-wise Subtraction) | Kernel View (Bitwise Operations) |
 | :--- | :--- | :--- |
 | **Common Setup** | Default File: `0666`<br>Default Dir: `0777`<br>Umask: `055` | Default File: `0666`<br>Default Dir: `0777`<br>Inverted Mask: `0777 ^ 055 = 0722` |
-| **File Permissions** | `6-0=6`, `6-5=1`, `6-5=1` → **`0611`** (`rw--x--x`) | `0666 & 0722` → **`0611`** (`rw--x--x`) |
+| **File Permissions** | `owner: 6-0=6`, `group: 6-5=2(bitwise)`, `other: 6-5=2(bitwise)` → **`0622`** (`rw--w--w-`) | `0666 & 0722` → **`0622`** (`rw--w--w-`) |
 | **Directory Permissions** | `7-0=7`, `7-5=2`, `7-5=2` → **`0722`** (`rwx-w--w-`) | `0777 & 0722` → **`0722`** (`rwx-w--w-`) |
 
 ### 133
@@ -122,9 +122,9 @@ The following table shows the calculations for a umask of `133`:
 | Step / Method | Hand-calc (Digit-wise Subtraction) | Kernel View (Bitwise Operations) |
 | :--- | :--- | :--- |
 | **Common Setup** | Default File: `0666`<br>Default Dir: `0777`<br>Umask: `133` | Default File: `0666`<br>Default Dir: `0777`<br>Inverted Mask: `0777 ^ 133 = 0644` |
-| **File Permissions** | `owner: 6-1=6(bitwise)`, `group: 6-3=4(bitwise)`, `other: 6-3=4(bitwise)` → **`0644`** (`r---wx-wx`) | `0666 & 0644` → **`0644`** (`r---wx-wx`) |
-| **Directory Permissions** | `7-1=6`, `7-3=4`, `7-3=4` → **`0644`** (`rwxr--r--`) | `0777 & 0644` → **`0644`** (`rwxr--r--`) |
+| **File Permissions** | `owner: 6-1=6(bitwise)`, `group: 6-3=4(bitwise)`, `other: 6-3=4(bitwise)` → **`0644`** (`rw-r--r--`) | `0666 & 0644` → **`0644`** (`rw-r--r--`) |
+| **Directory Permissions** | `7-1=6`, `7-3=4`, `7-3=4` → **`0644`** (`rw-r--r--`) | `0777 & 0644` → **`0644`** (`rw-r--r--`) |
 
 ### Note: 
-Note on umask rows 037 and 133: the calculation uses bitwise logic (`0666 & ~umask`), not arithmetic subtraction. Since files default to 0666 and have no `x` bit, `umask 3` (which clears `w` and `x`) only removes `w`, leaving `4` (`r`), not `3` (`wx`).
+Note on umask rows 037, 055, and 133: the calculation uses bitwise logic (`0666 & ~umask`), not arithmetic subtraction. Since files default to 0666 and have no `x` bit, umask digits containing the `x` bit (1, 3, 5, 7) do not subtract cleanly. For example, `umask 3` (which clears `w` and `x`) only removes `w` from a file, leaving `4` (`r`), not `3` (`wx`); `umask 5` (which clears `r` and `x`) only removes `r`, leaving `2` (`w`), not `1` (`x`). Directory examples never show this divergence because the default mode `0777` already has every bit set, so digit-wise subtraction and bitwise AND always agree there.
 

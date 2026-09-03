@@ -7,8 +7,8 @@ Flatpak remote). That is RHCSA-2.3.
 
 Credentials for an OCI-based Flatpak remote expire when you log out. Write the
 credentials straight into a location Flatpak reads at startup to keep using
-the remote in later sessions — without ever copying a file that may hold more
-credentials than you intend to publish.
+the remote in later sessions — without copying a file that may hold
+credentials you did not mean to publish.
 
 If the system has an active subscription, no registry credentials are needed
 at all. The steps below are for unsubscribed systems.
@@ -55,12 +55,13 @@ token**: a credential created separately from your personal login, limited to
 registry access, and revocable on its own. Create one before you log in, and
 use its tokens instead of your own username and password.
 
-Log in as root into a private file first, so the credentials never sit
-world-readable while you work:
+Log in as root to a private file first, so the credentials never sit
+world-readable while you work. The username is the service account's name,
+not your own:
 
 ```console
 # podman login --authfile /root/flatpak-auth.json \
-     -u <service-account-username> --password-stdin \
+     -u SERVICE_ACCOUNT_NAME --password-stdin \
      flatpaks.registry.redhat.io
 ```
 

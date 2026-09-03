@@ -33,15 +33,19 @@ owner-read.
 
 ### Matches
 
+Each of these modes sets every bit that `-324` asks for:
+
 | Mode | Why |
 | --- | --- |
 | `0324` (`-wx-w-r--`) | Exactly the required bits, nothing more |
 | `0724` (`rwx-w-r--`) | Owner-read is extra — allowed, the required bits are all there |
 | `0374` (`-wx-wrwx`) | Extra bits on group/other don't disqualify |
-| `2725` (`-wsws-r-x`) | Setgid (2000) + extra bits; required bits all present |
+| `2725` (`rwxwsr-x`) | Setgid (2000) + extra bits; required bits all present |
 | `1777` (`rwxrwxrwx`) | World-writable still matches — it contains `wx-w-r--` |
 
 ### No matches
+
+Each of these modes is missing at least one required bit:
 
 | Mode | Why it fails |
 | --- | --- |
@@ -64,6 +68,8 @@ others — an OR test.
 
 ### Matches
 
+Each of these modes sets at least one bit that `/442` asks for:
+
 | Mode | Why |
 | --- | --- |
 | `0400` (`r--------`) | Owner-read alone satisfies it |
@@ -73,6 +79,8 @@ others — an OR test.
 | `6600` (`rwS-S---`) | Setuid/setgid junk plus owner+group read — matches via the read bits |
 
 ### No matches
+
+Each of these modes sets none of the bits `/442` asks for:
 
 | Mode | Why it fails |
 | --- | --- |

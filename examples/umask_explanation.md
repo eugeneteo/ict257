@@ -102,7 +102,7 @@ The following table shows the calculations for a umask of `037`:
 | Step / Method | Hand-calc (Digit-wise Subtraction) | Kernel View (Bitwise Operations) |
 | :--- | :--- | :--- |
 | **Common Setup** | Default File: `0666`<br>Default Dir: `0777`<br>Umask: `037` | Default File: `0666`<br>Default Dir: `0777`<br>Inverted Mask: `0777 ^ 037 = 0740` |
-| **File Permissions** | `owner: 6-0=6`, `group: 6-3=4(bitwise)`, `others: 6-7 → 0` → **`0640`** (`rw---wx---`) | `0666 & 0740` → **`0640`** (`rw---wx---`) |
+| **File Permissions** | `owner: 6-0=6`, `group: 6-3=4(bitwise)`, `others: 6-7 → 0` → **`0640`** (`rw-r-----`) | `0666 & 0740` → **`0640`** (`rw-r-----`) |
 | **Directory Permissions** | `7-0=7`, `7-3=4`, `7-7 → 0` → **`0740`** (`rwxr-----`) | `0777 & 0740` → **`0740`** (`rwxr-----`) |
 
 ### 055

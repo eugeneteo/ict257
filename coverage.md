@@ -64,7 +64,7 @@ leave out.
 | RHCSA-4.6 | Manage tuning profiles | — | 09.01 | 9 |
 | RHCSA-4.7 | Locate and interpret logs and journals | — | 05.01, 05.03, 05.05 | 8 |
 | RHCSA-4.8 | Preserve system journals | — | 05.07 | 8 |
-| RHCSA-4.9 | Start, stop, check network services | 16.01, 16.03 | — | 5 |
+| RHCSA-4.9 | Start, stop, check network services | 16.01, 16.03 | — | 6 |
 | RHCSA-4.10 | Securely transfer files | — | 08.01, 08.03 | 9 |
 
 ## 5. Configure local storage
@@ -93,7 +93,7 @@ leave out.
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
 | RHCSA-7.1 | `at`, `cron`, systemd timer units | — | 03.01, 03.03, 04.01, 04.03, 04.05 | 7, 8 |
-| RHCSA-7.2 | Services and enabling them at boot | 16.01, 16.03 | — | 5 |
+| RHCSA-7.2 | Services and enabling them at boot | 16.01, 16.03 | — | 6 |
 | RHCSA-7.3 | Boot into a specific target automatically | — | 12.03 | 10 |
 | RHCSA-7.4 | Configure time service clients | — | 05.09 | 8 |
 | RHCSA-7.5 | Install and update from CDN, repo, local file | 04.01, 12.03, 12.05 | — | 2, 4 |
@@ -105,7 +105,7 @@ leave out.
 | --- | --- | --- | --- | --- |
 | RHCSA-8.1 | IPv4 and IPv6 addresses | 17.01, 17.03, 18.01, 18.03 | — | 6 |
 | RHCSA-8.2 | Hostname resolution | 18.05 | — | 6 |
-| RHCSA-8.3 | Network services automatic at boot | 16.01, 16.03 | — | 5 |
+| RHCSA-8.3 | Network services automatic at boot | 16.01, 16.03 | — | 6 |
 | RHCSA-8.4 | Restrict access with `firewalld` | — | 14.01 | 11 |
 
 ## 9. Manage users and groups

@@ -24,7 +24,7 @@ Explaining a solution is how you find out whether you understood it.
 | 4 | [The bottle marked drink me, and where it came from](#4-the-bottle-marked-drink-me-and-where-it-came-from) | week 4 | Moderate | RHCSA-2.1, 2.2, 7.5 | `lab start software-dnf` |
 | 5 | [A cake marked eat me, for one guest only](#5-a-cake-marked-eat-me-for-one-guest-only) | week 4 | Doable | RHCSA-2.3, 2.4 | `lab start flatpak-configure` |
 | 6 | [Clean cup, move down](#6-clean-cup-move-down) | week 5 | Moderate | RHCSA-6.5, 1.8, 1.9, 1.10 | `lab start perms-cli` |
-| 7 | [The White Rabbit must not be late](#7-the-white-rabbit-must-not-be-late) | week 5 | Doable | RHCSA-7.2, 4.9, 8.3 | `lab start services-identify` |
+| 7 | [The White Rabbit must not be late](#7-the-white-rabbit-must-not-be-late) | week 6 | Doable | RHCSA-7.2, 4.9, 8.3 | `lab start services-identify` |
 | 8 | [Who are you, said the Caterpillar](#8-who-are-you-said-the-caterpillar) | week 6 | Doable | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` |
 | 9 | [Two, Five and Seven paint the roses](#9-two-five-and-seven-paint-the-roses) | week 7 | Moderate | RHCSA-3.3, 3.1, 3.2, 3.4 | `lab start scripts-loops` |
 | 10 | [One card in the whole pack](#10-one-card-in-the-whole-pack) | week 7 | Doable | RHCSA-1.3, 1.7, 1.11 | `lab start regexes-regex` |

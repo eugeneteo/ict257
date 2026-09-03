@@ -105,19 +105,29 @@ in the lab environment and watch it do nothing.
 
 One worked example goes with this week: [`examples/directory-permissions.md`](examples/directory-permissions.md) on what setgid, the sticky bit and the umask do to a shared directory.
 
-## Week 5: File systems, locating files, processes and system services
+## Week 5: File systems, locating files and processes
 
 | Page | Why it matters |
 | --- | --- |
 | [Linux process states](https://idea.popcount.org/2012-12-11-linux-process-states/) | Stops a process from the shell and shows the state letter change in `ps`. Afterwards the `STAT` column of `ps aux` reports something you have watched happen. RHCSA-4.4 |
-| [systemd "static" unit file state](https://bbs.archlinux.org/viewtopic.php?id=147964) | Answers why some units refuse to be enabled. A unit with no `[Install]` section gives `systemctl` nowhere to put the symlink. RHCSA-7.2 |
-| [What is the difference between `systemctl mask` and `systemctl disable`?](https://askubuntu.com/questions/816285/what-is-the-difference-between-systemctl-mask-and-systemctl-disable) | Both look like off and they are not the same. A disabled unit still starts when something else pulls it in. A masked unit cannot start at all. RHCSA-7.2, RHCSA-4.9 |
 
 The process states post is from 2012 and it still holds, because the kernel
 state names have not moved. It stops short of the full picture. RH124 15.01
 also lists the `K` and `I` states and the post does not. Read the post for the
 states you can produce yourself, then take the rest from the course table. Most
 of the page is about `ptrace`, which no objective asks for.
+
+## Week 6: System services, network configuration, name resolution and secure remote access
+
+| Page | Why it matters |
+| --- | --- |
+| [systemd "static" unit file state](https://bbs.archlinux.org/viewtopic.php?id=147964) | Answers why some units refuse to be enabled. A unit with no `[Install]` section gives `systemctl` nowhere to put the symlink. RHCSA-7.2 |
+| [What is the difference between `systemctl mask` and `systemctl disable`?](https://askubuntu.com/questions/816285/what-is-the-difference-between-systemctl-mask-and-systemctl-disable) | Both look like off and they are not the same. A disabled unit still starts when something else pulls it in. A masked unit cannot start at all. RHCSA-7.2, RHCSA-4.9 |
+| [RFC 1122](https://datatracker.ietf.org/doc/html/rfc1122) | The document RH124 17.01 names when it defines the four-layer model. Read section 1.1.3 and you will see where the layer names came from and who assigned them. RHCSA-8.1 |
+| [How the TCP/IP Protocols Handle Data Communications](https://docs.oracle.com/cd/E18752_01/html/816-4554/ipov-29.html) | Follows one packet down the sending stack and back up the receiving one. Encapsulation stops being a word and becomes a sequence you can recite. RHCSA-8.1 |
+| [Benefits of IPv6](https://www.catchpoint.com/benefits-of-ipv6) | Explains why RHEL 10 brings up IPv6 alongside IPv4 without being asked, and where a link-local address comes from. RHCSA-8.1 |
+| [Why Authentication Using SSH Public Key is Better than Using Password and How Do They Work?](https://runcloud.io/blog/ssh-public-key-authentication) | Sets out why a key pair beats a password before you type `ssh-keygen`. Afterwards you know which half of the pair is safe to copy to a server. RHCSA-10.3 |
+| [OpenSSH: ssh-add / ssh-agent Command Set Maximum Lifetime In Seconds](https://www.cyberciti.biz/faq/unix-linux-appleosx-bsd-ssh-add-agent-command-set-lifetime/) | RH124 19.03 caches your passphrase until you log out. This shows how to expire it sooner with `-t`, and why you would want to. RHCSA-10.3, RHCSA-1.4 |
 
 The forum answers need a filter. In the Arch thread the correct answer is post
 5, not post 3. Static does not mean enabled by something else. It means the
@@ -136,16 +146,6 @@ that names every field, and its `chronyd` example is the one to study. The
 is what a service that forks looks like. Answers online tend to say that the
 main process is whatever `ExecStart` named, and that example shows why the
 short version is not safe.
-
-## Week 6: Network configuration, name resolution and secure remote access
-
-| Page | Why it matters |
-| --- | --- |
-| [RFC 1122](https://datatracker.ietf.org/doc/html/rfc1122) | The document RH124 17.01 names when it defines the four-layer model. Read section 1.1.3 and you will see where the layer names came from and who assigned them. RHCSA-8.1 |
-| [How the TCP/IP Protocols Handle Data Communications](https://docs.oracle.com/cd/E18752_01/html/816-4554/ipov-29.html) | Follows one packet down the sending stack and back up the receiving one. Encapsulation stops being a word and becomes a sequence you can recite. RHCSA-8.1 |
-| [Benefits of IPv6](https://www.catchpoint.com/benefits-of-ipv6) | Explains why RHEL 10 brings up IPv6 alongside IPv4 without being asked, and where a link-local address comes from. RHCSA-8.1 |
-| [Why Authentication Using SSH Public Key is Better than Using Password and How Do They Work?](https://runcloud.io/blog/ssh-public-key-authentication) | Sets out why a key pair beats a password before you type `ssh-keygen`. Afterwards you know which half of the pair is safe to copy to a server. RHCSA-10.3 |
-| [OpenSSH: ssh-add / ssh-agent Command Set Maximum Lifetime In Seconds](https://www.cyberciti.biz/faq/unix-linux-appleosx-bsd-ssh-add-agent-command-set-lifetime/) | RH124 19.03 caches your passphrase until you log out. This shows how to expire it sooner with `-t`, and why you would want to. RHCSA-10.3, RHCSA-1.4 |
 
 RFC 1122 is long and it is a requirements document, not a tutorial. Read the
 layering section and stop. Nine later RFCs update it, so treat any detail

@@ -117,7 +117,7 @@ also lists the `K` and `I` states and the post does not. Read the post for the
 states you can produce yourself, then take the rest from the course table. Most
 of the page is about `ptrace`, which no objective asks for.
 
-## Week 6: System services, network configuration, name resolution and secure remote access
+## Week 6: System services, network addressing, name resolution and secure remote access
 
 | Page | Why it matters |
 | --- | --- |

@@ -105,7 +105,11 @@ in the lab environment and watch it do nothing.
 
 One worked example goes with this week: [`examples/directory-permissions.md`](examples/directory-permissions.md) on what setgid, the sticky bit and the umask do to a shared directory.
 
-## Week 5: File systems, locating files and processes
+## Week 5: Software repositories, Flatpak applications and removable media
+
+Two worked examples go with this week: [`examples/find-perm-modes.md`](examples/find-perm-modes.md) on `find -perm` octal modes with `-` and `/` prefixes, and [`examples/flatpak-registry-authentication.md`](examples/flatpak-registry-authentication.md) on persisting Flatpak registry credentials without exposing your personal login.
+
+## Week 6: Processes, system services, network configuration, name resolution and secure remote access
 
 | Page | Why it matters |
 | --- | --- |
@@ -116,10 +120,6 @@ state names have not moved. It stops short of the full picture. RH124 15.01
 also lists the `K` and `I` states and the post does not. Read the post for the
 states you can produce yourself, then take the rest from the course table. Most
 of the page is about `ptrace`, which no objective asks for.
-
-Two worked examples go with this week: [`examples/find-perm-modes.md`](examples/find-perm-modes.md) on `find -perm` octal modes with `-` and `/` prefixes, and [`examples/flatpak-registry-authentication.md`](examples/flatpak-registry-authentication.md) on persisting Flatpak registry credentials without exposing your personal login.
-
-## Week 6: System services, network configuration, name resolution and secure remote access
 
 | Page | Why it matters |
 | --- | --- |

@@ -59,7 +59,7 @@ leave out.
 | RHCSA-4.1 | Boot, reboot, shut down normally | — | 12.03 | 10 |
 | RHCSA-4.2 | Boot into different targets manually | — | 12.03 | 10 |
 | RHCSA-4.3 | Interrupt the boot process | — | 12.01, 12.05, 13.01 | 10, 11 |
-| RHCSA-4.4 | Identify heavy processes and kill them | 15.01, 15.03, 15.05, 15.07 | — | 5 |
+| RHCSA-4.4 | Identify heavy processes and kill them | 15.01, 15.03, 15.05, 15.07 | — | 6 |
 | RHCSA-4.5 | Adjust process scheduling | — | 09.03 | 9 |
 | RHCSA-4.6 | Manage tuning profiles | — | 09.01 | 9 |
 | RHCSA-4.7 | Locate and interpret logs and journals | — | 05.01, 05.03, 05.05 | 8 |

@@ -96,7 +96,7 @@ leave out.
 | RHCSA-7.2 | Services and enabling them at boot | 16.01, 16.03 | — | 6 |
 | RHCSA-7.3 | Boot into a specific target automatically | — | 12.03 | 10 |
 | RHCSA-7.4 | Configure time service clients | — | 05.09 | 8 |
-| RHCSA-7.5 | Install and update from CDN, repo, local file | 04.01, 12.03, 12.05 | — | 2, 4 |
+| RHCSA-7.5 | Install and update from CDN, repo, local file | 04.01, 12.03, 12.05 | — | 2, 4, 5 |
 | RHCSA-7.6 | Modify the system bootloader | — | 12.01 | 10 |
 
 ## 8. Manage basic networking

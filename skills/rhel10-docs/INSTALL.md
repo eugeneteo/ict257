@@ -2,8 +2,8 @@
 
 The repository ships an assistant skill, `skills/rhel10-docs/`, that makes
 your coding agent answer RHEL 10 questions from official Red Hat
-documentation only, with a citation on every claim. It is one directory
-holding a single `SKILL.md`, so the same file works in every tool; only the
+documentation only, with a citation on every claim. The skill is one
+prompt-only `SKILL.md`, so the same file works in every tool; only the
 install location differs.
 
 First, get the repo:

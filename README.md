@@ -17,7 +17,7 @@ Use these materials to prepare for the ICT257 Red Hat System Administration cour
 | [`resources.md`](resources.md) | Resources for preparing beyond the courseware |
 | [`planner/`](planner/) | A study planner with revision dates |
 | [`exam-day.md`](exam-day.md) | What the exam environment is like on the day |
-| [`skills/rhel10-docs/`](skills/rhel10-docs/INSTALL.md) | An assistant skill that makes your AI assistant answer RHEL 10 questions from Red Hat docs only — install steps for Claude Code, Antigravity, Codex, and GitHub Copilot |
+| [`skills/rhel10-docs/`](skills/rhel10-docs/) | A skill that makes your AI assistant answer RHEL 10 questions from Red Hat docs only — see [`INSTALL.md`](skills/rhel10-docs/INSTALL.md) for Claude Code, Antigravity, Codex, and GitHub Copilot |
 
 ## Get the material
 

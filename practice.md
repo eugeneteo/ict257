@@ -22,7 +22,7 @@ Explaining a solution is how you find out whether you understood it.
 | 2 | [A small door, and one sentence from the Queen](#2-a-small-door-and-one-sentence-from-the-queen) | week 4 | Moderate | RHCSA-9.4, 9.1, 9.3, 9.2 | `lab start users-password` |
 | 3 | [Everybody has won, and all must have prizes](#3-everybody-has-won-and-all-must-have-prizes) | week 4 | Doable | RHCSA-10.2, 1.10 | `lab start perms-default` |
 | 4 | [The bottle marked drink me, and where it came from](#4-the-bottle-marked-drink-me-and-where-it-came-from) | week 4 | Moderate | RHCSA-2.1, 2.2, 7.5 | `lab start software-dnf` |
-| 5 | [A cake marked eat me, for one guest only](#5-a-cake-marked-eat-me-for-one-guest-only) | week 4 | Doable | RHCSA-2.3, 2.4 | `lab start flatpak-configure` |
+| 5 | [A cake marked eat me, for one guest only](#5-a-cake-marked-eat-me-for-one-guest-only) | week 5 | Doable | RHCSA-2.3, 2.4 | `lab start flatpak-configure` |
 | 6 | [Clean cup, move down](#6-clean-cup-move-down) | week 5 | Moderate | RHCSA-6.5, 1.8, 1.9, 1.10 | `lab start perms-cli` |
 | 7 | [The White Rabbit must not be late](#7-the-white-rabbit-must-not-be-late) | week 6 | Doable | RHCSA-7.2, 4.9, 8.3 | `lab start services-identify` |
 | 8 | [Who are you, said the Caterpillar](#8-who-are-you-said-the-caterpillar) | week 6 | Doable | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` |

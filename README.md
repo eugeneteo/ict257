@@ -17,7 +17,7 @@ Use these materials to prepare for the ICT257 Red Hat System Administration cour
 | [`resources.md`](resources.md) | Resources for preparing beyond the courseware |
 | [`planner/`](planner/) | A study planner with revision dates |
 | [`exam-day.md`](exam-day.md) | What the exam environment is like on the day |
-| [`skills/rhel10-docs/`](skills/rhel10-docs/) | A skill that makes your AI assistant answer RHEL 10 questions from Red Hat docs only — see [`INSTALL.md`](skills/rhel10-docs/INSTALL.md) for Claude Code, Antigravity, Codex, and GitHub Copilot |
+| [`skills/rhel10-docs/`](skills/rhel10-docs/) | A skill that makes your AI assistant answer RHEL 10 questions from Red Hat docs only — see [`INSTALL.md`](skills/rhel10-docs/INSTALL.md) to install it in Claude Code, Antigravity, Codex, or GitHub Copilot |
 
 ## Get the material
 
@@ -62,6 +62,6 @@ git switch main
 
 ## License
 
-The writing in this repository is licensed under [CC BY-SA 4.0](LICENSE). You may use, modify, and share it as long as you provide attribution and share any derivative works under the same license. The [`skills/rhel10-docs/`](skills/rhel10-docs/) skill is an exception: it carries its own [GPL-3.0](skills/rhel10-docs/LICENSE) licence.
+The writing in this repository is licensed under [CC BY-SA 4.0](LICENSE). You may use, modify, and share it as long as you provide attribution and share any derivative works under the same licence. The [`skills/rhel10-docs/`](skills/rhel10-docs/) skill is an exception: it carries its own [GPL-3.0](skills/rhel10-docs/LICENSE) licence.
 
 Red Hat's exam objectives and quoted text belong to Red Hat and appear here with attribution and links to the source. Red Hat, RHCSA, and the certification names are Red Hat trademarks.

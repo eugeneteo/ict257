@@ -15,7 +15,7 @@ The following table lists the available examples and the course sections they su
 | [`password-records.md`](password-records.md) | RH124 10.05 and 10.09, password hashes and account defaults |
 | [`group-permissions.md`](group-permissions.md) | RH124 10.07, group permissions and `newgrp` |
 | [`directory-permissions.md`](directory-permissions.md) | RH124 11.01 and 11.05, setgid, the sticky bit and the umask |
-| [`umask_explanation.md`](umask_explanation.md) | RH124 11.05, hand-calc and kernel view of umask permissions |
+| [`umask-explanation.md`](umask-explanation.md) | RH124 11.05, hand-calc and kernel view of umask permissions |
 | [`flatpak-registry-authentication.md`](flatpak-registry-authentication.md) | RH124 13.01, persisting Flatpak registry credentials safely |
 | [`find-perm-modes.md`](find-perm-modes.md) | RH124 14.05, `find -perm` octal modes with `-` and `/` prefixes |
 | [`network-and-firewall-tools.md`](network-and-firewall-tools.md) | RH124 18.01 and RH134 14.01, `nmtui` and `firewall-cmd` |

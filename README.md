@@ -62,6 +62,6 @@ git switch main
 
 ## License
 
-The writing in this repository is licensed under [CC BY-SA 4.0](LICENSE). You may use, modify, and share it as long as you provide attribution and share any derivative works under the same licence. The [`skills/rhel10-docs/`](skills/rhel10-docs/) skill is an exception: it carries its own [GPL-3.0](skills/rhel10-docs/LICENSE) licence.
+The writing in this repository is licensed under [CC BY-SA 4.0](LICENSE). You may use, modify, and share it as long as you provide attribution and share any derivative works under the same licence. The [`skills/rhel10-docs/`](skills/rhel10-docs/) skill is an exception: it is licensed under [GPL-3.0](skills/rhel10-docs/LICENSE).
 
 Red Hat's exam objectives and quoted text belong to Red Hat and appear here with attribution and links to the source. Red Hat, RHCSA, and the certification names are Red Hat trademarks.

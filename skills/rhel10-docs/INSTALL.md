@@ -85,6 +85,39 @@ group work. VS Code and GitHub Copilot CLI both honor this file.
 
 ---
 
+## Renaming the skill
+
+You can rename the skill to whatever you like — for example `redhat-docs`
+or `my-rhel10`. Rename **both** the directory and the `name:` line at the
+top of `SKILL.md`, and keep the two identical:
+
+```sh
+mv ~/.claude/skills/rhel10-docs ~/.claude/skills/redhat-docs
+```
+
+```yaml
+---
+name: redhat-docs
+---
+```
+
+Notes by install type:
+
+- **Claude Code / Antigravity**: the skill is invoked and listed by the
+  `name:` field, so that is the line that matters. Renaming the directory
+  keeps things tidy, and for Antigravity the symlink name should match
+  too.
+- **Codex / GitHub Copilot**: you point at the file, so change the heading
+  in your `AGENTS.md` or `copilot-instructions.md` block, and the path if
+  you moved the file. Nothing inside `SKILL.md` needs to change for these
+  tools, but renaming both anyway keeps the skill consistent wherever you
+  install it.
+
+Avoid spaces and uppercase in the name; letters, digits, and hyphens are
+safe everywhere.
+
+---
+
 ## Verify the install
 
 In any tool, ask:

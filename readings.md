@@ -82,7 +82,7 @@ Check `/etc/login.defs` yourself and see.
 That site sits behind a bot check, so it may ask you to prove you are a person
 before it loads.
 
-Three worked examples go with this week: [`examples/password-records.md`](examples/password-records.md) on password hashes and account defaults, [`examples/sudoers.md`](examples/sudoers.md) on reading a sudoers rule, and [`examples/streams.md`](examples/streams.md) on streams and redirection.
+Four worked examples go with this week: [`examples/password-records.md`](examples/password-records.md) on password hashes and account defaults, [`examples/sudoers.md`](examples/sudoers.md) on reading a sudoers rule, [`examples/streams.md`](examples/streams.md) on streams and redirection, and [`examples/group-permissions.md`](examples/group-permissions.md) on a shared group directory and refreshing membership with `newgrp`.
 
 ## Week 4: File permissions, RPM packages and Flatpak applications
 

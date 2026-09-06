@@ -39,9 +39,9 @@ Each of these modes sets every bit that `-324` asks for:
 | --- | --- |
 | `0324` (`-wx-w-r--`) | Exactly the required bits, nothing more |
 | `0724` (`rwx-w-r--`) | Owner-read is extra — allowed, the required bits are all there |
-| `0374` (`-wx-wrwx`) | Extra bits on group/other don't disqualify |
-| `2725` (`rwxwsr-x`) | Setgid (2000) + extra bits; required bits all present |
-| `1777` (`rwxrwxrwx`) | World-writable still matches — it contains `wx-w-r--` |
+| `0374` (`-wxrwxr--`) | Extra bits on group/other don't disqualify |
+| `2725` (`rwx-wSr-x`) | Setgid (2000) + extra bits; required bits all present |
+| `1777` (`rwxrwxrwt`) | World-writable still matches — it contains `wx-w-r--` |
 
 ### No matches
 
@@ -73,10 +73,10 @@ Each of these modes sets at least one bit that `/442` asks for:
 | Mode | Why |
 | --- | --- |
 | `0400` (`r--------`) | Owner-read alone satisfies it |
-| `0040` (`----r-----`) | Group-read alone satisfies it |
+| `0040` (`---r-----`) | Group-read alone satisfies it |
 | `0002` (`-------w-`) | Other-write alone satisfies it |
 | `0444` (`r--r--r--`) | Both read bits set |
-| `6600` (`rwS-S---`) | Setuid/setgid junk plus owner+group read — matches via the read bits |
+| `6660` (`rwSrwS---`) | Setuid/setgid junk plus owner+group read — matches via the read bits |
 
 ### No matches
 
@@ -85,9 +85,9 @@ Each of these modes sets none of the bits `/442` asks for:
 | Mode | Why it fails |
 | --- | --- |
 | `0200` (`-w-------`) | Only owner-write; none of owner-read / group-read / other-write present |
-| `0030` (`---wx----`) | Group has write+execute but not **read** |
+| `0030` (`----wx---`) | Group has write+execute but not **read** |
 | `0211` (`-w---x--x`) | Owner-write only; group lacks read; other lacks write |
-| `0000` (`----------`) | No bits at all |
+| `0000` (`---------`) | No bits at all |
 | `0020` (`----w----`) | Group-write only — group **read** is what `/442` asks for |
 
 ## The mental model

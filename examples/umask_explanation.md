@@ -4,7 +4,7 @@ This guide explains how to calculate file and directory permissions when a umask
 
 ## 1. Hand-calculation method (digit-wise subtraction)
 
-For files, the default permission mode is `0666` (rw-rw-rw-). For directories, the default permission mode is `0777` (rwx-rwx-rwx-).
+For files, the default permission mode is `0666` (rw-rw-rw-). For directories, the default permission mode is `0777` (rwxrwxrwx).
 
 The hand-calculation method subtracts each octal digit of the umask from the corresponding digit of the default permission mode. The calculation prevents any resulting digit from dropping below zero:
 

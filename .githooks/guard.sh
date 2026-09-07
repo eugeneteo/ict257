@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-only
+# This file is part of ict257 <https://github.com/eugeneteo/ict257>,
+# licensed under the GNU General Public License v3.0. See the LICENSE
+# file in skills/rhel10-docs/ or <https://www.gnu.org/licenses/gpl-3.0.html>.
 # Shared guard used by the pre-commit and pre-push hooks.
 #
 # check_paths <label> <file-with-NUL-or-newline-separated-paths>

@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 """Build the ICT257 study planner spreadsheet.
 
+SPDX-License-Identifier: GPL-3.0-only
+This file is part of ict257 <https://github.com/eugeneteo/ict257>, licensed
+under the GNU General Public License v3.0. See the LICENSE file in
+skills/rhel10-docs/ or <https://www.gnu.org/licenses/gpl-3.0.html>.
+
 Run from the repository root:
 
     python3 planner/build.py

@@ -18,8 +18,8 @@ cd ict257
 Tools that support the [Agent Skills](https://agentskills.io) format
 (`SKILL.md` folders) read the skill from a skills directory, so a **symlink**
 into this checkout is enough — and a later `git pull` here updates the skill
-everywhere at once. A plain copy (`cp -r`) also works but will not track
-updates; use it if you plan to delete this checkout after installing.
+everywhere at once. A plain copy (`cp -r`) also works, but it will not track
+updates. Choose a copy if you plan to delete this checkout after installing.
 
 - **Claude Code** — skills directory `~/.claude/skills/` (or per-project
   `.claude/skills/`).
@@ -45,7 +45,7 @@ ln -s "$(pwd)/skills/rhel10-docs" ~/.claude/skills/rhel10-docs
 Restart Claude Code (or start a new session) and verify with the `/skills`
 command — `rhel10-docs` should be listed.
 
-Copy instead of symlink, or install for one project only, if you prefer:
+If you prefer, copy instead of symlinking, or install for one project only:
 
 ```sh
 cp -r skills/rhel10-docs ~/.claude/skills/        # snapshot copy
@@ -77,11 +77,11 @@ mkdir -p .github/skills
 ln -s /absolute/path/to/ict257/skills/rhel10-docs .github/skills/rhel10-docs
 ```
 
-Committing the symlink to the project repo means the rule applies for every
-collaborator automatically — use this for group work. If a collaborator's
-checkout has the symlink pointing at a path that does not exist on their
-machine, they should re-create it with the command above using their own
-clone path, or copy the folder instead:
+Commit the symlink to the project repo and it works for every collaborator
+automatically — do this for group work. A symlink committed with your path
+will be broken on anyone else's machine. Each collaborator then re-creates
+it with the command above, using their own clone path, or copies the folder
+instead:
 
 ```sh
 cp -r /absolute/path/to/ict257/skills/rhel10-docs .github/skills/rhel10-docs

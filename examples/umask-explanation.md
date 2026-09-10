@@ -16,7 +16,7 @@ The three resulting digits form the final octal permission value.
 
 ## 2. Kernel-view method (bitwise operations)
 
-The operating system kernel computes final permissions by inverting the umask bits and performing a bitwise AND operation with the default mode:
+The operating system kernel computes final permissions by inverting the umask bits and ANDing them with the default mode:
 
 ```
 final_perm = default_mode & (~umask)
@@ -26,7 +26,7 @@ Because inverting the umask bits within the nine permission bits is equivalent t
 
 ## 3. Overview table of umask examples
 
-The following table provides the resulting file and directory permissions for eight common umask values:
+The table below lists the resulting file and directory permissions for eight common umask values:
 
 | Umask | File (octal) | File (symbolic) | Dir (octal) | Dir (symbolic) |
 |-------|--------------|-----------------|-------------|----------------|
@@ -39,11 +39,11 @@ The following table provides the resulting file and directory permissions for ei
 | 055   | 0622 | rw--w--w- | 0722 | rwx-w--w- |
 | 133   | 0644 | rw-r--r-- | 0644 | rw-r--r-- |
 
-This overview table demonstrates that the hand-calculation method yields the same resulting permissions as the bitwise operations in the kernel.
+The hand-calculation method gives the same permissions as the bitwise operations in the kernel.
 
 ## Detailed calculations
 
-This section provides step-by-step calculations for each umask value. Each example compares digit-wise subtraction with bitwise XOR and AND operations.
+This section works through each umask value step by step, comparing digit-wise subtraction with bitwise XOR and AND.
 
 ### 022
 

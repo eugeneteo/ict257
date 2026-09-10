@@ -4,7 +4,7 @@ These examples supplement RH124 chapter 3, section 1 (using man pages). Finding 
 
 ## What you will learn
 
-Manual pages use both a name and a section number to identify the correct documentation. When multiple pages share the same name, you need to specify which section you want to avoid reading the wrong documentation.
+Manual pages use both a name and a section number to identify the correct documentation. When multiple pages share the same name, specify the section, or you will read the wrong one.
 
 ```
 [student@workstation ~]$ man -k ^passwd | cut -d' ' -f1,2

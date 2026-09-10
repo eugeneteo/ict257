@@ -9,8 +9,7 @@ Use this routine for changes that must survive a reboot.
 - **Persistent form, not the runtime one.** One command and a flag decides
   whether the change survives a reboot.
 - **Reload, or run whatever the second command is.** Two commands, and the
-  first alone might not reflect the change or the change might not be
-  persistent.
+  first alone might not reflect the change or make it persistent.
 
 ## Use the persistent form
 

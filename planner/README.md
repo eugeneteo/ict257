@@ -9,7 +9,7 @@ LibreOffice Calc, Numbers or Google Sheets.
 
 ## What you set
 
-One cell. On the **Start here** sheet, put in the date of your week 1 class.
+One cell. On the **Start here** sheet, enter the date of your week 1 class.
 Every other date in the workbook follows from it, including the exam date and
 the revision dates for the chapters. The 39 teaching chapters carry two
 revision dates each. The two course prefaces carry none, and the two

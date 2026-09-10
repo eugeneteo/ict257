@@ -77,11 +77,11 @@ mkdir -p .github/skills
 ln -s /absolute/path/to/ict257/skills/rhel10-docs .github/skills/rhel10-docs
 ```
 
-Commit the symlink to the project repo and it works for every collaborator
-automatically — do this for group work. A symlink committed with your path
-will be broken on anyone else's machine. Each collaborator then re-creates
-it with the command above, using their own clone path, or copies the folder
-instead:
+Commit the symlink and it works for every collaborator automatically — but
+only if their checkout sits at the same absolute path as yours. If it does
+not, the symlink is broken on their machine; each collaborator then
+re-creates it with the command above, using their own clone path, or copies
+the folder instead:
 
 ```sh
 cp -r /absolute/path/to/ict257/skills/rhel10-docs .github/skills/rhel10-docs

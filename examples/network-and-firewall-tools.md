@@ -4,7 +4,7 @@ These examples supplement RH124 chapter 18, section 1 (configuring network conne
 
 ## What you will learn
 
-Use `nmtui` for safer network configuration edits, and understand how `firewall-cmd` applies rules permanently versus temporarily.
+Use `nmtui` for safer network configuration edits, and understand how `firewall-cmd` separates permanent rules from temporary ones.
 
 ```
 [root@rhel ~]# nmtui

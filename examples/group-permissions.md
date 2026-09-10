@@ -28,7 +28,7 @@ Expected output (the GID may differ):
 ict257:x:1001:
 ```
 
-**Note:** An alternative method is `getent group ict257`, which returns the same output. This is shown for reference only and you do not need to run it.
+**Note:** Alternatively, `getent group ict257` returns the same output. It is shown for reference only and you do not need to run it.
 
 ### Step 2: Create two student users
 
@@ -87,7 +87,7 @@ Set both owner and group ownership on the folder:
 sudo chown root:ict257 /home/ict257-shared
 ```
 
-**Note:** Always use the `user:group` format when setting ownership. The shorthand `:group` syntax is prone to typos and mistakes.
+**Note:** Always use the `user:group` format when setting ownership. The shorthand `:group` syntax is prone to typos.
 
 Verify the ownership:
 
@@ -125,7 +125,7 @@ The permission string `rwxrwx---` confirms that owner and group can read, write,
 
 ### Step 7: Set the setgid bit so new files inherit the group
 
-Set the setgid bit on the directory. The `g+s` command sets a special permission bit that makes new files and subdirectories created inside this directory automatically inherit the group ownership from the parent directory, rather than taking the creator's primary group.
+Set the setgid bit on the directory. The `g+s` command sets a special permission bit so that new files and subdirectories created inside this directory inherit its group instead of the creator's primary group.
 
 Without this step, when student1 creates a file, it would be owned by `student1:student1`. With setgid, the file becomes `student1:ict257`, allowing all group members to modify it. The inheritance happens regardless of which groups are active in the creator's session, as Step 8 shows.
 
@@ -145,11 +145,11 @@ Expected output:
 drwxrws--- 2 root ict257 4096 Aug 23 12:00 /home/ict257-shared
 ```
 
-The `s` in the group permissions (where you would normally see `x` or `-`) indicates the setgid bit is active. This means new files will automatically be owned by the ict257 group.
+The `s` in the group permissions (where you would normally see `x` or `-`) indicates the setgid bit is active. New files will be owned by the ict257 group.
 
 **Note:** You will learn more about setgid and special permission bits in RH124 Chapter 11, Controlling Access to Files.
 
-**Why `newgrp` is needed:** Step 8 adds the users to the `ict257` group while one of them is already logged in, and a shell started before that change doesn’t see the new membership. `newgrp ict257` switches the primary group of the running shell to `ict257`, activating the membership without logging out. This step demonstrates how to refresh group membership in an active session.
+**Why `newgrp` is needed:** Step 8 adds the users to the `ict257` group while one of them is already logged in, and a shell started before that change doesn't see the new membership. `newgrp ict257` switches the primary group of the running shell to `ict257`, activating the membership without logging out.
 
 ### Step 8: Create the report file as one of the group members
 
@@ -395,7 +395,7 @@ Exit the student3 shell:
 exit
 ```
 
-The permission restrictions work correctly: only members of the ict257 group can access the shared folder and its files.
+Only members of the ict257 group can access the shared folder and its files.
 
 ## Cleanup
 

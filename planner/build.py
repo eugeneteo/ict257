@@ -129,7 +129,7 @@ NOTES = {
     ("RH124", 0): "Sections 00.02 and 00.03 only. They cover the lab environment and the exercise types.",
     ("RH124", 1): "Context, not a skill. No objective matches it.",
     ("RH124", 5): "Brought forward into week 1 so you have the assistant from the start. You will not have it in the exam.",
-    ("RH124", 20): "Five review labs. Open to you from week 6, so start earlier if you can.",
+    ("RH124", 20): "Five review labs. Open to you from week 7, so start earlier if you can.",
     ("RH134", 0): "Not scheduled. It orients you to a self-paced Red Hat course. Skim it and move on.",
     ("RH134", 6): "Hardest third of the module starts here. Weeks 9 to 11 deserve the most revision time.",
     ("RH134", 16): "No objective matches it. Cover the chapters the exam asks for first.",
@@ -148,7 +148,7 @@ PRACTICE = [
     (5, "A cake marked eat me, for one guest only", 4, "Doable", "RHCSA-2.3, 2.4", "lab start flatpak-configure"),
     (6, "Clean cup, move down", 5, "Moderate", "RHCSA-6.5, 1.8, 1.9, 1.10", "lab start perms-cli"),
     (7, "The White Rabbit must not be late", 5, "Doable", "RHCSA-7.2, 4.9, 8.3", "lab start services-identify"),
-    (8, "Who are you, said the Caterpillar", 6, "Doable", "RHCSA-10.3, 1.4", "lab start ssh-keyauth"),
+    (8, "Who are you, said the Caterpillar", 7, "Doable", "RHCSA-10.3, 1.4", "lab start ssh-keyauth"),
     (9, "Two, Five and Seven paint the roses", 7, "Moderate", "RHCSA-3.3, 3.1, 3.2, 3.4", "lab start scripts-loops"),
     (10, "One card in the whole pack", 7, "Doable", "RHCSA-1.3, 1.7, 1.11", "lab start regexes-regex"),
     (11, "A watch that tells the day of the month", 8, "Moderate", "RHCSA-7.1 (at and cron only), 1.2", "lab start scheduling-cron"),
@@ -417,7 +417,7 @@ def build_start_here(wb):
     row += 1
     reasoning = [
         "Weeks 1 to 6 are RH124. Weeks 7 to 12 are RH134. Week 13 is catch-up, week 14 is revision, and you sit the exam in week 15.",
-        "The two comprehensive reviews sit in weeks 13 and 14, where lessons.md puts them. RH124 20 is open to you from week 6 and RH134 19.02 to 19.04 from week 11, so start either one early if you can.",
+        "The two comprehensive reviews sit in weeks 13 and 14, where lessons.md puts them. RH124 20 is open to you from week 7 and RH134 19.02 to 19.04 from week 11, so start either one early if you can.",
         "A comprehensive review gets one revision, not two. There is no room for a second before the exam, and the exam itself is the second pass.",
         "The two preface chapters get no revision dates. They orient you to the courseware and teach no skill the exam asks for. RH134 00 is not scheduled at all.",
         "Three weeks after the first revision falls past the exam for the week 11 and week 12 chapters. Those second revisions are pulled back into revision week instead, week 11 material first and week 12 material a day later.",

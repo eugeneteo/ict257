@@ -103,8 +103,8 @@ leave out.
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-8.1 | IPv4 and IPv6 addresses | 17.01, 17.03, 18.01, 18.03 | — | 6 |
-| RHCSA-8.2 | Hostname resolution | 18.05 | — | 6 |
+| RHCSA-8.1 | IPv4 and IPv6 addresses | 17.01, 17.03, 18.01, 18.03 | — | 7 |
+| RHCSA-8.2 | Hostname resolution | 18.05 | — | 7 |
 | RHCSA-8.3 | Network services automatic at boot | 16.01, 16.03 | — | 6 |
 | RHCSA-8.4 | Restrict access with `firewalld` | — | 14.01 | 11 |
 
@@ -123,7 +123,7 @@ leave out.
 | --- | --- | --- | --- | --- |
 | RHCSA-10.1 | Firewall settings with `firewall-cmd` | — | 14.01 | 11 |
 | RHCSA-10.2 | Default file permissions | 11.05 | — | 4 |
-| RHCSA-10.3 | Key-based authentication for SSH | 19.03 | — | 6 |
+| RHCSA-10.3 | Key-based authentication for SSH | 19.03 | — | 7 |
 | RHCSA-10.4 | SELinux enforcing and permissive modes | — | 06.01, 06.07 | 9 |
 | RHCSA-10.5 | SELinux file and process contexts | — | 06.01, 06.03, 06.07 | 9 |
 | RHCSA-10.6 | Restore default file contexts | — | 06.03, 06.07 | 9 |

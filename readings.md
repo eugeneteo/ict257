@@ -109,7 +109,7 @@ One worked example goes with this week: [`examples/directory-permissions.md`](ex
 
 Two worked examples go with this week: [`examples/find-perm-modes.md`](examples/find-perm-modes.md) on `find -perm` octal modes with `-` and `/` prefixes, and [`examples/flatpak-registry-authentication.md`](examples/flatpak-registry-authentication.md) on persisting Flatpak registry credentials without exposing your personal login.
 
-## Week 6: Processes, system services, network configuration, name resolution and secure remote access
+## Week 6: Processes, system services and remote access
 
 | Page | Why it matters |
 | --- | --- |
@@ -125,11 +125,6 @@ of the page is about `ptrace`, which no objective asks for.
 | --- | --- |
 | [systemd "static" unit file state](https://bbs.archlinux.org/viewtopic.php?id=147964) | Answers why some units refuse to be enabled. A unit with no `[Install]` section gives `systemctl` nowhere to put the symlink. RHCSA-7.2 |
 | [What is the difference between `systemctl mask` and `systemctl disable`?](https://askubuntu.com/questions/816285/what-is-the-difference-between-systemctl-mask-and-systemctl-disable) | Both look like off and they are not the same. A disabled unit still starts when something else pulls it in. A masked unit cannot start at all. RHCSA-7.2, RHCSA-4.9 |
-| [RFC 1122](https://datatracker.ietf.org/doc/html/rfc1122) | The document RH124 17.01 names when it defines the four-layer model. Read section 1.1.3 and you will see where the layer names came from and who assigned them. RHCSA-8.1 |
-| [How the TCP/IP Protocols Handle Data Communications](https://docs.oracle.com/cd/E18752_01/html/816-4554/ipov-29.html) | Follows one packet down the sending stack and back up the receiving one. Encapsulation stops being a word and becomes a sequence you can recite. RHCSA-8.1 |
-| [Benefits of IPv6](https://www.catchpoint.com/benefits-of-ipv6) | Explains why RHEL 10 brings up IPv6 alongside IPv4 without being asked, and where a link-local address comes from. RHCSA-8.1 |
-| [Why Authentication Using SSH Public Key is Better than Using Password and How Do They Work?](https://runcloud.io/blog/ssh-public-key-authentication) | Sets out why a key pair beats a password before you type `ssh-keygen`. Afterwards you know which half of the pair is safe to copy to a server. RHCSA-10.3 |
-| [OpenSSH: ssh-add / ssh-agent Command Set Maximum Lifetime In Seconds](https://www.cyberciti.biz/faq/unix-linux-appleosx-bsd-ssh-add-agent-command-set-lifetime/) | RH124 19.03 caches your passphrase until you log out. This shows how to expire it sooner with `-t`, and why you would want to. RHCSA-10.3, RHCSA-1.4 |
 
 The forum answers need a filter. In the Arch thread the correct answer is post
 5, not post 3. Static does not mean enabled by something else. It means the
@@ -148,6 +143,16 @@ that names every field, and its `chronyd` example is the one to study. The
 is what a service that forks looks like. Answers online tend to say that the
 main process is whatever `ExecStart` named, and that example shows why the
 short version is not safe.
+
+## Week 7: Network configuration, name resolution, secure remote access, shell scripts, regular expressions and scheduled jobs
+
+| Page | Why it matters |
+| --- | --- |
+| [RFC 1122](https://datatracker.ietf.org/doc/html/rfc1122) | The document RH124 17.01 names when it defines the four-layer model. Read section 1.1.3 and you will see where the layer names came from and who assigned them. RHCSA-8.1 |
+| [How the TCP/IP Protocols Handle Data Communications](https://docs.oracle.com/cd/E18752_01/html/816-4554/ipov-29.html) | Follows one packet down the sending stack and back up the receiving one. Encapsulation stops being a word and becomes a sequence you can recite. RHCSA-8.1 |
+| [Benefits of IPv6](https://www.catchpoint.com/benefits-of-ipv6) | Explains why RHEL 10 brings up IPv6 alongside IPv4 without being asked, and where a link-local address comes from. RHCSA-8.1 |
+| [Why Authentication Using SSH Public Key is Better than Using Password and How Do They Work?](https://runcloud.io/blog/ssh-public-key-authentication) | Sets out why a key pair beats a password before you type `ssh-keygen`. Afterwards you know which half of the pair is safe to copy to a server. RHCSA-10.3 |
+| [OpenSSH: ssh-add / ssh-agent Command Set Maximum Lifetime In Seconds](https://www.cyberciti.biz/faq/unix-linux-appleosx-bsd-ssh-add-agent-command-set-lifetime/) | RH124 19.03 caches your passphrase until you log out. This shows how to expire it sooner with `-t`, and why you would want to. RHCSA-10.3, RHCSA-1.4 |
 
 RFC 1122 is long and it is a requirements document, not a tutorial. Read the
 layering section and stop. Nine later RFCs update it, so treat any detail
@@ -195,8 +200,6 @@ sits on your RHEL machine. The output labels line up closely and the two
 programs are different, with different options. Learn the one you will have in
 front of you on the day. Other subnet calculators, IPv6 validators and binary
 converters are a search away and none of them adds anything to this one.
-
-## Week 7: Shell scripts, regular expressions and scheduled jobs
 
 | Page | What it is |
 | --- | --- |

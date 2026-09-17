@@ -150,4 +150,4 @@ which arrives in the `net-tools` package. That package sits in the `base`
 package group and not in `core`, so a minimal install leaves you with a command
 that is not found. `ss` comes from `iproute`, which every install gets. The
 options are the same on both and RH124 17.03 tables them, so learn them once.
-You meet `ss` in week 6 of the module, and this is what it is for.
+You meet `ss` in week 7 of the module, and this is what it is for.

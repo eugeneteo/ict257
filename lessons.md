@@ -28,12 +28,12 @@ this module. They are not from the courseware.
 
 A group permissions lab example that accompanies RH124 section 10.07 (Managing Local Group Accounts) is available at [`examples/group-permissions.md`](examples/group-permissions.md).
 
-### Weeks 7 to 12: Red Hat System Administration II
+### Weeks 8 to 12: Red Hat System Administration II
 
 | Week | Focus | In class | Own time | Objectives |
 | --- | --- | --- | --- | --- |
-| 7 | Network configuration, name resolution, secure remote access, shell scripts, regular expressions and scheduled jobs | RH124 17.01, 17.03, 18.01, 18.03, 18.05, 19.03, RH134 01.01, 01.03, 01.05, 02.01, 03.01, 03.03 | RH124 17.02, 18.07, 19.05, RH134 01.07, 02.03, 03.05 | RHCSA-1.3, RHCSA-3.1, RHCSA-3.2, RHCSA-3.3, RHCSA-3.4, RHCSA-7.1, RHCSA-8.1, RHCSA-8.2, RHCSA-10.3 |
-| 8 | Recurring jobs, logs, journals and keeping time | RH134 04.01, 04.03, 04.05, 05.01, 05.03, 05.05, 05.07, 05.09 | RH134 04.07, 05.02, 05.11 | RHCSA-4.7, RHCSA-4.8, RHCSA-7.1, RHCSA-7.4 |
+| 7 | Network configuration, name resolution and secure remote access | RH124 17.01, 17.03, 18.01, 18.03, 18.05, 19.03 | RH124 17.02, 18.07, 19.05 | RHCSA-8.1, RHCSA-8.2, RHCSA-10.3 |
+| 8 | Shell scripts, regular expressions, scheduled jobs, logs, journals and keeping time | RH134 01.01, 01.03, 01.05, 02.01, 03.01, 03.03, 04.01, 04.03, 04.05, 05.01, 05.03, 05.05, 05.07, 05.09 | RH134 01.07, 02.03, 03.05, 04.07, 05.02, 05.11 | RHCSA-1.3, RHCSA-3.1, RHCSA-3.2, RHCSA-3.3, RHCSA-3.4, RHCSA-4.7, RHCSA-4.8, RHCSA-7.1, RHCSA-7.4 |
 | 9 | SELinux, archives, secure file transfer and tuning profiles | RH134 06.01, 06.03, 06.05, 06.07, 07.01, 08.01, 08.03, 09.01, 09.03 | RH134 06.09, 08.05, 09.05 | RHCSA-1.6, RHCSA-4.5, RHCSA-4.6, RHCSA-4.10, RHCSA-10.4, RHCSA-10.5, RHCSA-10.6, RHCSA-10.8 |
 | 10 | Partitions, swap, logical volumes and booting | RH134 10.01, 10.03, 11.01, 11.03, 11.05, 12.01, 12.03, 12.05 | RH134 10.05, 11.06, 11.07, 12.07 | RHCSA-1.5, RHCSA-4.1, RHCSA-4.2, RHCSA-4.3, RHCSA-5.1, RHCSA-5.2, RHCSA-5.3, RHCSA-5.4, RHCSA-5.5, RHCSA-5.6, RHCSA-6.1, RHCSA-6.4, RHCSA-7.3, RHCSA-7.6 |
 | 11 | Boot troubleshooting, firewalls, network file systems and installation | RH134 13.01, 14.01, 14.03, 15.01, 15.03, 16.01, 16.03 | RH134 14.05, 15.05, 16.05 | RHCSA-4.3, RHCSA-6.2, RHCSA-6.3, RHCSA-8.4, RHCSA-10.1, RHCSA-10.7 |

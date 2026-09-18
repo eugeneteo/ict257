@@ -177,7 +177,7 @@ faults.
 [student@workstation ~]$ grep -Ev '^[[:space:]]*(#|$)' /etc/login.defs
 ```
 
-The `-E` asks for extended syntax, which week 7 of the module covers. Even then, open the
+The `-E` asks for extended syntax, which week 8 of the module covers. Even then, open the
 file itself before you decide that any filter has shown you all of it.
 
 Now read three of those lines back against the previous section. `PASS_MAX_DAYS`

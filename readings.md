@@ -144,7 +144,7 @@ is what a service that forks looks like. Answers online tend to say that the
 main process is whatever `ExecStart` named, and that example shows why the
 short version is not safe.
 
-## Week 7: Network configuration, name resolution, secure remote access, shell scripts, regular expressions and scheduled jobs
+## Week 7: Network configuration, name resolution and secure remote access
 
 | Page | Why it matters |
 | --- | --- |
@@ -201,11 +201,15 @@ programs are different, with different options. Learn the one you will have in
 front of you on the day. Other subnet calculators, IPv6 validators and binary
 converters are a search away and none of them adds anything to this one.
 
+## Week 8: Shell scripts, regular expressions, scheduled jobs, logs, journals and keeping time
+
 | Page | What it is |
 | --- | --- |
 | [Exit Codes With Special Meanings](https://tldp.org/LDP/abs/html/exitcodes.html#EXITCODESREF) | The exit codes the shell has already claimed, and the 128 plus signal number rule behind a status of 130 or 137. RHCSA-3.1, RHCSA-3.4 |
 | [Regular Expressions, in the GNU grep manual](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html) | The syntax as the `grep` command on your machine implements it, including where basic and extended expressions part company. RHCSA-1.3 |
 | [Dotfiles, and which one runs when](https://samthor.au/2019/dotfiles-highlights/) | Sam Thorogood on the startup files, and why a setting works in one shell and not another. RHCSA-3.3 |
+| [Cron Examples](https://crontab.guru/examples.html) | Worked schedule expressions, each read back to you in plain English. Check that an expression says what you meant before you install it. RHCSA-7.1 |
+| [Why omusrmsg is evil, and how it is fixed](https://rainer.gerhards.net/2011/07/why-omusrmsg-is-evil-and-how-it-is-fixed.html) | The author of rsyslog on the `:omusrmsg:` prefix you meet in the default `/etc/rsyslog.conf`. RHCSA-4.7 |
 
 RH134 01.05 teaches the `exit` command and the `$?` variable. It does not tell
 you which values are already spoken for. Read the table on that page and stop
@@ -219,13 +223,6 @@ practice for RHCSA-1.11, and the local copy matches the version you are
 running.
 
 A worked example on why `~/.bashrc` runs both ways sits in [`examples/shell-startup-files.md`](examples/shell-startup-files.md).
-
-## Week 8: Recurring jobs, logs, journals and keeping time
-
-| Page | What it is |
-| --- | --- |
-| [Cron Examples](https://crontab.guru/examples.html) | Worked schedule expressions, each read back to you in plain English. Check that an expression says what you meant before you install it. RHCSA-7.1 |
-| [Why omusrmsg is evil, and how it is fixed](https://rainer.gerhards.net/2011/07/why-omusrmsg-is-evil-and-how-it-is-fixed.html) | The author of rsyslog on the `:omusrmsg:` prefix you meet in the default `/etc/rsyslog.conf`. RHCSA-4.7 |
 
 Crontab Guru reads five fields. System jobs in `/etc/cron.d` carry a sixth
 field for the user, taught in RH134 04.05. Paste one of those lines in and the

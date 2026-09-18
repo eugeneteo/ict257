@@ -26,8 +26,8 @@ Explaining a solution is how you find out whether you understood it.
 | 6 | [Clean cup, move down](#6-clean-cup-move-down) | week 5 | Moderate | RHCSA-6.5, 1.8, 1.9, 1.10 | `lab start perms-cli` |
 | 7 | [The White Rabbit must not be late](#7-the-white-rabbit-must-not-be-late) | week 6 | Doable | RHCSA-7.2, 4.9, 8.3 | `lab start services-identify` |
 | 8 | [Who are you, said the Caterpillar](#8-who-are-you-said-the-caterpillar) | week 7 | Doable | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` |
-| 9 | [Two, Five and Seven paint the roses](#9-two-five-and-seven-paint-the-roses) | week 7 | Moderate | RHCSA-3.3, 3.1, 3.2, 3.4 | `lab start scripts-loops` |
-| 10 | [One card in the whole pack](#10-one-card-in-the-whole-pack) | week 7 | Doable | RHCSA-1.3, 1.7, 1.11 | `lab start regexes-regex` |
+| 9 | [Two, Five and Seven paint the roses](#9-two-five-and-seven-paint-the-roses) | week 8 | Moderate | RHCSA-3.3, 3.1, 3.2, 3.4 | `lab start scripts-loops` |
+| 10 | [One card in the whole pack](#10-one-card-in-the-whole-pack) | week 8 | Doable | RHCSA-1.3, 1.7, 1.11 | `lab start regexes-regex` |
 | 11 | [A watch that tells the day of the month](#11-a-watch-that-tells-the-day-of-the-month) | week 8 | Moderate | RHCSA-7.1 (at and cron only), 1.2 | `lab start scheduling-cron` |
 | 12 | [The jury writes it all down](#12-the-jury-writes-it-all-down) | week 8 | Moderate | RHCSA-4.7, 4.8, 7.4 | `lab start logs-systemd` |
 | 13 | [A caucus race with no winner](#13-a-caucus-race-with-no-winner) | week 9 | Moderate | RHCSA-4.4, 4.5, 4.6 | `lab start tuning-nice` |

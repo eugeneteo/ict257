@@ -24,7 +24,7 @@ leave out.
 | --- | --- | --- | --- | --- |
 | RHCSA-1.1 | Shell prompt and command syntax | 02.01, 02.03, 02.05 | — | 1 |
 | RHCSA-1.2 | Input/output redirection | 09.01 | — | 3 |
-| RHCSA-1.3 | `grep` and regular expressions | — | 02.01 | 7 |
+| RHCSA-1.3 | `grep` and regular expressions | — | 02.01 | 8 |
 | RHCSA-1.4 | Remote access using SSH | 19.01 | — | 6 |
 | RHCSA-1.5 | Log in and switch users | 10.03 | 12.03 | 3, 10 |
 | RHCSA-1.6 | `tar`, `gzip`, `bzip2` | — | 07.01 | 9 |
@@ -47,10 +47,10 @@ leave out.
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-3.1 | Conditional execution | — | 01.05 | 7 |
-| RHCSA-3.2 | Looping constructs | — | 01.05 | 7 |
-| RHCSA-3.3 | Script inputs (`$1`, `$2`) | — | 01.01, 01.03 | 7 |
-| RHCSA-3.4 | Process command output in a script | — | 01.03 | 7 |
+| RHCSA-3.1 | Conditional execution | — | 01.05 | 8 |
+| RHCSA-3.2 | Looping constructs | — | 01.05 | 8 |
+| RHCSA-3.3 | Script inputs (`$1`, `$2`) | — | 01.01, 01.03 | 8 |
+| RHCSA-3.4 | Process command output in a script | — | 01.03 | 8 |
 
 ## 4. Operate running systems
 
@@ -92,7 +92,7 @@ leave out.
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-7.1 | `at`, `cron`, systemd timer units | — | 03.01, 03.03, 04.01, 04.03, 04.05 | 7, 8 |
+| RHCSA-7.1 | `at`, `cron`, systemd timer units | — | 03.01, 03.03, 04.01, 04.03, 04.05 | 8 |
 | RHCSA-7.2 | Services and enabling them at boot | 16.01, 16.03 | — | 6 |
 | RHCSA-7.3 | Boot into a specific target automatically | — | 12.03 | 10 |
 | RHCSA-7.4 | Configure time service clients | — | 05.09 | 8 |

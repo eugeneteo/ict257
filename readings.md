@@ -57,7 +57,7 @@ section on inodes and filenames. Everything from there on is exact.
 
 Prove the NIST table on your own machine. `df -h` counts in powers of 1024 and
 `df -H` counts in powers of 1000, so one disk reports two different sizes. It
-pays off again in week 10, when you size partitions and logical volumes of
+pays off again in week 11, when you size partitions and logical volumes of
 your own.
 
 Two worked examples go with this week: [`examples/manual-pages.md`](examples/manual-pages.md) on finding the right page, and [`examples/links.md`](examples/links.md) on hard and soft links.
@@ -201,15 +201,13 @@ programs are different, with different options. Learn the one you will have in
 front of you on the day. Other subnet calculators, IPv6 validators and binary
 converters are a search away and none of them adds anything to this one.
 
-## Week 8: Shell scripts, regular expressions, scheduled jobs, logs, journals and keeping time
+## Week 8: Shell scripts, regular expressions and scheduled user tasks
 
 | Page | What it is |
 | --- | --- |
 | [Exit Codes With Special Meanings](https://tldp.org/LDP/abs/html/exitcodes.html#EXITCODESREF) | The exit codes the shell has already claimed, and the 128 plus signal number rule behind a status of 130 or 137. RHCSA-3.1, RHCSA-3.4 |
 | [Regular Expressions, in the GNU grep manual](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html) | The syntax as the `grep` command on your machine implements it, including where basic and extended expressions part company. RHCSA-1.3 |
 | [Dotfiles, and which one runs when](https://samthor.au/2019/dotfiles-highlights/) | Sam Thorogood on the startup files, and why a setting works in one shell and not another. RHCSA-3.3 |
-| [Cron Examples](https://crontab.guru/examples.html) | Worked schedule expressions, each read back to you in plain English. Check that an expression says what you meant before you install it. RHCSA-7.1 |
-| [Why omusrmsg is evil, and how it is fixed](https://rainer.gerhards.net/2011/07/why-omusrmsg-is-evil-and-how-it-is-fixed.html) | The author of rsyslog on the `:omusrmsg:` prefix you meet in the default `/etc/rsyslog.conf`. RHCSA-4.7 |
 
 RH134 01.05 teaches the `exit` command and the `$?` variable. It does not tell
 you which values are already spoken for. Read the table on that page and stop
@@ -223,6 +221,13 @@ practice for RHCSA-1.11, and the local copy matches the version you are
 running.
 
 A worked example on why `~/.bashrc` runs both ways sits in [`examples/shell-startup-files.md`](examples/shell-startup-files.md).
+
+## Week 9: Recurring system tasks, logs, journals and keeping time
+
+| Page | What it is |
+| --- | --- |
+| [Cron Examples](https://crontab.guru/examples.html) | Worked schedule expressions, each read back to you in plain English. Check that an expression says what you meant before you install it. RHCSA-7.1 |
+| [Why omusrmsg is evil, and how it is fixed](https://rainer.gerhards.net/2011/07/why-omusrmsg-is-evil-and-how-it-is-fixed.html) | The author of rsyslog on the `:omusrmsg:` prefix you meet in the default `/etc/rsyslog.conf`. RHCSA-4.7 |
 
 Crontab Guru reads five fields. System jobs in `/etc/cron.d` carry a sixth
 field for the user, taught in RH134 04.05. Paste one of those lines in and the
@@ -238,7 +243,7 @@ rsyslog to `rsyslog.conf(5)`, and to the HTML manual that arrives with the
 
 A worked example on preserving the journal sits in [`examples/journal-persistence.md`](examples/journal-persistence.md).
 
-## Week 9: SELinux, archives, secure file transfer and tuning profiles
+## Week 10: SELinux, archives, secure file transfer and tuning profiles
 
 | Page | What it is |
 | --- | --- |
@@ -257,7 +262,7 @@ question does not arise. The flaw itself is not examinable. It is the reason
 behind an instruction the course gives you without explaining it, and RH134
 08.01 names this very page in its own list of references.
 
-## Week 10: Partitions, swap, logical volumes and booting
+## Week 11: Partitions, swap, logical volumes and booting
 
 Partitions, swap, logical volumes and booting.
 
@@ -278,7 +283,7 @@ work from.
 
 Two worked examples go with this week in [`examples/partitioning-and-lvm.md`](examples/partitioning-and-lvm.md): partitioning with `parted`, and cleaning up an LVM build.
 
-## Week 11: Boot troubleshooting, firewalls and network file systems
+## Week 12: Boot troubleshooting, firewalls, network file systems and installation
 
 Boot troubleshooting, firewalls, network file systems and installation.
 
@@ -298,7 +303,7 @@ check each directive and run `ksvalidator` over the result.
 
 Two worked examples go with this week in [`examples/network-and-firewall-tools.md`](examples/network-and-firewall-tools.md): the `firewall-cmd` two-step, and tracing an open port you did not put there.
 
-## Week 12: Containers and image mode
+## Week 13: Containers and image mode
 
 Containers and image mode.
 
@@ -313,7 +318,7 @@ the work itself. Finish the chapters that carry objectives first.
 | [Why a privileged container in Docker is a bad idea](https://www.trendmicro.com/en_gb/research/19/l/why-running-a-privileged-container-in-docker-is-a-bad-idea.html) | What `--privileged` actually hands over. RH134 18.05 asks you to run the image builder with that flag, so understand the trade before you type it |
 | [Podman's new network stack](https://www.redhat.com/en/blog/podman-new-network-stack) | Matthew Heon on why netavark and aardvark replaced CNI. Background for the container networking you get by default on RHEL 10 |
 
-The comic reaches back to week 11 on purpose. Meeting `chroot` twice, once for
+The comic reaches back to week 12 on purpose. Meeting `chroot` twice, once for
 repairing a system and once for running a container, is the point.
 
 The privileged container piece was written about Docker in 2019. The risk it

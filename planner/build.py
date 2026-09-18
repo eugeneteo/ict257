@@ -104,23 +104,23 @@ WEEKS = {
     5: ("RH124", [12, 13, 14], "Software repositories, Flatpak applications and removable media"),
     6: ("RH124", [15, 16, 19], "Processes, system services and remote access"),
     7: ("RH124", [17, 18, 19], "Network configuration, name resolution and secure remote access"),
-    8: ("RH134", [1, 2, 3, 4, 5], "Shell scripts, regular expressions, scheduled jobs, logs, journals and keeping time"),
-    9: ("RH134", [6, 7, 8, 9], "SELinux, archives, secure file transfer and tuning profiles"),
-    10: ("RH134", [10, 11, 12], "Partitions, swap, logical volumes and booting"),
-    11: ("RH134", [13, 14, 15, 16], "Boot troubleshooting, firewalls, network file systems and installation"),
-    12: ("RH134", [17, 18], "Containers and image mode"),
+    8: ("RH134", [1, 2, 3], "Shell scripts, regular expressions and scheduled user tasks"),
+    9: ("RH134", [4, 5], "Recurring system tasks, logs, journals and keeping time"),
+    10: ("RH134", [6, 7, 8, 9], "SELinux, archives, secure file transfer and tuning profiles"),
+    11: ("RH134", [10, 11, 12], "Partitions, swap, logical volumes and booting"),
+    12: ("RH134", [13, 14, 15, 16], "Boot troubleshooting, firewalls, network file systems and installation"),
+    13: ("RH134", [17, 18], "Containers and image mode"),
 }
 
-# lessons.md schedules no new chapters after week 12. Week 13 is catch-up and
-# week 14 is revision, and that is where the two comprehensive reviews go.
+# lessons.md schedules no new chapters after week 13. Week 14 is revision, and that
+# is where the two comprehensive reviews go.
 EXTRA_WEEKS = {
-    13: "Catch-up week. No new chapters. Overflow from the twelve teaching weeks.",
     14: "Revision week. Objective by objective, with both comprehensive reviews open to you.",
 }
 
 # Chapters lessons.md does not place in a teaching week.
 UNSCHEDULED = {
-    ("RH124", 20): 13,
+    ("RH124", 20): 14,
     ("RH134", 0): 7,
     ("RH134", 19): 14,
 }
@@ -131,11 +131,11 @@ NOTES = {
     ("RH124", 5): "Brought forward into week 1 so you have the assistant from the start. You will not have it in the exam.",
     ("RH124", 20): "Five review labs. Open to you from week 7, so start earlier if you can.",
     ("RH134", 0): "Not scheduled. It orients you to a self-paced Red Hat course. Skim it and move on.",
-    ("RH134", 6): "Hardest third of the module starts here. Weeks 9 to 11 deserve the most revision time.",
+    ("RH134", 6): "Hardest third of the module starts here. Weeks 10 to 12 deserve the most revision time.",
     ("RH134", 16): "No objective matches it. Cover the chapters the exam asks for first.",
     ("RH134", 17): "No objective matches it. Cover the chapters the exam asks for first.",
     ("RH134", 18): "No objective matches it. Cover the chapters the exam asks for first.",
-    ("RH134", 19): "Labs 19.02 to 19.04 are open from week 11. Lab 19.05 rests on week 12 containers.",
+    ("RH134", 19): "Labs 19.02 to 19.04 are open from week 12. Lab 19.05 rests on week 13 containers.",
 }
 
 # Optional practice challenges, from practice.md. Sorted by the week each one
@@ -151,18 +151,18 @@ PRACTICE = [
     (8, "Who are you, said the Caterpillar", 7, "Doable", "RHCSA-10.3, 1.4", "lab start ssh-keyauth"),
     (9, "Two, Five and Seven paint the roses", 8, "Moderate", "RHCSA-3.3, 3.1, 3.2, 3.4", "lab start scripts-loops"),
     (10, "One card in the whole pack", 8, "Doable", "RHCSA-1.3, 1.7, 1.11", "lab start regexes-regex"),
-    (11, "A watch that tells the day of the month", 8, "Moderate", "RHCSA-7.1 (at and cron only), 1.2", "lab start scheduling-cron"),
-    (12, "The jury writes it all down", 8, "Moderate", "RHCSA-4.7, 4.8, 7.4", "lab start logs-systemd"),
-    (13, "A caucus race with no winner", 9, "Moderate", "RHCSA-4.4, 4.5, 4.6", "lab start tuning-nice"),
-    (14, "The Cheshire Cat fades, but the grin stays", 9, "Moderate", "RHCSA-10.4, 10.5, 10.8", "lab start selinux-booleans"),
-    (15, "Alice grows, and the bottle is put away", 10, "Hard", "RHCSA-6.4, 5.1, 5.2, 5.3", "lab start lvm-extend"),
-    (16, "No room, said the Hare, and there was plenty", 10, "Hard", "RHCSA-5.4, 5.2, 5.3, 5.6", "lab start lvm-create"),
-    (17, "The treacle well, and what was drawn from it", 10, "Hard", "RHCSA-6.1 (XFS and ext4 only), 1.6, 4.10, 5.5", "lab start archive-manage"),
-    (18, "A door that opens only when asked", 11, "Doable", "RHCSA-6.2, 6.3, 4.9", "lab start nfsclient-autofs"),
-    (19, "The flamingo lent for the game, and given back", 11, "Moderate", "RHCSA-10.7, 10.1", "lab start netsecurity-ports"),
-    (20, "What is the use of a book without pictures", 11, "Hard", "RHCSA-5.1, 5.5, 10.6, 10.1", "lab start storage-partitions"),
-    (21, "A passage of their own to the garden", 11, "Moderate", "RHCSA-8.1, 8.2, 8.4", "lab start net-edit"),
-    (22, "Begin at the beginning, said the King", 11, "Hard", "RHCSA-7.6, 4.1, 4.2, 4.3, 7.3, 1.5", "lab start boot-grub"),
+    (11, "A watch that tells the day of the month", 9, "Moderate", "RHCSA-7.1 (at and cron only), 1.2", "lab start scheduling-cron"),
+    (12, "The jury writes it all down", 9, "Moderate", "RHCSA-4.7, 4.8, 7.4", "lab start logs-systemd"),
+    (13, "A caucus race with no winner", 10, "Moderate", "RHCSA-4.4, 4.5, 4.6", "lab start tuning-nice"),
+    (14, "The Cheshire Cat fades, but the grin stays", 10, "Moderate", "RHCSA-10.4, 10.5, 10.8", "lab start selinux-booleans"),
+    (15, "Alice grows, and the bottle is put away", 11, "Hard", "RHCSA-6.4, 5.1, 5.2, 5.3", "lab start lvm-extend"),
+    (16, "No room, said the Hare, and there was plenty", 11, "Hard", "RHCSA-5.4, 5.2, 5.3, 5.6", "lab start lvm-create"),
+    (17, "The treacle well, and what was drawn from it", 11, "Hard", "RHCSA-6.1 (XFS and ext4 only), 1.6, 4.10, 5.5", "lab start archive-manage"),
+    (18, "A door that opens only when asked", 12, "Doable", "RHCSA-6.2, 6.3, 4.9", "lab start nfsclient-autofs"),
+    (19, "The flamingo lent for the game, and given back", 12, "Moderate", "RHCSA-10.7, 10.1", "lab start netsecurity-ports"),
+    (20, "What is the use of a book without pictures", 12, "Hard", "RHCSA-5.1, 5.5, 10.6, 10.1", "lab start storage-partitions"),
+    (21, "A passage of their own to the garden", 12, "Moderate", "RHCSA-8.1, 8.2, 8.4", "lab start net-edit"),
+    (22, "Begin at the beginning, said the King", 12, "Hard", "RHCSA-7.6, 4.1, 4.2, 4.3, 7.3, 1.5", "lab start boot-grub"),
 ]
 
 DEFAULT_START = dt.date(2026, 8, 3)  # Monday of teaching week 1. Change in the sheet, not here.
@@ -416,11 +416,11 @@ def build_start_here(wb):
     section_head(ws, row, 6, "4. How the dates are worked out, and where they had to bend")
     row += 1
     reasoning = [
-        "Weeks 1 to 7 are RH124. Weeks 8 to 12 are RH134. Week 13 is catch-up, week 14 is revision, and you sit the exam in week 15.",
-        "The two comprehensive reviews sit in weeks 13 and 14, where lessons.md puts them. RH124 20 is open to you from week 7 and RH134 19.02 to 19.04 from week 11, so start either one early if you can.",
+        "Weeks 1 to 7 are RH124. Weeks 8 to 13 are RH134. Week 14 is revision, and you sit the exam in week 15.",
+        "The two comprehensive reviews sit in week 14, where lessons.md puts them. RH124 20 is open to you from week 7 and RH134 19.02 to 19.04 from week 12, so start either one early if you can.",
         "A comprehensive review gets one revision, not two. There is no room for a second before the exam, and the exam itself is the second pass.",
         "The two preface chapters get no revision dates. They orient you to the courseware and teach no skill the exam asks for. RH134 00 is not scheduled at all.",
-        "Three weeks after the first revision falls past the exam for the week 11 and week 12 chapters. Those second revisions are pulled back into revision week instead, week 11 material first and week 12 material a day later.",
+        "Three weeks after the first revision falls past the exam for the week 12 and week 13 chapters. Those second revisions are pulled back into revision week instead, week 12 material first and week 13 material a day later.",
         "That squeeze lands on SELinux, storage, booting, troubleshooting, firewalls and network file systems, which is the hardest material in the module. Give revision week to those and start them before the sheet tells you to.",
     ]
     for line in reasoning:
@@ -493,7 +493,7 @@ def build_plan(wb, rows):
 
         ws.cell(row=r, column=6, value=f"=SemesterStart+7*($D{r}-1)")
         ws.cell(row=r, column=7, value=f'=IF($B{r}=0,"",MIN($F{r}+7,RevisionCutoff))')
-        ws.cell(row=r, column=8, value=f'=IF(OR($B{r}=0,$D{r}>=13),"",MIN($G{r}+21,RevisionCutoff-12+$D{r}))')
+        ws.cell(row=r, column=8, value=f'=IF(OR($B{r}=0,$D{r}>=14),"",MIN($G{r}+21,RevisionCutoff-13+$D{r}))')
 
         ws.cell(row=r, column=9, value="Not started").font = text_font
         ws.cell(row=r, column=10).font = text_font

@@ -28,18 +28,18 @@ Explaining a solution is how you find out whether you understood it.
 | 8 | [Who are you, said the Caterpillar](#8-who-are-you-said-the-caterpillar) | week 7 | Doable | RHCSA-10.3, 1.4 | `lab start ssh-keyauth` |
 | 9 | [Two, Five and Seven paint the roses](#9-two-five-and-seven-paint-the-roses) | week 8 | Moderate | RHCSA-3.3, 3.1, 3.2, 3.4 | `lab start scripts-loops` |
 | 10 | [One card in the whole pack](#10-one-card-in-the-whole-pack) | week 8 | Doable | RHCSA-1.3, 1.7, 1.11 | `lab start regexes-regex` |
-| 11 | [A watch that tells the day of the month](#11-a-watch-that-tells-the-day-of-the-month) | week 8 | Moderate | RHCSA-7.1 (at and cron only), 1.2 | `lab start scheduling-cron` |
-| 12 | [The jury writes it all down](#12-the-jury-writes-it-all-down) | week 8 | Moderate | RHCSA-4.7, 4.8, 7.4 | `lab start logs-systemd` |
-| 13 | [A caucus race with no winner](#13-a-caucus-race-with-no-winner) | week 9 | Moderate | RHCSA-4.4, 4.5, 4.6 | `lab start tuning-nice` |
-| 14 | [The Cheshire Cat fades, but the grin stays](#14-the-cheshire-cat-fades-but-the-grin-stays) | week 9 | Moderate | RHCSA-10.4, 10.5, 10.8 | `lab start selinux-booleans` |
-| 15 | [Alice grows, and the bottle is put away](#15-alice-grows-and-the-bottle-is-put-away) | week 10 | Hard | RHCSA-6.4, 5.1, 5.2, 5.3 | `lab start lvm-extend` |
-| 16 | [No room, said the Hare, and there was plenty](#16-no-room-said-the-hare-and-there-was-plenty) | week 10 | Hard | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` |
-| 17 | [The treacle well, and what was drawn from it](#17-the-treacle-well-and-what-was-drawn-from-it) | week 10 | Hard | RHCSA-6.1 (XFS and ext4 only), 1.6, 4.10, 5.5 | `lab start archive-manage` |
-| 18 | [A door that opens only when asked](#18-a-door-that-opens-only-when-asked) | week 11 | Doable | RHCSA-6.2, 6.3, 4.9 | `lab start nfsclient-autofs` |
-| 19 | [The flamingo lent for the game, and given back](#19-the-flamingo-lent-for-the-game-and-given-back) | week 11 | Moderate | RHCSA-10.7, 10.1 | `lab start netsecurity-ports` |
-| 20 | [What is the use of a book without pictures](#20-what-is-the-use-of-a-book-without-pictures) | week 11 | Hard | RHCSA-5.1, 5.5, 10.6, 10.1 | `lab start storage-partitions` |
-| 21 | [A passage of their own to the garden](#21-a-passage-of-their-own-to-the-garden) | week 11 | Moderate | RHCSA-8.1, 8.2, 8.4 | `lab start net-edit` |
-| 22 | [Begin at the beginning, said the King](#22-begin-at-the-beginning-said-the-king) | week 11 | Hard | RHCSA-7.6, 4.1, 4.2, 4.3, 7.3, 1.5 | `lab start boot-grub` |
+| 11 | [A watch that tells the day of the month](#11-a-watch-that-tells-the-day-of-the-month) | week 9 | Moderate | RHCSA-7.1 (at and cron only), 1.2 | `lab start scheduling-cron` |
+| 12 | [The jury writes it all down](#12-the-jury-writes-it-all-down) | week 9 | Moderate | RHCSA-4.7, 4.8, 7.4 | `lab start logs-systemd` |
+| 13 | [A caucus race with no winner](#13-a-caucus-race-with-no-winner) | week 10 | Moderate | RHCSA-4.4, 4.5, 4.6 | `lab start tuning-nice` |
+| 14 | [The Cheshire Cat fades, but the grin stays](#14-the-cheshire-cat-fades-but-the-grin-stays) | week 10 | Moderate | RHCSA-10.4, 10.5, 10.8 | `lab start selinux-booleans` |
+| 15 | [Alice grows, and the bottle is put away](#15-alice-grows-and-the-bottle-is-put-away) | week 11 | Hard | RHCSA-6.4, 5.1, 5.2, 5.3 | `lab start lvm-extend` |
+| 16 | [No room, said the Hare, and there was plenty](#16-no-room-said-the-hare-and-there-was-plenty) | week 11 | Hard | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` |
+| 17 | [The treacle well, and what was drawn from it](#17-the-treacle-well-and-what-was-drawn-from-it) | week 11 | Hard | RHCSA-6.1 (XFS and ext4 only), 1.6, 4.10, 5.5 | `lab start archive-manage` |
+| 18 | [A door that opens only when asked](#18-a-door-that-opens-only-when-asked) | week 12 | Doable | RHCSA-6.2, 6.3, 4.9 | `lab start nfsclient-autofs` |
+| 19 | [The flamingo lent for the game, and given back](#19-the-flamingo-lent-for-the-game-and-given-back) | week 12 | Moderate | RHCSA-10.7, 10.1 | `lab start netsecurity-ports` |
+| 20 | [What is the use of a book without pictures](#20-what-is-the-use-of-a-book-without-pictures) | week 12 | Hard | RHCSA-5.1, 5.5, 10.6, 10.1 | `lab start storage-partitions` |
+| 21 | [A passage of their own to the garden](#21-a-passage-of-their-own-to-the-garden) | week 12 | Moderate | RHCSA-8.1, 8.2, 8.4 | `lab start net-edit` |
+| 22 | [Begin at the beginning, said the King](#22-begin-at-the-beginning-said-the-king) | week 12 | Hard | RHCSA-7.6, 4.1, 4.2, 4.3, 7.3, 1.5 | `lab start boot-grub` |
 
 
 Every objective is listed in [`objectives.md`](objectives.md). The difficulty is

@@ -36,8 +36,8 @@ The **Practice** sheet tracks the 22 optional challenges in
 
 ## Where the schedule bends
 
-Three weeks after the first revision falls past the exam for the week 11 and
-week 12 chapters, so those second revisions are pulled back into revision week.
+Three weeks after the first revision falls past the exam for the week 12 and
+week 13 chapters, so those second revisions are pulled back into revision week.
 That squeeze lands on SELinux, storage, booting, troubleshooting, firewalls and
 network file systems, which is the hardest material in the module. Start those
 before the sheet tells you to.

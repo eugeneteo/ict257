@@ -31,7 +31,7 @@ Explaining a solution is how you find out whether you understood it.
 | 11 | [A watch that tells the day of the month](#11-a-watch-that-tells-the-day-of-the-month) | week 9 | Moderate | RHCSA-7.1 (at and cron only), 1.2 | `lab start scheduling-cron` |
 | 12 | [The jury writes it all down](#12-the-jury-writes-it-all-down) | week 9 | Moderate | RHCSA-4.7, 4.8, 7.4 | `lab start logs-systemd` |
 | 13 | [A caucus race with no winner](#13-a-caucus-race-with-no-winner) | week 10 | Moderate | RHCSA-4.4, 4.5, 4.6 | `lab start tuning-nice` |
-| 14 | [The Cheshire Cat fades, but the grin stays](#14-the-cheshire-cat-fades-but-the-grin-stays) | week 10 | Moderate | RHCSA-10.4, 10.5, 10.8 | `lab start selinux-booleans` |
+| 14 | [The Cheshire Cat fades, but the grin stays](#14-the-cheshire-cat-fades-but-the-grin-stays) | week 9 | Moderate | RHCSA-10.4, 10.5, 10.8 | `lab start selinux-booleans` |
 | 15 | [Alice grows, and the bottle is put away](#15-alice-grows-and-the-bottle-is-put-away) | week 11 | Hard | RHCSA-6.4, 5.1, 5.2, 5.3 | `lab start lvm-extend` |
 | 16 | [No room, said the Hare, and there was plenty](#16-no-room-said-the-hare-and-there-was-plenty) | week 11 | Hard | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` |
 | 17 | [The treacle well, and what was drawn from it](#17-the-treacle-well-and-what-was-drawn-from-it) | week 11 | Hard | RHCSA-6.1 (XFS and ext4 only), 1.6, 4.10, 5.5 | `lab start archive-manage` |

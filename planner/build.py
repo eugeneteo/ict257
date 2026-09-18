@@ -105,11 +105,11 @@ WEEKS = {
     6: ("RH124", [15, 16, 19], "Processes, system services and remote access"),
     7: ("RH124", [17, 18, 19], "Network configuration, name resolution and secure remote access"),
     8: ("RH134", [1, 2, 3], "Shell scripts, regular expressions and scheduled user tasks"),
-    9: ("RH134", [4, 5], "Recurring system tasks, logs, journals and keeping time"),
-    10: ("RH134", [6, 7, 8, 9], "SELinux, archives, secure file transfer and tuning profiles"),
+    9: ("RH134", [4, 5, 6], "Recurring system tasks, logs, journals, keeping time and SELinux"),
+    10: ("RH134", [7, 8, 9], "Archives, secure file transfer and tuning profiles"),
     11: ("RH134", [10, 11, 12], "Partitions, swap, logical volumes and booting"),
-    12: ("RH134", [13, 14, 15, 16], "Boot troubleshooting, firewalls, network file systems and installation"),
-    13: ("RH134", [17, 18], "Containers and image mode"),
+    12: ("RH134", [13, 14, 15], "Boot troubleshooting, firewalls and network file systems"),
+    13: ("RH134", [16, 17, 18], "Installation, containers and image mode"),
 }
 
 # lessons.md schedules no new chapters after week 13. Week 14 is revision, and that
@@ -131,15 +131,15 @@ NOTES = {
     ("RH124", 5): "Brought forward into week 1 so you have the assistant from the start. You will not have it in the exam.",
     ("RH124", 20): "Five review labs. Open to you from week 7, so start earlier if you can.",
     ("RH134", 0): "Not scheduled. It orients you to a self-paced Red Hat course. Skim it and move on.",
-    ("RH134", 6): "Hardest third of the module starts here. Weeks 10 to 12 deserve the most revision time.",
+    ("RH134", 6): "Hardest third of the module starts here. Weeks 9, 11 and 12 deserve the most revision time.",
     ("RH134", 16): "No objective matches it. Cover the chapters the exam asks for first.",
     ("RH134", 17): "No objective matches it. Cover the chapters the exam asks for first.",
     ("RH134", 18): "No objective matches it. Cover the chapters the exam asks for first.",
     ("RH134", 19): "Labs 19.02 to 19.04 are open from week 12. Lab 19.05 rests on week 13 containers.",
 }
 
-# Optional practice challenges, from practice.md. Sorted by the week each one
-# becomes possible.
+# Optional practice challenges, from practice.md. Ordered by challenge number,
+# which roughly but not strictly follows the week each one becomes possible.
 PRACTICE = [
     (1, "The pool of tears, and another beside it", 3, "Doable", "RHCSA-1.2, 1.1", "nothing"),
     (2, "A small door, and one sentence from the Queen", 4, "Moderate", "RHCSA-9.4, 9.1, 9.3, 9.2", "lab start users-password"),
@@ -154,7 +154,7 @@ PRACTICE = [
     (11, "A watch that tells the day of the month", 9, "Moderate", "RHCSA-7.1 (at and cron only), 1.2", "lab start scheduling-cron"),
     (12, "The jury writes it all down", 9, "Moderate", "RHCSA-4.7, 4.8, 7.4", "lab start logs-systemd"),
     (13, "A caucus race with no winner", 10, "Moderate", "RHCSA-4.4, 4.5, 4.6", "lab start tuning-nice"),
-    (14, "The Cheshire Cat fades, but the grin stays", 10, "Moderate", "RHCSA-10.4, 10.5, 10.8", "lab start selinux-booleans"),
+    (14, "The Cheshire Cat fades, but the grin stays", 9, "Moderate", "RHCSA-10.4, 10.5, 10.8", "lab start selinux-booleans"),
     (15, "Alice grows, and the bottle is put away", 11, "Hard", "RHCSA-6.4, 5.1, 5.2, 5.3", "lab start lvm-extend"),
     (16, "No room, said the Hare, and there was plenty", 11, "Hard", "RHCSA-5.4, 5.2, 5.3, 5.6", "lab start lvm-create"),
     (17, "The treacle well, and what was drawn from it", 11, "Hard", "RHCSA-6.1 (XFS and ext4 only), 1.6, 4.10, 5.5", "lab start archive-manage"),

@@ -222,12 +222,13 @@ running.
 
 A worked example on why `~/.bashrc` runs both ways sits in [`examples/shell-startup-files.md`](examples/shell-startup-files.md).
 
-## Week 9: Recurring system tasks, logs, journals and keeping time
+## Week 9: Recurring system tasks, logs, journals, keeping time and SELinux
 
 | Page | What it is |
 | --- | --- |
 | [Cron Examples](https://crontab.guru/examples.html) | Worked schedule expressions, each read back to you in plain English. Check that an expression says what you meant before you install it. RHCSA-7.1 |
 | [Why omusrmsg is evil, and how it is fixed](https://rainer.gerhards.net/2011/07/why-omusrmsg-is-evil-and-how-it-is-fixed.html) | The author of rsyslog on the `:omusrmsg:` prefix you meet in the default `/etc/rsyslog.conf`. RHCSA-4.7 |
+| [The SELinux Coloring Book](https://people.redhat.com/duffy/selinux/selinux-coloring-book_A4-Stapled.pdf) | Dan Walsh and Máirín Duffy on type enforcement, MCS and MLS, drawn as cats and dogs. Read it before RH134 06.01. RHCSA-10.5 |
 
 Crontab Guru reads five fields. System jobs in `/etc/cron.d` carry a sixth
 field for the user, taught in RH134 04.05. Paste one of those lines in and the
@@ -241,18 +242,17 @@ says why a bare user name stopped being enough. Read it once. Leave the rest of
 rsyslog to `rsyslog.conf(5)`, and to the HTML manual that arrives with the
 `rsyslog-doc` package.
 
-A worked example on preserving the journal sits in [`examples/journal-persistence.md`](examples/journal-persistence.md).
-
-## Week 10: SELinux, archives, secure file transfer and tuning profiles
-
-| Page | What it is |
-| --- | --- |
-| [The SELinux Coloring Book](https://people.redhat.com/duffy/selinux/selinux-coloring-book_A4-Stapled.pdf) | Dan Walsh and Máirín Duffy on type enforcement, MCS and MLS, drawn as cats and dogs. Read it before RH134 06.01. RHCSA-10.5 |
-| [CVE-2020-15778](https://access.redhat.com/security/cve/CVE-2020-15778) | Red Hat on the `scp` command injection flaw. It is the reason RH134 08.01 tells you to stay off the legacy SCP protocol. RHCSA-4.10 |
-
 The colouring book is old and that does not matter here. It names no command
 and no option, so there is nothing in it to go stale. It draws the labelling
 model that RH134 06.01 then states in prose.
+
+A worked example on preserving the journal sits in [`examples/journal-persistence.md`](examples/journal-persistence.md).
+
+## Week 10: Archives, secure file transfer and tuning profiles
+
+| Page | What it is |
+| --- | --- |
+| [CVE-2020-15778](https://access.redhat.com/security/cve/CVE-2020-15778) | Red Hat on the `scp` command injection flaw. It is the reason RH134 08.01 tells you to stay off the legacy SCP protocol. RHCSA-4.10 |
 
 Red Hat rates the `scp` flaw Moderate. It records a fix for RHEL 8, marks RHEL
 7 as will not fix and carries no entry for RHEL 9 or RHEL 10. On RHEL 10 the
@@ -283,40 +283,41 @@ work from.
 
 Two worked examples go with this week in [`examples/partitioning-and-lvm.md`](examples/partitioning-and-lvm.md): partitioning with `parted`, and cleaning up an LVM build.
 
-## Week 12: Boot troubleshooting, firewalls, network file systems and installation
+## Week 12: Boot troubleshooting, firewalls and network file systems
 
-Boot troubleshooting, firewalls, network file systems and installation.
+Boot troubleshooting, firewalls and network file systems.
 
 | Page | Why it is worth reading | Objective |
 | --- | --- | --- |
 | [How to use the chroot command on Linux](https://www.howtogeek.com/441534/how-to-use-the-chroot-command-on-linux/) | Rescue mode drops you at a shell and expects `chroot /mnt/sysroot`. This builds a small root directory by hand, so you can see what that one command moves | RHCSA-4.3 |
 | [Mounting file systems on demand](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/managing_file_systems/mounting-file-systems-on-demand) | Red Hat's autofs chapter for RHEL 10, covering the master map, direct maps and indirect maps. It matches the file layout RH134 15.03 teaches | RHCSA-6.3 |
-| [Automatically installing RHEL](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/automatically_installing_rhel/index) | The Kickstart command reference for RHEL 10. Check a directive here before you copy one out of an older example, because several have been withdrawn | No objective |
-| [Certified hypervisors and guest operating systems](https://access.redhat.com/articles/certified-hypervisors) | Which hypervisors Red Hat certifies for a RHEL 10 guest. Useful when you build a practice machine of your own outside the lab | No objective |
 
 You will not build a chroot by hand in the exam. Knowing what the command
 changes is what stops the rescue steps being a recipe you half remember.
 
-Older Kickstart files circulate widely and most of them are from the RHEL 7
-era. A file that installed a system then can fail outright on RHEL 10, so
-check each directive and run `ksvalidator` over the result.
-
 Two worked examples go with this week in [`examples/network-and-firewall-tools.md`](examples/network-and-firewall-tools.md): the `firewall-cmd` two-step, and tracing an open port you did not put there.
 
-## Week 13: Containers and image mode
+## Week 13: Installation, containers and image mode
 
-Containers and image mode.
+Installation, containers and image mode.
 
-No RHCSA objective covers this week. RH134 17 and 18 teach Podman and image
-mode, and the exam asks for neither. Everything below is for interest and for
-the work itself. Finish the chapters that carry objectives first.
+No RHCSA objective covers this week. RH134 16, 17 and 18 teach installation,
+Podman and image mode, and the exam asks for none of them. Everything below is
+for interest and for the work itself. Finish the chapters that carry objectives
+first.
 
 | Page | Why it is worth reading |
 | --- | --- |
+| [Automatically installing RHEL](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/automatically_installing_rhel/index) | The Kickstart command reference for RHEL 10. Check a directive here before you copy one out of an older example, because several have been withdrawn |
+| [Certified hypervisors and guest operating systems](https://access.redhat.com/articles/certified-hypervisors) | Which hypervisors Red Hat certifies for a RHEL 10 guest. Useful when you build a practice machine of your own outside the lab |
 | [pivot-root, by Julia Evans](https://wizardzines.com/comics/pivot-root/) | One page showing that a container image is a tarball of a file system, and that running one starts by changing a process root directory. It is the same `chroot` you used in rescue mode |
 | [Podman pull "official" images from Docker Hub](https://stackoverflow.com/questions/69162077/podman-pull-official-images-from-docker-hub) | Why a short image name behaves differently under Podman, and what the search list in `/etc/containers/registries.conf` does with it |
 | [Why a privileged container in Docker is a bad idea](https://www.trendmicro.com/en_gb/research/19/l/why-running-a-privileged-container-in-docker-is-a-bad-idea.html) | What `--privileged` actually hands over. RH134 18.05 asks you to run the image builder with that flag, so understand the trade before you type it |
 | [Podman's new network stack](https://www.redhat.com/en/blog/podman-new-network-stack) | Matthew Heon on why netavark and aardvark replaced CNI. Background for the container networking you get by default on RHEL 10 |
+
+Older Kickstart files circulate widely and most of them are from the RHEL 7
+era. A file that installed a system then can fail outright on RHEL 10, so
+check each directive and run `ksvalidator` over the result.
 
 The comic reaches back to week 12 on purpose. Meeting `chroot` twice, once for
 repairing a system and once for running a container, is the point.

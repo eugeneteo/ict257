@@ -25,6 +25,7 @@ this module. They are not from the courseware.
 | 4 | User passwords, file permissions and RPM packages | RH124 10.09, 11.01, 11.03, 11.05, 12.01, 12.03 | RH124 11.02, 11.07, 12.07 | RHCSA-1.10, RHCSA-2.1, RHCSA-2.2, RHCSA-2.3, RHCSA-2.4, RHCSA-6.5, RHCSA-7.5, RHCSA-9.2, RHCSA-10.2 |
 | 5 | Software repositories, Flatpak applications and removable media | RH124 12.05, 13.01, 13.03, 14.01, 14.03, 14.05 | RH124 13.05, 14.02, 14.07 | RHCSA-1.8, RHCSA-5.5, RHCSA-6.1 |
 | 6 | Processes, system services and remote access | RH124 15.01, 15.03, 15.05, 15.07, 16.01, 16.03, 19.01 | RH124 15.02, 15.09, 16.05 | RHCSA-1.4, RHCSA-4.4, RHCSA-4.9, RHCSA-7.2, RHCSA-8.3 |
+| 7 | Network configuration, name resolution and secure remote access | RH124 17.01, 17.03, 18.01, 18.03, 18.05, 19.03 | RH124 17.02, 18.07, 19.05 | RHCSA-8.1, RHCSA-8.2, RHCSA-10.3 |
 
 A group permissions lab example that accompanies RH124 section 10.07 (Managing Local Group Accounts) is available at [`examples/group-permissions.md`](examples/group-permissions.md).
 
@@ -32,13 +33,12 @@ A group permissions lab example that accompanies RH124 section 10.07 (Managing L
 
 | Week | Focus | In class | Own time | Objectives |
 | --- | --- | --- | --- | --- |
-| 7 | Network configuration, name resolution and secure remote access | RH124 17.01, 17.03, 18.01, 18.03, 18.05, 19.03 | RH124 17.02, 18.07, 19.05 | RHCSA-8.1, RHCSA-8.2, RHCSA-10.3 |
 | 8 | Shell scripts, regular expressions and scheduled user tasks | RH134 01.01, 01.03, 01.05, 02.01, 03.01, 03.03 | RH134 01.07, 02.03, 03.05 | RHCSA-1.3, RHCSA-3.1, RHCSA-3.2, RHCSA-3.3, RHCSA-3.4, RHCSA-7.1 |
-| 9 | Recurring system tasks, logs, journals and keeping time | RH134 04.01, 04.03, 04.05, 05.01, 05.03, 05.05, 05.07, 05.09 | RH134 04.07, 05.02, 05.11 | RHCSA-4.7, RHCSA-4.8, RHCSA-7.1, RHCSA-7.4 |
-| 10 | SELinux, archives, secure file transfer and tuning profiles | RH134 06.01, 06.03, 06.05, 06.07, 07.01, 08.01, 08.03, 09.01, 09.03 | RH134 06.09, 08.05, 09.05 | RHCSA-1.6, RHCSA-4.5, RHCSA-4.6, RHCSA-4.10, RHCSA-10.4, RHCSA-10.5, RHCSA-10.6, RHCSA-10.8 |
+| 9 | Recurring system tasks, logs, journals, keeping time and SELinux | RH134 04.01, 04.03, 04.05, 05.01, 05.03, 05.05, 05.07, 05.09, 06.01, 06.03, 06.05, 06.07 | RH134 04.07, 05.02, 05.11, 06.09 | RHCSA-4.7, RHCSA-4.8, RHCSA-7.1, RHCSA-7.4, RHCSA-10.4, RHCSA-10.5, RHCSA-10.6, RHCSA-10.8 |
+| 10 | Archives, secure file transfer and tuning profiles | RH134 07.01, 08.01, 08.03, 09.01, 09.03 | RH134 08.05, 09.05 | RHCSA-1.6, RHCSA-4.5, RHCSA-4.6, RHCSA-4.10 |
 | 11 | Partitions, swap, logical volumes and booting | RH134 10.01, 10.03, 11.01, 11.03, 11.05, 12.01, 12.03, 12.05 | RH134 10.05, 11.06, 11.07, 12.07 | RHCSA-1.5, RHCSA-4.1, RHCSA-4.2, RHCSA-4.3, RHCSA-5.1, RHCSA-5.2, RHCSA-5.3, RHCSA-5.4, RHCSA-5.5, RHCSA-5.6, RHCSA-6.1, RHCSA-6.4, RHCSA-7.3, RHCSA-7.6 |
-| 12 | Boot troubleshooting, firewalls, network file systems and installation | RH134 13.01, 14.01, 14.03, 15.01, 15.03, 16.01, 16.03 | RH134 14.05, 15.05, 16.05 | RHCSA-4.3, RHCSA-6.2, RHCSA-6.3, RHCSA-8.4, RHCSA-10.1, RHCSA-10.7 |
-| 13 | Containers and image mode | RH134 17.01, 17.03, 17.05, 18.01, 18.03, 18.05, 18.07 | RH134 17.02, 17.07, 18.02 | — |
+| 12 | Boot troubleshooting, firewalls and network file systems | RH134 13.01, 14.01, 14.03, 15.01, 15.03 | RH134 14.05, 15.05 | RHCSA-4.3, RHCSA-6.2, RHCSA-6.3, RHCSA-8.4, RHCSA-10.1, RHCSA-10.7 |
+| 13 | Installation, containers and image mode | RH134 16.01, 16.03, 17.01, 17.03, 17.05, 18.01, 18.03, 18.05, 18.07 | RH134 16.05, 17.02, 17.07, 18.02 | — |
 
 ### Week 14: revision
 
@@ -64,9 +64,9 @@ There is no session in week 15. You sit the RHCSA (EX200) exam. For what the
 exam environment is like on the day, see [`exam-day.md`](exam-day.md).
 
 Revise with the comprehensive review, then the chapter labs. See
-[Your own time](#your-own-time). The labs from weeks 10 to 12 deserve the most
-attention. SELinux, storage, booting, troubleshooting, firewalls and network
-file systems are the hardest material in the module.
+[Your own time](#your-own-time). The labs from weeks 9, 11 and 12 deserve the
+most attention. SELinux, storage, booting, troubleshooting, firewalls and
+network file systems are the hardest material in the module.
 
 The exam is performance-based, so configurations must survive a reboot.
 Practise the version of a task that persists, not the one that works until you
@@ -151,7 +151,7 @@ stuck in your own time.
 I cover RH124 01.01 briefly in week 1. It sets context. It does not teach a
 skill, and no objective corresponds to it.
 
-I teach RH134 chapters 16 to 18 last, in weeks 12 and 13, because no objective
+I teach RH134 chapters 16 to 18 last, in week 13, because no objective
 corresponds to them. Study them after the chapters the exam asks for.
 
 I do not schedule RH124 00.01 or RH134 00.01 to 00.03. They orient you to the

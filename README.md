@@ -8,7 +8,7 @@ Use these materials to prepare for the ICT257 Red Hat System Administration cour
 | --- | --- |
 | [`objectives.md`](objectives.md) | RHCSA (EX200) exam objectives with stable IDs |
 | [`coverage.md`](coverage.md) | How RH124 and RH134 cover each objective |
-| [`lessons.md`](lessons.md) | Twelve weeks of teaching followed by catch-up, revision, and the exam |
+| [`lessons.md`](lessons.md) | Thirteen weeks of teaching followed by revision and the exam |
 | [`examples/`](examples/) | Teaching examples and lab exercises for specific chapters |
 | [`pairings.md`](pairings.md) | Commands to pair and forms that survive a reboot |
 | [`practice.md`](practice.md) | Optional practice challenges to attempt on your own |

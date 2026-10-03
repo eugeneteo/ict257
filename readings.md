@@ -207,6 +207,7 @@ converters are a search away and none of them adds anything to this one.
 | --- | --- |
 | [Exit Codes With Special Meanings](https://tldp.org/LDP/abs/html/exitcodes.html#EXITCODESREF) | The exit codes the shell has already claimed, and the 128 plus signal number rule behind a status of 130 or 137. RHCSA-3.1, RHCSA-3.4 |
 | [Regular Expressions, in the GNU grep manual](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html) | The syntax as the `grep` command on your machine implements it, including where basic and extended expressions part company. RHCSA-1.3 |
+| [Cron Examples](https://crontab.guru/examples.html) | Worked schedule expressions, each read back to you in plain English. Check that an expression says what you meant before you install it. RHCSA-7.1 |
 | [Dotfiles, and which one runs when](https://samthor.au/2019/dotfiles-highlights/) | Sam Thorogood on the startup files, and why a setting works in one shell and not another. RHCSA-3.3 |
 
 RH134 01.05 teaches the `exit` command and the `$?` variable. It does not tell
@@ -222,11 +223,16 @@ running.
 
 A worked example on why `~/.bashrc` runs both ways sits in [`examples/shell-startup-files.md`](examples/shell-startup-files.md).
 
+Crontab Guru reads five fields. System jobs in `/etc/cron.d` carry a sixth
+field for the user, taught in RH134 04.05, which lands in week 9. Paste one of
+those lines in and the answer comes back wrong. The site belongs to a
+monitoring vendor. It covers neither the `at` command nor systemd timer units,
+and RHCSA-7.1 asks you for both.
+
 ## Week 9: Recurring system tasks, logs, journals, keeping time and SELinux
 
 | Page | What it is |
 | --- | --- |
-| [Cron Examples](https://crontab.guru/examples.html) | Worked schedule expressions, each read back to you in plain English. Check that an expression says what you meant before you install it. RHCSA-7.1 |
 | [Why omusrmsg is evil, and how it is fixed](https://rainer.gerhards.net/2011/07/why-omusrmsg-is-evil-and-how-it-is-fixed.html) | The author of rsyslog on the `:omusrmsg:` prefix you meet in the default `/etc/rsyslog.conf`. RHCSA-4.7 |
 | [OnCalendar Expression Documentation](https://systemd.guru/documentation.html) | The `OnCalendar=` syntax systemd timers use, field by field, with the ranges and repetition values each accepts. It is the page to read when a timer has to run at an hour cron cannot express. RHCSA-7.1 |
 | [The SELinux Coloring Book](https://people.redhat.com/duffy/selinux/selinux-coloring-book_A4-Stapled.pdf) | Dan Walsh and Máirín Duffy on type enforcement, MCS and MLS, drawn as cats and dogs. Read it before RH134 06.01. RHCSA-10.5 |
@@ -243,9 +249,9 @@ says why a bare user name stopped being enough. Read it once. Leave the rest of
 rsyslog to `rsyslog.conf(5)`, and to the HTML manual that arrives with the
 `rsyslog-doc` package.
 
-The systemd.guru page covers the timer half that Crontab Guru leaves out, and
-the pair make a set: five fields of cron on one site, the `OnCalendar=` grammar
-on the other. The same vendor runs both. Check the page's expressions against
+The systemd.guru page covers the timer half that Crontab Guru, back in week 8,
+leaves out: five fields of cron on one site, the `OnCalendar=` grammar on the
+other. The same vendor runs both. Check the page's expressions against
 `systemd-analyze calendar` on your own machine, which RHEL 10 ships and which
 prints every date an expression will next fire. RH134 04.05 stops at the
 `daily`, `hourly` and `weekly` aliases, so the page fills the gap for anything

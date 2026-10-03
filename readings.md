@@ -228,6 +228,7 @@ A worked example on why `~/.bashrc` runs both ways sits in [`examples/shell-star
 | --- | --- |
 | [Cron Examples](https://crontab.guru/examples.html) | Worked schedule expressions, each read back to you in plain English. Check that an expression says what you meant before you install it. RHCSA-7.1 |
 | [Why omusrmsg is evil, and how it is fixed](https://rainer.gerhards.net/2011/07/why-omusrmsg-is-evil-and-how-it-is-fixed.html) | The author of rsyslog on the `:omusrmsg:` prefix you meet in the default `/etc/rsyslog.conf`. RHCSA-4.7 |
+| [OnCalendar Expression Documentation](https://systemd.guru/documentation.html) | The `OnCalendar=` syntax systemd timers use, field by field, with the ranges and repetition values each accepts. It is the page to read when a timer has to run at an hour cron cannot express. RHCSA-7.1 |
 | [The SELinux Coloring Book](https://people.redhat.com/duffy/selinux/selinux-coloring-book_A4-Stapled.pdf) | Dan Walsh and Máirín Duffy on type enforcement, MCS and MLS, drawn as cats and dogs. Read it before RH134 06.01. RHCSA-10.5 |
 
 Crontab Guru reads five fields. System jobs in `/etc/cron.d` carry a sixth
@@ -241,6 +242,14 @@ Your default `/etc/rsyslog.conf` sends `*.emerg` to `:omusrmsg:*`, and the post
 says why a bare user name stopped being enough. Read it once. Leave the rest of
 rsyslog to `rsyslog.conf(5)`, and to the HTML manual that arrives with the
 `rsyslog-doc` package.
+
+The systemd.guru page covers the timer half that Crontab Guru leaves out, and
+the pair make a set: five fields of cron on one site, the `OnCalendar=` grammar
+on the other. The same vendor runs both. Check the page's expressions against
+`systemd-analyze calendar` on your own machine, which RHEL 10 ships and which
+prints every date an expression will next fire. RH134 04.05 stops at the
+`daily`, `hourly` and `weekly` aliases, so the page fills the gap for anything
+finer.
 
 The colouring book is old and that does not matter here. It names no command
 and no option, so there is nothing in it to go stale. It draws the labelling

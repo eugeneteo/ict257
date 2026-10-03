@@ -229,14 +229,13 @@ and RHCSA-7.1 asks you for both.
 
 A worked example on why `~/.bashrc` runs both ways sits in [`examples/shell-startup-files.md`](examples/shell-startup-files.md).
 
-## Week 9: Recurring system tasks, logs, journals, keeping time and SELinux
+## Week 9: Recurring system tasks, logs, journals and keeping time
 
 | Page | What it is |
 | --- | --- |
 | [Why omusrmsg is evil, and how it is fixed](https://rainer.gerhards.net/2011/07/why-omusrmsg-is-evil-and-how-it-is-fixed.html) | The author of rsyslog on the `:omusrmsg:` prefix you meet in the default `/etc/rsyslog.conf`. RHCSA-4.7 |
 | [`rsyslog.conf(5)`](https://man7.org/linux/man-pages/man5/rsyslog.conf.5.html) | The grammar of a selector line, facility then priority, in the two sentences quoted below. Every line in `/etc/rsyslog.conf` is built from them | RHCSA-4.7 |
 | [OnCalendar Expression Documentation](https://systemd.guru/documentation.html) | The `OnCalendar=` syntax systemd timers use, field by field, with the ranges and repetition values each accepts. It is the page to read when a timer has to run at an hour cron cannot express. RHCSA-7.1 |
-| [The SELinux Coloring Book](https://people.redhat.com/duffy/selinux/selinux-coloring-book_A4-Stapled.pdf) | Dan Walsh and Máirín Duffy on type enforcement, MCS and MLS, drawn as cats and dogs. Read it before RH134 06.01. RHCSA-10.5 |
 
 The rsyslog post dates from 2011 and it explains a line RHEL 10 ships today.
 Your default `/etc/rsyslog.conf` sends `*.emerg` to `:omusrmsg:*`, and the post
@@ -268,17 +267,18 @@ prints when an expression will next fire. RH134 04.05 stops at the
 `daily`, `hourly` and `weekly` aliases, so the page fills the gap for anything
 finer.
 
-The colouring book is old and that does not matter here. It names no command
-and no option, so there is nothing in it to go stale. It draws the labelling
-model that RH134 06.01 then states in prose.
-
 A worked example on preserving the journal sits in [`examples/journal-persistence.md`](examples/journal-persistence.md).
 
-## Week 10: Archives, secure file transfer and tuning profiles
+## Week 10: SELinux, archives, secure file transfer and tuning profiles
 
 | Page | What it is |
 | --- | --- |
+| [The SELinux Coloring Book](https://people.redhat.com/duffy/selinux/selinux-coloring-book_A4-Stapled.pdf) | Dan Walsh and Máirín Duffy on type enforcement, MCS and MLS, drawn as cats and dogs. Read it before RH134 06.01. RHCSA-10.5 |
 | [CVE-2020-15778](https://access.redhat.com/security/cve/CVE-2020-15778) | Red Hat on the `scp` command injection flaw. It is the reason RH134 08.01 tells you to stay off the legacy SCP protocol. RHCSA-4.10 |
+
+The colouring book is old and that does not matter here. It names no command
+and no option, so there is nothing in it to go stale. It draws the labelling
+model that RH134 06.01 then states in prose.
 
 Red Hat rates the `scp` flaw Moderate. It records a fix for RHEL 8, marks RHEL
 7 as will not fix and carries no entry for RHEL 9 or RHEL 10. On RHEL 10 the

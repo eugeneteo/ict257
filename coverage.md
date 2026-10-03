@@ -124,11 +124,11 @@ leave out.
 | RHCSA-10.1 | Firewall settings with `firewall-cmd` | — | 14.01 | 12 |
 | RHCSA-10.2 | Default file permissions | 11.05 | — | 4 |
 | RHCSA-10.3 | Key-based authentication for SSH | 19.03 | — | 7 |
-| RHCSA-10.4 | SELinux enforcing and permissive modes | — | 06.01, 06.07 | 9 |
-| RHCSA-10.5 | SELinux file and process contexts | — | 06.01, 06.03, 06.07 | 9 |
-| RHCSA-10.6 | Restore default file contexts | — | 06.03, 06.07 | 9 |
+| RHCSA-10.4 | SELinux enforcing and permissive modes | — | 06.01, 06.07 | 10 |
+| RHCSA-10.5 | SELinux file and process contexts | — | 06.01, 06.03, 06.07 | 10 |
+| RHCSA-10.6 | Restore default file contexts | — | 06.03, 06.07 | 10 |
 | RHCSA-10.7 | SELinux port labels | — | 14.03 | 12 |
-| RHCSA-10.8 | SELinux Boolean settings | — | 06.05 | 9 |
+| RHCSA-10.8 | SELinux Boolean settings | — | 06.05 | 10 |
 
 ## Coverage gaps
 

@@ -221,27 +221,22 @@ package, so install `info` if the command is not found. Reading it there is
 practice for RHCSA-1.11, and the local copy matches the version you are
 running.
 
-A worked example on why `~/.bashrc` runs both ways sits in [`examples/shell-startup-files.md`](examples/shell-startup-files.md).
-
 Crontab Guru reads five fields. System jobs in `/etc/cron.d` carry a sixth
 field for the user, taught in RH134 04.05, which lands in week 9. Paste one of
 those lines in and the answer comes back wrong. The site belongs to a
 monitoring vendor. It covers neither the `at` command nor systemd timer units,
 and RHCSA-7.1 asks you for both.
 
+A worked example on why `~/.bashrc` runs both ways sits in [`examples/shell-startup-files.md`](examples/shell-startup-files.md).
+
 ## Week 9: Recurring system tasks, logs, journals, keeping time and SELinux
 
 | Page | What it is |
 | --- | --- |
 | [Why omusrmsg is evil, and how it is fixed](https://rainer.gerhards.net/2011/07/why-omusrmsg-is-evil-and-how-it-is-fixed.html) | The author of rsyslog on the `:omusrmsg:` prefix you meet in the default `/etc/rsyslog.conf`. RHCSA-4.7 |
+| [`rsyslog.conf(5)`](https://man7.org/linux/man-pages/man5/rsyslog.conf.5.html) | The grammar of a selector line, facility then priority, in the two sentences quoted below. Every line in `/etc/rsyslog.conf` is built from them | RHCSA-4.7 |
 | [OnCalendar Expression Documentation](https://systemd.guru/documentation.html) | The `OnCalendar=` syntax systemd timers use, field by field, with the ranges and repetition values each accepts. It is the page to read when a timer has to run at an hour cron cannot express. RHCSA-7.1 |
 | [The SELinux Coloring Book](https://people.redhat.com/duffy/selinux/selinux-coloring-book_A4-Stapled.pdf) | Dan Walsh and Máirín Duffy on type enforcement, MCS and MLS, drawn as cats and dogs. Read it before RH134 06.01. RHCSA-10.5 |
-
-Crontab Guru reads five fields. System jobs in `/etc/cron.d` carry a sixth
-field for the user, taught in RH134 04.05. Paste one of those lines in and the
-answer comes back wrong. The site belongs to a monitoring vendor. It covers
-neither the `at` command nor systemd timer units, and RHCSA-7.1 asks you for
-both.
 
 The rsyslog post dates from 2011 and it explains a line RHEL 10 ships today.
 Your default `/etc/rsyslog.conf` sends `*.emerg` to `:omusrmsg:*`, and the post
@@ -249,11 +244,27 @@ says why a bare user name stopped being enough. Read it once. Leave the rest of
 rsyslog to `rsyslog.conf(5)`, and to the HTML manual that arrives with the
 `rsyslog-doc` package.
 
+Read `rsyslog.conf(5)` on your own machine as well, with `man 5 rsyslog.conf`.
+The sentences to find are these. They sit in the basic layout section, and a
+selector such as `mail.info` or the `*.emerg` line above is a facility from
+the first list paired with a priority from the second.
+
+> The facility is one of the following keywords: auth, authpriv, cron, daemon,
+> kern, lpr, mail, mark, news, security (same as auth), syslog, user, uucp and
+> local0 through local7.
+
+> The priority is one of the following keywords, in ascending order: debug,
+> info, notice, warning, warn (same as warning), err, error (same as err),
+> crit, alert, emerg, panic (same as emerg).
+
+The page adds that `error`, `warn` and `panic` are deprecated, and that `mark`
+and `security` should not be used in new configurations.
+
 The systemd.guru page covers the timer half that Crontab Guru, back in week 8,
-leaves out: five fields of cron on one site, the `OnCalendar=` grammar on the
+leaves out. Five fields of cron on one site, the `OnCalendar=` grammar on the
 other. The same vendor runs both. Check the page's expressions against
 `systemd-analyze calendar` on your own machine, which RHEL 10 ships and which
-prints every date an expression will next fire. RH134 04.05 stops at the
+prints when an expression will next fire. RH134 04.05 stops at the
 `daily`, `hourly` and `weekly` aliases, so the page fills the gap for anything
 finer.
 

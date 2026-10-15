@@ -14,6 +14,8 @@ says so. Read the note.
 
 Getting oriented, the command-line assistant and the shell.
 
+One worked example goes with this week: [`examples/manual-pages.md`](examples/manual-pages.md) on finding the right page.
+
 RH124 01.01 sets context and teaches no skill, so we cover it briefly. Most of
 what follows fills that context out, for anyone who wants it.
 
@@ -60,7 +62,7 @@ Prove the NIST table on your own machine. `df -h` counts in powers of 1024 and
 pays off again in week 11, when you size partitions and logical volumes of
 your own.
 
-Two worked examples go with this week: [`examples/manual-pages.md`](examples/manual-pages.md) on finding the right page, and [`examples/links.md`](examples/links.md) on hard and soft links.
+One worked example goes with this week: [`examples/links.md`](examples/links.md) on hard and soft links.
 
 ## Week 3: Editing text, redirecting output, users and groups
 
@@ -69,7 +71,16 @@ Editing text, redirecting output, users and groups.
 | Page | Why it is worth your time | Objective |
 | --- | --- | --- |
 | [Thinking in pipelines](https://effective-shell.com/part-2-core-skills/thinking-in-pipelines/) | It draws the three streams as files with numbers on them, 0 for standard input, 1 for standard output and 2 for standard error, then builds pipelines out of those numbers. Redirection stops being syntax you memorise once you can see where each stream goes | RHCSA-1.2 |
-| [Understanding the /etc/shadow file](https://www.cyberciti.biz/faq/understanding-etcshadow-file/) | It walks the colon-separated fields one at a time, including the ageing fields that `chage` writes. Afterwards you can read a shadow entry yourself and check your own work instead of trusting the command that produced it | RHCSA-9.2 |
+
+Four worked examples go with this week: [`examples/password-records.md`](examples/password-records.md) on password hashes and account defaults, [`examples/sudoers.md`](examples/sudoers.md) on reading a sudoers rule, [`examples/streams.md`](examples/streams.md) on streams and redirection, and [`examples/group-permissions.md`](examples/group-permissions.md) on a shared group directory and refreshing membership with `newgrp`.
+
+## Week 4: File permissions, RPM packages and Flatpak applications
+
+| Page | Why it matters |
+| --- | --- |
+| [Linux File Permissions Illustrated](https://bytebytego.com/guides/linux-file-permission-illustrated/) | One diagram of the ten characters that `ls -l` prints. Afterwards you can point at any position in a mode string and say who it governs. RHCSA-1.10 |
+| [setuid, setgid, and the Sticky Bit Explained](https://linuxize.com/post/setuid-setgid-sticky-bit/) | Each special bit does something different on a file and on a directory. That split is the hardest thing in this week, and the page ends in a table you can check yourself against. RHCSA-1.10, RHCSA-10.2 |
+| [Understanding the /etc/shadow file](https://www.cyberciti.biz/faq/understanding-etcshadow-file/) | It walks the colon-separated fields one at a time, including the ageing fields that `chage` writes. Afterwards you can read a shadow entry yourself and check your own work instead of trusting the command that produced it. RHCSA-9.2 |
 
 Read the shadow page beside `man 5 shadow` on a lab system. The manual page
 records nine fields and the page describes eight, because it passes over the
@@ -81,15 +92,6 @@ Check `/etc/login.defs` yourself and see.
 
 That site sits behind a bot check, so it may ask you to prove you are a person
 before it loads.
-
-Four worked examples go with this week: [`examples/password-records.md`](examples/password-records.md) on password hashes and account defaults, [`examples/sudoers.md`](examples/sudoers.md) on reading a sudoers rule, [`examples/streams.md`](examples/streams.md) on streams and redirection, and [`examples/group-permissions.md`](examples/group-permissions.md) on a shared group directory and refreshing membership with `newgrp`.
-
-## Week 4: File permissions, RPM packages and Flatpak applications
-
-| Page | Why it matters |
-| --- | --- |
-| [Linux File Permissions Illustrated](https://bytebytego.com/guides/linux-file-permission-illustrated/) | One diagram of the ten characters that `ls -l` prints. Afterwards you can point at any position in a mode string and say who it governs. RHCSA-1.10 |
-| [setuid, setgid, and the Sticky Bit Explained](https://linuxize.com/post/setuid-setgid-sticky-bit/) | Each special bit does something different on a file and on a directory. That split is the hardest thing in this week, and the page ends in a table you can check yourself against. RHCSA-1.10, RHCSA-10.2 |
 
 The ByteByteGo page is a diagram and a few lines of text. Take the diagram and
 leave the rest. It describes read, write and execute for files only. Those
@@ -103,7 +105,7 @@ fault before you can correct it. The page adds one fact the course leaves out.
 The kernel ignores setuid and setgid on shell scripts. Set the bit on a script
 in the lab environment and watch it do nothing.
 
-One worked example goes with this week: [`examples/directory-permissions.md`](examples/directory-permissions.md) on what setgid, the sticky bit and the umask do to a shared directory.
+Two worked examples go with this week: [`examples/directory-permissions.md`](examples/directory-permissions.md) on what setgid, the sticky bit and the umask do to a shared directory, and [`examples/umask-explanation.md`](examples/umask-explanation.md) on how the umask is applied to the default modes.
 
 ## Week 5: Software repositories, Flatpak applications and removable media
 
@@ -234,7 +236,7 @@ A worked example on why `~/.bashrc` runs both ways sits in [`examples/shell-star
 | Page | What it is |
 | --- | --- |
 | [Why omusrmsg is evil, and how it is fixed](https://rainer.gerhards.net/2011/07/why-omusrmsg-is-evil-and-how-it-is-fixed.html) | The author of rsyslog on the `:omusrmsg:` prefix you meet in the default `/etc/rsyslog.conf`. RHCSA-4.7 |
-| [`rsyslog.conf(5)`](https://man7.org/linux/man-pages/man5/rsyslog.conf.5.html) | The grammar of a selector line, facility then priority, in the two sentences quoted below. Every line in `/etc/rsyslog.conf` is built from them | RHCSA-4.7 |
+| [`rsyslog.conf(5)`](https://man7.org/linux/man-pages/man5/rsyslog.conf.5.html) | The grammar of a selector line, facility then priority, in the two sentences quoted below. Every line in `/etc/rsyslog.conf` is built from them. RHCSA-4.7 |
 | [OnCalendar Expression Documentation](https://systemd.guru/documentation.html) | The `OnCalendar=` syntax systemd timers use, field by field, with the ranges and repetition values each accepts. It is the page to read when a timer has to run at an hour cron cannot express. RHCSA-7.1 |
 
 The rsyslog post dates from 2011 and it explains a line RHEL 10 ships today.

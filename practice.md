@@ -21,7 +21,7 @@ Explaining a solution is how you find out whether you understood it.
 | 1 | [The pool of tears, and another beside it](#1-the-pool-of-tears-and-another-beside-it) | week 3 | Doable | RHCSA-1.2, 1.1 | nothing |
 | 2 | [A small door, and one sentence from the Queen](#2-a-small-door-and-one-sentence-from-the-queen) | week 4 | Moderate | RHCSA-9.4, 9.1, 9.3, 9.2 | `lab start users-password` |
 | 3 | [Everybody has won, and all must have prizes](#3-everybody-has-won-and-all-must-have-prizes) | week 4 | Doable | RHCSA-10.2, 1.10 | `lab start perms-default` |
-| 4 | [The bottle marked drink me, and where it came from](#4-the-bottle-marked-drink-me-and-where-it-came-from) | week 4 | Moderate | RHCSA-2.1, 2.2, 7.5 | `lab start software-dnf` |
+| 4 | [The bottle marked drink me, and where it came from](#4-the-bottle-marked-drink-me-and-where-it-came-from) | week 5 | Moderate | RHCSA-2.1, 2.2, 7.5 | `lab start software-dnf` |
 | 5 | [A cake marked eat me, for one guest only](#5-a-cake-marked-eat-me-for-one-guest-only) | week 5 | Doable | RHCSA-2.3, 2.4 | `lab start flatpak-configure` |
 | 6 | [Clean cup, move down](#6-clean-cup-move-down) | week 5 | Moderate | RHCSA-6.5, 1.8, 1.9, 1.10 | `lab start perms-cli` |
 | 7 | [The White Rabbit must not be late](#7-the-white-rabbit-must-not-be-late) | week 6 | Doable | RHCSA-7.2, 4.9, 8.3 | `lab start services-identify` |
@@ -30,7 +30,7 @@ Explaining a solution is how you find out whether you understood it.
 | 10 | [One card in the whole pack](#10-one-card-in-the-whole-pack) | week 8 | Doable | RHCSA-1.3, 1.7, 1.11 | `lab start regexes-regex` |
 | 11 | [A watch that tells the day of the month](#11-a-watch-that-tells-the-day-of-the-month) | week 9 | Moderate | RHCSA-7.1 (at and cron only), 1.2 | `lab start scheduling-cron` |
 | 12 | [The jury writes it all down](#12-the-jury-writes-it-all-down) | week 9 | Moderate | RHCSA-4.7, 4.8, 7.4 | `lab start logs-systemd` |
-| 13 | [A caucus race with no winner](#13-a-caucus-race-with-no-winner) | week 10 | Moderate | RHCSA-4.4, 4.5, 4.6 | `lab start tuning-nice` |
+| 13 | [A caucus race with no winner](#13-a-caucus-race-with-no-winner) | week 11 | Moderate | RHCSA-4.4, 4.5, 4.6 | `lab start tuning-nice` |
 | 14 | [The Cheshire Cat fades, but the grin stays](#14-the-cheshire-cat-fades-but-the-grin-stays) | week 10 | Moderate | RHCSA-10.4, 10.5, 10.8 | `lab start selinux-booleans` |
 | 15 | [Alice grows, and the bottle is put away](#15-alice-grows-and-the-bottle-is-put-away) | week 11 | Hard | RHCSA-6.4, 5.1, 5.2, 5.3 | `lab start lvm-extend` |
 | 16 | [No room, said the Hare, and there was plenty](#16-no-room-said-the-hare-and-there-was-plenty) | week 11 | Hard | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` |

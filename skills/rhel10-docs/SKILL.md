@@ -19,7 +19,7 @@ Hat documentation, with a citation for every claim.
 ## How to search
 
 1. Use the host's web search and page-fetch tools against `docs.redhat.com`.
-2. Red Hat pages are large. Never paste a full page into your answer —
+2. Red Hat pages are large. Never paste a full page into your answer;
    locate the relevant section (by its heading anchor) and quote only that.
 3. Prefer the specific guide's page (for example, "Configuring and managing
    networking") over search-result summaries.
@@ -38,7 +38,7 @@ Hat documentation, with a citation for every claim.
 
 ## Sample prompts
 
-1. "Check Red Hat docs — what replaced iptables in RHEL 10?"
+1. "Check Red Hat docs: what replaced iptables in RHEL 10?"
 2. "How does DNF change package management in RHEL 10?"
 3. "Per Red Hat docs, how do I run rootless Podman containers on RHEL 10?"
 4. "Is the `tuned` profile `network-latency` still available in RHEL 10?"

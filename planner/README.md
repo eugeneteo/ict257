@@ -11,7 +11,7 @@ LibreOffice Calc, Numbers or Google Sheets.
 
 One cell. On the **Start here** sheet, enter the date of your week 1 class.
 Every other date in the workbook follows from it, including the exam date and
-the revision dates for the chapters. The 39 teaching chapters carry two
+the revision dates for the chapters. The 37 teaching chapters carry two
 revision dates each. The two course prefaces carry none, and the two
 comprehensive reviews carry one.
 
@@ -22,6 +22,7 @@ for you.
 
 Each chapter carries three dates. The class date is the week we teach it.
 Revision 1 falls a week later. Revision 2 falls three weeks after that.
+Chapters and weeks follow the week ordering in [`readings.md`](../readings.md).
 
 Three short passes beat one long one, and the gap between them is the point.
 You have to work to recall the material, and that effort is what fixes it.
@@ -51,5 +52,5 @@ python3 planner/build.py
 ```
 
 The script writes the spreadsheet from scratch, so any edit you make to the
-`.xlsx` will be lost when you run it. Chapters and weeks follow
-[`lessons.md`](../lessons.md).
+`.xlsx` will be lost when you run it. Chapters and weeks follow the week
+ordering in [`readings.md`](../readings.md).

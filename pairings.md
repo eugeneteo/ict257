@@ -32,7 +32,7 @@ setting persistent.
 - `activation`, it is saved but the running service has not picked it up
 - `visibility`, the file is right but a label, cache or generator disagrees
 
-### RH124, weeks 1 to 6
+### RH124, weeks 1 to 7
 
 | After you | You must also | Or else | Fails how | Objective |
 | --- | --- | --- | --- | --- |
@@ -43,13 +43,13 @@ setting persistent.
 | `systemctl enable UNIT` | `systemctl start UNIT` | nothing is running until the next boot | activation | RHCSA-4.9, RHCSA-7.2 |
 | edit `/etc/NetworkManager/system-connections/NAME.nmconnection` | `nmcli con reload` | NetworkManager still holds the old profile | visibility | RHCSA-8.1 |
 | `nmcli con mod NAME ...` | `nmcli con up NAME` | the interface keeps its old runtime address | activation | RHCSA-8.1 |
-| edit a service configuration file, such as `sshd_config`, `chrony.conf`, `journald.conf` or a file under `/etc/rsyslog.d` | `systemctl reload` that service, or `restart` if it has no reload | the daemon keeps the settings it started with | activation | RHCSA-10.3 |
 
-### RH134, weeks 7 to 12
+### RH134, weeks 8 to 12
 
 | After you | You must also | Or else | Fails how | Objective |
 | --- | --- | --- | --- | --- |
 | `export EDITOR=nano`, though vim is the default and it is better | add the export to `~/.bash_profile` | the variable is lost at the next login | persistence | RHCSA-3.3 |
+| edit a service configuration file, such as `sshd_config`, `chrony.conf`, `journald.conf` or a file under `/etc/rsyslog.d` | `systemctl reload` that service, or `restart` if it has no reload | the daemon keeps the settings it started with | activation | RHCSA-7.2 |
 | edit a `.timer` unit under `/etc/systemd/system` | `systemctl daemon-reload` | systemd still has the stale unit cached | visibility | RHCSA-7.1 |
 | create `/etc/tmpfiles.d/NAME.conf` | `systemd-tmpfiles --create /etc/tmpfiles.d/NAME.conf` | the described directory does not exist yet | activation | RHCSA-7.1 |
 | `mkdir /var/log/journal` | `journalctl --flush` | the journal still lives only in memory | activation | RHCSA-4.8 |

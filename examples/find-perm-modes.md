@@ -15,10 +15,10 @@ $ find /home -perm -324
 $ find /home -perm /442
 ```
 
-Both use `find` with octal permission modes — digit order is **owner / group /
+Both use `find` with octal permission modes: digit order is **owner / group /
 other**, and each digit sums r=4, w=2, x=1.
 
-## `-perm -324` — "at least these bits"
+## `-perm -324`: "at least these bits"
 
 The leading `-` means: **all** of these bits must be set (other bits may also
 be set).
@@ -27,8 +27,8 @@ be set).
 - `2` (group) = **write**
 - `4` (other) = **read**
 
-So it finds files where the owner can write and execute — or enter, if the
-file is a directory — the group can write, and others can read. Extra bits
+So it finds files where the owner can write and execute (or enter, if the
+file is a directory), the group can write, and others can read. Extra bits
 such as setgid or owner-read do not disqualify a file.
 
 ### Matches
@@ -38,10 +38,10 @@ Each of these modes sets every bit that `-324` asks for:
 | Mode | Why |
 | --- | --- |
 | `0324` (`-wx-w-r--`) | Exactly the required bits, nothing more |
-| `0724` (`rwx-w-r--`) | Owner-read is extra — allowed, the required bits are all there |
+| `0724` (`rwx-w-r--`) | Owner-read is extra: allowed, the required bits are all there |
 | `0374` (`-wxrwxr--`) | Extra bits on group/other don't disqualify |
 | `2725` (`rwx-wSr-x`) | Setgid (2000) + extra bits; required bits all present |
-| `1777` (`rwxrwxrwt`) | World-writable still matches — it contains `wx-w-r--` |
+| `1777` (`rwxrwxrwt`) | World-writable still matches: it contains `wx-w-r--` |
 
 ### No matches
 
@@ -55,7 +55,7 @@ Each of these modes is missing at least one required bit:
 | `0344` (`-wxr--r--`) | Group has read instead of **write** |
 | `0424` (`r---w-r--`) | Owner has read instead of **write** (and no execute) |
 
-## `-perm /442` — "any of these bits"
+## `-perm /442`: "any of these bits"
 
 The leading `/` means: **at least one** of these bits must be set.
 
@@ -64,7 +64,7 @@ The leading `/` means: **at least one** of these bits must be set.
 - `2` (other) = **write**
 
 So it finds files readable by owner, *or* readable by group, *or* writable by
-others — an OR test.
+others. It is an OR test.
 
 ### Matches
 
@@ -76,7 +76,7 @@ Each of these modes sets at least one bit that `/442` asks for:
 | `0040` (`---r-----`) | Group-read alone satisfies it |
 | `0002` (`-------w-`) | Other-write alone satisfies it |
 | `0444` (`r--r--r--`) | Both read bits set |
-| `6660` (`rwSrwS---`) | Setuid/setgid junk plus owner+group read — matches via the read bits |
+| `6660` (`rwSrwS---`) | Setuid/setgid junk plus owner+group read: matches via the read bits |
 
 ### No matches
 
@@ -88,12 +88,12 @@ Each of these modes sets none of the bits `/442` asks for:
 | `0030` (`----wx---`) | Group has write+execute but not **read** |
 | `0211` (`-w---x--x`) | Owner-write only; group lacks read; other lacks write |
 | `0000` (`---------`) | No bits at all |
-| `0020` (`----w----`) | Group-write only — group **read** is what `/442` asks for |
+| `0020` (`----w----`) | Group-write only: group **read** is what `/442` asks for |
 
 ## The mental model
 
 - `-` is a logical **AND** over the listed bits: "must have all".
 - `/` is a logical **OR**: "must have at least one".
 - The third form, with no prefix (e.g. `-perm 324`), means *exactly* these bits
-  and nothing else — `0724` would fail an exact `324` test even though it
+  and nothing else: `0724` would fail an exact `324` test even though it
   passes `-324`.

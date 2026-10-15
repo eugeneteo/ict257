@@ -199,8 +199,9 @@ option or a shell prompt reaching `hints.md`, which must point a student at the
 material without working for them.
 
 Anything I do not want committed or pushed goes in the two ignored directories
-named in `.gitignore`. The `.githooks/` pre-commit and pre-push guards refuse
-them even if I force-add them.
+named in `.gitignore`. The `.githooks/` pre-commit, commit-msg and pre-push
+guards refuse them, even if I force-add them; the commit-msg hook refuses a
+commit message that names a file in an ignored directory.
 
 The guards protect me and nobody else. `core.hooksPath` lives in `.git/config`,
 which does not survive a clone, so a student who clones this gets `.githooks/`

@@ -437,7 +437,7 @@ def build_start_here(wb):
         row=row,
         column=1,
         value="ICT257 Red Hat System Administration, Singapore University of Social Sciences. Taught by Eugene Teo. "
-              "Chapters and weeks follow lessons.md. Rebuild this file with python3 planner/build.py.",
+              "Chapters and weeks follow readings.md. Rebuild this file with python3 planner/build.py.",
     )
     credit.font = Font(name=FONT_NAME, size=9, italic=True, color=SUBTITLE)
     credit.alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)

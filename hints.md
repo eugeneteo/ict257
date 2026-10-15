@@ -100,7 +100,8 @@ failed. Both worked examples in the course start somewhere else.
 <summary>The Cat points the way (where to look in the courseware)</summary>
 
 RH124 chapter 11, section 5 has the arithmetic, the starting permissions and
-the default value. RH134 chapter 1, section 1 covers the rest. It gives the
+the default value. RH134 chapter 1, section 1 covers the rest (covered in
+week 8). It gives the
 order in which a login shell reads its startup files. It also says where a
 setting that must reach every account belongs.
 

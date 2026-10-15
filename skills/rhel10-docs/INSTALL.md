@@ -17,14 +17,14 @@ cd ict257
 
 Tools that support the [Agent Skills](https://agentskills.io) format
 (`SKILL.md` folders) read the skill from a skills directory, so a **symlink**
-into this checkout is enough — and a later `git pull` here updates the skill
+into this checkout is enough, and a later `git pull` here updates the skill
 everywhere at once. A plain copy (`cp -r`) also works, but it will not track
 updates. Choose a copy if you plan to delete this checkout after installing.
 
-- **Claude Code** — skills directory `~/.claude/skills/` (or per-project
+- **Claude Code**: skills directory `~/.claude/skills/` (or per-project
   `.claude/skills/`).
-- **Antigravity (agy)** — skills directory `~/.gemini/config/skills/`.
-- **GitHub Copilot** — skills directory `.github/skills/` inside each
+- **Antigravity (agy)**: skills directory `~/.gemini/config/skills/`.
+- **GitHub Copilot**: skills directory `.github/skills/` inside each
   repository (repo-level is the reliable location; support across Copilot
   CLI, code review, the cloud agent, and VS Code agent mode since
   December 2025).
@@ -43,7 +43,7 @@ ln -s "$(pwd)/skills/rhel10-docs" ~/.claude/skills/rhel10-docs
 ```
 
 Restart Claude Code (or start a new session) and verify with the `/skills`
-command — `rhel10-docs` should be listed.
+command; `rhel10-docs` should be listed.
 
 If you prefer, copy instead of symlinking, or install for one project only:
 
@@ -77,7 +77,7 @@ mkdir -p .github/skills
 ln -s /absolute/path/to/ict257/skills/rhel10-docs .github/skills/rhel10-docs
 ```
 
-Commit the symlink and it works for every collaborator automatically — but
+Commit the symlink and it works for every collaborator automatically, but
 only if their checkout sits at the same absolute path as yours. If it does
 not, the symlink is broken on their machine; each collaborator then
 re-creates it with the command above, using their own clone path, or copies
@@ -96,7 +96,7 @@ VS Code and GitHub Copilot CLI both honor `.github/skills/`.
 Codex CLI does not use a skills directory; it reads instructions from
 `AGENTS.md`. Two options:
 
-**Option A — per-project (recommended for coursework).** In each project
+**Option A: per-project (recommended for coursework).** In each project
 where you want the skill, add a line to the project's `AGENTS.md`:
 
 ```markdown
@@ -106,15 +106,16 @@ rules in <ABSOLUTE_PATH_TO_ict257>/skills/rhel10-docs/SKILL.md:
 search only docs.redhat.com RHEL 10 documentation and cite every claim.
 ```
 
-**Option B — global.** Append the same block to `~/.codex/AGENTS.md` so
+**Option B: global.** Append the same block to `~/.codex/AGENTS.md` so
 it applies in every Codex session.
 
 ---
 
 ## Renaming the skill
 
-You can rename the skill to whatever you like — for example `redhat-docs`
-or `my-rhel10`. Rename **both** the directory and the `name:` line at
+You can rename the skill to whatever you like, for example `redhat-docs`
+or `my-rhel10`. Rename **both** the installed directory (the symlink for
+Claude Code, Antigravity and Copilot installs) and the `name:` line at
 the top of `SKILL.md`, and keep the two identical:
 
 ```sh
@@ -147,9 +148,9 @@ safe everywhere.
 
 In any tool, ask:
 
-> Check Red Hat docs — what replaced iptables in RHEL 10?
+> Check Red Hat docs: what replaced iptables in RHEL 10?
 
 A correct install produces an answer that (a) names the RHEL 10
 replacement, and (b) includes a link to the exact docs.redhat.com page.
 If the tool answers from general knowledge with no citation, the skill
-is not loaded — recheck the paths above.
+is not loaded; recheck the paths above.

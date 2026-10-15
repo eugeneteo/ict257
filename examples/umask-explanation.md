@@ -1,5 +1,7 @@
 # Umask permission calculations
 
+This example supplements RH124 chapter 11, section 5 (setting default file permissions with umask).
+
 This guide explains how to calculate file and directory permissions when a umask is applied. It compares the informal hand-calculation method with the bitwise operations performed by the operating system kernel.
 
 ## 1. Hand-calculation method (digit-wise subtraction)
@@ -125,6 +127,6 @@ The following table shows the calculations for a umask of `133`:
 | **File Permissions** | `owner: 6-1=6(bitwise)`, `group: 6-3=4(bitwise)`, `other: 6-3=4(bitwise)` → **`0644`** (`rw-r--r--`) | `0666 & 0644` → **`0644`** (`rw-r--r--`) |
 | **Directory Permissions** | `7-1=6`, `7-3=4`, `7-3=4` → **`0644`** (`rw-r--r--`) | `0777 & 0644` → **`0644`** (`rw-r--r--`) |
 
-### Note: 
+### Note:
 Note on umask rows 037, 055, and 133: the calculation uses bitwise logic (`0666 & ~umask`), not arithmetic subtraction. Since files default to 0666 and have no `x` bit, umask digits containing the `x` bit (1, 3, 5, 7) do not subtract cleanly. For example, `umask 3` (which clears `w` and `x`) only removes `w` from a file, leaving `4` (`r`), not `3` (`wx`); `umask 5` (which clears `r` and `x`) only removes `r`, leaving `2` (`w`), not `1` (`x`). Directory examples never show this divergence because the default mode `0777` already has every bit set, so digit-wise subtraction and bitwise AND always agree there.
 

@@ -26,7 +26,7 @@ leave out.
 | RHCSA-1.2 | Input/output redirection | 09.01 | — | 3 |
 | RHCSA-1.3 | `grep` and regular expressions | — | 02.01 | 8 |
 | RHCSA-1.4 | Remote access using SSH | 19.01 | — | 6 |
-| RHCSA-1.5 | Log in and switch users | 10.03 | 12.03 | 3, 11 |
+| RHCSA-1.5 | Log in and switch users | 10.03 | 12.03 | 3, 12 |
 | RHCSA-1.6 | `tar`, `gzip`, `bzip2` | — | 07.01 | 10 |
 | RHCSA-1.7 | Create and edit text files | 08.01 | — | 3 |
 | RHCSA-1.8 | Create, delete, copy, move files | 06.01, 06.03, 07.01, 07.05, 14.05 | — | 2, 5 |
@@ -56,9 +56,9 @@ leave out.
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-4.1 | Boot, reboot, shut down normally | — | 12.03 | 11 |
-| RHCSA-4.2 | Boot into different targets manually | — | 12.03 | 11 |
-| RHCSA-4.3 | Interrupt the boot process | — | 12.01, 12.05, 13.01 | 11, 12 |
+| RHCSA-4.1 | Boot, reboot, shut down normally | — | 12.03 | 12 |
+| RHCSA-4.2 | Boot into different targets manually | — | 12.03 | 12 |
+| RHCSA-4.3 | Interrupt the boot process | — | 12.01, 12.05, 13.01 | 12 |
 | RHCSA-4.4 | Identify heavy processes and kill them | 15.01, 15.03, 15.05, 15.07 | — | 6 |
 | RHCSA-4.5 | Adjust process scheduling | — | 09.03 | 10, 11 |
 | RHCSA-4.6 | Manage tuning profiles | — | 09.01 | 10 |
@@ -82,7 +82,7 @@ leave out.
 
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
-| RHCSA-6.1 | VFAT, ext4, XFS file systems | 14.01, 14.03 | 10.01, 12.05 | 5, 11 |
+| RHCSA-6.1 | VFAT, ext4, XFS file systems | 14.01, 14.03 | 10.01, 12.05 | 5, 11, 12 |
 | RHCSA-6.2 | NFS network file systems | — | 15.01 | 12 |
 | RHCSA-6.3 | Configure autofs | — | 15.03 | 12 |
 | RHCSA-6.4 | Extend existing logical volumes | — | 11.03 | 11 |
@@ -94,10 +94,10 @@ leave out.
 | --- | --- | --- | --- | --- |
 | RHCSA-7.1 | `at`, `cron`, systemd timer units | — | 03.01, 03.03, 04.01, 04.03, 04.05 | 8, 9 |
 | RHCSA-7.2 | Services and enabling them at boot | 16.01, 16.03 | — | 6 |
-| RHCSA-7.3 | Boot into a specific target automatically | — | 12.03 | 11 |
+| RHCSA-7.3 | Boot into a specific target automatically | — | 12.03 | 12 |
 | RHCSA-7.4 | Configure time service clients | — | 05.09 | 9 |
 | RHCSA-7.5 | Install and update from CDN, repo, local file | 04.01, 12.03, 12.05 | — | 2, 4, 5 |
-| RHCSA-7.6 | Modify the system bootloader | — | 12.01 | 11 |
+| RHCSA-7.6 | Modify the system bootloader | — | 12.01 | 12 |
 
 ## 8. Manage basic networking
 

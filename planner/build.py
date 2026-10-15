@@ -107,8 +107,8 @@ WEEKS = {
     8: ("RH134", [1, 2, 3], "Shell scripts, regular expressions and scheduled user tasks"),
     9: ("RH134", [4, 5], "Recurring system tasks, logs, journals and keeping time"),
     10: ("RH134", [6, 7, 8, 9], "SELinux, archives, secure file transfer and tuning profiles"),
-    11: ("RH134", [10, 11, 12], "Partitions, swap, logical volumes and booting"),
-    12: ("RH134", [13, 14, 15], "Boot troubleshooting, firewalls and network file systems"),
+    11: ("RH134", [10, 11], "Partitions, swap and logical volumes"),
+    12: ("RH134", [12, 13, 14, 15], "Booting, troubleshooting, firewalls and network file systems"),
     13: ("RH134", [16, 17, 18], "Installation, containers and image mode"),
 }
 
@@ -153,7 +153,7 @@ PRACTICE = [
     (10, "One card in the whole pack", 8, "Doable", "RHCSA-1.3, 1.7, 1.11", "lab start regexes-regex"),
     (11, "A watch that tells the day of the month", 9, "Moderate", "RHCSA-7.1 (at and cron only), 1.2", "lab start scheduling-cron"),
     (12, "The jury writes it all down", 9, "Moderate", "RHCSA-4.7, 4.8, 7.4", "lab start logs-systemd"),
-    (13, "A caucus race with no winner", 10, "Moderate", "RHCSA-4.4, 4.5, 4.6", "lab start tuning-nice"),
+    (13, "A caucus race with no winner", 11, "Moderate", "RHCSA-4.4, 4.5, 4.6", "lab start tuning-nice"),
     (14, "The Cheshire Cat fades, but the grin stays", 10, "Moderate", "RHCSA-10.4, 10.5, 10.8", "lab start selinux-booleans"),
     (15, "Alice grows, and the bottle is put away", 11, "Hard", "RHCSA-6.4, 5.1, 5.2, 5.3", "lab start lvm-extend"),
     (16, "No room, said the Hare, and there was plenty", 11, "Hard", "RHCSA-5.4, 5.2, 5.3, 5.6", "lab start lvm-create"),

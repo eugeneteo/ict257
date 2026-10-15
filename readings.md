@@ -290,38 +290,38 @@ question does not arise. The flaw itself is not examinable. It is the reason
 behind an instruction the course gives you without explaining it, and RH134
 08.01 names this very page in its own list of references.
 
-## Week 11: Partitions, swap, logical volumes and booting
+## Week 11: Partitions, swap and logical volumes
 
-Partitions, swap, logical volumes and booting.
+Partitions, swap and logical volumes.
 
 | Page | Why it is worth reading | Objective |
 | --- | --- | --- |
 | [Linux on 4 KB sector disks: practical advice](https://web.archive.org/web/20210125124010/https://developer.ibm.com/tutorials/l-linux-on-4kb-sector-disks/) | Rod Smith measures what a misaligned partition costs on an Advanced Format disk. RH134 10.01 names 2048 as a safe first sector and says only that it aligns. This puts a number on getting it wrong | RHCSA-5.1 |
 | [LVM volume group: what are extents?](https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extents) | The accepted answer explains the unit that LVM actually allocates in. It is why `lvcreate -l` and `lvcreate -L` take different numbers, and why a size rounds up | RHCSA-5.4, RHCSA-6.4 |
-| [`bootup(7)`](https://man7.org/linux/man-pages/man7/bootup.7.html) | The systemd boot sequence as RHEL 10 runs it, from firmware through the initial RAM file system to the default target | RHCSA-4.2, RHCSA-7.3 |
 | [Configuring and managing logical volumes](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_logical_volumes/index) | Red Hat's own LVM guide for RHEL 10. Use it when a `pvs`, `vgs` or `lvs` field means nothing to you | RHCSA-5.2, RHCSA-5.3, RHCSA-5.4 |
 
 The alignment page was written long before RHEL 10, so read it for the
 principle and not for the tools it names. RH134 teaches `parted`, which reads
 the disk topology itself and warns you when a start position lands badly.
 
-Read `bootup(7)` on your own machine as well, with `man 7 bootup`. That lookup
-is what RHCSA-1.11 asks of you, and the exam may leave you nothing else to
-work from.
-
 Two worked examples go with this week in [`examples/partitioning-and-lvm.md`](examples/partitioning-and-lvm.md): partitioning with `parted`, and cleaning up an LVM build.
 
-## Week 12: Boot troubleshooting, firewalls and network file systems
+## Week 12: Booting, troubleshooting, firewalls and network file systems
 
-Boot troubleshooting, firewalls and network file systems.
+Booting, troubleshooting, firewalls and network file systems.
 
 | Page | Why it is worth reading | Objective |
 | --- | --- | --- |
 | [How to use the chroot command on Linux](https://www.howtogeek.com/441534/how-to-use-the-chroot-command-on-linux/) | Rescue mode drops you at a shell and expects `chroot /mnt/sysroot`. This builds a small root directory by hand, so you can see what that one command moves | RHCSA-4.3 |
 | [Mounting file systems on demand](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/managing_file_systems/mounting-file-systems-on-demand) | Red Hat's autofs chapter for RHEL 10, covering the master map, direct maps and indirect maps. It matches the file layout RH134 15.03 teaches | RHCSA-6.3 |
+| [`bootup(7)`](https://man7.org/linux/man-pages/man7/bootup.7.html) | The systemd boot sequence as RHEL 10 runs it, from firmware through the initial RAM file system to the default target | RHCSA-4.2, RHCSA-7.3 |
 
 You will not build a chroot by hand in the exam. Knowing what the command
 changes is what stops the rescue steps being a recipe you half remember.
+
+Read `bootup(7)` on your own machine as well, with `man 7 bootup`. That lookup
+is what RHCSA-1.11 asks of you, and the exam may leave you nothing else to
+work from.
 
 Two worked examples go with this week in [`examples/network-and-firewall-tools.md`](examples/network-and-firewall-tools.md): the `firewall-cmd` two-step, and tracing an open port you did not put there.
 

@@ -83,8 +83,8 @@ leave out.
 | Objective | Summary | RH124 | RH134 | Week |
 | --- | --- | --- | --- | --- |
 | RHCSA-6.1 | VFAT, ext4, XFS file systems | 14.01, 14.03 | 10.01, 12.05 | 5, 11, 12 |
-| RHCSA-6.2 | NFS network file systems | — | 15.01 | 12 |
-| RHCSA-6.3 | Configure autofs | — | 15.03 | 12 |
+| RHCSA-6.2 | NFS network file systems | — | 15.01 | 13 |
+| RHCSA-6.3 | Configure autofs | — | 15.03 | 13 |
 | RHCSA-6.4 | Extend existing logical volumes | — | 11.03 | 11 |
 | RHCSA-6.5 | Diagnose file permission problems | 11.01, 11.03, 11.05 | — | 4 |
 

@@ -35,7 +35,7 @@ Explaining a solution is how you find out whether you understood it.
 | 15 | [Alice grows, and the bottle is put away](#15-alice-grows-and-the-bottle-is-put-away) | week 11 | Hard | RHCSA-6.4, 5.1, 5.2, 5.3 | `lab start lvm-extend` |
 | 16 | [No room, said the Hare, and there was plenty](#16-no-room-said-the-hare-and-there-was-plenty) | week 11 | Hard | RHCSA-5.4, 5.2, 5.3, 5.6 | `lab start lvm-create` |
 | 17 | [The treacle well, and what was drawn from it](#17-the-treacle-well-and-what-was-drawn-from-it) | week 11 | Hard | RHCSA-6.1 (XFS and ext4 only), 1.6, 4.10, 5.5 | `lab start archive-manage` |
-| 18 | [A door that opens only when asked](#18-a-door-that-opens-only-when-asked) | week 12 | Doable | RHCSA-6.2, 6.3, 4.9 | `lab start nfsclient-autofs` |
+| 18 | [A door that opens only when asked](#18-a-door-that-opens-only-when-asked) | week 13 | Doable | RHCSA-6.2, 6.3, 4.9 | `lab start nfsclient-autofs` |
 | 19 | [The flamingo lent for the game, and given back](#19-the-flamingo-lent-for-the-game-and-given-back) | week 12 | Moderate | RHCSA-10.7, 10.1 | `lab start netsecurity-ports` |
 | 20 | [What is the use of a book without pictures](#20-what-is-the-use-of-a-book-without-pictures) | week 12 | Hard | RHCSA-5.1, 5.5, 10.6, 10.1 | `lab start storage-partitions` |
 | 21 | [A passage of their own to the garden](#21-a-passage-of-their-own-to-the-garden) | week 12 | Moderate | RHCSA-8.1, 8.2, 8.4 | `lab start net-edit` |

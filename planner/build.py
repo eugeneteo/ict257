@@ -108,8 +108,8 @@ WEEKS = {
     9: ("RH134", [4, 5], "Recurring system tasks, logs, journals and keeping time"),
     10: ("RH134", [6, 7, 8, 9], "SELinux, archives, secure file transfer and tuning profiles"),
     11: ("RH134", [10, 11], "Partitions, swap and logical volumes"),
-    12: ("RH134", [12, 13, 14, 15], "Booting, troubleshooting, firewalls and network file systems"),
-    13: ("RH134", [16, 17, 18], "Installation, containers and image mode"),
+    12: ("RH134", [12, 13, 14], "Booting, troubleshooting and firewalls"),
+    13: ("RH134", [15, 16, 17, 18], "Network file systems, installation, containers and image mode"),
 }
 
 # lessons.md schedules no new chapters after week 13. Week 14 is revision, and that
@@ -131,11 +131,11 @@ NOTES = {
     ("RH124", 5): "Brought forward into week 1 so you have the assistant from the start. You will not have it in the exam.",
     ("RH124", 20): "Five review labs. Open to you from week 7, so start earlier if you can.",
     ("RH134", 0): "Not scheduled. It orients you to a self-paced Red Hat course. Skim it and move on.",
-    ("RH134", 6): "Hardest third of the module starts here. Weeks 10, 11 and 12 deserve the most revision time.",
+    ("RH134", 6): "Hardest third of the module starts here. Weeks 10 to 13 deserve the most revision time.",
     ("RH134", 16): "No objective matches it. Cover the chapters the exam asks for first.",
     ("RH134", 17): "No objective matches it. Cover the chapters the exam asks for first.",
     ("RH134", 18): "No objective matches it. Cover the chapters the exam asks for first.",
-    ("RH134", 19): "Labs 19.02 to 19.04 are open from week 12. Lab 19.05 rests on week 13 containers.",
+    ("RH134", 19): "Labs 19.02 and 19.04 are open from week 12. Labs 19.03 and 19.05 rest on week 13 material.",
 }
 
 # Optional practice challenges, from practice.md. Ordered by challenge number,
@@ -158,7 +158,7 @@ PRACTICE = [
     (15, "Alice grows, and the bottle is put away", 11, "Hard", "RHCSA-6.4, 5.1, 5.2, 5.3", "lab start lvm-extend"),
     (16, "No room, said the Hare, and there was plenty", 11, "Hard", "RHCSA-5.4, 5.2, 5.3, 5.6", "lab start lvm-create"),
     (17, "The treacle well, and what was drawn from it", 11, "Hard", "RHCSA-6.1 (XFS and ext4 only), 1.6, 4.10, 5.5", "lab start archive-manage"),
-    (18, "A door that opens only when asked", 12, "Doable", "RHCSA-6.2, 6.3, 4.9", "lab start nfsclient-autofs"),
+    (18, "A door that opens only when asked", 13, "Doable", "RHCSA-6.2, 6.3, 4.9", "lab start nfsclient-autofs"),
     (19, "The flamingo lent for the game, and given back", 12, "Moderate", "RHCSA-10.7, 10.1", "lab start netsecurity-ports"),
     (20, "What is the use of a book without pictures", 12, "Hard", "RHCSA-5.1, 5.5, 10.6, 10.1", "lab start storage-partitions"),
     (21, "A passage of their own to the garden", 12, "Moderate", "RHCSA-8.1, 8.2, 8.4", "lab start net-edit"),
@@ -417,7 +417,7 @@ def build_start_here(wb):
     row += 1
     reasoning = [
         "Weeks 1 to 7 are RH124. Weeks 8 to 13 are RH134. Week 14 is revision, and you sit the exam in week 15.",
-        "The two comprehensive reviews sit in week 14, where lessons.md puts them. RH124 20 is open to you from week 7 and RH134 19.02 to 19.04 from week 12, so start either one early if you can.",
+        "The two comprehensive reviews sit in week 14, where lessons.md puts them. RH124 20 is open to you from week 7 and RH134 19.02 and 19.04 from week 12, and 19.03 and 19.05 from week 13, so start either one early if you can.",
         "A comprehensive review gets one revision, not two. There is no room for a second before the exam, and the exam itself is the second pass.",
         "The two preface chapters get no revision dates. They orient you to the courseware and teach no skill the exam asks for. RH134 00 is not scheduled at all.",
         "Three weeks after the first revision falls past the exam for the week 12 and week 13 chapters. Those second revisions are pulled back into revision week instead, week 12 material first and week 13 material a day later.",

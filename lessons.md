@@ -37,8 +37,8 @@ A group permissions lab example that accompanies RH124 section 10.07 (Managing L
 | 9 | Recurring system tasks, logs, journals and keeping time | RH134 04.01, 04.03, 04.05, 05.01, 05.03, 05.05, 05.07, 05.09 | RH134 04.07, 05.02, 05.11 | RHCSA-4.7, RHCSA-4.8, RHCSA-7.1, RHCSA-7.4 |
 | 10 | SELinux, archives, secure file transfer and tuning profiles | RH134 06.01, 06.03, 06.05, 06.07, 07.01, 08.01, 08.03, 09.01 | RH134 06.09, 08.05, 09.05 | RHCSA-1.6, RHCSA-4.5, RHCSA-4.6, RHCSA-4.10, RHCSA-10.4, RHCSA-10.5, RHCSA-10.6, RHCSA-10.8 |
 | 11 | Partitions, swap and logical volumes | RH134 09.03, 10.01, 10.03, 11.01, 11.03, 11.05 | RH134 10.05, 11.06, 11.07 | RHCSA-5.1, RHCSA-5.2, RHCSA-5.3, RHCSA-5.4, RHCSA-5.5, RHCSA-5.6, RHCSA-6.1, RHCSA-6.4 |
-| 12 | Booting, troubleshooting, firewalls and network file systems | RH134 12.01, 12.03, 12.05, 13.01, 14.01, 14.03, 15.01, 15.03 | RH134 12.07, 14.05, 15.05 | RHCSA-1.5, RHCSA-4.1, RHCSA-4.2, RHCSA-4.3, RHCSA-6.1, RHCSA-6.2, RHCSA-6.3, RHCSA-7.3, RHCSA-7.6, RHCSA-8.4, RHCSA-10.1, RHCSA-10.7 |
-| 13 | Installation, containers and image mode | RH134 16.01, 16.03, 17.01, 17.03, 17.05, 18.01, 18.03, 18.05, 18.07 | RH134 16.05, 17.02, 17.07, 18.02 | — |
+| 12 | Booting, troubleshooting and firewalls | RH134 12.01, 12.03, 12.05, 13.01, 14.01, 14.03 | RH134 12.07, 14.05 | RHCSA-1.5, RHCSA-4.1, RHCSA-4.2, RHCSA-4.3, RHCSA-6.1, RHCSA-7.3, RHCSA-7.6, RHCSA-8.4, RHCSA-10.1, RHCSA-10.7 |
+| 13 | Network file systems, installation, containers and image mode | RH134 15.01, 15.03, 16.01, 16.03, 17.01, 17.03, 17.05, 18.01, 18.03, 18.05, 18.07 | RH134 15.05, 16.05, 17.02, 17.07, 18.02 | RHCSA-6.2, RHCSA-6.3 |
 
 Week 10 stopped at the start of RH134 09.03 (Influencing Process Scheduling), so
 that section moves to week 11 and is taught in the first part of the session.
@@ -50,6 +50,10 @@ Week 11 stopped before RH134 12.01, so chapter 12 moves to week 12 in full and
 is taught in the first part of that session. Read 12.01, 12.03 and 12.05 before
 week 12, and do the RH134 12.07 lab in your own time once it is taught.
 
+Week 12 stopped before RH134 15.01, so chapter 15 moves to week 13 in full and
+is taught in the first part of that session. Read 15.01 and 15.03 before week
+13, and do the RH134 15.05 lab in your own time once it is taught.
+
 ### Week 14: revision
 
 No new chapters. We go through [`objectives.md`](objectives.md) and
@@ -58,8 +62,8 @@ one asks of you and which week taught it. Bring the objectives you are least
 sure of.
 
 Both comprehensive review chapters are open to you by now. If week 13 slipped,
-RH134 19.05 is the one review lab that may have to wait, because it rests on the
-container material.
+RH134 19.03 and 19.05 are the review labs that may have to wait, because they
+rest on the network file system and container material.
 
 Read [`pairings.md`](pairings.md) before you sit either of them. It lists the
 commands that need a second command, and the forms that survive a reboot.
@@ -74,7 +78,7 @@ There is no session in week 15. You sit the RHCSA (EX200) exam. For what the
 exam environment is like on the day, see [`exam-day.md`](exam-day.md).
 
 Revise with the comprehensive review, then the chapter labs. See
-[Your own time](#your-own-time). The labs from weeks 10, 11 and 12 deserve the
+[Your own time](#your-own-time). The labs from weeks 10 to 13 deserve the
 most attention. SELinux, storage, booting, troubleshooting, firewalls and
 network file systems are the hardest material in the module.
 
@@ -145,11 +149,11 @@ See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 | Taught enough by | Material |
 | --- | --- |
 | Week 7 | RH124 20.02 to 20.06, five labs covering Red Hat System Administration I |
-| Week 12 | RH134 19.02 to 19.04, three labs covering Red Hat System Administration II |
-| Week 13 | RH134 19.05, one lab on containers |
+| Week 12 | RH134 19.02 and 19.04, two labs covering boot troubleshooting and network security |
+| Week 13 | RH134 19.03 and 19.05, one lab on network file systems, one on containers |
 
-RH134 19.05 rests on the container material I teach in week 13, and it has no
-corresponding objective. Do the other four review labs first.
+RH134 19.03 rests on the network file system material taught in week 13, and
+19.05 rests on the containers. Do the other three review labs first.
 
 ## Sequencing notes
 

@@ -297,6 +297,7 @@ Partitions, swap and logical volumes.
 | Page | Why it is worth reading | Objective |
 | --- | --- | --- |
 | [Linux on 4 KB sector disks: practical advice](https://web.archive.org/web/20210125124010/https://developer.ibm.com/tutorials/l-linux-on-4kb-sector-disks/) | Rod Smith measures what a misaligned partition costs on an Advanced Format disk. RH134 10.01 names 2048 as a safe first sector and says only that it aligns. This puts a number on getting it wrong | RHCSA-5.1 |
+| [Swap Space in Operating System](https://www.geeksforgeeks.org/operating-systems/swap-space-in-operating-system/) | Explains what the kernel does when RAM runs short and why swap exists at all. RH134 10.03 and 11.01 show the commands to add swap; this covers the reasoning behind sizes and placement decisions | RHCSA-5.6 |
 | [LVM volume group: what are extents?](https://unix.stackexchange.com/questions/341077/lvm-volume-group-what-are-extents) | The accepted answer explains the unit that LVM actually allocates in. It is why `lvcreate -l` and `lvcreate -L` take different numbers, and why a size rounds up | RHCSA-5.4, RHCSA-6.4 |
 | [Configuring and managing logical volumes](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/configuring_and_managing_logical_volumes/index) | Red Hat's own LVM guide for RHEL 10. Use it when a `pvs`, `vgs` or `lvs` field means nothing to you | RHCSA-5.2, RHCSA-5.3, RHCSA-5.4 |
 

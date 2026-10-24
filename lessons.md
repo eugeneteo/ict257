@@ -1,6 +1,6 @@
 # ICT257 lesson plan
 
-Thirteen weeks of teaching, with one three-hour session each week, covering the RHCSA (EX200) objectives in [`objectives.md`](objectives.md) and the Red Hat course material mapped in [`coverage.md`](coverage.md). Week 14 is revision, and you take the exam in week 15. See [Week 15: the exam](#week-15-the-exam).
+Fourteen weeks of teaching, with one three-hour session each week, covering the RHCSA (EX200) objectives in [`objectives.md`](objectives.md) and the Red Hat course material mapped in [`coverage.md`](coverage.md). Week 14 covers containers and image mode and goes through the objectives one last time, and you take the exam in week 15. See [Week 15: the exam](#week-15-the-exam).
 
 The RH124 and RH134 courseware is **not** part of this repository. The file cites only section numbers, which refer to version 10.0 of both courses.
 
@@ -29,7 +29,7 @@ this module. They are not from the courseware.
 
 A group permissions lab example that accompanies RH124 section 10.07 (Managing Local Group Accounts) is available at [`examples/group-permissions.md`](examples/group-permissions.md).
 
-### Weeks 8 to 13: Red Hat System Administration II
+### Weeks 8 to 14: Red Hat System Administration II
 
 | Week | Focus | In class | Own time | Objectives |
 | --- | --- | --- | --- | --- |
@@ -38,7 +38,8 @@ A group permissions lab example that accompanies RH124 section 10.07 (Managing L
 | 10 | SELinux, archives, secure file transfer and tuning profiles | RH134 06.01, 06.03, 06.05, 06.07, 07.01, 08.01, 08.03, 09.01 | RH134 06.09, 08.05, 09.05 | RHCSA-1.6, RHCSA-4.5, RHCSA-4.6, RHCSA-4.10, RHCSA-10.4, RHCSA-10.5, RHCSA-10.6, RHCSA-10.8 |
 | 11 | Partitions, swap and logical volumes | RH134 09.03, 10.01, 10.03, 11.01, 11.03, 11.05 | RH134 10.05, 11.06, 11.07 | RHCSA-5.1, RHCSA-5.2, RHCSA-5.3, RHCSA-5.4, RHCSA-5.5, RHCSA-5.6, RHCSA-6.1, RHCSA-6.4 |
 | 12 | Booting, troubleshooting and firewalls | RH134 12.01, 12.03, 12.05, 13.01, 14.01, 14.03 | RH134 12.07, 14.05 | RHCSA-1.5, RHCSA-4.1, RHCSA-4.2, RHCSA-4.3, RHCSA-6.1, RHCSA-7.3, RHCSA-7.6, RHCSA-8.4, RHCSA-10.1, RHCSA-10.7 |
-| 13 | Network file systems, installation, containers and image mode | RH134 15.01, 15.03, 16.01, 16.03, 17.01, 17.03, 17.05, 18.01, 18.03, 18.05, 18.07 | RH134 15.05, 16.05, 17.02, 17.07, 18.02 | RHCSA-6.2, RHCSA-6.3 |
+| 13 | Network file systems and installation | RH134 15.01, 15.03, 16.01, 16.03 | RH134 15.05, 16.05 | RHCSA-6.2, RHCSA-6.3 |
+| 14 | Containers, image mode and revision | RH134 17.01, 17.03, 17.05, 18.01, 18.03, 18.05, 18.07 | RH134 17.02, 17.07, 18.02 | — |
 
 Week 10 stopped at the start of RH134 09.03 (Influencing Process Scheduling), so
 that section moves to week 11 and is taught in the first part of the session.
@@ -54,16 +55,19 @@ Week 12 stopped before RH134 15.01, so chapter 15 moves to week 13 in full and
 is taught in the first part of that session. Read 15.01 and 15.03 before week
 13, and do the RH134 15.05 lab in your own time once it is taught.
 
-### Week 14: revision
+### Week 14: containers, image mode and revision
 
-No new chapters. We go through [`objectives.md`](objectives.md) and
-[`coverage.md`](coverage.md) objective by objective, so you can see what each
-one asks of you and which week taught it. Bring the objectives you are least
-sure of.
+Containers and image mode are the last chapters, and we teach them this week
+(chapters 17 and 18). There is no new material after them. The session also
+goes through [`pairings.md`](pairings.md), [`exam-day.md`](exam-day.md),
+[`objectives.md`](objectives.md) and [`coverage.md`](coverage.md), objective by
+objective, so you can see what each one asks of you and which week taught it.
+Bring the objectives you are least sure of.
 
-Both comprehensive review chapters are open to you by now. If week 13 slipped,
-RH134 19.03 and 19.05 are the review labs that may have to wait, because they
-rest on the network file system and container material.
+Both comprehensive review chapters are open to you by now. RH134 19.03 and
+19.05 are the review labs that had to wait, because 19.03 rests on the network
+file system material taught in week 13 and 19.05 rests on the container
+material taught this week.
 
 Read [`pairings.md`](pairings.md) before you sit either of them. It lists the
 commands that need a second command, and the forms that survive a reboot.
@@ -78,7 +82,7 @@ There is no session in week 15. You sit the RHCSA (EX200) exam. For what the
 exam environment is like on the day, see [`exam-day.md`](exam-day.md).
 
 Revise with the comprehensive review, then the chapter labs. See
-[Your own time](#your-own-time). The labs from weeks 10 to 13 deserve the
+[Your own time](#your-own-time). The labs from weeks 10 to 14 deserve the
 most attention. SELinux, storage, booting, troubleshooting, firewalls and
 network file systems are the hardest material in the module.
 
@@ -109,7 +113,7 @@ divide between teaching and exercises.
 | Wrap-up | 10 min | Next week's pre-reading and the practice to work through |
 
 Guided exercises are the only exercises we do in class, and they are where most
-questions surface. There are 72 of them across the thirteen teaching weeks, so a
+questions surface. There are 72 of them across the fourteen teaching weeks, so a
 typical week spends about an hour on them and leaves about 95 minutes to teach.
 
 Arrive without having read and you can still follow the session, because I
@@ -150,10 +154,11 @@ See [Exam practice](coverage.md#exam-practice) for what each lab exercises.
 | --- | --- |
 | Week 7 | RH124 20.02 to 20.06, five labs covering Red Hat System Administration I |
 | Week 12 | RH134 19.02 and 19.04, two labs covering boot troubleshooting and network security |
-| Week 13 | RH134 19.03 and 19.05, one lab on network file systems, one on containers |
+| Week 14 | RH134 19.03 and 19.05, one lab on network file systems, one on containers |
 
 RH134 19.03 rests on the network file system material taught in week 13, and
-19.05 rests on the containers. Do the other three review labs first.
+19.05 rests on the container material taught in week 14. Do the other three
+review labs first.
 
 ## Sequencing notes
 
@@ -165,7 +170,7 @@ stuck in your own time.
 I cover RH124 01.01 briefly in week 1. It sets context. It does not teach a
 skill, and no objective corresponds to it.
 
-I teach RH134 chapters 16 to 18 last, in week 13, because no objective
+I teach RH134 chapters 16 to 18 last, in weeks 13 and 14, because no objective
 corresponds to them. Study them after the chapters the exam asks for.
 
 I do not schedule RH124 00.01 or RH134 00.01 to 00.03. They orient you to the

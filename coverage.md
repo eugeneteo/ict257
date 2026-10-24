@@ -226,7 +226,7 @@ and RH134 has nine plus three, which makes twelve.
 
 No objective in [`objectives.md`](objectives.md) mentions installation,
 Kickstart, containers or image mode, so no section of RH134 chapters 16, 17,
-or 18 appears in the matrix above. I still teach them, in week 13,
+or 18 appears in the matrix above. I still teach them, in weeks 13 and 14,
 after every chapter that carries an objective. See
 [`lessons.md`](lessons.md#sequencing-notes).
 

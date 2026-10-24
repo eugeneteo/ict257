@@ -104,7 +104,7 @@ sign in.
 
 Whichever you choose, sit it timed and closed book, and do it after the
 comprehensive review labs. See
-[Week 14: revision](lessons.md#week-14-revision).
+[Week 14: containers, image mode and revision](lessons.md#week-14-containers-image-mode-and-revision).
 
 ## References
 

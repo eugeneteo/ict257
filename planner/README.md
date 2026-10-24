@@ -11,9 +11,10 @@ LibreOffice Calc, Numbers or Google Sheets.
 
 One cell. On the **Start here** sheet, enter the date of your week 1 class.
 Every other date in the workbook follows from it, including the exam date and
-the revision dates for the chapters. The 37 teaching chapters carry two
-revision dates each. The two course prefaces carry none, and the two
-comprehensive reviews carry one.
+the revision dates for the chapters. Most of the teaching chapters carry two
+revision dates each. The last stretch of the module has no room for a second
+pass before the exam, so those chapters carry one. The two course prefaces
+carry none, and the two comprehensive reviews carry one.
 
 If you have already booked your exam, type that date over the one it works out
 for you.
@@ -21,7 +22,9 @@ for you.
 ## What it does
 
 Each chapter carries three dates. The class date is the week we teach it.
-Revision 1 falls a week later. Revision 2 falls three weeks after that.
+Revision 1 falls a week later. Revision 2 falls three weeks after that, unless
+the chapter is taught in week 13 or later and the second date would fall past
+the exam.
 Chapters and weeks follow the week ordering in [`readings.md`](../readings.md).
 
 Three short passes beat one long one, and the gap between them is the point.
@@ -37,11 +40,12 @@ The **Practice** sheet tracks the 22 optional challenges in
 
 ## Where the schedule bends
 
-Three weeks after the first revision falls past the exam for the week 12 and
-week 13 chapters, so those second revisions are pulled back into revision week.
-That squeeze lands on SELinux, storage, booting, troubleshooting, firewalls and
-network file systems, which is the hardest material in the module. Start those
-before the sheet tells you to.
+Three weeks after the first revision falls past the exam for the week 12, week
+13 and week 14 chapters. There is no revision week to pull those second
+revisions into, so they are pulled back into the days before the exam instead.
+That squeeze lands on SELinux, storage, booting, troubleshooting, firewalls,
+network file systems, installation, containers and image mode, which is the
+hardest material in the module. Start those before the sheet tells you to.
 
 The **Start here** sheet explains the rest of the reasoning.
 

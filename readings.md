@@ -325,29 +325,40 @@ work from.
 
 Two worked examples go with this week in [`examples/network-and-firewall-tools.md`](examples/network-and-firewall-tools.md): the `firewall-cmd` two-step, and tracing an open port you did not put there.
 
-## Week 13: Network file systems, installation, containers and image mode
+## Week 13: Network file systems and installation
 
-Network file systems, installation, containers and image mode.
+Network file systems and installation.
 
-Chapter 15 now arrives first in this week and carries RHCSA-6.2 and RHCSA-6.3.
-Only RH134 16, 17 and 18 lack objectives. They teach installation, Podman and
-image mode, and the exam asks for none of them. The rows other than the autofs
-chapter are for interest and for the work itself. Finish the chapters that
-carry objectives first.
+Chapter 15 arrives first in this week and carries RHCSA-6.2 and RHCSA-6.3. It
+is joined by chapter 16, which teaches installation and Kickstart. The rows
+other than the autofs chapter are for interest and for the work itself. Finish
+the chapters that carry objectives first.
 
 | Page | Why it is worth reading | Objective |
 | --- | --- | --- |
 | [Mounting file systems on demand](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/managing_file_systems/mounting-file-systems-on-demand) | Red Hat's autofs chapter for RHEL 10, covering the master map, direct maps and indirect maps. It matches the file layout RH134 15.03 teaches | RHCSA-6.3 |
 | [Automatically installing RHEL](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/automatically_installing_rhel/index) | The Kickstart command reference for RHEL 10. Check a directive here before you copy one out of an older example, because several have been withdrawn | — |
 | [Certified hypervisors and guest operating systems](https://access.redhat.com/articles/certified-hypervisors) | Which hypervisors Red Hat certifies for a RHEL 10 guest. Useful when you build a practice machine of your own outside the lab | — |
-| [pivot-root, by Julia Evans](https://wizardzines.com/comics/pivot-root/) | One page showing that a container image is a tarball of a file system, and that running one starts by changing a process root directory. It is the same `chroot` you used in rescue mode | — |
-| [Podman pull "official" images from Docker Hub](https://stackoverflow.com/questions/69162077/podman-pull-official-images-from-docker-hub) | Why a short image name behaves differently under Podman, and what the search list in `/etc/containers/registries.conf` does with it | — |
-| [Why a privileged container in Docker is a bad idea](https://www.trendmicro.com/en_gb/research/19/l/why-running-a-privileged-container-in-docker-is-a-bad-idea.html) | What `--privileged` actually hands over. RH134 18.05 asks you to run the image builder with that flag, so understand the trade before you type it | — |
-| [Podman's new network stack](https://www.redhat.com/en/blog/podman-new-network-stack) | Matthew Heon on why netavark and aardvark replaced CNI. Background for the container networking you get by default on RHEL 10 | — |
 
 Older Kickstart files circulate widely and most of them are from the RHEL 7
 era. A file that installed a system then can fail outright on RHEL 10, so
 check each directive and run `ksvalidator` over the result.
+
+## Week 14: Containers and image mode
+
+Containers and image mode.
+
+Chapters 17 and 18 arrive in this week, and they are the last chapters of the
+course. Only RH134 16, 17 and 18 lack objectives. They teach installation,
+Podman and image mode, and the exam asks for none of them, so the rows below
+are for interest.
+
+| Page | Why it is worth reading | Objective |
+| --- | --- | --- |
+| [pivot-root, by Julia Evans](https://wizardzines.com/comics/pivot-root/) | One page showing that a container image is a tarball of a file system, and that running one starts by changing a process root directory. It is the same `chroot` you used in rescue mode | — |
+| [Podman pull "official" images from Docker Hub](https://stackoverflow.com/questions/69162077/podman-pull-official-images-from-docker-hub) | Why a short image name behaves differently under Podman, and what the search list in `/etc/containers/registries.conf` does with it | — |
+| [Why a privileged container in Docker is a bad idea](https://www.trendmicro.com/en_gb/research/19/l/why-running-a-privileged-container-in-docker-is-a-bad-idea.html) | What `--privileged` actually hands over. RH134 18.05 asks you to run the image builder with that flag, so understand the trade before you type it | — |
+| [Podman's new network stack](https://www.redhat.com/en/blog/podman-new-network-stack) | Matthew Heon on why netavark and aardvark replaced CNI. Background for the container networking you get by default on RHEL 10 | — |
 
 The comic reaches back to week 12 on purpose. Meeting `chroot` twice, once for
 repairing a system and once for running a container, is the point.

@@ -109,16 +109,12 @@ WEEKS = {
     10: ("RH134", [6, 7, 8, 9], "SELinux, archives, secure file transfer and tuning profiles"),
     11: ("RH134", [10, 11], "Partitions, swap and logical volumes"),
     12: ("RH134", [12, 13, 14], "Booting, troubleshooting and firewalls"),
-    13: ("RH134", [15, 16, 17, 18], "Network file systems, installation, containers and image mode"),
+    13: ("RH134", [15, 16], "Network file systems and installation"),
+    14: ("RH134", [17, 18], "Containers, image mode and revision"),
 }
 
-# lessons.md schedules no new chapters after week 13. Week 14 is revision, and that
-# is where the two comprehensive reviews go.
-EXTRA_WEEKS = {
-    14: "Revision week. Objective by objective, with both comprehensive reviews open to you.",
-}
-
-# Chapters lessons.md does not place in a teaching week.
+# Chapters lessons.md does not place in a teaching week. Week 14 is the last
+# teaching week, and it is also where the review labs open.
 UNSCHEDULED = {
     ("RH124", 20): 14,
     ("RH134", 0): 7,
@@ -131,11 +127,11 @@ NOTES = {
     ("RH124", 5): "Brought forward into week 1 so you have the assistant from the start. You will not have it in the exam.",
     ("RH124", 20): "Five review labs. Open to you from week 7, so start earlier if you can.",
     ("RH134", 0): "Not scheduled. It orients you to a self-paced Red Hat course. Skim it and move on.",
-    ("RH134", 6): "Hardest third of the module starts here. Weeks 10 to 13 deserve the most revision time.",
+    ("RH134", 6): "Hardest third of the module starts here. Weeks 10 to 14 deserve the most revision time.",
     ("RH134", 16): "No objective matches it. Cover the chapters the exam asks for first.",
     ("RH134", 17): "No objective matches it. Cover the chapters the exam asks for first.",
     ("RH134", 18): "No objective matches it. Cover the chapters the exam asks for first.",
-    ("RH134", 19): "Labs 19.02 and 19.04 are open from week 12. Labs 19.03 and 19.05 rest on week 13 material.",
+    ("RH134", 19): "Labs 19.02 and 19.04 are open from week 12. Lab 19.03 rests on the week 13 network file system material and lab 19.05 on the week 14 container material.",
 }
 
 # Optional practice challenges, from practice.md. Ordered by challenge number,
@@ -252,7 +248,6 @@ def build_plan_rows():
     week_of.update(UNSCHEDULED)
 
     focus_of = {week: focus for week, (_c, _ch, focus) in WEEKS.items()}
-    focus_of.update(EXTRA_WEEKS)
 
     rows = []
     for course in ("RH124", "RH134"):
@@ -416,12 +411,12 @@ def build_start_here(wb):
     section_head(ws, row, 6, "4. How the dates are worked out, and where they had to bend")
     row += 1
     reasoning = [
-        "Weeks 1 to 7 are RH124. Weeks 8 to 13 are RH134. Week 14 is revision, and you sit the exam in week 15.",
-        "The two comprehensive reviews sit in week 14, where lessons.md puts them. RH124 20 is open to you from week 7 and RH134 19.02 and 19.04 from week 12, and 19.03 and 19.05 from week 13, so start either one early if you can.",
+        "Weeks 1 to 7 are RH124. Weeks 8 to 14 are RH134. Week 14 covers containers and image mode and includes a revision walkthrough, and you sit the exam in week 15.",
+        "The two comprehensive reviews sit in week 14, where lessons.md puts them. RH124 20 is open to you from week 7 and RH134 19.02 and 19.04 from week 12, and 19.03 and 19.05 from week 14, so start either one early if you can.",
         "A comprehensive review gets one revision, not two. There is no room for a second before the exam, and the exam itself is the second pass.",
         "The two preface chapters get no revision dates. They orient you to the courseware and teach no skill the exam asks for. RH134 00 is not scheduled at all.",
-        "Three weeks after the first revision falls past the exam for the week 12 and week 13 chapters. Those second revisions are pulled back into revision week instead, week 12 material first and week 13 material a day later.",
-        "That squeeze lands on SELinux, storage, booting, troubleshooting, firewalls and network file systems, which is the hardest material in the module. Give revision week to those and start them before the sheet tells you to.",
+        "Three weeks after the first revision falls past the exam for the week 12, week 13 and week 14 chapters. Those second revisions are pulled back into the days before the exam instead, week 12 material first and the later material a day after that.",
+        "That squeeze lands on SELinux, storage, booting, troubleshooting, firewalls, network file systems, installation, containers and image mode, which is the hardest material in the module. Start it before the sheet tells you to.",
     ]
     for line in reasoning:
         ws.merge_cells(start_row=row, start_column=1, end_row=row, end_column=6)
@@ -493,7 +488,7 @@ def build_plan(wb, rows):
 
         ws.cell(row=r, column=6, value=f"=SemesterStart+7*($D{r}-1)")
         ws.cell(row=r, column=7, value=f'=IF($B{r}=0,"",MIN($F{r}+7,RevisionCutoff))')
-        ws.cell(row=r, column=8, value=f'=IF(OR($B{r}=0,$D{r}>=14),"",MIN($G{r}+21,RevisionCutoff-13+$D{r}))')
+        ws.cell(row=r, column=8, value=f'=IF(OR($B{r}=0,$D{r}>=13),"",MIN($G{r}+21,RevisionCutoff))')
 
         ws.cell(row=r, column=9, value="Not started").font = text_font
         ws.cell(row=r, column=10).font = text_font

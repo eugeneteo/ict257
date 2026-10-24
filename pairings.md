@@ -44,7 +44,7 @@ setting persistent.
 | edit `/etc/NetworkManager/system-connections/NAME.nmconnection` | `nmcli con reload` | NetworkManager still holds the old profile | visibility | RHCSA-8.1 |
 | `nmcli con mod NAME ...` | `nmcli con up NAME` | the interface keeps its old runtime address | activation | RHCSA-8.1 |
 
-### RH134, weeks 8 to 12
+### RH134, weeks 8 to 14
 
 | After you | You must also | Or else | Fails how | Objective |
 | --- | --- | --- | --- | --- |

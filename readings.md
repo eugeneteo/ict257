@@ -348,7 +348,7 @@ check each directive and run `ksvalidator` over the result.
 
 Containers and image mode.
 
-Chapters 17 and 18 arrive in this week, and they are the last chapters of the
+Chapters 17 and 18 arrive this week and are the last chapters of the
 course. Only RH134 16, 17 and 18 lack objectives. They teach installation,
 Podman and image mode, and the exam asks for none of them, so the rows below
 are for interest.

@@ -1,6 +1,6 @@
 # ICT257 lesson plan
 
-Fourteen weeks of teaching, with one three-hour session each week, covering the RHCSA (EX200) objectives in [`objectives.md`](objectives.md) and the Red Hat course material mapped in [`coverage.md`](coverage.md). Week 14 covers containers and image mode and goes through the objectives one last time, and you take the exam in week 15. See [Week 15: the exam](#week-15-the-exam).
+Fourteen weeks of teaching, with one three-hour session each week, covering the RHCSA (EX200) objectives in [`objectives.md`](objectives.md) and the Red Hat course material mapped in [`coverage.md`](coverage.md). Week 14 covers containers and image mode and includes a revision walkthrough. You take the exam in week 15. See [Week 15: the exam](#week-15-the-exam).
 
 The RH124 and RH134 courseware is **not** part of this repository. The file cites only section numbers, which refer to version 10.0 of both courses.
 
@@ -59,8 +59,8 @@ is taught in the first part of that session. Read 15.01 and 15.03 before week
 
 Containers and image mode are the last chapters, and we teach them this week
 (chapters 17 and 18). There is no new material after them. The session also
-goes through [`pairings.md`](pairings.md), [`exam-day.md`](exam-day.md),
-[`objectives.md`](objectives.md) and [`coverage.md`](coverage.md), objective by
+goes through [`objectives.md`](objectives.md), [`coverage.md`](coverage.md),
+[`exam-day.md`](exam-day.md) and [`pairings.md`](pairings.md), objective by
 objective, so you can see what each one asks of you and which week taught it.
 Bring the objectives you are least sure of.
 
@@ -71,10 +71,6 @@ material taught this week.
 
 Read [`pairings.md`](pairings.md) before you sit either of them. It lists the
 commands that need a second command, and the forms that survive a reboot.
-
-[`practice.md`](practice.md) holds optional practice challenges, each naming the
-objective it belongs to. Attempt them once the review labs are behind you, to
-find out whether you can reach a result with nothing open in front of you.
 
 ## Week 15: the exam
 

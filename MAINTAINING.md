@@ -76,14 +76,12 @@ you line breaks that are not really there and send you chasing them.
 
 ## Tagging a semester
 
-Tag at the start of a semester, not the end. What a student wants is the state
-the material was in when their semester began.
+Tag on the last day of the semester, not the start. What a student wants is the
+state the material was in when their semester ended, as taught.
 
 The schedule in `lessons.md` is the reason this matters. I fine-tune it as I
 teach, to match what actually happens in the room, so it drifts through the
-semester by design. The tag holds what students were told in week 1, and `main`
-holds what turned out to be true. Prefer changing weeks not yet taught. Do not
-rewrite a week after it has been taught.
+semester by design. The tag holds what turned out to be true.
 
 Do the source checks above first and commit them. Then:
 
@@ -97,8 +95,9 @@ Watch for failures that Git does not report clearly:
   this machine.
 - Use `-a`. An annotated tag records who made it, when and why, as a real
   object. A bare `git tag 2026-s2` records none of that.
-- Do not move a tag once students have cloned it. If the name is wrong, add the
-  right one and leave the wrong one where it is.
+- Moving an already-pushed tag needs a forced push:
+  `git push --force origin 2026-s2`. Do this only before students clone, or
+  with a good reason.
 
 ## Licence
 
